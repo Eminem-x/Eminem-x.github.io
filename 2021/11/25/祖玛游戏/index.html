@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="祖玛游戏（ 搜索剪枝 | 记忆化搜索）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="祖玛游戏">
+<meta property="og:url" content="http://example.com/2021/11/25/%E7%A5%96%E7%8E%9B%E6%B8%B8%E6%88%8F/index.html">
+<meta property="og:site_name" content="Yuanhao Blog">
+<meta property="og:description" content="祖玛游戏（ 搜索剪枝 | 记忆化搜索）">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-25T08:18:27.925Z">
+<meta property="article:modified_time" content="2021-11-25T08:40:21.925Z">
+<meta property="article:author" content="Yuanhao">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/11/25/%E7%A5%96%E7%8E%9B%E6%B8%B8%E6%88%8F/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>祖玛游戏 | Yuanhao Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Yuanhao Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/25/%E7%A5%96%E7%8E%9B%E6%B8%B8%E6%88%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuanhao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuanhao Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          祖玛游戏
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-11-25 16:18:27 / 修改时间：16:40:21" itemprop="dateCreated datePublished" datetime="2021-11-25T16:18:27+08:00">2021-11-25</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" itemprop="url" rel="index"><span itemprop="name">广度优先搜索</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="祖玛游戏（-搜索剪枝-记忆化搜索）"><a href="#祖玛游戏（-搜索剪枝-记忆化搜索）" class="headerlink" title="祖玛游戏（ 搜索剪枝 | 记忆化搜索）"></a>祖玛游戏（ 搜索剪枝 | 记忆化搜索）</h3><span id="more"></span>
+
+<blockquote>
+<blockquote>
+<p>祖玛游戏的最小步数求解</p>
+<p>题目详情参见：<a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/zuma-game/">488. 祖玛游戏 - 力扣（LeetCode） (leetcode-cn.com)</a></a></p>
+</blockquote>
+</blockquote>
+<h3 id="题目分析："><a href="#题目分析：" class="headerlink" title="题目分析："></a>题目分析：</h3><ol>
+<li><p>因为插入球的选择和颜色情况太多，并且所带来的影响可能是在多次操作后才能体现出来，</p>
+<p>因此倘若使用贪心算法，很难建立起全局最优的决策，故而不采用贪心；</p>
+</li>
+<li><p>因此需要对状态空间进行枚举，通过穷尽所有的可能来找到最优解，</p>
+<p>并使用剪枝的方法来优化搜索过程；</p>
+</li>
+<li><p>如果使用深度优先搜索，则需要使用记忆化搜索，以避免重复计算相同的状态；</p>
+</li>
+<li><p>该题目只需要得到回合数最少的方案，因此广度优先搜索即可;</p>
+</li>
+<li><p>设当前桌面上有 n 个球，手中持有 m 个球，<br>  $$<br>  则此时一共有C^m_{m+n} * m! = A^m_{m+n}种插入方法<br>  $$</p>
+</li>
+</ol>
+<h3 id="解法一：BFS-剪枝"><a href="#解法一：BFS-剪枝" class="headerlink" title="解法一：BFS + 剪枝"></a>解法一：BFS + 剪枝</h3><p>思路：不妨规定，每一种不同的桌面上球的情况和手中球的情况的组合都是一种不同的状态，</p>
+<p>​            然后对状态空间进行枚举，即可得解答；</p>
+<p><strong>在搜索过程中，需要剪枝来简化算法的复杂性:</strong></p>
+<ul>
+<li>手中颜色相同的球每次选择时只需要考虑其中一个即可；</li>
+<li>只在连续相同颜色的球的开头位置或者结尾位置插入新的颜色相同的球；</li>
+<li>只考虑放置新球后有可能得到更优解的位置，以下三种情况：<ol>
+<li>插入新球与插入位置右侧的球颜色相同</li>
+<li>插入新球与插入位置两侧的球颜色均不相同，且插入位置两侧的球的颜色不同</li>
+<li>插入新球与插入位置两侧的球颜色均不相同，且插入位置两侧的球的颜色相同</li>
+<li>对于如果手中的球全部插入也无法满足新的消除，则直接进行中止</li>
+</ol>
+</li>
+</ul>
+<p><strong>当然还可以有更多的剪枝技巧。</strong></p>
+<p>具体实现的细节处理：</p>
+
+<ol>
+<li><p>消除操作后，如果导致出现了新的连续三个以上颜色相同的球，</p>
+<p>则继续消除这些球，直到不再满足消除条件；</p>
+</li>
+<li><p>消除时利用栈的特性，每次遇到连续可以消除的球时，将其从栈中弹出；</p>
+</li>
+</ol>
+<p>代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMinStep</span><span class="params">(String board, String hand)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span>[] arr = hand.toCharArray();</span><br><span class="line">        Arrays.sort(arr);</span><br><span class="line">        hand = <span class="keyword">new</span> String(arr);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 初始化用队列维护的状态队列：其中的三个元素分别为桌面球状态、手中球状态和回合数</span></span><br><span class="line">        Queue&lt;State&gt; queue = <span class="keyword">new</span> ArrayDeque&lt;State&gt;();</span><br><span class="line">        queue.offer(<span class="keyword">new</span> State(board, hand, <span class="number">0</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 初始化用哈希集合维护的已访问过的状态</span></span><br><span class="line">        Set&lt;String&gt; visited = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">        visited.add(board + <span class="string">&quot; &quot;</span> + hand);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">            State state = queue.poll();</span><br><span class="line">            String curBoard = state.board;</span><br><span class="line">            String curHand = state.hand;</span><br><span class="line">            <span class="keyword">int</span> step = state.step;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= curBoard.length(); ++i) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; curHand.length(); ++j) &#123;</span><br><span class="line">                    <span class="comment">// 第 1 个剪枝条件: 当前球的颜色和上一个球的颜色相同</span></span><br><span class="line">                    <span class="keyword">if</span> (j &gt; <span class="number">0</span> &amp;&amp; curHand.charAt(j) == curHand.charAt(j - <span class="number">1</span>)) &#123;</span><br><span class="line">                        <span class="keyword">continue</span>;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// 第 2 个剪枝条件: 只在连续相同颜色的球的开头位置插入新球</span></span><br><span class="line">                    <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; curBoard.charAt(i - <span class="number">1</span>) == curHand.charAt(j)) &#123;</span><br><span class="line">                        <span class="keyword">continue</span>;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// 第 3 个剪枝条件: 只在以下两种情况放置新球</span></span><br><span class="line">                    <span class="keyword">boolean</span> choose = <span class="keyword">false</span>;</span><br><span class="line">                    <span class="comment">//  - 第 1 种情况 : 当前球颜色与后面的球的颜色相同</span></span><br><span class="line">                    <span class="keyword">if</span> (i &lt; curBoard.length() &amp;&amp; curBoard.charAt(i) == curHand.charAt(j)) &#123;</span><br><span class="line">                        choose = <span class="keyword">true</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">//  - 第 2 种情况 : 当前后颜色相同且与当前颜色不同时候放置球</span></span><br><span class="line">                    <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; i &lt; curBoard.length() &amp;&amp; </span><br><span class="line">                        curBoard.charAt(i - <span class="number">1</span>) == curBoard.charAt(i) &amp;&amp; </span><br><span class="line">                        curBoard.charAt(i - <span class="number">1</span>) != curHand.charAt(j)) &#123;</span><br><span class="line">                        choose = <span class="keyword">true</span>;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">if</span> (choose) &#123;</span><br><span class="line">                        String newBoard = clean(curBoard.substring(<span class="number">0</span>, i) + </span><br><span class="line">                                                curHand.charAt(j) + curBoard.substring(i));</span><br><span class="line">                        String newHand = curHand.substring(<span class="number">0</span>, j) + curHand.substring(j + <span class="number">1</span>);</span><br><span class="line">                        <span class="keyword">if</span> (newBoard.length() == <span class="number">0</span>) &#123;</span><br><span class="line">                            <span class="keyword">return</span> step + <span class="number">1</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        String str = newBoard + <span class="string">&quot; &quot;</span> + newHand;</span><br><span class="line">                        <span class="keyword">if</span> (visited.add(str)) &#123;</span><br><span class="line">                            queue.offer(<span class="keyword">new</span> State(newBoard, newHand, step + <span class="number">1</span>));</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">clean</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        StringBuffer sb = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">        Deque&lt;Character&gt; letterStack = <span class="keyword">new</span> ArrayDeque&lt;Character&gt;();</span><br><span class="line">        Deque&lt;Integer&gt; countStack = <span class="keyword">new</span> ArrayDeque&lt;Integer&gt;();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); ++i) &#123;</span><br><span class="line">            <span class="keyword">char</span> c = s.charAt(i);</span><br><span class="line">            <span class="keyword">while</span> (!letterStack.isEmpty() &amp;&amp; c != letterStack.peek() &amp;&amp; countStack.peek() &gt;= <span class="number">3</span>) &#123;</span><br><span class="line">                letterStack.pop();</span><br><span class="line">                countStack.pop();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (letterStack.isEmpty() || c != letterStack.peek()) &#123;</span><br><span class="line">                letterStack.push(c);</span><br><span class="line">                countStack.push(<span class="number">1</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                countStack.push(countStack.pop() + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!countStack.isEmpty() &amp;&amp; countStack.peek() &gt;= <span class="number">3</span>) &#123;</span><br><span class="line">            letterStack.pop();</span><br><span class="line">            countStack.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (!letterStack.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">char</span> letter = letterStack.pop();</span><br><span class="line">            <span class="keyword">int</span> count = countStack.pop();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; ++i) &#123;</span><br><span class="line">                sb.append(letter);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        sb.reverse();</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">State</span> </span>&#123;</span><br><span class="line">    String board;</span><br><span class="line">    String hand;</span><br><span class="line">    <span class="keyword">int</span> step;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">State</span><span class="params">(String board, String hand, <span class="keyword">int</span> step)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.board = board;</span><br><span class="line">        <span class="keyword">this</span>.hand = hand;</span><br><span class="line">        <span class="keyword">this</span>.step = step;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\begin{align}<br>&amp;时间复杂度:O(m×n×A^n_{m+n})\<br>&amp;空间复杂度:O((m+n)×A^m_{m+n})<br>\end{align}<br>$$</p>
+<hr>
+<h3 id="解法二：记忆化搜索（AStar算法）"><a href="#解法二：记忆化搜索（AStar算法）" class="headerlink" title="解法二：记忆化搜索（AStar算法）"></a>解法二：记忆化搜索（AStar算法）</h3><p>代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    Map&lt;String, Integer&gt; dp = <span class="keyword">new</span> HashMap&lt;String, Integer&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMinStep</span><span class="params">(String board, String hand)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span>[] arr = hand.toCharArray();</span><br><span class="line">        Arrays.sort(arr);</span><br><span class="line">        hand = <span class="keyword">new</span> String(arr);</span><br><span class="line">        <span class="keyword">int</span> ans = dfs(board, hand);</span><br><span class="line">        <span class="keyword">return</span> ans &lt;= <span class="number">5</span> ? ans : -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">dfs</span><span class="params">(String board, String hand)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (board.length() == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        String key = board + <span class="string">&quot; &quot;</span> + hand;</span><br><span class="line">        <span class="keyword">if</span> (!dp.containsKey(key)) &#123;</span><br><span class="line">            <span class="keyword">int</span> res = <span class="number">6</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; hand.length(); ++j) &#123;</span><br><span class="line">                <span class="comment">// 第 1 个剪枝条件: 当前球的颜色和上一个球的颜色相同</span></span><br><span class="line">                <span class="keyword">if</span> (j &gt; <span class="number">0</span> &amp;&amp; hand.charAt(j) == hand.charAt(j - <span class="number">1</span>)) &#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= board.length(); ++i) &#123;</span><br><span class="line">                    <span class="comment">// 第 2 个剪枝条件: 只在连续相同颜色的球的开头位置插入新球</span></span><br><span class="line">                    <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; board.charAt(i - <span class="number">1</span>) == hand.charAt(j)) &#123;</span><br><span class="line">                        <span class="keyword">continue</span>;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// 第 3 个剪枝条件: 只在以下两种情况放置新球</span></span><br><span class="line">                    <span class="keyword">boolean</span> choose = <span class="keyword">false</span>;</span><br><span class="line">                    <span class="comment">//  - 第 1 种情况 : 当前球颜色与后面的球的颜色相同</span></span><br><span class="line">                    <span class="keyword">if</span> (i &lt; board.length() &amp;&amp; board.charAt(i) == hand.charAt(j)) &#123;</span><br><span class="line">                        choose = <span class="keyword">true</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">//  - 第 2 种情况 : 当前后颜色相同且与当前颜色不同时候放置球</span></span><br><span class="line">                    <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; i &lt; board.length() &amp;&amp; </span><br><span class="line">                        board.charAt(i - <span class="number">1</span>) == board.charAt(i) &amp;&amp; </span><br><span class="line">                        board.charAt(i - <span class="number">1</span>) != hand.charAt(j)) &#123;</span><br><span class="line">                        choose = <span class="keyword">true</span>;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">if</span> (choose) &#123;</span><br><span class="line">                        String newBoard = clean(board.substring(<span class="number">0</span>, i) + </span><br><span class="line">                                                hand.charAt(j) + board.substring(i));</span><br><span class="line">                        String newHand = hand.substring(<span class="number">0</span>, j) + hand.substring(j + <span class="number">1</span>);</span><br><span class="line">                        res = Math.min(res, dfs(newBoard, newHand) + <span class="number">1</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            dp.put(key, res);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp.get(key);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">clean</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        StringBuffer sb = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">        Deque&lt;Character&gt; letterStack = <span class="keyword">new</span> ArrayDeque&lt;Character&gt;();</span><br><span class="line">        Deque&lt;Integer&gt; countStack = <span class="keyword">new</span> ArrayDeque&lt;Integer&gt;();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); ++i) &#123;</span><br><span class="line">            <span class="keyword">char</span> c = s.charAt(i);</span><br><span class="line">            <span class="keyword">while</span> (!letterStack.isEmpty() &amp;&amp; c != letterStack.peek() &amp;&amp; countStack.peek() &gt;= <span class="number">3</span>) &#123;</span><br><span class="line">                letterStack.pop();</span><br><span class="line">                countStack.pop();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (letterStack.isEmpty() || c != letterStack.peek()) &#123;</span><br><span class="line">                letterStack.push(c);</span><br><span class="line">                countStack.push(<span class="number">1</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                countStack.push(countStack.pop() + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!countStack.isEmpty() &amp;&amp; countStack.peek() &gt;= <span class="number">3</span>) &#123;</span><br><span class="line">            letterStack.pop();</span><br><span class="line">            countStack.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (!letterStack.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">char</span> letter = letterStack.pop();</span><br><span class="line">            <span class="keyword">int</span> count = countStack.pop();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; ++i) &#123;</span><br><span class="line">                sb.append(letter);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        sb.reverse();</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">State</span> </span>&#123;</span><br><span class="line">    String board;</span><br><span class="line">    String hand;</span><br><span class="line">    <span class="keyword">int</span> step;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">State</span><span class="params">(String board, String hand, <span class="keyword">int</span> step)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.board = board;</span><br><span class="line">        <span class="keyword">this</span>.hand = hand;</span><br><span class="line">        <span class="keyword">this</span>.step = step;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>$$<br>\begin{align}<br>&amp;时间复杂度:O(m×n×A^n_{m+n})\<br>&amp;空间复杂度:O((m+n)×A^m_{m+n})<br>\end{align}<br>$$</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/25/%E6%8E%A5%E9%9B%A8%E6%B0%B4%E2%85%A1/" rel="prev" title="二维 接雨水">
+      <i class="fa fa-chevron-left"></i> 二维 接雨水
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A5%96%E7%8E%9B%E6%B8%B8%E6%88%8F%EF%BC%88-%E6%90%9C%E7%B4%A2%E5%89%AA%E6%9E%9D-%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">祖玛游戏（ 搜索剪枝 | 记忆化搜索）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">题目分析：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%EF%BC%9ABFS-%E5%89%AA%E6%9E%9D"><span class="nav-number">3.</span> <span class="nav-text">解法一：BFS + 剪枝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%EF%BC%9A%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2%EF%BC%88AStar%E7%AE%97%E6%B3%95%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">解法二：记忆化搜索（AStar算法）</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yuanhao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yuanhao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
