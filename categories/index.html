@@ -21,12 +21,12 @@
   </script>
 
   <meta property="og:type" content="website">
-<meta property="og:title" content="文章分类">
+<meta property="og:title" content="Categories">
 <meta property="og:url" content="http://example.com/categories/index.html">
 <meta property="og:site_name" content="Yuanhao Blog">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-11-22T01:37:20.000Z">
-<meta property="article:modified_time" content="2021-11-22T04:05:33.470Z">
+<meta property="article:modified_time" content="2021-11-27T11:48:29.219Z">
 <meta property="article:author" content="Yuanhao">
 <meta name="twitter:card" content="summary">
 
@@ -43,7 +43,7 @@
   };
 </script>
 
-  <title>文章分类 | Yuanhao Blog
+  <title>Categories | Yuanhao Blog
 </title>
   
 
@@ -123,6 +123,11 @@
     <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
         <li class="menu-item menu-item-categories">
 
     <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
@@ -188,7 +193,7 @@
     <div class="post-block" lang="zh-CN">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">文章分类
+<h1 class="post-title" itemprop="name headline">Categories
 </h1>
 
 <div class="post-meta">
@@ -294,6 +299,12 @@
         <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
   </nav>
 </div>
 
@@ -304,6 +315,19 @@
           <i class="fa fa-arrow-up"></i>
           <span>0%</span>
         </div>
+
+      
+        <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+        <div class="widget-wrap">
+          <h3 class="widget-title">Tag Cloud</h3>
+          <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="220" height="250" id="resCanvas" style="width=100%">
+              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">5</span></li></ul>
+            </canvas>
+          </div>
+        </div>
+      
 
     </div>
   </aside>
