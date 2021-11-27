@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Hexo Next的基础搭建</title>
+      <link href="/2021/11/27/Hexo%E7%9A%84%E5%9F%BA%E7%A1%80%E6%90%AD%E5%BB%BA/"/>
+      <url>/2021/11/27/Hexo%E7%9A%84%E5%9F%BA%E7%A1%80%E6%90%AD%E5%BB%BA/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Hexo-Next的基础搭建"><a href="#Hexo-Next的基础搭建" class="headerlink" title="Hexo Next的基础搭建"></a>Hexo Next的基础搭建</h3><span id="more"></span><h3 id="如何通过GitHub搭建Hexo博客？"><a href="#如何通过GitHub搭建Hexo博客？" class="headerlink" title="如何通过GitHub搭建Hexo博客？"></a>如何通过GitHub搭建Hexo博客？</h3><p>推荐UP主 CodeSheep 的这期视频：<a><a href="https://www.bilibili.com/video/BV1Yb411a7ty?from=search&seid=12143109252670934815&spm_id_from=333.337.0.0">手把手教你从0开始搭建自己的个人博客 |无坑版视频教程| hexo_哔哩哔哩_bilibili</a></a></p><p><em>（讲的很详细，并且其他视频对于初学者都很有帮助）</em></p><p><strong>补充：这里如果windows下的cmd操作不适配，推荐下载使用Git，仿照视频操作。</strong></p><hr><h3 id="如何添加-分类-标签-模块？"><a href="#如何添加-分类-标签-模块？" class="headerlink" title="如何添加 分类 | 标签 模块？"></a>如何添加 分类 | 标签 模块？</h3><p>推荐文章：<a><a href="https://juejin.cn/post/6921750181297782798">Hexo添加分类及标签（在Next主题下） - 掘金 (juejin.cn)</a></a></p><p><strong>补充：文章只能属于一个分类，但是可以属于多个标签。</strong></p><hr><h3 id="如何在文章内部署图片？"><a href="#如何在文章内部署图片？" class="headerlink" title="如何在文章内部署图片？"></a>如何在文章内部署图片？</h3><p>推荐文章：<a><a href="https://www.jianshu.com/p/f72aaad7b852">HEXO插入图片（详细版） - 简书 (jianshu.com)</a></a></p><p><strong>补充：</strong></p><ol><li><p>此方法插入图片时，typora或者其他markdown软件中，不可见图片，但是网页部署会出现，</p><p>这里推荐文章：<a>hexo博客如何插入图片 - 知乎 (zhihu.com)](<a href="https://zhuanlan.zhihu.com/p/265077468">https://zhuanlan.zhihu.com/p/265077468</a>)</a>的第三点说明。</p></li><li><p>在执行npm的时候可能会报错，参考下面文章依据情况解决：</p><p><a><a href="https://blog.csdn.net/zzq00zzj/article/details/120826520?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~default-1.no_search_link">(13条消息) npm install报错 npm ERR! 的四种解决办法_zzq00zzj的博客-CSDN博客</a></a></p></li></ol><hr><h3 id="如何添加访客统计和文章阅读次数？"><a href="#如何添加访客统计和文章阅读次数？" class="headerlink" title="如何添加访客统计和文章阅读次数？"></a>如何添加访客统计和文章阅读次数？</h3><p>推荐文章：<a><a href="https://blog.csdn.net/baidu_34310405/article/details/102665373">(13条消息) Hexo Next主题添加访客统计、访问次数统计、文章阅读次数统计_AcLings的博客-CSDN博客</a></a></p><hr><h3 id="如何美化代码块以-Mac-Pane的风格？"><a href="#如何美化代码块以-Mac-Pane的风格？" class="headerlink" title="如何美化代码块以 Mac Pane的风格？"></a>如何美化代码块以 Mac Pane的风格？</h3><p>推荐文章：<a><a href="https://miaosakurai.com/2020/04/20/Hexo-NexT%E7%BE%8E%E5%8C%96%F0%9F%8D%95Mac-Panel%E9%A3%8E%E6%A0%BC%E4%BB%A3%E7%A0%81%E5%9D%97%E9%85%8D%E7%BD%AE/">Hexo+NexT美化🍕Mac Panel风格代码块配置 | 樱井喵 (miaosakurai.com)</a></a></p><hr><h3 id="如何添加-标签云模块-博客背景-搜索功能-模块？"><a href="#如何添加-标签云模块-博客背景-搜索功能-模块？" class="headerlink" title="如何添加 标签云模块 |博客背景 |搜索功能 模块？"></a>如何添加 标签云模块 |博客背景 |搜索功能 模块？</h3><p>推荐博主：<a><a href="https://vic.kim/">归档 | Vicの博客</a></a></p><p><strong>补充：标签云至少存在两个标签才会生效显示</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>祖玛游戏</title>
       <link href="/2021/11/25/%E7%A5%96%E7%8E%9B%E6%B8%B8%E6%88%8F/"/>
       <url>/2021/11/25/%E7%A5%96%E7%8E%9B%E6%B8%B8%E6%88%8F/</url>
