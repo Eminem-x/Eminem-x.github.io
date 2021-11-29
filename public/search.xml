@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Hexo Next的界面优化</title>
+      <link href="/2021/11/29/Hexo%E7%9A%84%E7%95%8C%E9%9D%A2%E4%BC%98%E5%8C%96/"/>
+      <url>/2021/11/29/Hexo%E7%9A%84%E7%95%8C%E9%9D%A2%E4%BC%98%E5%8C%96/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Hexo-Next的界面优化"><a href="#Hexo-Next的界面优化" class="headerlink" title="Hexo Next的界面优化"></a>Hexo Next的界面优化</h3><span id="more"></span><h3 id="如何将页面背景改为黑色模式？"><a href="#如何将页面背景改为黑色模式？" class="headerlink" title="如何将页面背景改为黑色模式？"></a>如何将页面背景改为黑色模式？</h3><p>修改 Next 主题下的 _config.yml 配置文件：将 darkmode 的值修改为 true 。</p><p>如果主界面已经设置了 hexo-tag-cloud 标签云的展示，那么修改博客站点的配置文件，</p><p>_config.yml 中标签云模块下的 textColor 更改为 ‘#FFFFFF’ # 白色，或者其他颜色即可。</p><hr><h3 id="如何为页面添加当前浏览进度？"><a href="#如何为页面添加当前浏览进度？" class="headerlink" title="如何为页面添加当前浏览进度？"></a>如何为页面添加当前浏览进度？</h3><p>修改 Next 主题下的 _config.yml 配置文件：</p><p>将 back2top 中的 enable 和 scrollpercent 值修改为 true 。</p><hr><h3 id="如何将页面的首页更改为归档？"><a href="#如何将页面的首页更改为归档？" class="headerlink" title="如何将页面的首页更改为归档？"></a>如何将页面的首页更改为归档？</h3><p>修改 Next 主题下的 _config.yml 配置文件：</p><p>将 menu 下的 home 路径修改为 archive 即可，同时注释掉 archive。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: <span class="regexp">/archives/</span> || fa fa-archive</span><br><span class="line">  <span class="attr">about</span>: <span class="regexp">/about/</span> || fa fa-user</span><br><span class="line">  <span class="attr">tags</span>: <span class="regexp">/tags/</span> || fa fa-tags</span><br><span class="line">  <span class="attr">categories</span>: <span class="regexp">/categories/</span> || fa fa-th</span><br><span class="line">  #archives: <span class="regexp">/archives/</span> || fa fa-archive</span><br><span class="line">  #schedule: <span class="regexp">/schedule/</span> || fa fa-calendar</span><br><span class="line">  #sitemap: /sitemap.xml || fa fa-sitemap</span><br><span class="line">  #commonweal: <span class="regexp">/404/</span> || fa fa-heartbeat</span><br></pre></td></tr></table></figure><p><em>（提醒：如果担心更改错误，备份原文件）</em></p><hr><h3 id="如何为页面添加加载特效？"><a href="#如何为页面添加加载特效？" class="headerlink" title="如何为页面添加加载特效？"></a>如何为页面添加加载特效？</h3><p>参考文章：<a><a href="https://juejin.cn/post/6844903789946896398">Hexo博客NexT主题美化之顶部加载进度条 - 掘金 (juejin.cn)</a></a></p><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基本概念</title>
       <link href="/2021/11/29/Java%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
       <url>/2021/11/29/Java%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</url>
