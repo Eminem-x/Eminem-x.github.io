@@ -22,20 +22,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="洗牌算法( 模拟洗牌 | Fisher-Yates算法 )">
+  <meta name="description" content="第 N 位数字（数学）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="洗牌算法">
-<meta property="og:url" content="http://example.com/2021/11/23/%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:title" content="无限整数序列中定位数字">
+<meta property="og:url" content="http://example.com/2021/11/30/%E6%97%A0%E9%99%90%E6%95%B4%E6%95%B0%E5%BA%8F%E5%88%97%E4%B8%AD%E5%AE%9A%E4%BD%8D%E6%95%B0%E5%AD%97/index.html">
 <meta property="og:site_name" content="Yuanhao Blog">
-<meta property="og:description" content="洗牌算法( 模拟洗牌 | Fisher-Yates算法 )">
+<meta property="og:description" content="第 N 位数字（数学）">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-23T11:19:20.808Z">
-<meta property="article:modified_time" content="2021-11-27T11:46:11.806Z">
+<meta property="article:published_time" content="2021-11-30T11:37:15.754Z">
+<meta property="article:modified_time" content="2021-11-30T12:06:15.529Z">
 <meta property="article:author" content="Yuanhao">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/11/23/%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95/">
+<link rel="canonical" href="http://example.com/2021/11/30/%E6%97%A0%E9%99%90%E6%95%B4%E6%95%B0%E5%BA%8F%E5%88%97%E4%B8%AD%E5%AE%9A%E4%BD%8D%E6%95%B0%E5%AD%97/">
 
 
 <script id="page-configurations">
@@ -48,7 +48,7 @@
   };
 </script>
 
-  <title>洗牌算法 | Yuanhao Blog</title>
+  <title>无限整数序列中定位数字 | Yuanhao Blog</title>
   
 
 
@@ -188,7 +188,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/23/%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/30/%E6%97%A0%E9%99%90%E6%95%B4%E6%95%B0%E5%BA%8F%E5%88%97%E4%B8%AD%E5%AE%9A%E4%BD%8D%E6%95%B0%E5%AD%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -201,7 +201,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          洗牌算法
+          无限整数序列中定位数字
         </h1>
 
         <div class="post-meta">
@@ -210,16 +210,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-11-23 19:19:20" itemprop="dateCreated datePublished" datetime="2021-11-23T19:19:20+08:00">2021-11-23</time>
+              <time title="创建时间：2021-11-30 19:37:15 / 修改时间：20:06:15" itemprop="dateCreated datePublished" datetime="2021-11-30T19:37:15+08:00">2021-11-30</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-27 19:46:11" itemprop="dateModified" datetime="2021-11-27T19:46:11+08:00">2021-11-27</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -252,40 +246,50 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="洗牌算法-模拟洗牌-Fisher-Yates算法"><a href="#洗牌算法-模拟洗牌-Fisher-Yates算法" class="headerlink" title="洗牌算法( 模拟洗牌 | Fisher-Yates算法 )"></a>洗牌算法( 模拟洗牌 | Fisher-Yates算法 )</h3><span id="more"></span>
+        <h3 id="第-N-位数字（数学）"><a href="#第-N-位数字（数学）" class="headerlink" title="第 N 位数字（数学）"></a>第 N 位数字（数学）</h3><span id="more"></span>
 
 <blockquote>
 <blockquote>
-<p>设计算法打乱一个没有重复元素的给定整数数组 nums</p>
+<p>给你一个整数 <code>n</code> ，请你在无限的整数序列 <code>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ...]</code> 中找出并返回第 <code>n</code> 位上的数字。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：n = <span class="number">11</span></span><br><span class="line">输出：<span class="number">0</span></span><br></pre></td></tr></table></figure>
 </blockquote>
 </blockquote>
-<h3 id="解法一：模拟洗牌"><a href="#解法一：模拟洗牌" class="headerlink" title="解法一：模拟洗牌"></a>解法一：模拟洗牌</h3><p>思路：首先不妨设数组 <em>nums</em> 的长度为 <em>n</em>，</p>
-<ol>
-<li>不妨用数据结构 <em>waiting</em> 来存放 <em>nums</em> 中的所有元素，并初始化打乱后的数组 <em>shuffled</em></li>
-<li>从数组 <em>shuttle</em> 的 <em>0</em> 下标开始，每次从 <em>waiting</em> 中随机选取一个数据放置到 <em>shuffled</em>，并且从 <em>waiting</em> 中移除该数据</li>
-</ol>
-<p><em>（整体来说：模拟洗牌，每次的选择概率均相等，可以理解成抽签模拟）</em></p>
-<p>代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] shuffle() &#123;</span><br><span class="line">	<span class="keyword">int</span>[] shuffled = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">    List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; ++i) &#123;</span><br><span class="line">        list.add(nums[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    Random random = <span class="keyword">new</span> Random();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> j = random.nextInt(list.size());</span><br><span class="line">        shuffled[i] = list.remove(j);</span><br><span class="line">    &#125;</span><br><span class="line">    System.arraycopy(shuffled, <span class="number">0</span>, nums, <span class="number">0</span>, nums.length);</span><br><span class="line">    <span class="keyword">return</span> nums;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\begin{align}<br>&amp;时间复杂度：O(n^2)<br>&amp;空间复杂度：O(n)<br>\end{align}<br>$$</p>
+<h3 id="解法一：模拟查找"><a href="#解法一：模拟查找" class="headerlink" title="解法一：模拟查找"></a>解法一：模拟查找</h3><p>思路：将所有数字用字符串拼接，然后直接定位 <code>n</code> 返回当前下标的数字即可。</p>
+<p>错误：因为 <code>n</code> 的取值范围是 <code>1 &lt;= n &lt;= 2^31 - 1</code>，会超出时间限制，无法解答，</p>
+<p>​            实际上经过测试，当数据规模超过 10<sup>6</sup> 的规模时，就会超出时间限制。</p>
 <hr>
-<h3 id="解法二：Fisher-Yates洗牌算法"><a href="#解法二：Fisher-Yates洗牌算法" class="headerlink" title="解法二：Fisher-Yates洗牌算法"></a>解法二：Fisher-Yates洗牌算法</h3><p>首先需要理解为什么上面介绍的模拟洗牌算法的时间复杂度为 O(n<sup>2</sup>)，</p>
-<p><code>list.remove(int index)的时间复杂度是O(n - index)</code>, 因此改进算法：</p>
+<h3 id="解法二：数学定位"><a href="#解法二：数学定位" class="headerlink" title="解法二：数学定位"></a>解法二：数学定位</h3><p>思路：如果能够确定第 <code>n</code> 位上的数字，所在数字的位数，那么就可以进行定位求解。</p>
 <ol>
-<li>如果每次的 <em>index</em> 是最后一位，那么时间复杂度就降为 O(1)；</li>
-<li>那么在放入 <em>shuffled</em> 之前, 先将 当前的 index 和 最后一位进行交换；</li>
-<li>将最后一位移除的同时放入 <em>shuffled</em> 的指定位置即可。</li>
-</ol>
-<p>那么在此基础上，我们可以再进行改进，实现<strong>数组的原地乱序</strong></p>
-<ol>
-<li>不再使用数据结构 <em>waiting</em>，仅在原数组上操作；</li>
-<li><strong>不再从数组中移除元素，每次将第 <em>k</em> 个元素与第 <em>1</em> 个元素交换</strong> </li>
+<li><p><code>x</code> 位共计有 9 × 10<sup> x - 1</sup>个数字，共计有 <code>x</code> × 9 × 10<sup> x - 1</sup>位数字；</p>
+</li>
+<li><p>使用 <em>d</em> 和 <em>count</em> 分别表示当前遍历到的位数和当前位数下的所有整数的位数之和；</p>
+</li>
+<li><p>初始时 <code>d = 1</code>、<code>count = 9</code>，而后随之变化；</p>
+</li>
+<li><p>每次将 <em>n</em> 减去 <em>d×count</em>，然后将 <em>d</em> 加 <em>1</em>，将 <em>count</em> 乘 <em>10</em>，直到 <em>n ≤ d×count</em> ;</p>
+</li>
+<li><p>此时的 <code>d</code> 即为第 <code>n</code> 位上数字所在的数字位数，<em>n</em> 是所有 <em>d</em> 位数中从第一位到目标数字的位数；</p>
+</li>
+<li><p>使用目标数字在所有 <em>d</em> 位数中的下标进行计算，下标从 <em>0</em> 开始计数，</p>
+<p>令  <em>index=n−1</em>，则 <em>index</em> 即为目标数字在所有 <em>d</em> 位数中的下标，<em>index</em> 的最小可能取值是 <em>0</em> ;</p>
+</li>
+<li><p>第 <em>n</em> 位数字是第 <em>m</em> 个 <em>d</em> 位数的第  <em>index mod d</em> 位，<strong>注意编号都从 <em>0</em> 开始</strong>;</p>
+</li>
+<li><p>由于最小的 <em>d</em> 位数是 <em>10<sup>d - 1</sup></em>，因此第 <em>n</em> 位数字所在的整数是 <em>10<sup>d - 1</sup> + m</em>，</p>
+<p>该整数的右边第 <em>d − ( index mod d ) − 1</em> 位（计数从 <em>0</em> 开始）即为无限整数序列中的第 <em>n</em> 位。<br>$$<br>m = [\frac{index}{d}]<br>$$</p>
+</li>
 </ol>
 <p>代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] shuffle() &#123;</span><br><span class="line">	Random random = <span class="keyword">new</span> Random();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> j = i + random.nextInt(nums.length - i);</span><br><span class="line">        <span class="keyword">int</span> temp = nums[i];</span><br><span class="line">        nums[i] = nums[j];</span><br><span class="line">        nums[j] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findNthDigit</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> d = <span class="number">1</span>, count = <span class="number">9</span>;</span><br><span class="line">        <span class="keyword">while</span> (n &gt; (<span class="keyword">long</span>) d * count) &#123;</span><br><span class="line">            n -= d * count;</span><br><span class="line">            d++;</span><br><span class="line">            count *= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> index = n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> start = (<span class="keyword">int</span>) Math.pow(<span class="number">10</span>, d - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">int</span> num = start + index / d;</span><br><span class="line">        <span class="keyword">int</span> digitIndex = index % d;</span><br><span class="line">        <span class="keyword">int</span> digit = (num / (<span class="keyword">int</span>)(Math.pow(<span class="number">10</span>, d - digitIndex - <span class="number">1</span>))) % <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">return</span> digit;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>$$<br>\begin{align}<br>&amp;时间复杂度：O(n)<br>&amp;空间复杂度：O(n)<br>\end{align}<br>$$</p>
+<p>$$<br>\begin{align}<br>&amp;时间复杂度:O(log_{10}n)<br>&amp;空间复杂度:O(1)<br>\end{align}<br>$$</p>
+<hr>
+<h3 id="解法三：二分优化"><a href="#解法三：二分优化" class="headerlink" title="解法三：二分优化"></a>解法三：二分优化</h3><p>思路：如果范围更广一些，可以对查找 <code>d</code> 的部分进行优化，采用二分查找。</p>
+<p>结合解法二的从 <code>1</code> 开始遍历，当遍历到 <code>9</code> 时，即第九位个数时可知：<br>$$<br>9 × 9 × 10^8 = 8.1 × 10^9 ＞ 2^{31} - 1<br>$$<br>因此只需要在 <code>1 - 9</code> 之间进行二分查找即可。</p>
+<p>代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findNthDigit</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> low = <span class="number">1</span>, high = <span class="number">9</span>;</span><br><span class="line">        <span class="keyword">while</span> (low &lt; high) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (high - low) / <span class="number">2</span> + low;</span><br><span class="line">            <span class="keyword">if</span> (totalDigits(mid) &lt; n) &#123;</span><br><span class="line">                low = mid + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                high = mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> d = low;</span><br><span class="line">        <span class="keyword">int</span> prevDigits = totalDigits(d - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">int</span> index = n - prevDigits - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> start = (<span class="keyword">int</span>) Math.pow(<span class="number">10</span>, d - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">int</span> num = start + index / d;</span><br><span class="line">        <span class="keyword">int</span> digitIndex = index % d;</span><br><span class="line">        <span class="keyword">int</span> digit = (num / (<span class="keyword">int</span>) (Math.pow(<span class="number">10</span>, d - digitIndex - <span class="number">1</span>))) % <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">return</span> digit;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">totalDigits</span><span class="params">(<span class="keyword">int</span> length)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> digits = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> curLength = <span class="number">1</span>, curCount = <span class="number">9</span>;</span><br><span class="line">        <span class="keyword">while</span> (curLength &lt;= length) &#123;</span><br><span class="line">            digits += curLength * curCount;</span><br><span class="line">            curLength++;</span><br><span class="line">            curCount *= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> digits;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>\begin{align}<br>&amp;时间复杂度:O(log_{10}n×loglog_{10}n)<br>&amp;空间复杂度:O(1)<br>\end{align}<br>$$</p>
 
     </div>
 
@@ -304,13 +308,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/11/23/%E8%8C%83%E5%9B%B4%E5%86%85%E6%9F%A5%E8%AF%A2%E8%B4%A8%E6%95%B0/" rel="prev" title="范围内查询质数">
-      <i class="fa fa-chevron-left"></i> 范围内查询质数
+    <a href="/2021/11/29/Hexo%E7%9A%84%E7%95%8C%E9%9D%A2%E4%BC%98%E5%8C%96/" rel="prev" title="Hexo Next的界面优化">
+      <i class="fa fa-chevron-left"></i> Hexo Next的界面优化
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/11/24/%E6%8E%A5%E9%9B%A8%E6%B0%B4%E2%85%A0/" rel="next" title="一维 接雨水">
-      一维 接雨水 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -369,7 +370,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95-%E6%A8%A1%E6%8B%9F%E6%B4%97%E7%89%8C-Fisher-Yates%E7%AE%97%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">洗牌算法( 模拟洗牌 | Fisher-Yates算法 )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%EF%BC%9A%E6%A8%A1%E6%8B%9F%E6%B4%97%E7%89%8C"><span class="nav-number">2.</span> <span class="nav-text">解法一：模拟洗牌</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%EF%BC%9AFisher-Yates%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">解法二：Fisher-Yates洗牌算法</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC-N-%E4%BD%8D%E6%95%B0%E5%AD%97%EF%BC%88%E6%95%B0%E5%AD%A6%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">第 N 位数字（数学）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%EF%BC%9A%E6%A8%A1%E6%8B%9F%E6%9F%A5%E6%89%BE"><span class="nav-number">2.</span> <span class="nav-text">解法一：模拟查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%EF%BC%9A%E6%95%B0%E5%AD%A6%E5%AE%9A%E4%BD%8D"><span class="nav-number">3.</span> <span class="nav-text">解法二：数学定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%89%EF%BC%9A%E4%BA%8C%E5%88%86%E4%BC%98%E5%8C%96"><span class="nav-number">4.</span> <span class="nav-text">解法三：二分优化</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
