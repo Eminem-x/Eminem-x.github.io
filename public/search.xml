@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>房屋间收集雨水</title>
+      <link href="/2021/12/04/%E6%88%BF%E5%B1%8B%E9%97%B4%E6%94%B6%E9%9B%86%E9%9B%A8%E6%B0%B4/"/>
+      <url>/2021/12/04/%E6%88%BF%E5%B1%8B%E9%97%B4%E6%94%B6%E9%9B%86%E9%9B%A8%E6%B0%B4/</url>
+      
+        <content type="html"><![CDATA[<h3 id="房屋间收集雨水（-贪心-）"><a href="#房屋间收集雨水（-贪心-）" class="headerlink" title="房屋间收集雨水（ 贪心 ）"></a>房屋间收集雨水（ 贪心 ）</h3><span id="more"></span><blockquote><p>给你一个下标从 0 开始的字符串 street 。</p><p>street 中每个字符要么是表示房屋的 ‘H’ ，要么是表示空位的 ‘.’ 。</p><p>你可以在 空位 放置水桶，从相邻的房屋收集雨水。</p><p>位置在 i - 1 或者 i + 1 的水桶可以收集位置为 i 处房屋的雨水。</p><p>一个水桶如果相邻两个位置都有房屋，那么它可以收集 两个 房屋的雨水。</p><p>在确保每个房屋旁边都至少有一个水桶的前提下，请你返回需要的 最少 水桶数。如果无解请返回 -1 。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：street = &quot;H..H&quot;</span><br><span class="line">输出：2</span><br></pre></td></tr></table></figure><p>题目详情参考：<a href="https://leetcode-cn.com/problems/minimum-number-of-buckets-required-to-collect-rainwater-from-houses/">2086. 从房屋收集雨水需要的最少水桶数 - 力扣（LeetCode） (leetcode-cn.com)</a></p></blockquote><p>思路：<strong>如果房屋周围可以收集雨水，那么先判断是否左边可以共享，不行的话尽可能使用右边空间。</strong></p><ol><li>创建变量 <code>index</code> 记录可以被共享的位置，遍历更新即可；</li><li>先判断左边是否存在空位以及是否已被使用，如果可以，那么跳过；</li><li>反之，判断右边是否存在空位，如果可以，记录位置并且更新结果；</li><li>如果左右均没有空位，返回 <code>-1</code>;</li></ol><p>代码如下：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minimumBuckets</span><span class="params">(String street)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = street.length();</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 记录可以被共享的位置</span></span><br><span class="line">        <span class="keyword">int</span> index = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(street.charAt(i) == <span class="string">&#x27;H&#x27;</span>) &#123;</span><br><span class="line">                <span class="comment">// 先判断左边是否可以共享</span></span><br><span class="line">                <span class="keyword">if</span>(i - <span class="number">1</span> &gt;= <span class="number">0</span> &amp;&amp; street.charAt(i - <span class="number">1</span>) == <span class="string">&#x27;.&#x27;</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span>(index != i - <span class="number">1</span>) &#123;</span><br><span class="line">                        <span class="comment">// 如果左边没有被共享过 优先选择右边</span></span><br><span class="line">                        <span class="keyword">if</span>(i + <span class="number">1</span> &lt; len &amp;&amp; street.charAt(i + <span class="number">1</span>) == <span class="string">&#x27;.&#x27;</span>) &#123;</span><br><span class="line">                            index = i + <span class="number">1</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        ans++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span>(i + <span class="number">1</span> &lt; len &amp;&amp; street.charAt(i + <span class="number">1</span>) == <span class="string">&#x27;.&#x27;</span>) &#123;</span><br><span class="line">                    index = i + <span class="number">1</span>;</span><br><span class="line">                    ans++;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>$$<br>\begin{align}<br>&amp;时间复杂度:O(n)<br>&amp;空间复杂度:O(1)<br>\end{align}<br>$$</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+          <category> 贪心 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>蓄水</title>
       <link href="/2021/12/04/%E8%93%84%E6%B0%B4/"/>
       <url>/2021/12/04/%E8%93%84%E6%B0%B4/</url>
