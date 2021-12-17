@@ -22,20 +22,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="房屋间收集雨水（ 贪心 ）">
+  <meta name="description" content="换酒问题（ 数学 ）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="房屋间收集雨水">
-<meta property="og:url" content="http://example.com/2021/12/04/%E6%88%BF%E5%B1%8B%E9%97%B4%E6%94%B6%E9%9B%86%E9%9B%A8%E6%B0%B4/index.html">
+<meta property="og:title" content="换酒问题">
+<meta property="og:url" content="http://example.com/2021/12/17/%E6%8D%A2%E9%85%92%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Yuanhao Blog">
-<meta property="og:description" content="房屋间收集雨水（ 贪心 ）">
+<meta property="og:description" content="换酒问题（ 数学 ）">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-12-04T11:09:33.802Z">
-<meta property="article:modified_time" content="2021-12-04T11:11:06.948Z">
+<meta property="article:published_time" content="2021-12-17T04:59:33.840Z">
+<meta property="article:modified_time" content="2021-12-17T05:01:47.983Z">
 <meta property="article:author" content="Yuanhao">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/12/04/%E6%88%BF%E5%B1%8B%E9%97%B4%E6%94%B6%E9%9B%86%E9%9B%A8%E6%B0%B4/">
+<link rel="canonical" href="http://example.com/2021/12/17/%E6%8D%A2%E9%85%92%E9%97%AE%E9%A2%98/">
 
 
 <script id="page-configurations">
@@ -48,7 +48,7 @@
   };
 </script>
 
-  <title>房屋间收集雨水 | Yuanhao Blog</title>
+  <title>换酒问题 | Yuanhao Blog</title>
   
 
 
@@ -188,7 +188,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/04/%E6%88%BF%E5%B1%8B%E9%97%B4%E6%94%B6%E9%9B%86%E9%9B%A8%E6%B0%B4/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/17/%E6%8D%A2%E9%85%92%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -201,7 +201,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          房屋间收集雨水
+          换酒问题
         </h1>
 
         <div class="post-meta">
@@ -212,7 +212,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-12-04 19:09:33 / 修改时间：19:11:06" itemprop="dateCreated datePublished" datetime="2021-12-04T19:09:33+08:00">2021-12-04</time>
+              <time title="创建时间：2021-12-17 12:59:33 / 修改时间：13:01:47" itemprop="dateCreated datePublished" datetime="2021-12-17T12:59:33+08:00">2021-12-17</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -224,7 +224,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/%E8%B4%AA%E5%BF%83/" itemprop="url" rel="index"><span itemprop="name">贪心</span></a>
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
                 </span>
             </span>
 
@@ -246,28 +246,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="房屋间收集雨水（-贪心-）"><a href="#房屋间收集雨水（-贪心-）" class="headerlink" title="房屋间收集雨水（ 贪心 ）"></a>房屋间收集雨水（ 贪心 ）</h3><span id="more"></span>
+        <h3 id="换酒问题（-数学-）"><a href="#换酒问题（-数学-）" class="headerlink" title="换酒问题（ 数学 ）"></a>换酒问题（ 数学 ）</h3><span id="more"></span>
 
 <blockquote>
-<p>给你一个下标从 0 开始的字符串 street 。</p>
-<p>street 中每个字符要么是表示房屋的 ‘H’ ，要么是表示空位的 ‘.’ 。</p>
-<p>你可以在 空位 放置水桶，从相邻的房屋收集雨水。</p>
-<p>位置在 i - 1 或者 i + 1 的水桶可以收集位置为 i 处房屋的雨水。</p>
-<p>一个水桶如果相邻两个位置都有房屋，那么它可以收集 两个 房屋的雨水。</p>
-<p>在确保每个房屋旁边都至少有一个水桶的前提下，请你返回需要的 最少 水桶数。如果无解请返回 -1 。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：street = &quot;H..H&quot;</span><br><span class="line">输出：2</span><br></pre></td></tr></table></figure>
+<p>小区便利店正在促销，用 numExchange 个空酒瓶可以兑换一瓶新酒。</p>
+<p>你购入了 numBottles 瓶酒，如果喝掉了酒瓶中的酒，那么酒瓶就会变成空的。</p>
+<p>请你计算 最多 能喝到多少瓶酒。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：numBottles = 9, numExchange = 3</span><br><span class="line">输出：13</span><br></pre></td></tr></table></figure>
 
-<p>题目详情参考：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-number-of-buckets-required-to-collect-rainwater-from-houses/">2086. 从房屋收集雨水需要的最少水桶数 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+<p>题目详情参考：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/water-bottles/">1518. 换酒问题 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
 </blockquote>
-<p>思路：<strong>如果房屋周围可以收集雨水，那么先判断是否左边可以共享，不行的话尽可能使用右边空间。</strong></p>
+<p>思路：经典的数学问题，用迭代解决。</p>
 <ol>
-<li>创建变量 <code>index</code> 记录可以被共享的位置，遍历更新即可；</li>
-<li>先判断左边是否存在空位以及是否已被使用，如果可以，那么跳过；</li>
-<li>反之，判断右边是否存在空位，如果可以，记录位置并且更新结果；</li>
-<li>如果左右均没有空位，返回 <code>-1</code>;</li>
+<li>额外定义变量 <code>emptyBottles</code> ，表示在喝完一次后，所剩的空酒瓶数量；</li>
+<li>判断结束的条件是：手中的空酒瓶和酒瓶的总数量不小于 <code>numExchange</code> ；</li>
+<li>因为最开始手中有酒，所以采用 <code>do&#123;&#125; while()</code> 结构。</li>
 </ol>
-<p>代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minimumBuckets</span><span class="params">(String street)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = street.length();</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 记录可以被共享的位置</span></span><br><span class="line">        <span class="keyword">int</span> index = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(street.charAt(i) == <span class="string">&#x27;H&#x27;</span>) &#123;</span><br><span class="line">                <span class="comment">// 先判断左边是否可以共享</span></span><br><span class="line">                <span class="keyword">if</span>(i - <span class="number">1</span> &gt;= <span class="number">0</span> &amp;&amp; street.charAt(i - <span class="number">1</span>) == <span class="string">&#x27;.&#x27;</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span>(index != i - <span class="number">1</span>) &#123;</span><br><span class="line">                        <span class="comment">// 如果左边没有被共享过 优先选择右边</span></span><br><span class="line">                        <span class="keyword">if</span>(i + <span class="number">1</span> &lt; len &amp;&amp; street.charAt(i + <span class="number">1</span>) == <span class="string">&#x27;.&#x27;</span>) &#123;</span><br><span class="line">                            index = i + <span class="number">1</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        ans++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span>(i + <span class="number">1</span> &lt; len &amp;&amp; street.charAt(i + <span class="number">1</span>) == <span class="string">&#x27;.&#x27;</span>) &#123;</span><br><span class="line">                    index = i + <span class="number">1</span>;</span><br><span class="line">                    ans++;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numWaterBottles</span><span class="params">(<span class="keyword">int</span> numBottles, <span class="keyword">int</span> numExchange)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> emptyBottles = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            ans += numBottles;</span><br><span class="line">            emptyBottles += numBottles;</span><br><span class="line">            numBottles = emptyBottles / numExchange;</span><br><span class="line">            emptyBottles -= numBottles * numExchange;</span><br><span class="line">        &#125; <span class="keyword">while</span>(emptyBottles + numBottles &gt;= numExchange);</span><br><span class="line">        <span class="keyword">return</span> ans + numBottles;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>$$<br>\begin{align}<br>&amp;时间复杂度:O(n)<br>&amp;空间复杂度:O(1)<br>\end{align}<br>$$</p>
 
@@ -288,13 +284,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/12/04/%E8%93%84%E6%B0%B4/" rel="prev" title="蓄水">
-      <i class="fa fa-chevron-left"></i> 蓄水
+    <a href="/2021/12/16/%E5%8F%AF%E8%A7%81%E7%82%B9%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E7%9B%AE/" rel="prev" title="可见点的最大数目">
+      <i class="fa fa-chevron-left"></i> 可见点的最大数目
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/12/05/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%89%E7%A7%8D%E9%81%8D%E5%8E%86/" rel="next" title="二叉树的三种遍历">
-      二叉树的三种遍历 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -353,7 +346,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%BF%E5%B1%8B%E9%97%B4%E6%94%B6%E9%9B%86%E9%9B%A8%E6%B0%B4%EF%BC%88-%E8%B4%AA%E5%BF%83-%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">房屋间收集雨水（ 贪心 ）</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%A2%E9%85%92%E9%97%AE%E9%A2%98%EF%BC%88-%E6%95%B0%E5%AD%A6-%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">换酒问题（ 数学 ）</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
