@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>使用最小花费爬楼梯</title>
+      <link href="/2021/12/17/%E4%BD%BF%E7%94%A8%E6%9C%80%E5%B0%8F%E8%8A%B1%E8%B4%B9%E7%88%AC%E6%A5%BC%E6%A2%AF/"/>
+      <url>/2021/12/17/%E4%BD%BF%E7%94%A8%E6%9C%80%E5%B0%8F%E8%8A%B1%E8%B4%B9%E7%88%AC%E6%A5%BC%E6%A2%AF/</url>
+      
+        <content type="html"><![CDATA[<h3 id="使用最小花费爬楼梯（-动态规划-）"><a href="#使用最小花费爬楼梯（-动态规划-）" class="headerlink" title="使用最小花费爬楼梯（ 动态规划 ）"></a>使用最小花费爬楼梯（ 动态规划 ）</h3><span id="more"></span><blockquote><p>数组的每个下标作为一个阶梯，</p><p>第 i 个阶梯对应着一个非负数的体力花费值 cost[i]（下标从 0 开始）。</p><p>每当你爬上一个阶梯你都要花费对应的体力值，</p><p>一旦支付了相应的体力值，你就可以选择向上爬一个阶梯或者爬两个阶梯。</p><p>请你找出达到楼层顶部的最低花费。在开始时，你可以选择从下标为 0 或 1 的元素作为初始阶梯。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：cost = [10, 15, 20]</span><br><span class="line">输出：15</span><br><span class="line">解释：最低花费是从 cost[1] 开始，然后走两步即可到阶梯顶，一共花费 15 。</span><br></pre></td></tr></table></figure><p>题目详情参考：<a href="https://leetcode-cn.com/problems/min-cost-climbing-stairs/">746. 使用最小花费爬楼梯 - 力扣（LeetCode） (leetcode-cn.com)</a></p></blockquote><p><strong>补充说明：达到楼顶意味着超出数组，即最后一个阶梯是倒数第一个或者倒数第二个。</strong></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">体力值  10  15  20    </span><br><span class="line">水平线   0   1   2  楼层顶部</span><br></pre></td></tr></table></figure><p>思路：入门的动态规划，先找出转移方程，在求解。</p><ol><li>不妨设数组 <code>dp</code> ，<code>dp[i]</code> 表示当前阶梯的最小体力花费；</li><li>显而易见，想要达到 <code>i</code> 层阶梯，只能通过 <code>i-1</code> ，或者 <code>i-2</code> 阶梯到达；</li><li>可得如下动态转移方程：</li></ol><p>$$<br>dp[i] = max\lbrace dp[i-1],dp[i-2] \rbrace + cost[i]<br>$$</p><ol start="4"><li>最后结果即为倒数第二层或者倒数第一层的最小值。</li></ol><p>代码如下：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minCostClimbingStairs</span><span class="params">(<span class="keyword">int</span>[] cost)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[cost.length];</span><br><span class="line">        dp[<span class="number">0</span>] = cost[<span class="number">0</span>];</span><br><span class="line">        dp[<span class="number">1</span>] = cost[<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; cost.length; i++) &#123;</span><br><span class="line">            dp[i] = Math.min(dp[i - <span class="number">1</span>], dp[i - <span class="number">2</span>]) + cost[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.min(dp[cost.length - <span class="number">1</span>], dp[cost.length - <span class="number">2</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>$$<br>\begin{align}<br>&amp;时间复杂度:O(n)<br>&amp;空间复杂度:O(n)<br>\end{align}<br>$$</p><p><strong>实际上每次更新两个值，因此可以使用滚动数组减少数组的空间开销：</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minCostClimbingStairs</span><span class="params">(<span class="keyword">int</span>[] cost)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> first = cost[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">int</span> second = cost[<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; cost.length; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> temp = second;</span><br><span class="line">            second = Math.min(second, first) + cost[i];</span><br><span class="line">            first = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.min(first, second);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>$$<br>\begin{align}<br>&amp;时间复杂度:O(n)<br>&amp;空间复杂度:O(1)<br>\end{align}<br>$$</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+          <category> 动态规划 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>换酒问题</title>
       <link href="/2021/12/17/%E6%8D%A2%E9%85%92%E9%97%AE%E9%A2%98/"/>
       <url>/2021/12/17/%E6%8D%A2%E9%85%92%E9%97%AE%E9%A2%98/</url>
