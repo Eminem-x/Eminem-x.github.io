@@ -4,6 +4,87 @@
   
     
     <entry>
+      <title>游戏中弱角色的数量</title>
+      <link href="/2022/01/24/%E6%B8%B8%E6%88%8F%E4%B8%AD%E5%BC%B1%E8%A7%92%E8%89%B2%E7%9A%84%E6%95%B0%E9%87%8F/"/>
+      <url>/2022/01/24/%E6%B8%B8%E6%88%8F%E4%B8%AD%E5%BC%B1%E8%A7%92%E8%89%B2%E7%9A%84%E6%95%B0%E9%87%8F/</url>
+      
+        <content type="html"><![CDATA[<h3 id="游戏中弱角色的数量（数学）"><a href="#游戏中弱角色的数量（数学）" class="headerlink" title="游戏中弱角色的数量（数学）"></a>游戏中弱角色的数量（数学）</h3><span id="more"></span><blockquote><blockquote><p>题目详情参考：<a href="https://leetcode-cn.com/problems/the-number-of-weak-characters-in-the-game/">1996. 游戏中弱角色的数量 - 力扣（LeetCode） (leetcode-cn.com)</a></p></blockquote></blockquote><p>如何对数组进行合适的排序，可以使该问题的答案更为简洁</p><p>首先需要明确以下两点：</p><ol><li>如果一个角色为弱角色，那么它只会被统计一次</li><li>同等级的攻击不会出现弱角色</li><li><strong>lambda 表达式的写法，简化排序 </strong></li></ol><p><strong>不妨对数组按照攻击降序，防御升序的方式排序</strong></p><p>然后遍历数组，不断更新最高防御值，统计弱角色的数量，</p><p>因为排序后，攻击必定前者大于后者，只需要比较防御即可</p><p>代码如下：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numberOfWeakCharacters</span><span class="params">(<span class="keyword">int</span>[][] properties)</span> </span>&#123;</span><br><span class="line">        Arrays.sort(properties, (v1, v2) -&gt; v1[<span class="number">0</span>] != v2[<span class="number">0</span>] ? v2[<span class="number">0</span>] - v1[<span class="number">0</span>] : v1[<span class="number">1</span>] - v2[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">int</span> maxDefense = properties[<span class="number">0</span>][<span class="number">1</span>], ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; properties.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (properties[i][<span class="number">1</span>] &lt; maxDefense) &#123;</span><br><span class="line">                ans++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                maxDefense = Math.max(maxDefense, properties[i][<span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+          <category> 数学 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>访问完所有房间的第一天</title>
+      <link href="/2022/01/24/%E8%AE%BF%E9%97%AE%E5%AE%8C%E6%89%80%E6%9C%89%E6%88%BF%E9%97%B4%E7%9A%84%E7%AC%AC%E4%B8%80%E5%A4%A9/"/>
+      <url>/2022/01/24/%E8%AE%BF%E9%97%AE%E5%AE%8C%E6%89%80%E6%9C%89%E6%88%BF%E9%97%B4%E7%9A%84%E7%AC%AC%E4%B8%80%E5%A4%A9/</url>
+      
+        <content type="html"><![CDATA[<h3 id="访问完所有房间的第一天（动态规划）"><a href="#访问完所有房间的第一天（动态规划）" class="headerlink" title="访问完所有房间的第一天（动态规划）"></a>访问完所有房间的第一天（动态规划）</h3><span id="more"></span><blockquote><blockquote><p>题目详情参考：<a href="https://leetcode-cn.com/problems/first-day-where-you-have-been-in-all-the-rooms/">1997. 访问完所有房间的第一天 - 力扣（LeetCode） (leetcode-cn.com)</a></p></blockquote></blockquote><p><strong>在解题前，需要确定两个非常重要的信息条件：</strong></p><ol><li>第一个位置的元素必须是 <code>0</code></li><li>任意位置的元素不可以大于当前位置，即：<code>0 ≤ nextVisit[i] ≤ i</code></li></ol><p>那么可以从题意得到一个非常重要的信息：</p><p><strong>如果第一次到达位置 <code>x</code> ,那么在其之前的所有位置，访问次数必定是偶数</strong></p><p>成立的前提如下分析：</p><ol><li>因为第二个条件可以得出，不可能跳转位置，即必须累加</li><li>那么想要到达 <code>x</code>，必须从 <code>x-1</code> 位置前进一位到达</li><li>以此类推，前面的所有位置都必须为偶数</li></ol><p>那么由上述条件，又可以得知一个重要推论：</p><p><strong>从某一位置到达 <code>x</code> 所需要的天数，即为二者之差</strong></p><p>不妨设数组 <code>dp</code>，<code>dp[i]</code> 表示第一次到达当前位置所需的天数</p><p><strong>那么从 <code>y</code> 到 <code>x</code> 所需天数即为：<code>dp[x] - dp[y]</code></strong></p><p>进一步地，可以得到动态规划转移方程：<br>$$<br>\begin{align}<br>&amp;dp[i]=(dp[i-1] + 1) + (dp[i-1] - dp[nextVisit[i-1]] + 1) \\<br>&amp;dp[i]=2×dp[i-1]-dp[nextVisit[i-1]] + 2<br>\end{align}<br>$$<br>上述动态方程的证明如下：</p><ol><li>从 <code>i-1</code> 的位置到 <code>i</code> 需要加一天</li><li>但是第一次到达 <code>i-1</code> 的位置时，还会跳转到其所存储的位置</li><li>因此需要额外加上跳转位置重新到达 <code>i-1</code> 所需天数</li><li><strong>额外加上的天数，实际上就是从跳转位置到 <code>i-1</code> 的路径重走一遍</strong></li></ol><p>代码如下：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">firstDayBeenInAllRooms</span><span class="params">(<span class="keyword">int</span>[] nextVisit)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> MOD = <span class="number">1000000007</span>;</span><br><span class="line">        <span class="keyword">long</span>[] dp = <span class="keyword">new</span> <span class="keyword">long</span>[nextVisit.length];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nextVisit.length; i++) &#123;</span><br><span class="line">            dp[i] = (<span class="number">2</span> * dp[i - <span class="number">1</span>] - dp[nextVisit[i - <span class="number">1</span>]] + <span class="number">2</span>) % MOD;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>)((dp[dp.length - <span class="number">1</span>] + MOD) % MOD);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>除此之外，需要注意：为什么最后需要 + MOD ？</strong></p><p>并不是仅仅因为溢出的问题，因为已经将数组声明为 <code>long</code>，</p><p>实际上是因为在减法过程中，由于不断地 mod 导致后面的值不一定大于前面的值，</p><p>造成会出现负数的情况，所以需要 + MOD 重新取余的额外步骤</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+          <category> 动态规划 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>回文串</title>
+      <link href="/2022/01/09/%E5%9B%9E%E6%96%87%E4%B8%B2/"/>
+      <url>/2022/01/09/%E5%9B%9E%E6%96%87%E4%B8%B2/</url>
+      
+        <content type="html"><![CDATA[<h3 id="回文字符串"><a href="#回文字符串" class="headerlink" title="回文字符串"></a>回文字符串</h3><span id="more"></span>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构 </category>
+          
+          <category> 字符串 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>格雷编码</title>
       <link href="/2022/01/08/%E6%A0%BC%E9%9B%B7%E7%BC%96%E7%A0%81/"/>
       <url>/2022/01/08/%E6%A0%BC%E9%9B%B7%E7%BC%96%E7%A0%81/</url>
