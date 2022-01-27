@@ -22,33 +22,28 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="洗牌算法( 模拟洗牌 | Fisher-Yates算法 )">
-<meta property="og:type" content="article">
-<meta property="og:title" content="洗牌算法">
-<meta property="og:url" content="http://example.com/2021/11/23/%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Yuanhao Blog">
+<meta property="og:url" content="http://example.com/page/5/index.html">
 <meta property="og:site_name" content="Yuanhao Blog">
-<meta property="og:description" content="洗牌算法( 模拟洗牌 | Fisher-Yates算法 )">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-23T11:19:20.808Z">
-<meta property="article:modified_time" content="2021-11-27T11:46:11.806Z">
 <meta property="article:author" content="Yuanhao">
-<meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/11/23/%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95/">
+<link rel="canonical" href="http://example.com/page/5/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : false,
-    isPost : true,
+    isHome : true,
+    isPost : false,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>洗牌算法 | Yuanhao Blog</title>
+  <title>Yuanhao Blog</title>
   
 
 
@@ -181,14 +176,13 @@
         <div class="content-wrap">
           
 
-          <div class="content post posts-expand">
+          <div class="content index posts-expand">
             
-
-    
+      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/23/%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/23/%E8%8C%83%E5%9B%B4%E5%86%85%E6%9F%A5%E8%AF%A2%E8%B4%A8%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -200,9 +194,10 @@
       <meta itemprop="name" content="Yuanhao Blog">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          洗牌算法
-        </h1>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/23/%E8%8C%83%E5%9B%B4%E5%86%85%E6%9F%A5%E8%AF%A2%E8%B4%A8%E6%95%B0/" class="post-title-link" itemprop="url">范围内查询质数</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -211,14 +206,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-11-23 19:19:20" itemprop="dateCreated datePublished" datetime="2021-11-23T19:19:20+08:00">2021-11-23</time>
+              <time title="创建时间：2021-11-23 17:28:18" itemprop="dateCreated datePublished" datetime="2021-11-23T17:28:18+08:00">2021-11-23</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-27 19:46:11" itemprop="dateModified" datetime="2021-11-27T19:46:11+08:00">2021-11-27</time>
+                <time title="修改时间：2021-12-01 09:34:11" itemprop="dateModified" datetime="2021-12-01T09:34:11+08:00">2021-12-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -235,13 +230,6 @@
             </span>
 
           
-            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span id="busuanzi_value_page_pv"></span>
-            </span>
 
         </div>
       </header>
@@ -252,72 +240,119 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="洗牌算法-模拟洗牌-Fisher-Yates算法"><a href="#洗牌算法-模拟洗牌-Fisher-Yates算法" class="headerlink" title="洗牌算法( 模拟洗牌 | Fisher-Yates算法 )"></a>洗牌算法( 模拟洗牌 | Fisher-Yates算法 )</h3><span id="more"></span>
-
-<blockquote>
-<blockquote>
-<p>设计算法打乱一个没有重复元素的给定整数数组 nums</p>
-</blockquote>
-</blockquote>
-<h3 id="解法一：模拟洗牌"><a href="#解法一：模拟洗牌" class="headerlink" title="解法一：模拟洗牌"></a>解法一：模拟洗牌</h3><p>思路：首先不妨设数组 <em>nums</em> 的长度为 <em>n</em>，</p>
-<ol>
-<li>不妨用数据结构 <em>waiting</em> 来存放 <em>nums</em> 中的所有元素，并初始化打乱后的数组 <em>shuffled</em></li>
-<li>从数组 <em>shuttle</em> 的 <em>0</em> 下标开始，每次从 <em>waiting</em> 中随机选取一个数据放置到 <em>shuffled</em>，并且从 <em>waiting</em> 中移除该数据</li>
-</ol>
-<p><em>（整体来说：模拟洗牌，每次的选择概率均相等，可以理解成抽签模拟）</em></p>
-<p>代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] shuffle() &#123;</span><br><span class="line">	<span class="keyword">int</span>[] shuffled = <span class="keyword">new</span> <span class="keyword">int</span>[nums.length];</span><br><span class="line">    List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; ++i) &#123;</span><br><span class="line">        list.add(nums[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    Random random = <span class="keyword">new</span> Random();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> j = random.nextInt(list.size());</span><br><span class="line">        shuffled[i] = list.remove(j);</span><br><span class="line">    &#125;</span><br><span class="line">    System.arraycopy(shuffled, <span class="number">0</span>, nums, <span class="number">0</span>, nums.length);</span><br><span class="line">    <span class="keyword">return</span> nums;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\begin{align}<br>&amp;时间复杂度：O(n^2)<br>&amp;空间复杂度：O(n)<br>\end{align}<br>$$</p>
-<hr>
-<h3 id="解法二：Fisher-Yates洗牌算法"><a href="#解法二：Fisher-Yates洗牌算法" class="headerlink" title="解法二：Fisher-Yates洗牌算法"></a>解法二：Fisher-Yates洗牌算法</h3><p>首先需要理解为什么上面介绍的模拟洗牌算法的时间复杂度为 O(n<sup>2</sup>)，</p>
-<p><code>list.remove(int index)的时间复杂度是O(n - index)</code>, 因此改进算法：</p>
-<ol>
-<li>如果每次的 <em>index</em> 是最后一位，那么时间复杂度就降为 O(1)；</li>
-<li>那么在放入 <em>shuffled</em> 之前, 先将 当前的 index 和 最后一位进行交换；</li>
-<li>将最后一位移除的同时放入 <em>shuffled</em> 的指定位置即可。</li>
-</ol>
-<p>那么在此基础上，我们可以再进行改进，实现<strong>数组的原地乱序</strong></p>
-<ol>
-<li>不再使用数据结构 <em>waiting</em>，仅在原数组上操作；</li>
-<li><strong>不再从数组中移除元素，每次将第 <em>k</em> 个元素与第 <em>1</em> 个元素交换</strong> </li>
-</ol>
-<p>代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] shuffle() &#123;</span><br><span class="line">	Random random = <span class="keyword">new</span> Random();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> j = i + random.nextInt(nums.length - i);</span><br><span class="line">        <span class="keyword">int</span> temp = nums[i];</span><br><span class="line">        nums[i] = nums[j];</span><br><span class="line">        nums[j] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>\begin{align}<br>&amp;时间复杂度：O(n)<br>&amp;空间复杂度：O(n)<br>\end{align}<br>$$</p>
-
+          <h3 id="查询质数-枚举-埃氏筛-线性筛"><a href="#查询质数-枚举-埃氏筛-线性筛" class="headerlink" title="查询质数( 枚举 | 埃氏筛 | 线性筛 )"></a>查询质数( 枚举 | 埃氏筛 | 线性筛 )</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/11/23/%E8%8C%83%E5%9B%B4%E5%86%85%E6%9F%A5%E8%AF%A2%E8%B4%A8%E6%95%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
     </div>
 
     
     
     
-
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2021/11/23/%E8%8C%83%E5%9B%B4%E5%86%85%E6%9F%A5%E8%AF%A2%E8%B4%A8%E6%95%B0/" rel="prev" title="范围内查询质数">
-      <i class="fa fa-chevron-left"></i> 范围内查询质数
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/11/24/%E6%8E%A5%E9%9B%A8%E6%B0%B4%E2%85%A0/" rel="next" title="一维 接雨水">
-      一维 接雨水 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
+        <div class="post-eof"></div>
       </footer>
-    
   </article>
   
   
   
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/18/JavaFX/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuanhao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuanhao Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/18/JavaFX/" class="post-title-link" itemprop="url">Java课设总结</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-11-18 11:00:11" itemprop="dateCreated datePublished" datetime="2021-11-18T11:00:11+08:00">2021-11-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-27 19:39:43" itemprop="dateModified" datetime="2021-11-27T19:39:43+08:00">2021-11-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/" itemprop="url" rel="index"><span itemprop="name">课程设计</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="简易PPT实现"><a href="#简易PPT实现" class="headerlink" title="简易PPT实现"></a>简易PPT实现</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/11/18/JavaFX/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+  </nav>
 
 
 
@@ -369,7 +404,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95-%E6%A8%A1%E6%8B%9F%E6%B4%97%E7%89%8C-Fisher-Yates%E7%AE%97%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">洗牌算法( 模拟洗牌 | Fisher-Yates算法 )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%EF%BC%9A%E6%A8%A1%E6%8B%9F%E6%B4%97%E7%89%8C"><span class="nav-number">2.</span> <span class="nav-text">解法一：模拟洗牌</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%EF%BC%9AFisher-Yates%E6%B4%97%E7%89%8C%E7%AE%97%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">解法二：Fisher-Yates洗牌算法</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

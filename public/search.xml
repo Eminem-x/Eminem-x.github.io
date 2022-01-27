@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>回旋镖的数量</title>
+      <link href="/2022/01/27/%E5%9B%9E%E6%97%8B%E9%95%96%E7%9A%84%E6%95%B0%E9%87%8F/"/>
+      <url>/2022/01/27/%E5%9B%9E%E6%97%8B%E9%95%96%E7%9A%84%E6%95%B0%E9%87%8F/</url>
+      
+        <content type="html"><![CDATA[<h3 id="回旋镖的数量"><a href="#回旋镖的数量" class="headerlink" title="回旋镖的数量"></a>回旋镖的数量</h3><span id="more"></span><blockquote><p>题目详情参考：<a href="https://leetcode-cn.com/problems/number-of-boomerangs/">447. 回旋镖的数量 - 力扣（LeetCode） (leetcode-cn.com)</a></p></blockquote><ol><li>遍历点数组，分别求出当前点与其他点的距离，存储在哈希表中</li><li>在哈希表中统计键值相同的数量，注意可以更换位置，即求两次</li><li>重复上述过程，得出结果，不过时间复杂度较高</li></ol><p>代码如下：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numberOfBoomerangs</span><span class="params">(<span class="keyword">int</span>[][] points)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span>[] p : points) &#123;</span><br><span class="line">            Map&lt;Integer,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span>[] q : points) &#123;</span><br><span class="line">                <span class="keyword">int</span> dis = (p[<span class="number">0</span>] - q[<span class="number">0</span>]) * (p[<span class="number">0</span>] - q[<span class="number">0</span>]) + (p[<span class="number">1</span>]- q[<span class="number">1</span>]) * (p[<span class="number">1</span>]- q[<span class="number">1</span>]);</span><br><span class="line">                map.put(dis,map.getOrDefault(dis,<span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(Map.Entry&lt;Integer,Integer&gt; entry : map.entrySet()) &#123;</span><br><span class="line">                <span class="keyword">int</span> m = entry.getValue();</span><br><span class="line">                ans += m * (m - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构 </category>
+          
+          <category> 哈希 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>检测正方形</title>
+      <link href="/2022/01/27/%E6%A3%80%E6%B5%8B%E6%AD%A3%E6%96%B9%E5%BD%A2/"/>
+      <url>/2022/01/27/%E6%A3%80%E6%B5%8B%E6%AD%A3%E6%96%B9%E5%BD%A2/</url>
+      
+        <content type="html"><![CDATA[<h3 id="检测正方形"><a href="#检测正方形" class="headerlink" title="检测正方形"></a>检测正方形</h3><span id="more"></span><blockquote><p>题目详情参考：<a href="https://leetcode-cn.com/problems/detect-squares/">2013. 检测正方形 - 力扣（LeetCode） (leetcode-cn.com)</a></p></blockquote><p><strong>题目的思路比较明确，但是处理的方法需要注意：哈希嵌套</strong></p><ol><li>将每个点按照纵坐标的值，存储在哈希表中</li><li>在哈希表的基础上，将 <code>value</code> 值也使用哈希表存储</li><li>当检测某个点时，只需查看相同纵坐标下，彼此点之间的距离</li><li>点之间的距离即为待检测正方形的边长，随后分类讨论左右是否存在</li><li>与此同时，需要注意点的个数，统计重复正方形</li></ol><p>代码如下：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DetectSquares</span> </span>&#123;</span><br><span class="line">    Map&lt;Integer, Map&lt;Integer, Integer&gt;&gt; cnt;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DetectSquares</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        cnt = <span class="keyword">new</span> HashMap&lt;Integer, Map&lt;Integer, Integer&gt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span>[] point)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = point[<span class="number">0</span>], y = point[<span class="number">1</span>];</span><br><span class="line">        cnt.putIfAbsent(y, <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;());</span><br><span class="line">        Map&lt;Integer, Integer&gt; yCnt = cnt.get(y);</span><br><span class="line">        yCnt.put(x, yCnt.getOrDefault(x, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">count</span><span class="params">(<span class="keyword">int</span>[] point)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> x = point[<span class="number">0</span>], y = point[<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span> (!cnt.containsKey(y)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Map&lt;Integer, Integer&gt; yCnt = cnt.get(y);</span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;Integer, Map&lt;Integer, Integer&gt;&gt; entry : cnt.entrySet()) &#123;</span><br><span class="line">            <span class="keyword">int</span> col = entry.getKey();</span><br><span class="line">            Map&lt;Integer, Integer&gt; colCnt = entry.getValue();</span><br><span class="line">            <span class="keyword">if</span> (col != y) &#123;</span><br><span class="line">                <span class="comment">// 根据对称性，这里可以不用取绝对值</span></span><br><span class="line">                <span class="keyword">int</span> d = col - y;</span><br><span class="line">                res += colCnt.getOrDefault(x, <span class="number">0</span>) * </span><br><span class="line">                   yCnt.getOrDefault(x + d, <span class="number">0</span>) * colCnt.getOrDefault(x + d, <span class="number">0</span>);</span><br><span class="line">                res += colCnt.getOrDefault(x, <span class="number">0</span>) * </span><br><span class="line">                   yCnt.getOrDefault(x - d, <span class="number">0</span>) * colCnt.getOrDefault(x - d, <span class="number">0</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构 </category>
+          
+          <category> 哈希 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>游戏中弱角色的数量</title>
       <link href="/2022/01/24/%E6%B8%B8%E6%88%8F%E4%B8%AD%E5%BC%B1%E8%A7%92%E8%89%B2%E7%9A%84%E6%95%B0%E9%87%8F/"/>
       <url>/2022/01/24/%E6%B8%B8%E6%88%8F%E4%B8%AD%E5%BC%B1%E8%A7%92%E8%89%B2%E7%9A%84%E6%95%B0%E9%87%8F/</url>
