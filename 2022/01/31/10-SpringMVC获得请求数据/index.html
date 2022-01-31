@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
+  </script>
+
+  <meta name="description" content="SpringMVC获得请求数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringMVC获得请求数据">
+<meta property="og:url" content="http://example.com/2022/01/31/10-SpringMVC%E8%8E%B7%E5%BE%97%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE/index.html">
+<meta property="og:site_name" content="Yuanhao Blog">
+<meta property="og:description" content="SpringMVC获得请求数据">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-31T13:37:52.596Z">
+<meta property="article:modified_time" content="2022-01-31T13:38:11.405Z">
+<meta property="article:author" content="Yuanhao">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Spring">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2022/01/31/10-SpringMVC%E8%8E%B7%E5%BE%97%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>SpringMVC获得请求数据 | Yuanhao Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Yuanhao Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Java程序袁</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/31/10-SpringMVC%E8%8E%B7%E5%BE%97%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuanhao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuanhao Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SpringMVC获得请求数据
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-01-31 21:37:52 / 修改时间：21:38:11" itemprop="dateCreated datePublished" datetime="2022-01-31T21:37:52+08:00">2022-01-31</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="SpringMVC获得请求数据"><a href="#SpringMVC获得请求数据" class="headerlink" title="SpringMVC获得请求数据"></a>SpringMVC获得请求数据</h2><span id="more"></span>
+
+<p>客户端请求参数的格式是：<strong>name=value&amp;name=value…</strong></p>
+<p>服务器端要获得请求的参数，有时还需要进行数据的封装，</p>
+<h3 id="1-接收参数类型"><a href="#1-接收参数类型" class="headerlink" title="1. 接收参数类型"></a>1. 接收参数类型</h3><ol>
+<li><h5 id="基本类型参数"><a href="#基本类型参数" class="headerlink" title="基本类型参数"></a>基本类型参数</h5><p>Controller 中的业务方法的参数名称要与请求参数一致，参数值会自动映射匹配</p>
+</li>
+<li><h5 id="POJO类型参数"><a href="#POJO类型参数" class="headerlink" title="POJO类型参数"></a>POJO类型参数</h5><p>Controller 中的业务方法的 POJO 参数的属性名与请求参数一致，自动映射匹配</p>
+</li>
+<li><h5 id="数组类型参数"><a href="#数组类型参数" class="headerlink" title="数组类型参数"></a>数组类型参数</h5><p>Controller 中的业务方法的 数组名称的与请求参数一致，自动映射匹配</p>
+</li>
+<li><h5 id="集合类型参数"><a href="#集合类型参数" class="headerlink" title="集合类型参数"></a>集合类型参数</h5><ol>
+<li><p>获得集合参数时，需要将集合参数包装到 POJO</p>
+</li>
+<li><p>使用 ajax 提交时，可以指定 contextType 为 json 形式，</p>
+<p>在方法参数位置使用 <strong>@RequsetBody</strong> 可以直接接收集合数据</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="2-请求数据乱码问题："><a href="#2-请求数据乱码问题：" class="headerlink" title="2. 请求数据乱码问题："></a>2. <strong>请求数据乱码问题：</strong></h3><p>当 post 请求时，数据会出现乱码，设置过滤器进行编码的过滤</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--    配置全局过滤器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CharacterEncodingFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>org.springframework.web.filter.CharacterEncodingFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>encoding<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>GBK<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CharacterEncodingFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-参数绑定注解"><a href="#3-参数绑定注解" class="headerlink" title="3. 参数绑定注解"></a>3. 参数绑定注解</h3><p>当请求与业务方法的参数名称不一致时，就需要通过 <strong>@RequsetParam</strong> 注解显示的绑定</p>
+<ul>
+<li>value：请求参数名称</li>
+<li>required：指定请求参数是否必须包括，默认值为 true</li>
+<li>defaultValue：当没有指定请求参数时，则使用默认值赋值</li>
+</ul>
+<h3 id="4-获得Restful风格的参数"><a href="#4-获得Restful风格的参数" class="headerlink" title="4. 获得Restful风格的参数"></a>4. 获得Restful风格的参数</h3><p>Restful 是一种软件架构风格、设计风格，而不是标准，</p>
+<p>主要用于客户端和服务器交互类的软件，基于此风格设计，</p>
+<p>可以使得软件更加简洁，具有层次，易于实现缓存机制。</p>
+<p><strong>使用”url + 请求方式” 表示一次请求目的：</strong></p>
+<ul>
+<li>GET：用于获取资源</li>
+<li>POST：用于新建资源</li>
+<li>PUT：用于更新资源</li>
+<li>DELETE：用于删除资源</li>
+</ul>
+<p>在方法中使用 <strong>@PathVariable</strong> 注解进行占位符的匹配获取。</p>
+<h3 id="5-自定义类型转换器"><a href="#5-自定义类型转换器" class="headerlink" title="5. 自定义类型转换器"></a>5. 自定义类型转换器</h3><p>默认例子：客户端提交的字符串转换成 int 型进行参数设置</p>
+<p>现实需求：日期类型的数据就需要自定义类型转换器</p>
+<p><strong>具体开发步骤：</strong></p>
+<ol>
+<li>定义转换器类实现 Converter 接口</li>
+<li>在配置文件中声明转换器</li>
+<li>在 &lt;annotation-driven&gt; 中引用转换器</li>
+</ol>
+<h3 id="6-获得Servlet相关API"><a href="#6-获得Servlet相关API" class="headerlink" title="6. 获得Servlet相关API"></a>6. 获得Servlet相关API</h3><p>SpringMVC支持使用原始ServletAPI对象作为控制器方法的参数进行注入：</p>
+<ul>
+<li>HttpServletRequest</li>
+<li>HttpServletResponse</li>
+<li>HttpSession</li>
+</ul>
+<h3 id="7-获得请求头"><a href="#7-获得请求头" class="headerlink" title="7. 获得请求头"></a>7. 获得请求头</h3><ol>
+<li><h4 id="RequestHeader"><a href="#RequestHeader" class="headerlink" title="@RequestHeader"></a>@RequestHeader</h4></li>
+</ol>
+<p>注解属性如下：</p>
+<ul>
+<li>value：请求头的名称</li>
+<li>required：是否必须携带此请求头</li>
+</ul>
+<ol start="2">
+<li><h4 id="CookieValue"><a href="#CookieValue" class="headerlink" title="@CookieValue"></a>@CookieValue</h4></li>
+</ol>
+<p>注解属性如下：</p>
+<ul>
+<li>value：指定 cookie 的名称</li>
+<li>required：是否必须携带此 cookie</li>
+</ul>
+<h3 id="8-文件上传"><a href="#8-文件上传" class="headerlink" title="8. 文件上传"></a>8. 文件上传</h3><ol>
+<li><h4 id="文件上传客户端三要素"><a href="#文件上传客户端三要素" class="headerlink" title="文件上传客户端三要素"></a>文件上传客户端三要素</h4><ul>
+<li>表单项 type = “file”</li>
+<li>表单的提交方式是 post</li>
+<li>表单的 enctype 属性是多部分表单形式</li>
+</ul>
+</li>
+<li><h4 id="单文件上传步骤"><a href="#单文件上传步骤" class="headerlink" title="单文件上传步骤"></a>单文件上传步骤</h4><ul>
+<li><p>导入 fileupload 和 io 坐标</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-fileupload<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-fileupload<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-io<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-io<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>配置文件上传解析器</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--    配置文件上传解析器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;multipartResolver&quot;</span> <span class="attr">class</span>=<span class="string">&quot;org.springframework.web.multipart.commons.CommonsMultipartResolver&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;defaultEncoding&quot;</span> <span class="attr">value</span>=<span class="string">&quot;UTF-8&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;maxUploadSize&quot;</span> <span class="attr">value</span>=<span class="string">&quot;500000&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>编写文件上传代码</p>
+</li>
+</ul>
+</li>
+<li><h4 id="多文件上传"><a href="#多文件上传" class="headerlink" title="多文件上传"></a>多文件上传</h4><p>避免重复步骤，将方法参数 MultipartFile 类型修改为 MultipartFile[] 即可</p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+              <a href="/tags/Spring/" rel="tag"># Spring</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/01/31/9-SpringMVC%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94/" rel="prev" title="SpringMVC数据响应">
+      <i class="fa fa-chevron-left"></i> SpringMVC数据响应
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/01/31/11-Spring%20JdbcTemplate/" rel="next" title="SpringJdbcTemplate">
+      SpringJdbcTemplate <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringMVC%E8%8E%B7%E5%BE%97%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE"><span class="nav-number">1.</span> <span class="nav-text">SpringMVC获得请求数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%8E%A5%E6%94%B6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.</span> <span class="nav-text">1. 接收参数类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">基本类型参数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#POJO%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">POJO类型参数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">数组类型参数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0"><span class="nav-number">1.1.0.4.</span> <span class="nav-text">集合类型参数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">2. 请求数据乱码问题：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%8F%82%E6%95%B0%E7%BB%91%E5%AE%9A%E6%B3%A8%E8%A7%A3"><span class="nav-number">1.3.</span> <span class="nav-text">3. 参数绑定注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E8%8E%B7%E5%BE%97Restful%E9%A3%8E%E6%A0%BC%E7%9A%84%E5%8F%82%E6%95%B0"><span class="nav-number">1.4.</span> <span class="nav-text">4. 获得Restful风格的参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%99%A8"><span class="nav-number">1.5.</span> <span class="nav-text">5. 自定义类型转换器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E8%8E%B7%E5%BE%97Servlet%E7%9B%B8%E5%85%B3API"><span class="nav-number">1.6.</span> <span class="nav-text">6. 获得Servlet相关API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E8%8E%B7%E5%BE%97%E8%AF%B7%E6%B1%82%E5%A4%B4"><span class="nav-number">1.7.</span> <span class="nav-text">7. 获得请求头</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RequestHeader"><span class="nav-number">1.7.1.</span> <span class="nav-text">@RequestHeader</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CookieValue"><span class="nav-number">1.7.2.</span> <span class="nav-text">@CookieValue</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"><span class="nav-number">1.8.</span> <span class="nav-text">8. 文件上传</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="nav-number">1.8.1.</span> <span class="nav-text">文件上传客户端三要素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.8.2.</span> <span class="nav-text">单文件上传步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"><span class="nav-number">1.8.3.</span> <span class="nav-text">多文件上传</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yuanhao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+      
+        <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+        <div class="widget-wrap">
+          <h3 class="widget-title">Tag Cloud</h3>
+          <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="220" height="250" id="resCanvas" style="width=100%">
+              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">32</span></li></ul>
+            </canvas>
+          </div>
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yuanhao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
