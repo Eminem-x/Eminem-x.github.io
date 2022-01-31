@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
+  </script>
+
+  <meta name="description" content="Redis基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis基础">
+<meta property="og:url" content="http://example.com/2022/01/31/1-Redis%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Yuanhao Blog">
+<meta property="og:description" content="Redis基础">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-31T11:54:31.732Z">
+<meta property="article:modified_time" content="2022-01-31T12:07:25.517Z">
+<meta property="article:author" content="Yuanhao">
+<meta property="article:tag" content="Redis">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2022/01/31/1-Redis%E5%9F%BA%E7%A1%80/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Redis基础 | Yuanhao Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Yuanhao Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Java程序袁</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/31/1-Redis%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuanhao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuanhao Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Redis基础
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-01-31 19:54:31 / 修改时间：20:07:25" itemprop="dateCreated datePublished" datetime="2022-01-31T19:54:31+08:00">2022-01-31</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Redis/" itemprop="url" rel="index"><span itemprop="name">Redis</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Redis基础"><a href="#Redis基础" class="headerlink" title="Redis基础"></a>Redis基础</h2><span id="more"></span>
+
+<h3 id="1-安装和使用"><a href="#1-安装和使用" class="headerlink" title="1. 安装和使用"></a>1. 安装和使用</h3><p>安装：<a target="_blank" rel="noopener" href="https://www.runoob.com/redis/redis-install.html">Redis 安装 | 菜鸟教程 (runoob.com)</a></p>
+<p>推荐视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Rv41177Af?from=search&seid=8211878355588508937&spm_id_from=333.337.0.0">【尚硅谷】Redis 6 入门到精通 超详细 教程_哔哩哔哩_bilibili</a></p>
+<p>使用：</p>
+<ol>
+<li><p>打开一个 <strong>cmd</strong> 窗口 使用 cd 命令切换目录到 <strong>C:\redis</strong> 运行</p>
+<p><code>redis-server.exe redis.windows.conf</code></p>
+</li>
+<li><p>另启一个 <strong>cmd</strong> 窗口，原来的不要关闭，不然就无法访问服务端</p>
+<p><code>redis-cli.exe -h 127.0.0.1 -p 6379</code></p>
+</li>
+</ol>
+<h3 id="2-基础操作"><a href="#2-基础操作" class="headerlink" title="2. 基础操作"></a>2. 基础操作</h3><ol>
+<li><p>默认 <code>16</code> 个数据库，初始默认使用 <code>0</code> 号库</p>
+</li>
+<li><p>统一密码管理，所有库的密码相同</p>
+</li>
+<li><p><code>key</code> 键操作</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">keys <span class="operator">*</span> 		查看当前库所有 key </span><br><span class="line"><span class="keyword">exists</span> key	判断是否存在某 key</span><br><span class="line">type key	查看某 key 的类型</span><br><span class="line">del key		删除指定的 key</span><br><span class="line">unlink key	根据 <span class="keyword">value</span> 选择非阻塞删除</span><br><span class="line">expire key	为给定 key 设置过期时间</span><br><span class="line">ttl key		查看还有多少秒 key 过期	<span class="number">-1</span>表示永不,<span class="number">-2</span>表示已过期</span><br><span class="line"><span class="keyword">select</span> key	命令切换数据库</span><br><span class="line">dbsize		查看当前数据库的 key 数量</span><br><span class="line">flushdb		清空当前数据库</span><br><span class="line">flushall	清空所有数据库</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="3-数据类型："><a href="#3-数据类型：" class="headerlink" title="3. 数据类型："></a>3. 数据类型：</h3><ol>
+<li><h5 id="String-字符串类型"><a href="#String-字符串类型" class="headerlink" title="String 字符串类型"></a>String 字符串类型</h5><p>String 的数据结构为简单动态字符串 <strong>（Simple Dynamic String - SDS）</strong>，是可修改的字符串，</p>
+<p>采用预分配冗余空间的方式来减少内存的频繁分配，</p>
+<p>扩容是加倍现有的空间，但是最大长度为 <strong>512M</strong></p>
+   <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> key <span class="keyword">value</span> 			添加键值对，重复则会覆盖</span><br><span class="line"><span class="keyword">get</span> key				查询对应键值</span><br><span class="line">append key <span class="keyword">value</span>		将给定的 <span class="keyword">value</span> 追加到原值的末尾</span><br><span class="line">strlen key			获得值的长度</span><br><span class="line">setnx key <span class="keyword">value</span>			只有在 key 不存在时，设置 key 的值</span><br><span class="line">incr<span class="operator">/</span>decr key			将 key 中存储的数字增加<span class="operator">/</span>减少 <span class="number">1</span></span><br><span class="line">incrby<span class="operator">/</span>decrby key len		将 key 中存储的数字值增减，自定义步长</span><br><span class="line">mset key1 value...		同时设置一个或多个 key<span class="operator">-</span><span class="keyword">value</span> 对</span><br><span class="line">mget key1 key2...		同时获取一个或多个 <span class="keyword">value</span></span><br><span class="line">msetnx key1 value...		同时设置一个或多个 key<span class="operator">-</span><span class="keyword">value</span> 对，当且仅当所有给定 key 不存在</span><br><span class="line">getrange key <span class="keyword">start</span> <span class="keyword">end</span>		获得值的范围</span><br><span class="line">setrange key pos <span class="keyword">value</span>		从 pos 开始用 <span class="keyword">value</span> 复写 key 所存储的字符串值</span><br><span class="line">setex key <span class="type">time</span> <span class="keyword">value</span>		设置键值的同时，设置过期时间，单位秒</span><br><span class="line">getset key <span class="keyword">value</span>		以新换旧，设置新值的同时获得旧值</span><br></pre></td></tr></table></figure></li>
+<li><h5 id="List-列表类型"><a href="#List-列表类型" class="headerlink" title="List 列表类型"></a>List 列表类型</h5><p>List 的底层实际是双向链表，对两端的操作性能较高，但是查询索引性能较差，</p>
+<p>数据结构为快速链表（<strong>quickList</strong>），列表元素较少的情况下会使用一块连续的内存存储，</p>
+<p>这个结构成为压缩列表 <strong>（zipList）</strong>，当数据量较多时，多个压缩列表组成快速链表，</p>
+<p>简单的字符串列表，按照插入顺序排序，可以在列表首尾添加元素</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">lpush<span class="operator">/</span>rpush key value...	在左<span class="operator">/</span>右边插入一个或多值</span><br><span class="line">lpop<span class="operator">/</span>rpop key			从左<span class="operator">/</span>右边弹出一个值，值在键在，值光键亡</span><br><span class="line">rpoplpush key1 key2		从 key1 列表右边弹出一个值查到 key2 列表左边</span><br><span class="line">lrange key <span class="keyword">start</span> <span class="keyword">end</span>		按照索引下标获得元素（从左到右）</span><br><span class="line">lrange key <span class="number">0</span> <span class="number">-1</span>			获取所有元素</span><br><span class="line">lindex key index		按照索引下标获得元素（从左到右）</span><br><span class="line">llen key			获得列表长度</span><br><span class="line">linsert key before v1 v2	在 v1 的前面插入 v2</span><br><span class="line">lrem key n <span class="keyword">value</span>		从左边删除 n 个 <span class="keyword">value</span></span><br><span class="line">lset key index <span class="keyword">value</span>		将列表 key 下标为 index 的只替换为 <span class="keyword">value</span></span><br></pre></td></tr></table></figure></li>
+<li><h5 id="Set-集合类型"><a href="#Set-集合类型" class="headerlink" title="Set 集合类型"></a>Set 集合类型</h5><p>Set 提供的功能整体与 List 类似，特殊之处在于 Set 可以<strong>自动排重</strong>，</p>
+<p>并且提供了判断某个成员是否在一个集合内的接口，底层无序集合，hash 表实现，</p>
+<p>所以添加、删除、查找的时间复杂度都是 O（1），<strong>数据结构是 dict 字典</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sadd key value...		将一个或多个元素不重复地加入到集合</span><br><span class="line">smembers key			取出该集合地所有值</span><br><span class="line">sismember key <span class="keyword">value</span>		判断集合 key 是否含有该 <span class="keyword">value</span> 值,有 <span class="number">1</span> 无 <span class="number">0</span></span><br><span class="line">scard key			返回该集合地元素个数</span><br><span class="line">srem key value...		删除集合中一个或多个元素</span><br><span class="line">spop key			从该集合中随机弹出一个元素</span><br><span class="line">srandmember key n		从该集合中随机取出 n 个元素</span><br><span class="line">smove src des <span class="keyword">value</span>		将集合中地某个元素移动到另一个集合</span><br><span class="line">sinter key1 key2		返回两个集合的交集元素</span><br><span class="line">sunion key1 key2		返回两个集合的并集元素</span><br><span class="line">sdiff key1 key2			返回两个集合的差集元素</span><br></pre></td></tr></table></figure></li>
+<li><h5 id="Hash-哈希类型"><a href="#Hash-哈希类型" class="headerlink" title="Hash 哈希类型"></a>Hash 哈希类型</h5><p>键值对集合，String 类型的 field 和 value 的映射表，适合用于存储对象</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hset key field <span class="keyword">value</span>		给 key 中的 field 键赋值 <span class="keyword">value</span></span><br><span class="line">hget key field 			从 key 中取出 field 的 <span class="keyword">value</span></span><br><span class="line">hmset key field value...	批量设置 hash 值</span><br><span class="line">hexists key filed		查看哈希表中，是否存在键 field</span><br><span class="line">hkeys key			列出该 hash 集合中所有 field</span><br><span class="line">hvals key			列出该 hash 集合中所有 <span class="keyword">value</span></span><br><span class="line">hincrby key field inc		为 hash 中 field 的值上增量 <span class="number">1</span><span class="operator">/</span><span class="number">-1</span></span><br><span class="line">hsetnx key field <span class="keyword">value</span>		当且仅当不存在设置键值对</span><br></pre></td></tr></table></figure></li>
+<li><h5 id="Zset-有序集合"><a href="#Zset-有序集合" class="headerlink" title="Zset 有序集合"></a>Zset 有序集合</h5><p>Zset 与普通集合大体相似，不同之处在于有序集合的每个成员关联一个<strong>评分（score）</strong>，</p>
+<p>评分被用来按照从低到高的方式排序集合中的成员，成员唯一，但是评分可以重复，</p>
+<p>SortedSet（Zset）是一个非常特别的数据结构，<strong>底层使用两个数据结构：hash 和 跳跃表</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">zadd key score value...		将一个或多个元素及其 score 值加入到有序集中</span><br><span class="line">zrange key <span class="keyword">start</span> stop		返回下标在 <span class="keyword">start</span> 和 pop 之间的元素</span><br><span class="line">zrangebyscore key min max	返回 score 值介于 min 和 max 之间的元素</span><br><span class="line">zincrby	key inc <span class="keyword">value</span>		为元素的 score 加上增量</span><br><span class="line">zrem key <span class="keyword">value</span>			删除指定元素</span><br><span class="line">zcount key min max		统计分数区间内的元素个数</span><br><span class="line">zrank key <span class="keyword">value</span>			返回该值在集合中的排名</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Redis/" rel="tag"># Redis</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/01/27/%E5%9B%9E%E6%97%8B%E9%95%96%E7%9A%84%E6%95%B0%E9%87%8F/" rel="prev" title="回旋镖的数量">
+      <i class="fa fa-chevron-left"></i> 回旋镖的数量
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/01/31/2-Redis%E7%89%B9%E6%80%A7/" rel="next" title="Redis特性">
+      Redis特性 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">Redis基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="nav-number">1.1.</span> <span class="nav-text">1. 安装和使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C"><span class="nav-number">1.2.</span> <span class="nav-text">2. 基础操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%9A"><span class="nav-number">1.3.</span> <span class="nav-text">3. 数据类型：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#String-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">String 字符串类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#List-%E5%88%97%E8%A1%A8%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">List 列表类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Set-%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.3.0.3.</span> <span class="nav-text">Set 集合类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Hash-%E5%93%88%E5%B8%8C%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.3.0.4.</span> <span class="nav-text">Hash 哈希类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Zset-%E6%9C%89%E5%BA%8F%E9%9B%86%E5%90%88"><span class="nav-number">1.3.0.5.</span> <span class="nav-text">Zset 有序集合</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yuanhao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+      
+        <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+        <div class="widget-wrap">
+          <h3 class="widget-title">Tag Cloud</h3>
+          <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="220" height="250" id="resCanvas" style="width=100%">
+              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">32</span></li></ul>
+            </canvas>
+          </div>
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yuanhao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
