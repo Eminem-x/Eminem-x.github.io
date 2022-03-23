@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>RBAC</title>
+      <link href="/2022/03/23/RBAC/"/>
+      <url>/2022/03/23/RBAC/</url>
+      
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p>在最近学习的一个项目中，涉及到了权限管理，其所采用的是主流的 RBAC 模型，</p><p>RBAC(Role-Based Access Control) 基于角色的访问控制，不过根据业务的需要会有不同的变形，</p><p>查阅了一些文章和项目文档，认真总结 RBAC 模型的相关知识，随着学习再不断补充完善。</p><p>在此之前，需要阐述一个问题：<strong>为什么需要权限管理或者说角色权限系统？</strong></p><p>最主要的原因是系统存在不同权限的用户，而根据业务要求的不同，</p><p>每个用户使用的功能、查看的内容是不同的，</p><p>在接下来的示例中，也会体现这一点。</p><hr><h3 id="1-什么是-RBAC-模型"><a href="#1-什么是-RBAC-模型" class="headerlink" title="1. 什么是 RBAC 模型"></a>1. 什么是 RBAC 模型</h3><p>Role-Based Access Control：基于角色的访问控制：</p><p>通过角色关联用户，角色关联权限的访问间接赋予用户权限。</p><p><img src="/2022/03/23/RBAC/RBAC-basis.png"></p><p>在该项目中，一个用户拥有若干角色，每一个角色拥有若干个菜单，菜单中存在菜单权限与按钮权限。</p><p><img src="/2022/03/23/RBAC/RBAC.png"></p><p>（从定义和业务中可以看出，该模型是灵活的，重要的是权限控制思想）</p><p><strong>那么为什么不直接给用户分配 permission，而是在二者之间增加 Role 这一环节？</strong></p><p>从逻辑上来说，可以直接给用户分配权限，但如果这样，Coupling 就太强了，降低了 Expansibility，</p><p>适合用户数量、角色类型少的平台，不具有 generality 和 expansibility。</p><p>对于通常的系统，如果对批量的 user permission 调整，只需要调整用户关联的 role permission，</p><p>无需对每一个用户都进行权限调整，既大幅提升权限调整的效率，又降低了漏调权限的概率。</p><hr><h3 id="2-RBAC-模型的分类"><a href="#2-RBAC-模型的分类" class="headerlink" title="2. RBAC 模型的分类"></a>2. RBAC 模型的分类</h3><p>RBAC模型可以分为：RBAC0、RBAC1、RBAC2、RBAC3 四种，</p><p>其中 RBAC0 是基础，相当于底层逻辑，另外三种是以其为基础的拓展，</p><p>一般情况下使用 RBAC0 模型就可以满足常规的权限管理系统设计。</p><ol><li><p><strong>RBAC0</strong></p><p>最简单的 User、Role、Permission 模型，而其又包含两种：</p><ul><li>用户和角色是多对一关系</li><li>用户和角色是多对多关系</li></ul></li><li><p><strong>RBAC1</strong></p><p>基于RBAC0，增加子角色，引入继承概念，即子角色可以继承父角色的所有权限。</p><p><img src="/2022/03/23/RBAC/RBAC1.png"></p></li></ol><p>   使用场景：如某个业务部门有经理、主管、专员。权限等级依次降低，</p><p>   那么可以先创建完经理角色并配置权限后，主管角色继承经理，并删除某些权限。</p><ol start="3"><li><p><strong>RBAC2</strong></p><p>基于RBAC0，增加对 Role 的 restrictions：角色互斥、基数约束、先决条件角色等。</p><ul><li>角色互斥：同一用户不能分配到一组互斥角色集合中的多个角色</li><li>基数约束：一个角色被分配的用户数量有限</li><li>先决条件角色：若想获得更高的权限，首先需要拥有低一级的权限</li><li>运行时互斥：允许用户有多个角色，但在运行中不可同时激活</li></ul></li><li><p><strong>RBAC3</strong></p><p>统一模型：包含 RABC1 和 RABC2。</p></li></ol><hr><h3 id="3-什么是权限"><a href="#3-什么是权限" class="headerlink" title="3. 什么是权限"></a>3. 什么是权限</h3><p>Permission 可以看作是资源的集合，这里的资源指软件中的所有内容，</p><p>包括模块、菜单、页面、字段、操作功能（增删改查）等等，</p><p><strong>可以将权限分为：页面权限、操作权限和数据权限。</strong></p><ol><li><p><strong>Page Permission</strong></p><p>用户能否获取某些页面的菜单或者进入页面。</p></li><li><p><strong>Operation Permission</strong></p><p>用户凡是在操作系统中的任何动作、交互都是操作权限，如增删改查等。</p></li><li><p><strong>Data Permission</strong></p><p>一般业务管理系统，都有数据私密性的要求：哪些人可以看到哪些数据，不可以看到哪些数据</p></li></ol><p>以该项目为例，测试员 test 和 管理员 admin 登录后所拉取的菜单不同：</p><p><img src="/2022/03/23/RBAC/admin.png"></p><p><img src="/2022/03/23/RBAC/test.png"></p><p>而如果 test 想要访问其未拉取的菜单，就会报错，显示未拥有权限：</p><p><img src="/2022/03/23/RBAC/error.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Spring </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>栈模拟</title>
       <link href="/2022/03/21/%E6%A0%88%E6%A8%A1%E6%8B%9F/"/>
       <url>/2022/03/21/%E6%A0%88%E6%A8%A1%E6%8B%9F/</url>
