@@ -22,21 +22,17 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="Spring快速开始">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Spring快速开始">
-<meta property="og:url" content="http://example.com/2022/01/31/1-Spring%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="前缀树">
+<meta property="og:url" content="http://example.com/2022/03/24/%E5%AD%97%E5%85%B8%E6%A0%91/index.html">
 <meta property="og:site_name" content="Yuanhao Blog">
-<meta property="og:description" content="Spring快速开始">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-01-31T13:16:21.740Z">
-<meta property="article:modified_time" content="2022-01-31T14:43:07.216Z">
+<meta property="article:published_time" content="2022-03-24T11:29:53.990Z">
+<meta property="article:modified_time" content="2022-03-24T11:57:56.350Z">
 <meta property="article:author" content="Yuanhao">
-<meta property="article:tag" content="Java">
-<meta property="article:tag" content="Spring">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2022/01/31/1-Spring%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">
+<link rel="canonical" href="http://example.com/2022/03/24/%E5%AD%97%E5%85%B8%E6%A0%91/">
 
 
 <script id="page-configurations">
@@ -49,7 +45,7 @@
   };
 </script>
 
-  <title>Spring快速开始 | Yuanhao Blog</title>
+  <title>前缀树 | Yuanhao Blog</title>
   
 
 
@@ -189,7 +185,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/31/1-Spring%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/24/%E5%AD%97%E5%85%B8%E6%A0%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -202,7 +198,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Spring快速开始
+          前缀树
         </h1>
 
         <div class="post-meta">
@@ -213,7 +209,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-01-31 21:16:21 / 修改时间：22:43:07" itemprop="dateCreated datePublished" datetime="2022-01-31T21:16:21+08:00">2022-01-31</time>
+              <time title="创建时间：2022-03-24 19:29:53 / 修改时间：19:57:56" itemprop="dateCreated datePublished" datetime="2022-03-24T19:29:53+08:00">2022-03-24</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -221,11 +217,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a>
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
                 </span>
             </span>
 
@@ -247,43 +243,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Spring快速开始"><a href="#Spring快速开始" class="headerlink" title="Spring快速开始"></a>Spring快速开始</h2><span id="more"></span>
-
-<p><strong>PS：仅作为个人学习笔记，以后深入学习再补充</strong></p>
-<p>Spring 学习笔记地址：<a target="_blank" rel="noopener" href="https://github.com/Eminem-x/Spring">https://github.com/Eminem-x/Spring</a></p>
-<p>SpringBoot学习笔记地址：<a target="_blank" rel="noopener" href="https://github.com/Eminem-x/SpringBoot">https://github.com/Eminem-x/SpringBoot</a></p>
-<p>推荐 Spring 学习视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1WZ4y1P7Bp?from=search&seid=9648668674109084850&spm_id_from=333.337.0.0">黑马程序员 SSM 框架教程</a></p>
-<p>推荐 SpringBoot 学习视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19K4y1L7MT?from=search&seid=14164871616704737958&spm_id_from=333.337.0.0">尚硅谷 雷神 SpringBoot 学习</a></p>
-<p>SpringBoot 学习参考：<a target="_blank" rel="noopener" href="http://www.ityouknow.com/springboot/2016/01/06/spring-boot-quick-start.html">ityouknow-SpringBoot学习</a></p>
+        <p><escape><span id="more"></span><escape></escape></escape></p>
+<h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p><strong><code>Trie</code> （发音类似 try）前缀树</strong>，一种树形数据结构，用于高效地存储和检索字符串数据集中的键，</p>
+<p>有相当多地应用情景：自动补全和拼写检查，又称为<strong>字典树</strong>，实质上是 <strong>N叉树</strong> 的一种特殊形式。</p>
+<p>相关题目推荐：</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/concatenated-words/">472. 连接词 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/k-th-smallest-in-lexicographical-order/">440. 字典序的第K小数字 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+</li>
+</ul>
 <hr>
-<h3 id="1-Spring程序开发步骤"><a href="#1-Spring程序开发步骤" class="headerlink" title="1. Spring程序开发步骤"></a>1. Spring程序开发步骤</h3><ol>
-<li>导入 Spring 开发的基本包坐标（通过Maven）；</li>
-<li>创建 Bean；</li>
-<li>创建 Spring 核心配置文件；</li>
-<li>在 Spring 配置文件中进行配置；</li>
-<li>使用 Spring 的 API 获得 Bean 实例；</li>
-</ol>
-<h3 id="2-基本概念"><a href="#2-基本概念" class="headerlink" title="2. 基本概念"></a>2. 基本概念</h3><ol>
-<li><p>Dao 是数据访问层，Service 是业务层；</p>
-</li>
-<li><p>Dao 的作用是封装对数据库的访问：CRUD，不涉及业务逻辑；</p>
-</li>
-<li><p>Service 则专注业务逻辑，对于其中需要的数据库操作，通过 Dao 实现；</p>
-</li>
-<li><p>这样的分层是<strong>基于 MVC 架构</strong>而言：</p>
-<p>M是指业务模型（model），V是指用户界面（view），C则是控制器（controller），</p>
-<p>使用MVC的目的是将M和V的实现代码分离，从而使同一个程序可以使用不同的表现形式。</p>
-</li>
-<li><p>分层的作用是 <strong>解耦</strong>；</p>
-</li>
-<li><p><strong>对于 Spring 框架：</strong></p>
-<p>（View\Web）表示层调用控制层（Controller），</p>
-<p>控制层调用业务层（Service），</p>
-<p>业务层调用数据访问层（Dao）。</p>
-</li>
-<li><p><strong>Bean 是一个被实例化，组装，并通过 Spring IoC 容器所管理的对象。</strong></p>
-</li>
-</ol>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Trie</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Trie[] children;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> isEnd;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Trie</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        children = <span class="keyword">new</span> Trie[<span class="number">26</span>];</span><br><span class="line">        isEnd = <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(String word)</span> </span>&#123;</span><br><span class="line">        Trie node = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; word.length(); i++) &#123;</span><br><span class="line">            <span class="keyword">char</span> ch = word.charAt(i);</span><br><span class="line">            <span class="keyword">int</span> index = ch - <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">            <span class="keyword">if</span> (node.children[index] == <span class="keyword">null</span>) &#123;</span><br><span class="line">                node.children[index] = <span class="keyword">new</span> Trie();</span><br><span class="line">            &#125;</span><br><span class="line">            node = node.children[index];</span><br><span class="line">        &#125;</span><br><span class="line">        node.isEnd = <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">search</span><span class="params">(String word)</span> </span>&#123;</span><br><span class="line">        Trie node = searchPrefix(word);</span><br><span class="line">        <span class="keyword">return</span> node != <span class="keyword">null</span> &amp;&amp; node.isEnd;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">startsWith</span><span class="params">(String prefix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> searchPrefix(prefix) != <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Trie <span class="title">searchPrefix</span><span class="params">(String prefix)</span> </span>&#123;</span><br><span class="line">        Trie node = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; prefix.length(); i++) &#123;</span><br><span class="line">            <span class="keyword">char</span> ch = prefix.charAt(i);</span><br><span class="line">            <span class="keyword">int</span> index = ch - <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">            <span class="keyword">if</span> (node.children[index] == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            node = node.children[index];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>文章开始处的两个链接，前者直接应用到字典树，而后者间接用到字典树，</p>
+<p>都给出了非常巧妙地解法，<strong>尤其是后者如何层序遍历得出字典树结点数目，非常精彩。</strong></p>
 
     </div>
 
@@ -292,10 +266,6 @@
     
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/Java/" rel="tag"># Java</a>
-              <a href="/tags/Spring/" rel="tag"># Spring</a>
-          </div>
 
         
 
@@ -303,13 +273,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/01/31/4-Redis%E5%BA%94%E7%94%A8/" rel="prev" title="Redis应用">
-      <i class="fa fa-chevron-left"></i> Redis应用
+    <a href="/2022/03/23/RBAC/" rel="prev" title="RBAC">
+      <i class="fa fa-chevron-left"></i> RBAC
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/01/31/2-Spring%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" rel="next" title="Spring配置文件">
-      Spring配置文件 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -368,7 +335,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B"><span class="nav-number">1.</span> <span class="nav-text">Spring快速开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Spring%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.1.</span> <span class="nav-text">1. Spring程序开发步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.2.</span> <span class="nav-text">2. 基本概念</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Preface"><span class="nav-number">1.</span> <span class="nav-text">Preface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -527,6 +494,59 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
