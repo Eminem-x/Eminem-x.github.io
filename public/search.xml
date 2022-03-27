@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>算法</title>
+      <link href="/2022/03/27/%E7%AE%97%E6%B3%95/"/>
+      <url>/2022/03/27/%E7%AE%97%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p>过往总是将学习到的算法分散的放到博客里，导致博客内容很臃肿，</p><p>再加上随着学习的推进，逐渐觉得没有系统化，因此决定整理以前的知识，</p><p>一方面精简博客，另一方面系统化知识，并且引入开源项目 <a href="https://github.com/TheAlgorithms/Java">Java</a>，</p><p>以此项目为基础，规范化代码，还可以学习源码的设计思想。</p><hr><h3 id="Categories"><a href="#Categories" class="headerlink" title="Categories"></a>Categories</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数据结构</title>
+      <link href="/2022/03/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <url>/2022/03/27/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+      
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p>过往总是将学习到的数据结构分散的放到博客里，导致博客内容很臃肿，</p><p>再加上随着学习的推进，逐渐觉得没有系统化，因此决定整理以前的知识，</p><p>一方面精简博客，另一方面系统化知识，并且引入开源项目 <a href="https://github.com/TheAlgorithms/Java">Java</a>，</p><p>以此项目为基础，规范化代码，还可以学习源码的设计思想。</p><hr><h3 id="Categories"><a href="#Categories" class="headerlink" title="Categories"></a>Categories</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>前缀树</title>
       <link href="/2022/03/24/%E5%AD%97%E5%85%B8%E6%A0%91/"/>
       <url>/2022/03/24/%E5%AD%97%E5%85%B8%E6%A0%91/</url>
