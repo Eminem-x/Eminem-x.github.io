@@ -1,14 +1,14 @@
 ---
 title: Hexo Next的基础搭建
+date: 2021-11-27
+updated: 2021-11-27
 categories:
 - Hexo
 tags:
 - Hexo
 ---
 
-### Hexo Next的基础搭建
-
-<!--more-->
+<escape><!--more--></escape>
 
 ### 如何通过GitHub搭建Hexo博客？
 

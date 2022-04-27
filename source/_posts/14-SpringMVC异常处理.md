@@ -1,5 +1,7 @@
 ---
 title: SpringMVC异常处理
+date: 2022-01-31
+updated: 2022-01-31
 categories:
 - Java
 - Spring
@@ -8,11 +10,9 @@ tags:
 - Spring
 ---
 
-## SpringMVC异常处理
+<escape><!--more--></escape>
 
-<!--more-->
-
-### 1. 异常处理的思路
+### 异常处理的思路
 
 系统中异常包括两类：预期异常和运行时异常；
 
@@ -22,7 +22,7 @@ tags:
 
 **最后由 SpringMVC 前端控制器交由异常处理器进行异常处理。**
 
-### 2. 异常处理的两种方式
+### 异常处理的两种方式
 
 * SpringMVC 提供的简单异常处理器：SimpleMappingExceptionResolver
 

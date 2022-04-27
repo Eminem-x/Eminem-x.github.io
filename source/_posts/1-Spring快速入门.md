@@ -1,5 +1,7 @@
 ---
 title: Spring快速开始
+date: 2022-01-31
+updated: 2022-01-31
 categories:
 - Java
 - Spring
@@ -8,9 +10,7 @@ tags:
 - Spring
 ---
 
-## Spring快速开始
-
-<!--more-->
+<escape><!--more--></escape>
 
 **PS：仅作为个人学习笔记，以后深入学习再补充**
 
@@ -26,7 +26,7 @@ SpringBoot 学习参考：<a href="http://www.ityouknow.com/springboot/2016/01/0
 
 -----
 
-### 1. Spring程序开发步骤
+### Spring程序开发步骤
 
 1. 导入 Spring 开发的基本包坐标（通过Maven）；
 2. 创建 Bean；
@@ -34,7 +34,7 @@ SpringBoot 学习参考：<a href="http://www.ityouknow.com/springboot/2016/01/0
 4. 在 Spring 配置文件中进行配置；
 5. 使用 Spring 的 API 获得 Bean 实例；
 
-### 2. 基本概念
+### 基本概念
 
 1. Dao 是数据访问层，Service 是业务层；
 
@@ -48,7 +48,7 @@ SpringBoot 学习参考：<a href="http://www.ityouknow.com/springboot/2016/01/0
 
    使用MVC的目的是将M和V的实现代码分离，从而使同一个程序可以使用不同的表现形式。
 
-5. 分层的作用是 **解耦**；
+5. 分层的作用是**解耦**；
 
 6. **对于 Spring 框架：**
 

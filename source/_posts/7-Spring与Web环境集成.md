@@ -1,5 +1,7 @@
 ---
 title: Spring与Web环境集成
+date: 2022-01-31
+updated: 2022-01-31
 categories:
 - Java
 - Spring
@@ -8,17 +10,15 @@ tags:
 - Spring
 ---
 
-## Spring与Web环境集成
+<escape><!--more--></escape>
 
-<!--more-->
-
-### 1. ApplicationContext应用上下文获取方式
+### ApplicationContext应用上下文获取方式
 
 应用上下文对象是通过 `new ClassPathXmlApplicationContext(Spring配置文件)`方式获取，
 
 但是每次从容器中获得 Bean 时都要编写，会导致配置文件加载多次，应用上下文创建多次。
 
-
+<br>
 
 在 Web 项目中，可以使用 `ServletContextListener` 监听 Web 应用的启动，当应用启动时，
 
@@ -26,7 +26,7 @@ tags:
 
 这样就可以在任意位置从域中获得应用上下文对象 `ApplicationContext` 对象。
 
-### 2. Spring提供获取应用上下文的工具
+### Spring提供获取应用上下文的工具
 
 Spring 提供监听器 `ContextLoaderListener` 对上述功能封装，
 

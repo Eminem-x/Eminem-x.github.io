@@ -1,5 +1,7 @@
 ---
 title: Spring相关API
+date: 2022-01-31
+updated: 2022-01-31
 categories:
 - Java
 - Spring
@@ -8,17 +10,15 @@ tags:
 - Spring
 ---
 
-## Spring相关API
-
-<!--more-->
+<escape><!--more--></escape>
 
 各个版本的 API 文档链接：https://docs.spring.io/spring-framework/docs/
 
-### 1. ApplicationContext 的继承体系
+### ApplicationContext 的继承体系
 
 ApplicationContext：接口类型，代表应用上下文，可以通过其实例获得 Spring 容器中的 Bean 对象
 
-### 2. ApplicationContext 的实现类
+### ApplicationContext 的实现类
 
 * **ClassPathXmlApplicationContext**
 
@@ -32,7 +32,7 @@ ApplicationContext：接口类型，代表应用上下文，可以通过其实�
 
   当使用注解配置容器对象时，需要用此类创建容器，用来读取注解
 
-### 3. getBean() 方法
+### getBean() 方法
 
 ```java
 java.lang.Object getBean(java.lang.String name) throws BeansException

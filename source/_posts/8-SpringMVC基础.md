@@ -1,5 +1,7 @@
 ---
 title: SpringMVC基础
+date: 2022-01-31
+updated: 2022-01-31
 categories:
 - Java
 - Spring
@@ -8,11 +10,9 @@ tags:
 - Spring
 ---
 
-## SpringMVC基础
+<escape><!--more--></escape>
 
-<!--more-->
-
-### 1. SpringMVC概述
+### SpringMVC概述
 
 SpringMVC 是一种基于 Java 的实现 MVC设计模型的请求驱动类型的轻量级 Web 框架
 
@@ -23,7 +23,7 @@ SpringMVC 是一种基于 Java 的实现 MVC设计模型的请求驱动类型的
 5. 视图解析器：ViewResolver
 6. 视图：View
 
-### 2. SpringMVC步骤
+### SpringMVC步骤
 
 需求：客户端发起请求，服务器端接受请求，执行逻辑并进行视图跳转
 
@@ -34,7 +34,7 @@ SpringMVC 是一种基于 Java 的实现 MVC设计模型的请求驱动类型的
 5. 配置 SpringMVC 核心文件 spring-mvc.xml
 6. 客户端发起请求测试
 
-### 3. SpringMVC执行流程
+### SpringMVC执行流程
 
 1. 用户发送请求至前端控制器 DispatcherServlet
 
@@ -58,7 +58,7 @@ SpringMVC 是一种基于 Java 的实现 MVC设计模型的请求驱动类型的
 
 10. DispatcherServlet 根据 View 进行渲染视图后响应用户
 
-### 4. SpringMVC注解解析
+### SpringMVC注解解析
 
 1. **@RequestMapping**
 
@@ -75,7 +75,7 @@ SpringMVC 是一种基于 Java 的实现 MVC设计模型的请求驱动类型的
 * method：用于指定请求的方式
 * params：用于指定限制请求参数的条件，支持简单的表达式
 
-### 5. SpringMVC的XML配置解析
+### SpringMVC的XML配置解析
 
 1. mvc 命名空间引入和组件扫描
 2. 配置内部资源视图解析器

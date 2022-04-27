@@ -1,5 +1,7 @@
 ---
 title: SpringMVC拦截器
+date: 2022-01-31
+updated: 2022-01-31
 categories:
 - Java
 - Spring
@@ -8,11 +10,9 @@ tags:
 - Spring
 ---
 
-## SpringMVC拦截器
+<escape><!--more--></escape>
 
-<!--more-->
-
-### 1. 拦截器作用
+### 拦截器作用
 
 SpringMVC 的拦截器类似于 Servlet 开发中的过滤器 Filter，用于对处理器进行**预处理**和**后处理**；
 
@@ -22,14 +22,14 @@ SpringMVC 的拦截器类似于 Servlet 开发中的过滤器 Filter，用于对
 
 拦截器也是 **AOP** 思想的具体实现。
 
-### 2. 拦截器和过滤器区别
+### 拦截器和过滤器区别
 
 | 区别     | 过滤器（Filter）                                             | 拦截器（Interceptor）                                        |
 | -------- | :----------------------------------------------------------- | ------------------------------------------------------------ |
 | 适用范围 | servlet 规范中的一部分，<br />任何 Java Web 工程都可以使用   | SpringMVC框架才能使用                                        |
 | 拦截范围 | 在 url-pattern 中配置 /* 后，<br />可以对所有要访问的资源拦截 | 在 \<mvc:mapping path="" /> 中配置 /** 后，也可以全部拦截，<br />但是可以通过  \<mvc:exclude-mapping path="" />标签，<br />排除不需要拦截的资源 |
 
-### 3. 自定义拦截器
+### 自定义拦截器
 
 1. 创建拦截器类实现 HandlerInterceptor 接口
 

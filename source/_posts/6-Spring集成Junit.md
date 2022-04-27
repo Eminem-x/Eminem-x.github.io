@@ -1,5 +1,7 @@
 ---
 title: Spring集成Junit
+date: 2022-01-31
+updated: 2022-01-31
 categories:
 - Java
 - Spring
@@ -8,11 +10,9 @@ tags:
 - Spring
 ---
 
-## Spring集成Junit
+<escape><!--more--></escape>
 
-<!--more-->
-
-### 1. 原始 Junit 测试 Spring 的问题
+### 原始 Junit 测试 Spring 的问题
 
 在测试类中，每个测试方法都有一下两行代码：
 
@@ -21,12 +21,12 @@ ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.x
 IAccountService as = ac.getBean("accountService", IAccountService.class);
 ```
 
-### 2. 解决办法
+### 解决办法
 
 * 让 SpringJunit 负责创建 Spring 容器，但是需要将配置文件的名称告之；
 * 将需要进行测试 Bean 直接在测试类中进行注入；
 
-### 3. Spring 集成 Junit 步骤
+### Spring 集成 Junit 步骤
 
 1. 导入 Spring 集成 Junit 的坐标
 2. 使用 @RunWith 注解替换原来的运行期

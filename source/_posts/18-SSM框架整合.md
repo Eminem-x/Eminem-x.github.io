@@ -1,5 +1,7 @@
 ---
 title: SSM框架整合
+date: 2022-01-31
+updated: 2022-01-31
 categories:
 - Java
 - Spring
@@ -8,11 +10,9 @@ tags:
 - Spring
 ---
 
-## SSM框架整合
+<escape><!--more--></escape>
 
-<!--more-->
-
-### 1. 项目地址
+### 项目地址
 
 从 GitHub 上 Fork 的项目：https://github.com/liyifeng1994/ssm/tree/master/src
 
@@ -24,7 +24,7 @@ tags:
 
 仅通过 test 测试整体框架的完备性，适合学习框架的设计流程。
 
-### 2. 更改版本
+### 更改版本
 
 1. 数据库驱动版本：要和自己的数据库版本保持一致
 
@@ -46,7 +46,7 @@ tags:
 
    因为创建变量时，误写为 appointDate，所以更改了数据库列名
 
-### 3. 整合流程
+### 整合流程
 
 1. 建立整个项目的基础目录结构，同时遵循 maven 的目录规范
 2. 导入相应的 jar 包，资源坐标，注意版本号兼容性

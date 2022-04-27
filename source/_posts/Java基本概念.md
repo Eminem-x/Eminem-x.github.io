@@ -1,5 +1,7 @@
 ---
 title: 基本概念
+date: 2021-11-29
+updated: 2021-12-01
 categories:
 - Java
 - Java基础知识
@@ -7,9 +9,7 @@ tags:
 - Java
 ---
 
-### 基本概念
-
-<!--more-->
+<escape><!--more--></escape>
 
 ### Java语言有哪些优点？
 

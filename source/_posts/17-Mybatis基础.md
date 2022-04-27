@@ -1,5 +1,7 @@
 ---
 title: Mybatis基础
+date: 2022-01-31
+updated: 2022-01-31
 categories:
 - Java
 - Spring
@@ -8,11 +10,9 @@ tags:
 - Spring
 ---
 
-## Mybatis基础
+<escape><!--more--></escape>
 
-<!--more-->
-
-### 1. 原始 Jdbc 操作分析
+### 原始 Jdbc 操作分析
 
 **存在以下问题：**
 
@@ -26,14 +26,14 @@ tags:
 2. 将 sql 语句抽取到 xml 配置文件中
 3. 使用反射、内省等底层技术，自动将实体与表进行映射
 
-### 2. Mybatis 概念
+### Mybatis 概念
 
 * 基于 Java 的持久层框架，内部封装了 Jdbc，简化了开发者的工作
 * 通过 xml 或注解的方式将要执行的各种 statement 配置起来
 * 将结果映射为对象并返回，采用 ORM 思想解决实体和数据库映射问题
 * 对 Jdbc 进行封装，屏蔽了底层访问细节，便于操作和维护
 
-### 3. 开发步骤
+### 开发步骤
 
 1. 添加 MyBatis 坐标
 
@@ -98,7 +98,7 @@ tags:
 
    **操作涉及数据库数据变化时，要提交事务，即`sqlSession.commit()`**
 
-### 4. 核心配置文件
+### 核心配置文件
 
 * environments 标签：数据源环境配置标签
 * mappers 标签：加载映射配置
@@ -107,9 +107,9 @@ tags:
 * typeHandlers 标签：重写或创建类型处理器来处理不支持或非标准的类型
 * plugins 标签：Mybatis 可以使用第三方插件对功能进行拓展
 
-### 5. 相应API
+### 相应API
 
-1. ##### SqlSession 工厂构建器 SqlSessionFactoryBuilder
+1. #### SqlSession 工厂构建器 SqlSessionFactoryBuilder
 
    ```java
    // 获得核心配置文件
@@ -120,7 +120,7 @@ tags:
 
    通过加载核心文件输入流的形式构建一个 SqlSessionFactory 对象
 
-2. ##### SqlSession 工厂对象 SqlSessionFactory
+2. #### SqlSession 工厂对象 SqlSessionFactory
 
    存在多个方法创建 SqlSession 实例，常用的如下两种：
 
@@ -129,11 +129,11 @@ tags:
    | openSession()                   | 默认开启一个事务，但事务不会自动提交，需要手动提交，<br />更新数据才会持久化到数据库中 |
    | openSession(boolean autoCommit) | 参数为是否自动提交，如果为 true，那么不需要手动提交          |
 
-3. ##### SqlSession 会话对象
+3. #### SqlSession 会话对象
 
    包含所有执行语句、提交或回滚事务和获取映射器实例的方法
 
-### 6. Dao层代理开发
+### Dao层代理开发
 
 Mybatis的代理开发方式实现 DAO 层的开发：**Mapper接口开发方法**，
 
@@ -146,4 +146,4 @@ Mybatis的代理开发方式实现 DAO 层的开发：**Mapper接口开发方法
 * Mapper 接口方法的输入参数类型和文件中定义的每个 sql 的 parameterType 类型相同
 * Mapper 接口方法的输出参数类型和文件中定义的每个 sql 的 resultType 类型相同、
 
-### 7. MyBatis注解开发
+### MyBatis注解开发

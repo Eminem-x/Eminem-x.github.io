@@ -1,5 +1,7 @@
 ---
 title: KMP
+date: 2022-04-25
+updated: 2022-04-25
 categories:
 - 数据结构
 - 字符串

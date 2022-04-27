@@ -1,14 +1,14 @@
 ---
 title: Hexo Next的界面优化
+date: 2021-11-29
+updated: 2022-04-13
 categories:
 - Hexo
 tags:
 - Hexo
 ---
 
-### Hexo Next的界面优化
-
-<!--more-->
+<escape><!--more--></escape>
 
 ### 如何将页面背景改为黑色模式？
 

@@ -1,5 +1,7 @@
 ---
 title: Spring配置文件
+date: 2022-01-31
+updated: 2022-01-31
 categories:
 - Java
 - Spring
@@ -8,11 +10,9 @@ tags:
 - Spring
 ---
 
-## Spring配置文件
+<escape><!--more--></escape>
 
-<!--more-->
-
-### 1. Bean 标签基本配置
+### Bean 标签基本配置
 
 1. Bean 用于配置对象交由 Spring 来创建，**默认情况下调用的是类中的无参构造函数**，
 
@@ -36,7 +36,7 @@ tags:
    
 3. **\<import>标签**：导入其他的 Spring 的分文件
 
-### 2. Bean 标签范围配置
+### Bean 标签范围配置
 
 |    取值范围    |              说明              |
 | :------------: | :----------------------------: |
@@ -64,7 +64,7 @@ tags:
   2. 对象运行：只要对象在使用中，就一直存在；
   3. 对象销毁：当对象长时间不用，就被 Java 的垃圾回收期回收；
 
-### 3. Bean 生命周期配置
+### Bean 生命周期配置
 
 * init-method：指定类中的初始化方法名称
 
@@ -81,13 +81,13 @@ tags:
 3. 在大多数情况下更加推荐第二种方法；
 4. 参考文章：[java - How to close a spring ApplicationContext? - Stack Overflow](https://stackoverflow.com/questions/14423980/how-to-close-a-spring-applicationcontext)
 
-### 4. Bean 实例化三种方式
+### Bean 实例化三种方式
 
 * 无参构造方法实例化
 * 工厂静态方法实例化
 * 工厂实例方法实例化
 
-### 5. Bean 依赖注入
+### Bean 依赖注入
 
 1. **依赖注入（Dependency Injection）: Spring框架核心 IOC 的具体实现**
 
@@ -100,7 +100,7 @@ tags:
    * 引用数据类型
    * 集合数据类型
 
-### 6. 引入其他配置文件（分模块开发）
+### 引入其他配置文件（分模块开发）
 
 实际开发中，Spring 的配置内容非常多，导致配置很繁杂并且体积大，
 

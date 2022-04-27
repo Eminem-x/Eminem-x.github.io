@@ -1,5 +1,7 @@
 ---
 title: SpringMVC数据响应
+date: 2022-01-31
+updated: 2022-01-31
 categories:
 - Java
 - Spring
@@ -8,26 +10,26 @@ tags:
 - Spring
 ---
 
-## SpringMVC数据响应
+<escape><!--more--></escape>
 
-<!--more-->
+### 页面跳转
 
-### 1. 页面跳转
-
-1. ##### 直接返回字符串
+#### 直接返回字符串
 
 此种方式会将返回的字符串与视图解析器的前后缀拼接后跳转
 
-2. ##### 通过 ModelAndView 对象返回
+#### 通过 ModelAndView 对象返回
 
-### 2. 回写数据
+----
 
-1. ##### 直接返回字符串 / JSON
+### 回写数据
 
-   * 通过 SpringMVC 框架注入的 response 对象，此时不需要视图跳转，方法返回值为 void
-   * 将需要回写的字符串直接返回，通过 **@ResponseBody** 注解告知 SpringMVC 框架
+#### 直接返回字符串 / JSON
 
-2. ##### 返回对象或集合
+* 通过 SpringMVC 框架注入的 response 对象，此时不需要视图跳转，方法返回值为 void
+* 将需要回写的字符串直接返回，通过 **@ResponseBody** 注解告知 SpringMVC 框架
+
+#### 返回对象或集合
 
 通过 SpringMVC 进行 JSON 字符串的转换并回写，为处理器适配器配置消息转化参数，
 

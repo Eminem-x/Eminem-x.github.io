@@ -1,5 +1,7 @@
 ---
 title: Spring注解开发
+date: 2022-01-31
+updated: 2022-01-31
 categories:
 - Java
 - Spring
@@ -8,15 +10,13 @@ tags:
 - Spring
 ---
 
-## Spring注解开发
-
-<!--more-->
+<escpae><!--more--></escape>
 
 Spring 是轻代码而重配置的框架，配置比较繁重，影响开发效率，
 
 所以注解是一种开发趋势，注解代替 `xml` 配置文件可以简化配置，提高开发效率。
 
-### 1. 原始注解
+### 原始注解
 
 Spring 原始注解主要是替代 \<Bean> 的配置
 
@@ -50,7 +50,7 @@ Spring 原始注解主要是替代 \<Bean> 的配置
 
 3. 使用 `prototype` 时 `Spring` 不会负责销毁容器对象，将 `scope` 改为 `singleton` 才会生效 `destroy` 方法；
 
-### 2. 新注解
+### 新注解
 
 * 非自定义的 `Bean` 配置：\<bean>
 * 加载外部 `properties` 文件的配置：\<context:property-placeholder>
