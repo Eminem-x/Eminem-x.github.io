@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="珂朵莉树">
+<meta property="og:url" content="http://example.com/2022/06/23/%E7%8F%82%E6%9C%B5%E8%8E%89%E6%A0%91/index.html">
+<meta property="og:site_name" content="Yuanhao Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2022/06/23/%E7%8F%82%E6%9C%B5%E8%8E%89%E6%A0%91/%E7%8E%9B%E6%9C%B5%E8%8E%89%E6%A0%91.png">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Csum_%7Bi=l%7D%5E%7Br%7D%7Ba_i%5Ex%7D%5Cbmod+y">
+<meta property="article:published_time" content="2022-06-23T14:54:17.855Z">
+<meta property="article:modified_time" content="2022-06-23T15:56:16.764Z">
+<meta property="article:author" content="Yuanhao">
+<meta property="article:tag" content="数据结构">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/06/23/%E7%8F%82%E6%9C%B5%E8%8E%89%E6%A0%91/%E7%8E%9B%E6%9C%B5%E8%8E%89%E6%A0%91.png">
+
+<link rel="canonical" href="http://example.com/2022/06/23/%E7%8F%82%E6%9C%B5%E8%8E%89%E6%A0%91/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>珂朵莉树 | Yuanhao Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Yuanhao Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Later Equals Never</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/23/%E7%8F%82%E6%9C%B5%E8%8E%89%E6%A0%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuanhao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuanhao Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          珂朵莉树
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-06-23 22:54:17 / 修改时间：23:56:16" itemprop="dateCreated datePublished" datetime="2022-06-23T22:54:17+08:00">2022-06-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><escape><span id="more"></span></escape></p>
+<h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p><strong>珂朵莉树</strong>（Chtholly Tree）起源于<a href="https://link.zhihu.com/?target=https://codeforces.com/problemset/problem/896/C">CF896C</a>，那道题要求我们实现一种数据结构，可以较快地实现：</p>
+<blockquote>
+<p>区间加、区间赋值、求区间第k大值、求区间n次方和</p>
+</blockquote>
+<p>就此需求来说，普通的树状数组、线段树等显然难以胜任，看上去需要一种相当复杂的数据结构。</p>
+<p>然而，在出题人的题解中，实现的数据结构却很简单，最初用自己的 ID 把这种数据结构命名为 ODT，后又改名为珂朵莉树。</p>
+<p>珂朵莉树的适用范围是有<strong>区间赋值</strong>操作且<strong>数据随机</strong>的题目。其实珂朵莉树看上去并不像是树状数据结构，</p>
+<p>但因为一般要用到有序集合，而有序集合是用红黑树实现的，所以也不算名不副实。</p>
+<p>在随机数据下，珂朵莉树可以达到 <em>O(nloglogn)</em> 的复杂度，参见<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/102786071">这篇文章</a>（这篇文章博主也是非常厉害的)。</p>
+<p>而我接触这个特殊的数据结构是因为同学推荐力扣<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/range-module/submissions/">每日一题</a>用这种方法实现，起到一个抛砖引玉的效果。</p>
+<ul>
+<li>C++ 实现参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/106353082">https://zhuanlan.zhihu.com/p/106353082</a></li>
+<li>Rust 实现参考：<a target="_blank" rel="noopener" href="http://heavensheep.xyz/?p=276">http://heavensheep.xyz/?p=276</a></li>
+</ul>
+<p>本篇后续实现方式为 Java，利用的数据结构是 TreeSet，底层实现也是红黑树。</p>
+<h3 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h3><h4 id="有序集合"><a href="#有序集合" class="headerlink" title="有序集合"></a>有序集合</h4><p>在介绍 ODT 之前，先按照朴素做法取实现，采用有序集合，去判断各种情况的发生以及如何处理，</p>
+<p>并且利用底层插入寻找结点的时间复杂度为 O(logn) 来解决这道问题，但是实现起来非常复杂，细节很多，</p>
+<p>我在按照这种方法去实现时，一直在调试，详情参考：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/range-module/solution/range-mo-kuai-by-leetcode-solution-4utf/"> LeetCode 官方题解</a></p>
+<p>我在具体实现时候也优化了一些代码逻辑并且添加了 comment，便于理解，参考代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RangeModule</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 利用 TreeMap, 表示 intervals, 注意是半开区间</span></span><br><span class="line">    TreeMap&lt;Integer, Integer&gt; map;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">RangeModule</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        map = <span class="keyword">new</span> TreeMap&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addRange</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 利用 TreeMap 性质找到第一个严格大于 left 的 entry</span></span><br><span class="line">        Map.Entry&lt;Integer, Integer&gt; entry = map.higherEntry(left);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 如果存在 entry, 寻找小于 left 的 entry; 反之, 取最后一个 entry</span></span><br><span class="line">        Map.Entry&lt;Integer, Integer&gt; start = (entry != <span class="keyword">null</span> ? map.lowerEntry(entry.getKey()) : map.lastEntry());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 如果当前区间包含 [left, right), 不需再操作</span></span><br><span class="line">        <span class="keyword">if</span> (start != <span class="keyword">null</span> &amp;&amp; start.getValue() &gt;= right) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 如果当前区间的右值小于 right, 更新 [left, right) 为 [l, right), 并移除 [l, r]</span></span><br><span class="line">        <span class="keyword">if</span> (start != <span class="keyword">null</span> &amp;&amp; start.getValue() &gt;= left) &#123;</span><br><span class="line">            left = start.getKey();</span><br><span class="line">            map.remove(start.getKey());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 以上操作已经处理好最大小于 left 的 entry, 现在更新其后的区间</span></span><br><span class="line">        <span class="keyword">while</span> (entry != <span class="keyword">null</span> &amp;&amp; entry.getKey() &lt;= right) &#123;</span><br><span class="line">            right = Math.max(right, entry.getValue());</span><br><span class="line">            map.remove(entry.getKey());</span><br><span class="line">            entry = map.higherEntry(entry.getKey());</span><br><span class="line">        &#125;</span><br><span class="line">        map.put(left, right);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">queryRange</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        Map.Entry&lt;Integer, Integer&gt; entry = map.higherEntry(left);</span><br><span class="line">        Map.Entry&lt;Integer, Integer&gt; start = (entry != <span class="keyword">null</span> ? map.lowerEntry(entry.getKey()) : map.lastEntry());</span><br><span class="line">        <span class="comment">// 存在并且区间满足即返回 true</span></span><br><span class="line">        <span class="keyword">return</span> start != <span class="keyword">null</span> &amp;&amp; (start.getValue() &gt;= right);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">removeRange</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        Map.Entry&lt;Integer, Integer&gt; entry = map.higherEntry(left);</span><br><span class="line">        Map.Entry&lt;Integer, Integer&gt; start = (entry != <span class="keyword">null</span> ? map.lowerEntry(entry.getKey()) : map.lastEntry());</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 如果当前区间重叠 [left, right)</span></span><br><span class="line">        <span class="keyword">if</span> (start != <span class="keyword">null</span> &amp;&amp; start.getValue() &gt;= right) &#123;</span><br><span class="line">            <span class="keyword">if</span> (start.getKey() == left) &#123;</span><br><span class="line">                map.remove(start.getKey());</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                map.put(start.getKey(), left);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (start.getValue() != right) &#123;</span><br><span class="line">                map.put(right, start.getValue());</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (start != <span class="keyword">null</span> &amp;&amp; start.getValue() &gt; left) &#123;</span><br><span class="line">            map.put(start.getKey(), left);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 删除后续区间</span></span><br><span class="line">        <span class="keyword">while</span> (entry != <span class="keyword">null</span> &amp;&amp; entry.getKey() &lt; right) &#123;</span><br><span class="line">            map.remove(entry.getKey());</span><br><span class="line">            <span class="keyword">if</span> (right &lt; entry.getValue()) &#123;</span><br><span class="line">                map.put(right, entry.getValue());</span><br><span class="line">            &#125;</span><br><span class="line">            entry = map.higherEntry(entry.getKey());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="玛朵莉树"><a href="#玛朵莉树" class="headerlink" title="玛朵莉树"></a>玛朵莉树</h4><p>ODT 核心函数只有两个，<code>split()</code> 和 <code>assign()</code>，前者用于分割区间，后者用于区间赋值，也是其精髓。</p>
+<p>思路如下：</p>
+<ol>
+<li>用一个结构体或者类存储区间信息：左端点，右端点以及区间值</li>
+<li><code>split()</code> 函数用于分割区间，<strong>因此需要在开始初始化一个涵盖数据范围的区间</strong></li>
+<li><code>assign()</code> 函数用于区间赋值以及<strong>区间合并</strong>，使得零散的区间变得整齐</li>
+</ol>
+<p>可以参考下图例子，加以理解具体操作：</p>
+<p><img src="%E7%8E%9B%E6%9C%B5%E8%8E%89%E6%A0%91.png"></p>
+<p>具体代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RangeModule</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> N = (<span class="keyword">int</span>)<span class="number">1e9</span>;</span><br><span class="line"></span><br><span class="line">    TreeSet&lt;Node&gt; set = <span class="keyword">new</span> TreeSet&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Node 需要实现比较器接口</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Node</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">Node</span>&gt; </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> left, right, val;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.left = left;</span><br><span class="line">            <span class="keyword">this</span>.right = right;</span><br><span class="line">            <span class="keyword">this</span>.val = val;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span> <span class="params">(Node o)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.left - o.left;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">split</span><span class="params">(<span class="keyword">int</span> pos)</span> </span>&#123;</span><br><span class="line">        Node node = set.ceiling(<span class="keyword">new</span> Node(pos, <span class="number">0</span>, <span class="number">0</span>)); <span class="comment">// 获取大于等于 pos 的结点</span></span><br><span class="line">        <span class="comment">// 如果 node 左边界等于 pos</span></span><br><span class="line">        <span class="keyword">if</span> (node != <span class="keyword">null</span> &amp;&amp; node.left == pos) &#123;</span><br><span class="line">            <span class="keyword">return</span> node;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 如果不存在大于等于其的结点, 取最后一个结点</span></span><br><span class="line">            node = set.last();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 初始化时插入结点为 [0, N], 故存在 lower</span></span><br><span class="line">            node = set.lower(node);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 移除此结点 并新增分割后的结点</span></span><br><span class="line">        <span class="keyword">int</span> left = node.left, right = node.right, val = node.val;</span><br><span class="line">        set.remove(node);</span><br><span class="line">        set.add(<span class="keyword">new</span> Node(left, pos, val));</span><br><span class="line">        node = <span class="keyword">new</span> Node(pos, right, val);</span><br><span class="line">        set.add(node);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 返回分割后右侧结点</span></span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">assign</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 如果使用迭代器需要注意先 split right, 否则不需考虑顺序</span></span><br><span class="line">        Node end = split(right), begin = split(left);</span><br><span class="line">        <span class="comment">// 清空范围内的所有结点, 因为范围内区间可能已经被细分</span></span><br><span class="line">        <span class="keyword">while</span> (set.ceiling(<span class="keyword">new</span> Node(left, <span class="number">0</span>, <span class="number">0</span>)).left &lt; right) &#123;</span><br><span class="line">            set.remove(set.ceiling(<span class="keyword">new</span> Node(left, <span class="number">0</span>, <span class="number">0</span>)));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 加入新结点</span></span><br><span class="line">        set.add(<span class="keyword">new</span> Node(left, right, val));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        Node rNode = split(right);</span><br><span class="line">        Node lNode = split(left);</span><br><span class="line">        <span class="comment">// 判断区间内是否均满足</span></span><br><span class="line">        <span class="keyword">while</span> (lNode.left &lt; rNode.left) &#123;</span><br><span class="line">            <span class="keyword">if</span> (lNode.val != <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            lNode = set.higher(lNode);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">RangeModule</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 初始化必不可少, 因为后续需要区间分割</span></span><br><span class="line">        set.add(<span class="keyword">new</span> Node(<span class="number">0</span>, N, <span class="number">0</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addRange</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        assign(left, right, <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">queryRange</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> check(left, right);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">removeRange</span><span class="params">(<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        assign(left, right, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Final"><a href="#Final" class="headerlink" title="Final"></a>Final</h3><h4 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h4><ol>
+<li><p><strong>保持算法高效的核心在于哪里？</strong></p>
+<p>除了有序集合本身红黑树高效的插入查询之外，还在于 <code>assign</code> 函数清理掉细碎的小区间，合并成大区间，</p>
+<p>这样提高了 <code>query</code> 也就是查询操作的效率，有点 GC 的感觉</p>
+</li>
+<li><p><strong>为什么 C++ 实现 <code>assign</code> 中需要先 <code>split right</code> ?</strong></p>
+<p>这是因为迭代器的原因，先左再右可能会导致迭代器失效，因为修改了 <code>left iterator</code>，</p>
+<p>上述 Java 代码中，就不需要考虑此问题，有兴趣可以自行更换下顺序，看看代码执行结果，</p>
+<p>这里我本身理解也是浅尝则止，是以后需要学习跟进的地方，有关红黑树的实现</p>
+</li>
+<li><p><strong>最开始初始化一个区间是否必须？</strong></p>
+<p>必须，因为后续操作需要操作区间，并且必须是涵盖所有测试数据范围的区间</p>
+</li>
+<li><p><strong>为什么和官方解法的运行时间差距很大？</strong></p>
+<p>因为官方题解是遇到一个新区间或者删除时才会去处理结点，而玛朵莉树是相当于在分裂和合并，</p>
+<p>随着操作的增加，结点数也在增加，固然时间就增加，并且后者有很多 <code>new()</code> 操作，</p>
+<p>附上学到的一个术语：<code>ad-hoc</code>：指先用低成本实现一个简单易理解的算法，如果后续发现瓶颈再去优化</p>
+<blockquote>
+<p><strong>Ad hoc</strong> is a <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/List_of_Latin_phrases">Latin phrase</a> meaning literally ‘to this’. In English, it typically signifies a solution for a specific purpose, problem, or task rather than a <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Generalization">generalized</a> solution adaptable to collateral instances</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h4><p>既然抛砖引玉入门了这道题目，再回到原本的出处<a href="https://link.zhihu.com/?target=https://codeforces.com/problemset/problem/896/C">CF896C</a>，还剩下三个操作没有实现，具体实现就是暴力，</p>
+<p>附上 C++ 伪代码，实现步骤很简单，如果对于上述过程都理解了，自然也就明白了。</p>
+<ol>
+<li><p>区间加</p>
+<blockquote>
+<p><em>l</em> <em>r</em> <em>x</em> : For each <em>i</em> such that <em>l</em> ≤ <em>i</em> ≤ <em>r</em>, assign <em>ai</em> + <em>x</em> to <em>ai</em>.</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(ll l, ll r, ll v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> end = <span class="built_in">split</span>(r + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> it = <span class="built_in">split</span>(l); it != end; it++)</span><br><span class="line">        it-&gt;v += v;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>区间第 K 小值：</p>
+<blockquote>
+<p><em>l</em> <em>r</em> <em>x</em> : Print the <em>x</em>-th smallest number in the index range [<em>l</em>, <em>r</em>], i.e. </p>
+<p>the element at the <em>x</em>-th position if all the elements <em>ai</em> such that <em>l</em> ≤ <em>i</em> ≤ <em>r</em> are taken </p>
+<p>and sorted into an array of non-decreasing integers. It’s guaranteed that 1 ≤ <em>x</em> ≤ <em>r</em> - <em>l</em> + 1.</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">kth</span><span class="params">(ll l, ll r, ll k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> end = <span class="built_in">split</span>(r + <span class="number">1</span>);</span><br><span class="line">    vector&lt;pair&lt;ll, ll&gt;&gt; v; <span class="comment">// 这个pair里存节点的值和区间长度</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> it = <span class="built_in">split</span>(l); it != end; it++)</span><br><span class="line">        v.<span class="built_in">push_back</span>(<span class="built_in">make_pair</span>(it-&gt;v, it-&gt;r - it-&gt;l + <span class="number">1</span>));</span><br><span class="line">    <span class="built_in">sort</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>()); <span class="comment">// 直接按节点的值的大小排下序</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; v.<span class="built_in">size</span>(); i++) <span class="comment">// 然后挨个丢出来，直到丢出k个元素为止</span></span><br><span class="line">    &#123;</span><br><span class="line">        k -= v[i].second;</span><br><span class="line">        <span class="keyword">if</span> (k &lt;= <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> v[i].first;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>区间值求幂的和</p>
+<blockquote>
+<p><em>l</em> <em>r</em> <em>x</em> <em>y</em> : Print the sum of the <em>x</em>-th power of <em>ai</em> such that <em>l</em> ≤ <em>i</em> ≤ <em>r</em>, modulo <em>y</em>, i.e. </p>
+<p><img src="https://www.zhihu.com/equation?tex=%5Csum_%7Bi=l%7D%5E%7Br%7D%7Ba_i%5Ex%7D%5Cbmod+y" alt="[公式]"></p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">sum_of_pow</span><span class="params">(ll l, ll r, ll x, ll y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll tot = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">auto</span> end = <span class="built_in">split</span>(r + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> it = <span class="built_in">split</span>(l); it != end; it++)</span><br><span class="line">        tot = (tot + <span class="built_in">qmi</span>(it-&gt;v, x, y) * (it-&gt;r - it-&gt;l + <span class="number">1</span>)) % y; <span class="comment">// qmi 快速幂</span></span><br><span class="line">    <span class="keyword">return</span> tot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><p>在学习过程中，也接触到一对名词：<strong>在线算法（online algorithm）和离线算法（offline algorithm)</strong></p>
+<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Online_algorithm">维基百科</a>举了这样一个例子，选择排序是离线算法，而插入排序是在线算法。</p>
+<p>那就从这两个算法来看看在线算法和离线算法的区别：</p>
+<p>选择排序是不断地从未排序的元素中找到最大（小）的元素放到排序序列的起始位置，</p>
+<p>插入排序是不断将未排序的序列插入到有序的序列中，有序序列中的元素相对位置会在一定程度上被改变，</p>
+<p>两种排序的本质区别在于，后面的操作对前面操作的结果是否有影响。</p>
+<p><strong>更直观地讲，就是离线算法途中拿出来的结果就是最终结果的一部分，</strong></p>
+<p><strong>而在线算法可能到了最后一步才能得到需要的结果，</strong></p>
+<p><strong>而过程中产生中间结果都是为最后结果的输出而服务的。</strong></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"># 数据结构</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/06/04/%E4%BA%BA%E7%94%9F%E4%B8%83%E5%B9%B4/" rel="prev" title="人生七年">
+      <i class="fa fa-chevron-left"></i> 人生七年
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Preface"><span class="nav-number">1.</span> <span class="nav-text">Preface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Details"><span class="nav-number">2.</span> <span class="nav-text">Details</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E9%9B%86%E5%90%88"><span class="nav-number">2.1.</span> <span class="nav-text">有序集合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%8E%9B%E6%9C%B5%E8%8E%89%E6%A0%91"><span class="nav-number">2.2.</span> <span class="nav-text">玛朵莉树</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Final"><span class="nav-number">3.</span> <span class="nav-text">Final</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%9D%E8%80%83"><span class="nav-number">3.1.</span> <span class="nav-text">思考</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8B%93%E5%B1%95"><span class="nav-number">3.2.</span> <span class="nav-text">拓展</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A5%E5%85%85"><span class="nav-number">3.3.</span> <span class="nav-text">补充</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yuanhao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+      
+        <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+        <div class="widget-wrap">
+          <h3 class="widget-title">Tag Cloud</h3>
+          <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="220" height="250" id="resCanvas" style="width=100%">
+              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Thinking/" rel="tag">Thinking</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a><span class="tag-list-count">2</span></li></ul>
+            </canvas>
+          </div>
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yuanhao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
