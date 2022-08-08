@@ -412,69 +412,11 @@
     
     
     <entry>
-      <title>Spring快速开始</title>
-      <link href="/2022/01/31/1-Spring%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"/>
-      <url>/2022/01/31/1-Spring%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</url>
-      
-        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><p><strong>PS：仅作为个人学习笔记，以后深入学习再补充</strong></p><p>Spring 学习笔记地址：<a href="https://github.com/Eminem-x/Spring">https://github.com/Eminem-x/Spring</a></p><p>SpringBoot学习笔记地址：<a href="https://github.com/Eminem-x/SpringBoot">https://github.com/Eminem-x/SpringBoot</a></p><p>推荐 Spring 学习视频：<a href="https://www.bilibili.com/video/BV1WZ4y1P7Bp?from=search&seid=9648668674109084850&spm_id_from=333.337.0.0">黑马程序员 SSM 框架教程</a></p><p>推荐 SpringBoot 学习视频：<a href="https://www.bilibili.com/video/BV19K4y1L7MT?from=search&seid=14164871616704737958&spm_id_from=333.337.0.0">尚硅谷 雷神 SpringBoot 学习</a></p><p>SpringBoot 学习参考：<a href="http://www.ityouknow.com/springboot/2016/01/06/spring-boot-quick-start.html">ityouknow-SpringBoot学习</a></p><hr><h3 id="Spring程序开发步骤"><a href="#Spring程序开发步骤" class="headerlink" title="Spring程序开发步骤"></a>Spring程序开发步骤</h3><ol><li>导入 Spring 开发的基本包坐标（通过Maven）；</li><li>创建 Bean；</li><li>创建 Spring 核心配置文件；</li><li>在 Spring 配置文件中进行配置；</li><li>使用 Spring 的 API 获得 Bean 实例；</li></ol><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ol><li><p>Dao 是数据访问层，Service 是业务层；</p></li><li><p>Dao 的作用是封装对数据库的访问：CRUD，不涉及业务逻辑；</p></li><li><p>Service 则专注业务逻辑，对于其中需要的数据库操作，通过 Dao 实现；</p></li><li><p>这样的分层是<strong>基于 MVC 架构</strong>而言：</p><p>M是指业务模型（model），V是指用户界面（view），C则是控制器（controller），</p><p>使用MVC的目的是将M和V的实现代码分离，从而使同一个程序可以使用不同的表现形式。</p></li><li><p>分层的作用是<strong>解耦</strong>；</p></li><li><p><strong>对于 Spring 框架：</strong></p><p>（View\Web）表示层调用控制层（Controller），</p><p>控制层调用业务层（Service），</p><p>业务层调用数据访问层（Dao）。</p></li><li><p><strong>Bean 是一个被实例化，组装，并通过 Spring IoC 容器所管理的对象。</strong></p></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java </category>
-          
-          <category> Spring </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Java </tag>
-            
-            <tag> Spring </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>SpringMVC获得请求数据</title>
       <link href="/2022/01/31/10-SpringMVC%E8%8E%B7%E5%BE%97%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE/"/>
       <url>/2022/01/31/10-SpringMVC%E8%8E%B7%E5%BE%97%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE/</url>
       
         <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><p>客户端请求参数的格式是：<strong>name=value&amp;name=value…</strong></p><p>服务器端要获得请求的参数，有时还需要进行数据的封装，</p><h3 id="接收参数类型"><a href="#接收参数类型" class="headerlink" title="接收参数类型"></a>接收参数类型</h3><h4 id="1-基本类型参数"><a href="#1-基本类型参数" class="headerlink" title="1. 基本类型参数"></a>1. 基本类型参数</h4><p>Controller 中的业务方法的参数名称要与请求参数一致，参数值会自动映射匹配</p><h4 id="2-POJO类型参数"><a href="#2-POJO类型参数" class="headerlink" title="2. POJO类型参数"></a>2. POJO类型参数</h4><p>Controller 中的业务方法的 POJO 参数的属性名与请求参数一致，自动映射匹配</p><h4 id="3-数组类型参数"><a href="#3-数组类型参数" class="headerlink" title="3. 数组类型参数"></a>3. 数组类型参数</h4><p>Controller 中的业务方法的 数组名称的与请求参数一致，自动映射匹配</p><h4 id="4-集合类型参数"><a href="#4-集合类型参数" class="headerlink" title="4. 集合类型参数"></a>4. 集合类型参数</h4><ol><li><p>获得集合参数时，需要将集合参数包装到 POJO</p></li><li><p>使用 ajax 提交时，可以指定 contextType 为 json 形式，</p><p>在方法参数位置使用 <strong>@RequsetBody</strong> 可以直接接收集合数据</p></li></ol><hr><h3 id="请求数据乱码问题："><a href="#请求数据乱码问题：" class="headerlink" title="请求数据乱码问题："></a><strong>请求数据乱码问题：</strong></h3><p>当 post 请求时，数据会出现乱码，设置过滤器进行编码的过滤</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--    配置全局过滤器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CharacterEncodingFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>org.springframework.web.filter.CharacterEncodingFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>encoding<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>GBK<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CharacterEncodingFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure><hr><h3 id="参数绑定注解"><a href="#参数绑定注解" class="headerlink" title="参数绑定注解"></a>参数绑定注解</h3><p>当请求与业务方法的参数名称不一致时，就需要通过 <strong>@RequsetParam</strong> 注解显示的绑定</p><ul><li>value：请求参数名称</li><li>required：指定请求参数是否必须包括，默认值为 true</li><li>defaultValue：当没有指定请求参数时，则使用默认值赋值</li></ul><hr><h3 id="获得Restful风格的参数"><a href="#获得Restful风格的参数" class="headerlink" title="获得Restful风格的参数"></a>获得Restful风格的参数</h3><p>Restful 是一种软件架构风格、设计风格，而不是标准，</p><p>主要用于客户端和服务器交互类的软件，基于此风格设计，</p><p>可以使得软件更加简洁，具有层次，易于实现缓存机制。</p><p><strong>使用”url + 请求方式” 表示一次请求目的：</strong></p><ul><li>GET：用于获取资源</li><li>POST：用于新建资源</li><li>PUT：用于更新资源</li><li>DELETE：用于删除资源</li></ul><p>在方法中使用 <strong>@PathVariable</strong> 注解进行占位符的匹配获取。</p><hr><h3 id="自定义类型转换器"><a href="#自定义类型转换器" class="headerlink" title="自定义类型转换器"></a>自定义类型转换器</h3><p>默认例子：客户端提交的字符串转换成 int 型进行参数设置</p><p>现实需求：日期类型的数据就需要自定义类型转换器</p><p><strong>具体开发步骤：</strong></p><ol><li>定义转换器类实现 Converter 接口</li><li>在配置文件中声明转换器</li><li>在 &lt;annotation-driven&gt; 中引用转换器</li></ol><hr><h3 id="获得Servlet相关API"><a href="#获得Servlet相关API" class="headerlink" title="获得Servlet相关API"></a>获得Servlet相关API</h3><p>SpringMVC支持使用原始ServletAPI对象作为控制器方法的参数进行注入：</p><ul><li>HttpServletRequest</li><li>HttpServletResponse</li><li>HttpSession</li></ul><hr><h3 id="获得请求头"><a href="#获得请求头" class="headerlink" title="获得请求头"></a>获得请求头</h3><h4 id="1-RequestHeader"><a href="#1-RequestHeader" class="headerlink" title="1. @RequestHeader"></a>1. @RequestHeader</h4><p>注解属性如下：</p><ul><li>value：请求头的名称</li><li>required：是否必须携带此请求头</li></ul><h4 id="2-CookieValue"><a href="#2-CookieValue" class="headerlink" title="2. @CookieValue"></a>2. @CookieValue</h4><p>注解属性如下：</p><ul><li>value：指定 cookie 的名称</li><li>required：是否必须携带此 cookie</li></ul><hr><h3 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h3><h4 id="1-文件上传客户端三要素"><a href="#1-文件上传客户端三要素" class="headerlink" title="1. 文件上传客户端三要素"></a>1. 文件上传客户端三要素</h4><ul><li>表单项 type = “file”</li><li>表单的提交方式是 post</li><li>表单的 enctype 属性是多部分表单形式</li></ul><h4 id="2-单文件上传步骤"><a href="#2-单文件上传步骤" class="headerlink" title="2. 单文件上传步骤"></a>2. 单文件上传步骤</h4><ul><li><p>导入 fileupload 和 io 坐标</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-fileupload<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-fileupload<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-io<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-io<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>配置文件上传解析器</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--    配置文件上传解析器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;multipartResolver&quot;</span> <span class="attr">class</span>=<span class="string">&quot;org.springframework.web.multipart.commons.CommonsMultipartResolver&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;defaultEncoding&quot;</span> <span class="attr">value</span>=<span class="string">&quot;UTF-8&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;maxUploadSize&quot;</span> <span class="attr">value</span>=<span class="string">&quot;500000&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>编写文件上传代码</p></li></ul><h4 id="3-多文件上传"><a href="#3-多文件上传" class="headerlink" title="3. 多文件上传"></a>3. 多文件上传</h4><p>避免重复步骤，将方法参数 MultipartFile 类型修改为 MultipartFile[] 即可</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java </category>
-          
-          <category> Spring </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Java </tag>
-            
-            <tag> Spring </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>SpringMVC拦截器</title>
-      <link href="/2022/01/31/13-SpringMVC%E6%8B%A6%E6%88%AA%E5%99%A8/"/>
-      <url>/2022/01/31/13-SpringMVC%E6%8B%A6%E6%88%AA%E5%99%A8/</url>
-      
-        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="拦截器作用"><a href="#拦截器作用" class="headerlink" title="拦截器作用"></a>拦截器作用</h3><p>SpringMVC 的拦截器类似于 Servlet 开发中的过滤器 Filter，用于对处理器进行<strong>预处理</strong>和<strong>后处理</strong>；</p><p>将拦截器按一定顺序连接成一条链，这条链成为<strong>拦截器链（Interceptor Chain）</strong>；</p><p>在访问被拦截的方法或字段时，拦截器链中的拦截器就会按之前定义的顺序被调用；</p><p>拦截器也是 <strong>AOP</strong> 思想的具体实现。</p><h3 id="拦截器和过滤器区别"><a href="#拦截器和过滤器区别" class="headerlink" title="拦截器和过滤器区别"></a>拦截器和过滤器区别</h3><table><thead><tr><th>区别</th><th align="left">过滤器（Filter）</th><th>拦截器（Interceptor）</th></tr></thead><tbody><tr><td>适用范围</td><td align="left">servlet 规范中的一部分，<br />任何 Java Web 工程都可以使用</td><td>SpringMVC框架才能使用</td></tr><tr><td>拦截范围</td><td align="left">在 url-pattern 中配置 /* 后，<br />可以对所有要访问的资源拦截</td><td>在 &lt;mvc:mapping path=”” /&gt; 中配置 /** 后，也可以全部拦截，<br />但是可以通过  &lt;mvc:exclude-mapping path=”” /&gt;标签，<br />排除不需要拦截的资源</td></tr></tbody></table><h3 id="自定义拦截器"><a href="#自定义拦截器" class="headerlink" title="自定义拦截器"></a>自定义拦截器</h3><ol><li><p>创建拦截器类实现 HandlerInterceptor 接口</p><table><thead><tr><th>方法名</th><th>说明</th></tr></thead><tbody><tr><td>preHandle()</td><td>方法将在请求处理之前进行调用，返回值为布尔类型，<br />当返回值为 false 时，表示请求结束；<br />当返回值为 true 时，继续调用下一个拦截器的 preHandle 方法</td></tr><tr><td>postHandle()</td><td>方法在 preHandle 方法返回值为 true 时才能被调用，<br />并且会在视图返回渲染之前被调用</td></tr><tr><td>afterCompletion()</td><td>在整个请求结束后即渲染视图之后执行</td></tr></tbody></table></li><li><p>配置拦截器在 spring-mvc.xml 文件中</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--    配置拦截器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mvc:interceptors</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mvc:interceptor</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--    对哪些资源执行拦截操作--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mvc:mapping</span> <span class="attr">path</span>=<span class="string">&quot;/**&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.yuanhao.controller.interceptor.MyInterceptor1&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mvc:interceptor</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mvc:interceptors</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>测试拦截器</p></li></ol>]]></content>
       
       
       <categories>
@@ -528,11 +470,69 @@
     
     
     <entry>
+      <title>Spring快速开始</title>
+      <link href="/2022/01/31/1-Spring%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"/>
+      <url>/2022/01/31/1-Spring%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</url>
+      
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><p><strong>PS：仅作为个人学习笔记，以后深入学习再补充</strong></p><p>Spring 学习笔记地址：<a href="https://github.com/Eminem-x/Spring">https://github.com/Eminem-x/Spring</a></p><p>SpringBoot学习笔记地址：<a href="https://github.com/Eminem-x/SpringBoot">https://github.com/Eminem-x/SpringBoot</a></p><p>推荐 Spring 学习视频：<a href="https://www.bilibili.com/video/BV1WZ4y1P7Bp?from=search&seid=9648668674109084850&spm_id_from=333.337.0.0">黑马程序员 SSM 框架教程</a></p><p>推荐 SpringBoot 学习视频：<a href="https://www.bilibili.com/video/BV19K4y1L7MT?from=search&seid=14164871616704737958&spm_id_from=333.337.0.0">尚硅谷 雷神 SpringBoot 学习</a></p><p>SpringBoot 学习参考：<a href="http://www.ityouknow.com/springboot/2016/01/06/spring-boot-quick-start.html">ityouknow-SpringBoot学习</a></p><hr><h3 id="Spring程序开发步骤"><a href="#Spring程序开发步骤" class="headerlink" title="Spring程序开发步骤"></a>Spring程序开发步骤</h3><ol><li>导入 Spring 开发的基本包坐标（通过Maven）；</li><li>创建 Bean；</li><li>创建 Spring 核心配置文件；</li><li>在 Spring 配置文件中进行配置；</li><li>使用 Spring 的 API 获得 Bean 实例；</li></ol><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ol><li><p>Dao 是数据访问层，Service 是业务层；</p></li><li><p>Dao 的作用是封装对数据库的访问：CRUD，不涉及业务逻辑；</p></li><li><p>Service 则专注业务逻辑，对于其中需要的数据库操作，通过 Dao 实现；</p></li><li><p>这样的分层是<strong>基于 MVC 架构</strong>而言：</p><p>M是指业务模型（model），V是指用户界面（view），C则是控制器（controller），</p><p>使用MVC的目的是将M和V的实现代码分离，从而使同一个程序可以使用不同的表现形式。</p></li><li><p>分层的作用是<strong>解耦</strong>；</p></li><li><p><strong>对于 Spring 框架：</strong></p><p>（View\Web）表示层调用控制层（Controller），</p><p>控制层调用业务层（Service），</p><p>业务层调用数据访问层（Dao）。</p></li><li><p><strong>Bean 是一个被实例化，组装，并通过 Spring IoC 容器所管理的对象。</strong></p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+          <category> Spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Spring </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Spring环境搭建</title>
       <link href="/2022/01/31/12-Spring%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
       <url>/2022/01/31/12-Spring%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
       
         <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="环境搭建步骤"><a href="#环境搭建步骤" class="headerlink" title="环境搭建步骤"></a>环境搭建步骤</h3><ol><li>创建工程（Project&amp;Module）</li><li>导入静态页面</li><li>导入所需坐标</li><li>创建包结构（controller、service、dao、domain、utils）</li><li>导入数据库脚本</li><li>创建 POJO 类</li><li>创建配置文件</li></ol><h3 id="角色列表展示的步骤"><a href="#角色列表展示的步骤" class="headerlink" title="角色列表展示的步骤"></a>角色列表展示的步骤</h3><ol><li>点击角色管理菜单发送请求到服务端</li><li>创建 RoleController 和 showList() 方法</li><li>创建 RoleService 和 showList() 方法</li><li>创建 RoleDao 和 findAll() 方法</li><li>使用 JdbcTemplate 完成查询操作</li><li>将查询数据存储到 Model 中</li><li>转发到 role-list.jsp 页面进行展示</li></ol><h3 id="角色添加的步骤"><a href="#角色添加的步骤" class="headerlink" title="角色添加的步骤"></a>角色添加的步骤</h3><ol><li>点击列表页面新建按钮跳转到角色添加页面</li><li>输入角色信息，剪辑保存按钮，表单数据提交服务器</li><li>编写 RoleController 的 save() 方法</li><li>编写 RoleService 的 save() 方法</li><li>编写 RoleDao 的 save() 方法</li><li>使用 JdbcTemplate 保存 Role 数据到 sys_role</li><li>跳转回角色列表页面</li></ol><h3 id="用户登录权限控制"><a href="#用户登录权限控制" class="headerlink" title="用户登录权限控制"></a>用户登录权限控制</h3><p>用户没有登录的情况下，不能对后台菜单进行访问操作，点击菜单跳转到登陆页面，</p><p>只有用户登录成功后才能进行后台功能的操作。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+          <category> Spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Spring </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SpringMVC拦截器</title>
+      <link href="/2022/01/31/13-SpringMVC%E6%8B%A6%E6%88%AA%E5%99%A8/"/>
+      <url>/2022/01/31/13-SpringMVC%E6%8B%A6%E6%88%AA%E5%99%A8/</url>
+      
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="拦截器作用"><a href="#拦截器作用" class="headerlink" title="拦截器作用"></a>拦截器作用</h3><p>SpringMVC 的拦截器类似于 Servlet 开发中的过滤器 Filter，用于对处理器进行<strong>预处理</strong>和<strong>后处理</strong>；</p><p>将拦截器按一定顺序连接成一条链，这条链成为<strong>拦截器链（Interceptor Chain）</strong>；</p><p>在访问被拦截的方法或字段时，拦截器链中的拦截器就会按之前定义的顺序被调用；</p><p>拦截器也是 <strong>AOP</strong> 思想的具体实现。</p><h3 id="拦截器和过滤器区别"><a href="#拦截器和过滤器区别" class="headerlink" title="拦截器和过滤器区别"></a>拦截器和过滤器区别</h3><table><thead><tr><th>区别</th><th align="left">过滤器（Filter）</th><th>拦截器（Interceptor）</th></tr></thead><tbody><tr><td>适用范围</td><td align="left">servlet 规范中的一部分，<br />任何 Java Web 工程都可以使用</td><td>SpringMVC框架才能使用</td></tr><tr><td>拦截范围</td><td align="left">在 url-pattern 中配置 /* 后，<br />可以对所有要访问的资源拦截</td><td>在 &lt;mvc:mapping path=”” /&gt; 中配置 /** 后，也可以全部拦截，<br />但是可以通过  &lt;mvc:exclude-mapping path=”” /&gt;标签，<br />排除不需要拦截的资源</td></tr></tbody></table><h3 id="自定义拦截器"><a href="#自定义拦截器" class="headerlink" title="自定义拦截器"></a>自定义拦截器</h3><ol><li><p>创建拦截器类实现 HandlerInterceptor 接口</p><table><thead><tr><th>方法名</th><th>说明</th></tr></thead><tbody><tr><td>preHandle()</td><td>方法将在请求处理之前进行调用，返回值为布尔类型，<br />当返回值为 false 时，表示请求结束；<br />当返回值为 true 时，继续调用下一个拦截器的 preHandle 方法</td></tr><tr><td>postHandle()</td><td>方法在 preHandle 方法返回值为 true 时才能被调用，<br />并且会在视图返回渲染之前被调用</td></tr><tr><td>afterCompletion()</td><td>在整个请求结束后即渲染视图之后执行</td></tr></tbody></table></li><li><p>配置拦截器在 spring-mvc.xml 文件中</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--    配置拦截器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mvc:interceptors</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mvc:interceptor</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--    对哪些资源执行拦截操作--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mvc:mapping</span> <span class="attr">path</span>=<span class="string">&quot;/**&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.yuanhao.controller.interceptor.MyInterceptor1&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mvc:interceptor</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mvc:interceptors</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>测试拦截器</p></li></ol>]]></content>
       
       
       <categories>
@@ -644,6 +644,31 @@
     
     
     <entry>
+      <title>Redis特性</title>
+      <link href="/2022/01/31/2-Redis%E7%89%B9%E6%80%A7/"/>
+      <url>/2022/01/31/2-Redis%E7%89%B9%E6%80%A7/</url>
+      
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>配置信息存储在 <code>redis.windows.conf</code> 文件</p><hr><h3 id="发布订阅"><a href="#发布订阅" class="headerlink" title="发布订阅"></a>发布订阅</h3><h4 id="1-概念"><a href="#1-概念" class="headerlink" title="1. 概念"></a>1. 概念</h4><p>发布订阅（pub / sub）是一种消息通信模式：发送者（pub）发送信息，订阅者（sub）接收信息，</p><p>Redis 客户端可以订阅任意数量的频道，发布的消息没有持久化。</p><h4 id="2-命令行实现"><a href="#2-命令行实现" class="headerlink" title="2. 命令行实现"></a>2. 命令行实现</h4><ul><li><p>打开一个客户端订阅 channel1：<code>subscribe channel1</code></p></li><li><p>打开另一个客户端，给 channel1 发布消息：<code>public channel1 helloworld</code></p></li><li><p>打开第一个客户端可以接收到发送的信息</p></li></ul><hr><h3 id="新数据类型"><a href="#新数据类型" class="headerlink" title="新数据类型"></a>新数据类型</h3><h4 id="1-Bitmaps"><a href="#1-Bitmaps" class="headerlink" title="1. Bitmaps"></a>1. Bitmaps</h4><p>合理地使用操作位能够有效地提高内存使用率和开发效率</p><p>Redis 提供 Bitmaps 实现对位的操作：</p><ul><li><p>本身不是一种数据类型，实际上就是字符串，不过可以对位进行操作</p></li><li><p>提供单独的一套命令，可以堪称一个以位为单位的数组</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">setbit key <span class="keyword">offset</span> <span class="keyword">value</span>设置 Bitmaps 中某个偏移量的值</span><br><span class="line">getbit key <span class="keyword">offset</span>获取 Bitmaps 中某个偏移量的值</span><br><span class="line">bitcount key <span class="keyword">start</span> <span class="keyword">end</span>统计字符串被设置为 <span class="number">1</span> 的 bit 数</span><br><span class="line">bitop op dest src多功能符合操作</span><br></pre></td></tr></table></figure></li></ul><h4 id="2-HyperLogLog"><a href="#2-HyperLogLog" class="headerlink" title="2. HyperLogLog"></a>2. HyperLogLog</h4><p>工作当中，会遇到<strong>基数问题：</strong>求集合中不重复元素的个数，解决方案：</p><ol><li>数据存储在 MySQL 中，使用 <code>distinct count</code> 计算不重复个数</li><li>使用 Redis 提供的 hash、set、bitmaps 等数据结构来处理</li></ol><p>以上方案的结果准确，但是随着数据规模增加，导致占用空间非常大，</p><p><strong>而 HyperLogLog 可以降低一定的精度来平衡存储空间，用来做基数统计。</strong></p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pfadd key element添加指定元素到 HyperLogLog 中</span><br><span class="line">pfcount key计算 HLL 近似基数值</span><br><span class="line">pfmerge dest src将一个或多个 HLL 合并后的结果存在 dest 中 </span><br></pre></td></tr></table></figure><h4 id="3-Geospatial"><a href="#3-Geospatial" class="headerlink" title="3. Geospatial"></a>3. Geospatial</h4><p>对 GEO 类型的支持，<strong>GEO（Geographic）地理信息的缩写，二维坐标</strong></p><p>基于该类型，提供了经纬度设置、范围查询、距离查询等常见操作。</p><hr><h3 id="事务和锁机制"><a href="#事务和锁机制" class="headerlink" title="事务和锁机制"></a>事务和锁机制</h3><h4 id="1-事务概念"><a href="#1-事务概念" class="headerlink" title="1. 事务概念"></a>1. 事务概念</h4><p>Redis 事务是一个单独的隔离操作：事务中的所有命令都会序列化、按顺序地执行，</p><p>事务在执行的过程中，不会被其他客户端发送来的命令请求所打断。</p><h4 id="2-事务作用"><a href="#2-事务作用" class="headerlink" title="2. 事务作用"></a>2. 事务作用</h4><p>Redis 事务的主要作用就是串联多个命令防止别的命令插队</p><h4 id="3-操作命令"><a href="#3-操作命令" class="headerlink" title="3. 操作命令"></a>3. 操作命令</h4><ul><li>Multi：输入的命令依次进入命令队列中</li><li>Exec：将之前的命令队列中的命令依次执行</li><li>Discard：放弃组队</li></ul><h4 id="4-事务特性"><a href="#4-事务特性" class="headerlink" title="4. 事务特性"></a>4. 事务特性</h4><ol><li><p><strong>单独的隔离操作</strong></p><p>事务中的所有命令都会序列化、按顺序地执行，事务在执行的过程中，</p><p>不会被其他客户端发送来的命令请求所打断</p></li><li><p><strong>没有隔离级别的概念</strong></p><p>队列中的命令没有提交之前都不会实际被执行，</p><p>因为事务提交前任何指令都不会被实际执行</p></li><li><p><strong>不保证原子性</strong></p><p>事务中如果有一条命令执行失败，其后的命令仍然会被执行，不回滚</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Redis </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Mybatis基础</title>
       <link href="/2022/01/31/17-Mybatis%E5%9F%BA%E7%A1%80/"/>
       <url>/2022/01/31/17-Mybatis%E5%9F%BA%E7%A1%80/</url>
@@ -673,144 +698,11 @@
     
     
     <entry>
-      <title>Redis特性</title>
-      <link href="/2022/01/31/2-Redis%E7%89%B9%E6%80%A7/"/>
-      <url>/2022/01/31/2-Redis%E7%89%B9%E6%80%A7/</url>
-      
-        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>配置信息存储在 <code>redis.windows.conf</code> 文件</p><hr><h3 id="发布订阅"><a href="#发布订阅" class="headerlink" title="发布订阅"></a>发布订阅</h3><h4 id="1-概念"><a href="#1-概念" class="headerlink" title="1. 概念"></a>1. 概念</h4><p>发布订阅（pub / sub）是一种消息通信模式：发送者（pub）发送信息，订阅者（sub）接收信息，</p><p>Redis 客户端可以订阅任意数量的频道，发布的消息没有持久化。</p><h4 id="2-命令行实现"><a href="#2-命令行实现" class="headerlink" title="2. 命令行实现"></a>2. 命令行实现</h4><ul><li><p>打开一个客户端订阅 channel1：<code>subscribe channel1</code></p></li><li><p>打开另一个客户端，给 channel1 发布消息：<code>public channel1 helloworld</code></p></li><li><p>打开第一个客户端可以接收到发送的信息</p></li></ul><hr><h3 id="新数据类型"><a href="#新数据类型" class="headerlink" title="新数据类型"></a>新数据类型</h3><h4 id="1-Bitmaps"><a href="#1-Bitmaps" class="headerlink" title="1. Bitmaps"></a>1. Bitmaps</h4><p>合理地使用操作位能够有效地提高内存使用率和开发效率</p><p>Redis 提供 Bitmaps 实现对位的操作：</p><ul><li><p>本身不是一种数据类型，实际上就是字符串，不过可以对位进行操作</p></li><li><p>提供单独的一套命令，可以堪称一个以位为单位的数组</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">setbit key <span class="keyword">offset</span> <span class="keyword">value</span>设置 Bitmaps 中某个偏移量的值</span><br><span class="line">getbit key <span class="keyword">offset</span>获取 Bitmaps 中某个偏移量的值</span><br><span class="line">bitcount key <span class="keyword">start</span> <span class="keyword">end</span>统计字符串被设置为 <span class="number">1</span> 的 bit 数</span><br><span class="line">bitop op dest src多功能符合操作</span><br></pre></td></tr></table></figure></li></ul><h4 id="2-HyperLogLog"><a href="#2-HyperLogLog" class="headerlink" title="2. HyperLogLog"></a>2. HyperLogLog</h4><p>工作当中，会遇到<strong>基数问题：</strong>求集合中不重复元素的个数，解决方案：</p><ol><li>数据存储在 MySQL 中，使用 <code>distinct count</code> 计算不重复个数</li><li>使用 Redis 提供的 hash、set、bitmaps 等数据结构来处理</li></ol><p>以上方案的结果准确，但是随着数据规模增加，导致占用空间非常大，</p><p><strong>而 HyperLogLog 可以降低一定的精度来平衡存储空间，用来做基数统计。</strong></p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pfadd key element添加指定元素到 HyperLogLog 中</span><br><span class="line">pfcount key计算 HLL 近似基数值</span><br><span class="line">pfmerge dest src将一个或多个 HLL 合并后的结果存在 dest 中 </span><br></pre></td></tr></table></figure><h4 id="3-Geospatial"><a href="#3-Geospatial" class="headerlink" title="3. Geospatial"></a>3. Geospatial</h4><p>对 GEO 类型的支持，<strong>GEO（Geographic）地理信息的缩写，二维坐标</strong></p><p>基于该类型，提供了经纬度设置、范围查询、距离查询等常见操作。</p><hr><h3 id="事务和锁机制"><a href="#事务和锁机制" class="headerlink" title="事务和锁机制"></a>事务和锁机制</h3><h4 id="1-事务概念"><a href="#1-事务概念" class="headerlink" title="1. 事务概念"></a>1. 事务概念</h4><p>Redis 事务是一个单独的隔离操作：事务中的所有命令都会序列化、按顺序地执行，</p><p>事务在执行的过程中，不会被其他客户端发送来的命令请求所打断。</p><h4 id="2-事务作用"><a href="#2-事务作用" class="headerlink" title="2. 事务作用"></a>2. 事务作用</h4><p>Redis 事务的主要作用就是串联多个命令防止别的命令插队</p><h4 id="3-操作命令"><a href="#3-操作命令" class="headerlink" title="3. 操作命令"></a>3. 操作命令</h4><ul><li>Multi：输入的命令依次进入命令队列中</li><li>Exec：将之前的命令队列中的命令依次执行</li><li>Discard：放弃组队</li></ul><h4 id="4-事务特性"><a href="#4-事务特性" class="headerlink" title="4. 事务特性"></a>4. 事务特性</h4><ol><li><p><strong>单独的隔离操作</strong></p><p>事务中的所有命令都会序列化、按顺序地执行，事务在执行的过程中，</p><p>不会被其他客户端发送来的命令请求所打断</p></li><li><p><strong>没有隔离级别的概念</strong></p><p>队列中的命令没有提交之前都不会实际被执行，</p><p>因为事务提交前任何指令都不会被实际执行</p></li><li><p><strong>不保证原子性</strong></p><p>事务中如果有一条命令执行失败，其后的命令仍然会被执行，不回滚</p></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> Redis </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Redis </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Redis进阶</title>
-      <link href="/2022/01/31/3-Redis%E8%BF%9B%E9%98%B6/"/>
-      <url>/2022/01/31/3-Redis%E8%BF%9B%E9%98%B6/</url>
-      
-        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="RDB（Redis-DataBase）"><a href="#RDB（Redis-DataBase）" class="headerlink" title="RDB（Redis DataBase）"></a><strong>RDB</strong>（Redis DataBase）</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>在指定时间间隔内将内存中的数据集快照写入磁盘</p><h4 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h4><p>Redis 会<strong>单独创建（fork）</strong>一个子进程来进行持久化，会先将数据写入到一个临时文件，</p><p>待持久化过程结束，再用临时文件替换上次持久化好的文件，<strong>默认 dump.rdb</strong></p><h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h4><p>优点：</p><ol><li><p>整个过程中，主进程不进行任何 IO 操作，这就确保了极高的性能</p></li><li><p>如果对数据恢复的完整性不敏感，那么比 AOF 更加高效。</p></li><li><p>节省磁盘空间，恢复速度快</p></li></ol><p>缺点：</p><ol><li>最后一次持久化后的数据可能丢失</li><li>虽然使用了写时复制技术，但是如果数据庞大还是比较消耗性能</li><li>Fork 的时候内存中的数据被克隆一份，大致 2 倍的膨胀性需要考虑</li></ol><h4 id="Fork"><a href="#Fork" class="headerlink" title="Fork"></a>Fork</h4><ol><li><p>Fork 的作用是复制一个与当前进程一样的进程，所有的数据均一致，</p><p>但是是一个全新的进程，并作为原进程的子进程</p></li><li><p>写时复制技术</p></li><li><p>一般情况父进程和子进程共用一段物理内存</p></li></ol><hr><h3 id="AOF（Append-Only-File）"><a href="#AOF（Append-Only-File）" class="headerlink" title="AOF（Append Only File）"></a><strong>AOF</strong>（Append Only File）</h3><ol><li><h4 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h4><p>以日志的形式来记录每个写操作（增量保存），</p><p>将 Redis 执行过的所有写指令记录下来（读操作不记录），</p><p>只许追加文件但不可以改写文件，Redis 启动时会读取文件重构数据</p></li><li><h4 id="流程-1"><a href="#流程-1" class="headerlink" title="流程"></a>流程</h4><ul><li>客户端的请求写命令会被 append 追加到 AOF 缓冲区内</li><li>AOF 缓存区根据 AOF 持久化策略将操作 sync 同步到磁盘 AOF 文件</li><li>AOF 文件大小超过重写策略或手动重写时，进行 rewrite 重写和压缩</li><li>Redis 服务启动时，会重新加载 AOF 文件中的写操作恢复数据</li></ul></li><li><h4 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h4><ol><li>AOF 默认不开启，需要在配置文件中将 <code>appendonly</code> 改为 <code>yes</code></li><li>AOF 和 RDB 同时开启时，系统默认取 AOF 的数据<strong>（数据不会存在丢失）</strong></li><li>异常通过 <code>redis-check-aof --fix appendonly,aof</code> 恢复文件，重启即可</li><li>同步频率设置 appendfsync：<ul><li>always：始终同步，每次 Redis 的写入都会立刻记入日志，完整性好但性能差</li><li>everysec：每秒同步，如果宕机，本秒的数据可能丢失</li><li>no：不主动进行同步，把同步时机交给操作系统</li></ul></li><li>Rewrite 压缩：避免 AOF 文件过大，采用重写机制，将内容压缩</li></ol></li><li><h4 id="优缺点-1"><a href="#优缺点-1" class="headerlink" title="优缺点"></a>优缺点</h4><p>优点：</p><ol><li>备份机制更稳健，丢失数据概率更低</li><li>可读的日志文本，可以处理误操作</li></ol><p>缺点：</p><ol><li>占用更多的磁盘空间</li><li>恢复备份速度慢</li><li>每次读写都同步的话，存在一定的性能压力</li><li>存在个别 bug，造成恢复不能</li></ol></li></ol><hr><h3 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h3><ol><li>官方推荐两个都启用</li><li>如果对数据不敏感，可以单独使用 RDB</li><li>不建议单独使用 AOF，可能会出现 bug</li><li>如果只是做纯内存缓存，可以都不用</li></ol><hr><h3 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h3><ol><li><h4 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a><strong>概念</strong></h4><p>主机数据更新后根据配置和策略，自动同步到备机的 <strong>master/slaver 机制，</strong></p><p>master 以写为主，slaver 以读为主，但是会存在<strong>复制延时</strong>的情况，</p><p>当系统繁忙或 slaver 机器数量增加的时候，延迟问题会更加严重</p></li><li><h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a><strong>作用</strong></h4><ul><li>读写分离，性能拓展</li><li>容灾快速恢复</li></ul></li><li><h4 id="搭建简单的一主两从"><a href="#搭建简单的一主两从" class="headerlink" title="搭建简单的一主两从"></a><strong>搭建简单的一主两从</strong></h4><ol><li><p>创建 <code>/myRedis</code> 文件夹，拷贝 <code>redis.Windows.conf</code> 文件至目录下</p></li><li><p>配置一主两从，创建三个配置文件</p><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">redis6379.<span class="keyword">conf</span></span><br><span class="line">redis6380.<span class="keyword">conf</span></span><br><span class="line">redis6381.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure></li><li><p>在每个配置文件中写入以下内容（替换 6379 即可）</p><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">include</span> redis.windows.<span class="keyword">conf</span></span><br><span class="line">pidfile /<span class="keyword">var</span>/<span class="keyword">run</span>/redis_6379.pid</span><br><span class="line">port 6379</span><br><span class="line">dbfilename dump6379.rdb</span><br></pre></td></tr></table></figure></li><li><p>启动三个 Redis 服务</p><ul><li>查看当前主机运行状况</li><li>在从机上执行 <code>slaveof</code> 主机 ip 端口号</li><li><code>SLAVEOF 127.0.0.1 6379</code> 配置主从关系</li><li>验证主从的基本性质，master 以写为主，slaver 以读为主</li></ul></li></ol></li><li><h4 id="主从复制特点"><a href="#主从复制特点" class="headerlink" title="主从复制特点"></a><strong>主从复制特点</strong></h4><ul><li>一主二仆</li><li>薪火相传</li><li>反客为主</li></ul></li><li><h4 id="哨兵模式"><a href="#哨兵模式" class="headerlink" title="哨兵模式"></a><strong>哨兵模式</strong></h4><ol><li><p>反客为主的自动版，能够后台监控主机是否故障，根据投票数将从库转为主库</p></li><li><p>模拟案例</p><ol><li><p>建立一个简易的一主二仆模式</p></li><li><p>在 <code>/myRedis</code> 目录下建立 <code>sentinel.conf</code> 文件</p></li><li><p>写入 <code>sentinel monitor mymaster 127.0.0.1 6379 1</code> </p><p><code>mymaster</code> 为监控对象起的名称，<code>1</code> 为至少有多少个哨兵同意迁移的数量</p></li><li><p>如果你使用 <code>redis-sentinel</code> 可执行文件，你可以使用下面的命令来运行 <code>Sentinel</code>：</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-sentinel <span class="regexp">/path/</span>to/sentinel.conf</span><br></pre></td></tr></table></figure><p>另外，你可以直接使用 <code>redis-server</code> 并以 <code>Sentinel</code> 模式来启动：</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">server</span> /<span class="type">path</span>/<span class="keyword">to</span>/sentinel.conf <span class="comment">--sentinel</span></span><br></pre></td></tr></table></figure></li><li><p>将主机关闭，查看结果即可</p></li></ol></li><li><p>选择条件依次如下</p><ul><li>选择优先级靠前的（redis.conf 中的 slave-priority 值越小优先级越高）</li><li>选择偏移量最大的（获得最全原主机数据的从服务）</li><li>选择 runid 最小地从服务（每个 Redis 启动后随机生成的 40 位 runid）</li></ul></li></ol></li></ol><hr><h3 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h3><ol><li><h5 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h5>Redis 集群实现了对 Redis 的水平扩容，即启动 N 个 Redis 节点，将整个数据库分布存储在这 N 个节点中，每个节点存储总数据的 1/N，集群通过分区来提供一定程度的可用性，即使集群中有一部分节点失效或者无法进行通讯，集群也可以继续处理命令请求</li><li><h5 id="搭建简易集群"><a href="#搭建简易集群" class="headerlink" title="搭建简易集群"></a>搭建简易集群</h5><ol><li><p>在目录下创建六份实例 <code>redis.conf</code></p></li><li><p>在主从的基础上，添加以下内容（替换 6379 即可）</p><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cluster</span>-enabled yes</span><br><span class="line"><span class="keyword">cluster</span>-config-<span class="keyword">file</span> nodes-6379.<span class="keyword">conf</span></span><br><span class="line"><span class="keyword">cluster</span>-node-timeout 15000</span><br></pre></td></tr></table></figure></li><li><p>启动六个 Redis 服务，将节点合成一个集群</p><p>启动服务后，确保所有的 <code>nodes-xxxx.conf</code> 文件生成正常</p><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli --cluster create --cluster-replicas <span class="number">1 127.0.0</span>.<span class="number">1:6379 127</span>.<span class="number">0</span>.<span class="number">0.1:6380</span> <span class="number">127.0.0.1</span>:<span class="number">6381 127.0</span>.<span class="number">0.1:6389</span> <span class="number">127.0.0.1</span>:<span class="number">6390 127.0</span>.<span class="number">0.1:6391</span></span><br></pre></td></tr></table></figure><p>通过任意节点进入集群 <code>redis-cli.exe -p 6379</code></p><p>查看集群节点信息 <code>cluster nodes</code></p></li></ol></li><li><h5 id="如何分配节点"><a href="#如何分配节点" class="headerlink" title="如何分配节点"></a>如何分配节点</h5><code>--cluster-replicas 1</code> 表示为集群中的每个主节点创建一个从节点分配原则尽量保证每个主数据库运行在不同的 IP 地址，每个主库和从库不在一个 IP 地址上</li><li><h5 id="插槽-Hash-Slot"><a href="#插槽-Hash-Slot" class="headerlink" title="插槽 Hash Slot"></a>插槽 Hash Slot</h5>一个集群包含 <code>16384</code> 个插槽，数据库中的每个键都属于其中一个，集群使用公式 <code>CRC16(key) % 16384</code> 来计算 key 属于哪个槽，而集群中的每个节点负责处理一部分插槽</li><li><strong>故障恢复</strong><ul><li><p>如果主节点宕机，从节点根据超时时间自动升为主节点</p></li><li><p>主节点恢复后，主节点变成从机</p></li><li><p>如果所有某段插槽的主从节点都宕机，</p><p>集群根据 <code>cluster-require-full-coverage</code> 是否宕机</p></li></ul></li><li><h5 id="优缺点-2"><a href="#优缺点-2" class="headerlink" title="优缺点"></a>优缺点</h5>优点：<ol><li>实现扩容</li><li>分摊压力</li><li>无中心配置相对简单</li></ol></li></ol><p>   缺点：</p><pre><code>  1. 多键操作是不支持的  2. 多键的 Redis 事务是不被支持的，lua 脚本不被支持  3. 出现较晚，目前整体迁移复杂度较大</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> Redis </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Redis </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>SSM框架整合</title>
       <link href="/2022/01/31/18-SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88/"/>
       <url>/2022/01/31/18-SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88/</url>
       
         <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h3><p>从 GitHub 上 Fork 的项目：<a href="https://github.com/liyifeng1994/ssm/tree/master/src">https://github.com/liyifeng1994/ssm/tree/master/src</a></p><p>并且该项目有详细的整合流程：<a href="https://blog.csdn.net/qq598535550/article/details/51703190">https://blog.csdn.net/qq598535550/article/details/51703190</a></p><p>但是因为是几年前的项目，许多包的版本过时，无法正常启动，所以重新构建了整个项目，</p><p>跟着原作者的流程完成，整体不会出现太难解决的问题，并且该项目并无具体 web实现，</p><p>仅通过 test 测试整体框架的完备性，适合学习框架的设计流程。</p><h3 id="更改版本"><a href="#更改版本" class="headerlink" title="更改版本"></a>更改版本</h3><ol><li><p>数据库驱动版本：要和自己的数据库版本保持一致</p></li><li><p>c3p0 版本：<a href="https://blog.csdn.net/Peng_Ze_Yu/article/details/81632828">https://blog.csdn.net/Peng_Ze_Yu/article/details/81632828</a></p><p>在 Maven 导入时，更改版本信息，否则报错</p></li><li><p>Spring 版本：5.0.5.RELEASE</p></li><li><p>junit 版本：4.12 避免低版本不支持</p><p>mybatis 以及 mybatis-spring 版本更新</p></li><li><p>entity：<a href="https://blog.csdn.net/qq_35991056/article/details/81390551">https://blog.csdn.net/qq_35991056/article/details/81390551</a></p><p>entity / domain / model 的区别，在以后项目中应该也会遇到</p></li><li><p>数据库的 appoint_time 修改为 appoint_date</p><p>因为创建变量时，误写为 appointDate，所以更改了数据库列名</p></li></ol><h3 id="整合流程"><a href="#整合流程" class="headerlink" title="整合流程"></a>整合流程</h3><ol><li><p>建立整个项目的基础目录结构，同时遵循 maven 的目录规范</p></li><li><p>导入相应的 jar 包，资源坐标，注意版本号兼容性</p></li><li><p>资源文件中建立 spring 文件，按照 dao、service、controller分层配置</p></li><li><p>配置 mybatis 的核心文件 <code>mybatis-config.xml</code></p></li><li><p>配置 <code>web.xml</code> 文件</p></li><li><p>根据需求，配置日志文件</p></li><li><p>需要根据需求设计数据库以及查询语句</p></li><li><p>在 entity 层中封装数据库实体，注意内部成员名称</p></li><li><p>在 dao 层建立相对应的接口，由于 mybatis 不需要实现</p></li><li><p>资源文件中编写相对应的 mapper 配置文件</p></li><li><p>定义业务的数据字典，返回给客户端的状态信息</p></li><li><p>在 dto 包下建立类存储执行操作后的返回结果</p></li><li><p>在 dto 包下建立封装 json 返回结果的类，设计成泛型</p></li><li><p>在 exception 下建立自定义异常类</p></li><li><p>在 service 层下编写具体业务代码，创建并实现接口</p></li><li><p>编写 controller 层即 web 层，完善整体结构</p></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java </category>
-          
-          <category> Spring </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Java </tag>
-            
-            <tag> Spring </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Spring相关API</title>
-      <link href="/2022/01/31/3-Spring%E7%9B%B8%E5%85%B3API/"/>
-      <url>/2022/01/31/3-Spring%E7%9B%B8%E5%85%B3API/</url>
-      
-        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><p>各个版本的 API 文档链接：<a href="https://docs.spring.io/spring-framework/docs/">https://docs.spring.io/spring-framework/docs/</a></p><h3 id="ApplicationContext-的继承体系"><a href="#ApplicationContext-的继承体系" class="headerlink" title="ApplicationContext 的继承体系"></a>ApplicationContext 的继承体系</h3><p>ApplicationContext：接口类型，代表应用上下文，可以通过其实例获得 Spring 容器中的 Bean 对象</p><h3 id="ApplicationContext-的实现类"><a href="#ApplicationContext-的实现类" class="headerlink" title="ApplicationContext 的实现类"></a>ApplicationContext 的实现类</h3><ul><li><p><strong>ClassPathXmlApplicationContext</strong></p><p>从类的根路径下加载配置文件<strong>（推荐使用）</strong></p></li><li><p><strong>FileSystemXmlApplicationContext</strong></p><p>从磁盘路径上加载配置文件，配置文件可以在磁盘上的任意位置</p></li><li><p><strong>AnnotationConfigApplicationContext</strong></p><p>当使用注解配置容器对象时，需要用此类创建容器，用来读取注解</p></li></ul><h3 id="getBean-方法"><a href="#getBean-方法" class="headerlink" title="getBean() 方法"></a>getBean() 方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java.lang.<span class="function">Object <span class="title">getBean</span><span class="params">(java.lang.String name)</span> <span class="keyword">throws</span> BeansException</span></span><br><span class="line"><span class="function">&lt;T&gt; T <span class="title">getBean</span><span class="params">(java.lang.Class&lt;T&gt; requiredType)</span> <span class="keyword">throws</span> BeansException</span></span><br></pre></td></tr></table></figure><ol><li><p>参数类型是字符串时，表示根据 Bean 的 id 从容器中获得实例，</p><p>返回时 Object，需要进行强制类型转换</p></li><li><p>参数类型是 Class 时，表示根据类型从容器中匹配 Bean 实例，</p><p>不需要强制类型转换，但是当有多个相同 Bean 时，会报错</p></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java </category>
-          
-          <category> Spring </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Java </tag>
-            
-            <tag> Spring </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Redis应用</title>
-      <link href="/2022/01/31/4-Redis%E5%BA%94%E7%94%A8/"/>
-      <url>/2022/01/31/4-Redis%E5%BA%94%E7%94%A8/</url>
-      
-        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="秒杀"><a href="#秒杀" class="headerlink" title="秒杀"></a>秒杀</h3><ol><li><p><strong>关于 Postman 和 JMeter 的选择</strong></p><p>推荐选择 JMeter，因为 Postman 只能支持串行接口测试</p><p>JMeter 推荐参考文章：</p><ul><li><p><a href="https://www.jianshu.com/p/0e4daecc8122">JMeter入门教程 - 简书 (jianshu.com)</a></p></li><li><p><a href="https://www.cnblogs.com/summerstore/p/11529105.html">如何使用JMeter进行并发测试 - 你安静了夏天 - 博客园 (cnblogs.com)</a></p></li></ul><p>Postman 关于能否并发：<a href="https://www.zhihu.com/question/280155125">https://www.zhihu.com/question/280155125</a></p></li><li><p><strong>出现的问题</strong></p><ul><li><p>超时：节省每次连接 Redis 服务带来的消耗，使用连接池解决</p></li><li><p>超卖：使用乐观锁，事务提交，解决超出库存的问题</p></li><li><p>库存遗留问题：由于乐观锁的机制造成仍有库存遗留</p><p><strong>通过 LUA 脚本解决争抢问题</strong>，实际上是 Redis 利用其单线程的特性，</p><p>用任务队列的方式解决多任务并发问题</p></li></ul></li></ol><hr><h3 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h3><ol><li><p>概念</p><p>使用 Redis 大部分情况都是通过 key 查询对应的值，</p><p>假如发送的请求传进来的 key 是不存在 Redis 中的，</p><p>那么就查不到缓存，查不到缓存就会去数据库查询，</p><p>假如有大量这样的请求，这些请求像“穿透”了缓存一样直接打在数据库上。</p></li><li><p>解决方案</p><ol><li><p><strong>把无效的 key 存进 Redis 中</strong></p><p>如果Redis查不到数据，数据库也查不到，我们把这个 key 值保存进 Redis，</p><p>设置 value=”null”，当下次再通过这个 key 查询时就不需要再查询数据库，</p><p>这种方式是有问题的，若不存在的 Key 值每次都是随机的，存进Redis也没有意义。</p></li><li><p><strong>设置可访问的名单（白名单）</strong></p></li><li><p><strong>采用布隆过滤器（Boom Filter）</strong></p><p>布隆过滤器的作用是某个 key 不存在，那么就一定不存在，</p><p>它说某个 key 存在，那么很大可能是存在(存在一定的误判率)，</p><p>于是我们可以在缓存之前再加一层布隆过滤器，</p><p>在查询的时候先去布隆过滤器查询 key 是否存在，如果不存在就直接返回。</p></li><li><p><strong>进行实时监控</strong></p><p>当发现 Redis 的命中率开始急速降低时，需要排查访问对象和访问的数据，</p><p>以及运维人员配合，可以设置黑名单限制服务。</p></li></ol></li></ol><hr><h3 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h3><ol><li><p>概念</p><p>缓存击穿是一个热点的 key ，有大并发集中对其进行访问，</p><p>突然间这个 key 失效了，导致大并发全部打在数据库上，</p><p>导致数据库压力剧增，这种现象就叫做缓存击穿。</p></li><li><p>解决方案</p><ol><li><p><strong>预先设置热门数据</strong></p><p>如果业务允许的话，对于热点的 key 可以设置永不过期，</p><p>或者加大热门数据 key 的过期时长。</p></li><li><p><strong>实时调整</strong></p><p>现场监控哪些数据热门，实时调整 key 的过期时长。</p></li><li><p><strong>使用互斥锁</strong></p><p>如果缓存失效的情况，只有拿到锁才可以查询数据库，</p><p>降低了在同一时刻打在数据库上的请求，防止数据库打死，</p><p>当然这样会导致系统的性能变差。</p></li></ol></li></ol><hr><h3 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h3><ol><li><p>概念</p><p>当某一个时刻出现大规模的缓存失效的情况，</p><p>那么就会导致大量的请求直接打在数据库上面，导致数据库压力巨大，</p><p>如果在高并发的情况下，可能瞬间就会导致数据库宕机，</p><p>这时如果马上重启数据库，马上又会有新的流量把数据库打死，这就是缓存雪崩。</p></li><li><p>解决方案</p><ol><li><p><strong>构建多级缓存架构</strong></p><p>nginx + redis + 其他缓存</p></li><li><p><strong>使用锁或队列</strong></p><p>用加锁或队列的方式保证不会有大量的线程对数据库一次性读写，</p><p>从而避免失效时大量的并发请求落到底层存储系统上，不适用高并发情况</p></li><li><p><strong>设置过期标志更新缓存</strong></p><p>如果过期会触发通知另外的线程在后台去更新实际 key 的缓存</p></li><li><p><strong>将缓存失效时间分散</strong></p><p>在失效时间上加上一个随机值，避免因为相同的过期时间导致缓存雪崩</p></li><li><p><strong>熔断机制</strong></p><p>当流量到达一定的阈值时，就直接返回“系统拥挤”之类的提示，</p><p>防止过多的请求打在数据库上，至少能保证一部分用户是可以正常使用，</p><p>其他用户多刷新几次也能得到结果。</p></li></ol></li></ol><hr><h3 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h3><ol><li><h5 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h5><p>随着业务发展的需要，原单体单机部署的系统被演化成分布式集群系统后，</p><p>由于分布式系统多线程、多进程并且分布在不同机器上，</p><p>这使原单机部署情况下的并发控制锁策略失效，</p><p>单纯的 Java API 并不能提供分布式锁的能力，为了解决这个问题，</p><p>需要一种跨 JVM 的互斥机制来控制共享资源的访问</p></li><li><h5 id="实现方案"><a href="#实现方案" class="headerlink" title="实现方案"></a>实现方案</h5><ol><li>基于数据库实现分布式锁</li><li><strong>基于缓存（Redis 等）</strong></li><li>基于 Zookeeper</li></ol></li><li><h5 id="使用-redis-实现分布式锁"><a href="#使用-redis-实现分布式锁" class="headerlink" title="使用 redis 实现分布式锁"></a><strong>使用 redis 实现分布式锁</strong></h5><ol><li>设置锁和过期时间</li><li>UUID 防止误删</li><li>LUA 保证删除原子性</li></ol></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> Redis </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Redis </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Spring配置数据源</title>
-      <link href="/2022/01/31/4-Spring%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E6%BA%90/"/>
-      <url>/2022/01/31/4-Spring%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E6%BA%90/</url>
-      
-        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="数据源（连接池）的作用"><a href="#数据源（连接池）的作用" class="headerlink" title="数据源（连接池）的作用"></a>数据源（连接池）的作用</h3><ul><li>提高程序性能</li><li>事先实例化数据源，初始化部分连接资源</li><li>使用连接资源时从数据源中获取</li><li>使用完毕后连接资源归还给数据源</li></ul><p>常见的数据源：DBCP、C3P0、BoneCP、Druid等</p><h3 id="数据源的开发步骤"><a href="#数据源的开发步骤" class="headerlink" title="数据源的开发步骤"></a>数据源的开发步骤</h3><ol><li>导入数据源的坐标和数据库驱动坐标</li><li>创建数据源对象</li><li>设置数据源的基本连接数据</li><li>使用数据源获取连接资源和归还连接资源</li></ol><h3 id="Spring-配置数据源"><a href="#Spring-配置数据源" class="headerlink" title="Spring 配置数据源"></a>Spring 配置数据源</h3><p>可以将 DataSource 的创建权交由 Spring 容器完成</p><h4 id="抽取-jdbc-配置文件"><a href="#抽取-jdbc-配置文件" class="headerlink" title="抽取 jdbc 配置文件"></a>抽取 jdbc 配置文件</h4><p>applicationContext.xml 加载 jdbc.properties 配置文件获得连接信息。</p><ol><li><p>引入 context 命名空间和约束路径：</p><p>命名空间：</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</span><br></pre></td></tr></table></figure><p>约束路径：</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http://www.springframework.org/schema/context </span><br><span class="line">http://www.springframework.org/schema/context/spring-context.xsd</span><br></pre></td></tr></table></figure></li><li><p>Spring 容器加载 properties 文件</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:property-placeholder</span> <span class="attr">location</span>=<span class="string">&quot;xx.properties&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;key&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure></li></ol>]]></content>
       
       
       <categories>
@@ -864,11 +756,36 @@
     
     
     <entry>
-      <title>Spring注解开发</title>
-      <link href="/2022/01/31/5-Spring%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/"/>
-      <url>/2022/01/31/5-Spring%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/</url>
+      <title>Redis进阶</title>
+      <link href="/2022/01/31/3-Redis%E8%BF%9B%E9%98%B6/"/>
+      <url>/2022/01/31/3-Redis%E8%BF%9B%E9%98%B6/</url>
       
-        <content type="html"><![CDATA[<p><escpae><span id="more"></span></escape></p><p>Spring 是轻代码而重配置的框架，配置比较繁重，影响开发效率，</p><p>所以注解是一种开发趋势，注解代替 <code>xml</code> 配置文件可以简化配置，提高开发效率。</p><h3 id="原始注解"><a href="#原始注解" class="headerlink" title="原始注解"></a>原始注解</h3><p>Spring 原始注解主要是替代 &lt;Bean&gt; 的配置</p><table><thead><tr><th>注解</th><th align="left">说明</th></tr></thead><tbody><tr><td>@Component</td><td align="left">使用在类上实例化 Bean</td></tr><tr><td>@Controller</td><td align="left">使用在 web 层类上实例化 Bean</td></tr><tr><td>@Service</td><td align="left">使用在 service 层类上实例化 Bean</td></tr><tr><td>@Repository</td><td align="left">使用在 dao 层类上实例化 Bean</td></tr><tr><td>@Autowired</td><td align="left">使用在字段上用于根据类型依赖注入</td></tr><tr><td>@Qualifier</td><td align="left">结合 @Autowired 用于根据名称依赖注入</td></tr><tr><td>@Resource</td><td align="left">相当于 @Autowired + @Qualifier</td></tr><tr><td>@Value</td><td align="left">注入普通属性</td></tr><tr><td>@Scope</td><td align="left">标注 Bean 的作用范围</td></tr><tr><td>@PostConstruct</td><td align="left">标注方法上表明是 Bean 的初始化方法</td></tr><tr><td>@PreDestory</td><td align="left">标注方法上表明是 Bean 的销毁方法</td></tr></tbody></table><p><strong>注意：</strong></p><ol><li><p>使用注解进行开发时，需要在 <code>xml</code> 中配置组件扫描，其作用是：</p><p>指定哪个包及其子包下的 <code>Bean</code> 需要进行扫描以便识别使用注解配置的类、字段和方法；</p></li></ol><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">&quot;&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure><ol start="2"><li><p><code>@Autowired</code> 根据数据类型从 <code>Spring</code> 容器中进行匹配</p><p><code>@Qualifier</code> 根据 <code>id</code> 值从容器中进行匹配，但是需要结合 <code>@Autowired</code> 使用；</p></li><li><p>使用 <code>prototype</code> 时 <code>Spring</code> 不会负责销毁容器对象，将 <code>scope</code> 改为 <code>singleton</code> 才会生效 <code>destroy</code> 方法；</p></li></ol><h3 id="新注解"><a href="#新注解" class="headerlink" title="新注解"></a>新注解</h3><ul><li>非自定义的 <code>Bean</code> 配置：&lt;bean&gt;</li><li>加载外部 <code>properties</code> 文件的配置：&lt;context:property-placeholder&gt;</li><li>组件扫描的配置：&lt;context:component-scan&gt;</li><li>引入其他文件：&lt;import&gt;</li></ul><table><thead><tr><th>注解</th><th>说明</th></tr></thead><tbody><tr><td>@Configuration</td><td>用于指定当前类是一个 Spring 核心配置类</td></tr><tr><td>@ComponentScan</td><td>用于指定 Spring 在初始化容器时要扫描的包</td></tr><tr><td>@Bean</td><td>使用在方法上，将该方法的返回值存储到容器中</td></tr><tr><td>@PropertySource</td><td>用于加载 properties 文件</td></tr><tr><td>@Import</td><td>用于导入其他配置类</td></tr></tbody></table>]]></content>
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="RDB（Redis-DataBase）"><a href="#RDB（Redis-DataBase）" class="headerlink" title="RDB（Redis DataBase）"></a><strong>RDB</strong>（Redis DataBase）</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>在指定时间间隔内将内存中的数据集快照写入磁盘</p><h4 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h4><p>Redis 会<strong>单独创建（fork）</strong>一个子进程来进行持久化，会先将数据写入到一个临时文件，</p><p>待持久化过程结束，再用临时文件替换上次持久化好的文件，<strong>默认 dump.rdb</strong></p><h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h4><p>优点：</p><ol><li><p>整个过程中，主进程不进行任何 IO 操作，这就确保了极高的性能</p></li><li><p>如果对数据恢复的完整性不敏感，那么比 AOF 更加高效。</p></li><li><p>节省磁盘空间，恢复速度快</p></li></ol><p>缺点：</p><ol><li>最后一次持久化后的数据可能丢失</li><li>虽然使用了写时复制技术，但是如果数据庞大还是比较消耗性能</li><li>Fork 的时候内存中的数据被克隆一份，大致 2 倍的膨胀性需要考虑</li></ol><h4 id="Fork"><a href="#Fork" class="headerlink" title="Fork"></a>Fork</h4><ol><li><p>Fork 的作用是复制一个与当前进程一样的进程，所有的数据均一致，</p><p>但是是一个全新的进程，并作为原进程的子进程</p></li><li><p>写时复制技术</p></li><li><p>一般情况父进程和子进程共用一段物理内存</p></li></ol><hr><h3 id="AOF（Append-Only-File）"><a href="#AOF（Append-Only-File）" class="headerlink" title="AOF（Append Only File）"></a><strong>AOF</strong>（Append Only File）</h3><ol><li><h4 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h4><p>以日志的形式来记录每个写操作（增量保存），</p><p>将 Redis 执行过的所有写指令记录下来（读操作不记录），</p><p>只许追加文件但不可以改写文件，Redis 启动时会读取文件重构数据</p></li><li><h4 id="流程-1"><a href="#流程-1" class="headerlink" title="流程"></a>流程</h4><ul><li>客户端的请求写命令会被 append 追加到 AOF 缓冲区内</li><li>AOF 缓存区根据 AOF 持久化策略将操作 sync 同步到磁盘 AOF 文件</li><li>AOF 文件大小超过重写策略或手动重写时，进行 rewrite 重写和压缩</li><li>Redis 服务启动时，会重新加载 AOF 文件中的写操作恢复数据</li></ul></li><li><h4 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h4><ol><li>AOF 默认不开启，需要在配置文件中将 <code>appendonly</code> 改为 <code>yes</code></li><li>AOF 和 RDB 同时开启时，系统默认取 AOF 的数据<strong>（数据不会存在丢失）</strong></li><li>异常通过 <code>redis-check-aof --fix appendonly,aof</code> 恢复文件，重启即可</li><li>同步频率设置 appendfsync：<ul><li>always：始终同步，每次 Redis 的写入都会立刻记入日志，完整性好但性能差</li><li>everysec：每秒同步，如果宕机，本秒的数据可能丢失</li><li>no：不主动进行同步，把同步时机交给操作系统</li></ul></li><li>Rewrite 压缩：避免 AOF 文件过大，采用重写机制，将内容压缩</li></ol></li><li><h4 id="优缺点-1"><a href="#优缺点-1" class="headerlink" title="优缺点"></a>优缺点</h4><p>优点：</p><ol><li>备份机制更稳健，丢失数据概率更低</li><li>可读的日志文本，可以处理误操作</li></ol><p>缺点：</p><ol><li>占用更多的磁盘空间</li><li>恢复备份速度慢</li><li>每次读写都同步的话，存在一定的性能压力</li><li>存在个别 bug，造成恢复不能</li></ol></li></ol><hr><h3 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h3><ol><li>官方推荐两个都启用</li><li>如果对数据不敏感，可以单独使用 RDB</li><li>不建议单独使用 AOF，可能会出现 bug</li><li>如果只是做纯内存缓存，可以都不用</li></ol><hr><h3 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h3><ol><li><h4 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a><strong>概念</strong></h4><p>主机数据更新后根据配置和策略，自动同步到备机的 <strong>master/slaver 机制，</strong></p><p>master 以写为主，slaver 以读为主，但是会存在<strong>复制延时</strong>的情况，</p><p>当系统繁忙或 slaver 机器数量增加的时候，延迟问题会更加严重</p></li><li><h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a><strong>作用</strong></h4><ul><li>读写分离，性能拓展</li><li>容灾快速恢复</li></ul></li><li><h4 id="搭建简单的一主两从"><a href="#搭建简单的一主两从" class="headerlink" title="搭建简单的一主两从"></a><strong>搭建简单的一主两从</strong></h4><ol><li><p>创建 <code>/myRedis</code> 文件夹，拷贝 <code>redis.Windows.conf</code> 文件至目录下</p></li><li><p>配置一主两从，创建三个配置文件</p><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">redis6379.<span class="keyword">conf</span></span><br><span class="line">redis6380.<span class="keyword">conf</span></span><br><span class="line">redis6381.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure></li><li><p>在每个配置文件中写入以下内容（替换 6379 即可）</p><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">include</span> redis.windows.<span class="keyword">conf</span></span><br><span class="line">pidfile /<span class="keyword">var</span>/<span class="keyword">run</span>/redis_6379.pid</span><br><span class="line">port 6379</span><br><span class="line">dbfilename dump6379.rdb</span><br></pre></td></tr></table></figure></li><li><p>启动三个 Redis 服务</p><ul><li>查看当前主机运行状况</li><li>在从机上执行 <code>slaveof</code> 主机 ip 端口号</li><li><code>SLAVEOF 127.0.0.1 6379</code> 配置主从关系</li><li>验证主从的基本性质，master 以写为主，slaver 以读为主</li></ul></li></ol></li><li><h4 id="主从复制特点"><a href="#主从复制特点" class="headerlink" title="主从复制特点"></a><strong>主从复制特点</strong></h4><ul><li>一主二仆</li><li>薪火相传</li><li>反客为主</li></ul></li><li><h4 id="哨兵模式"><a href="#哨兵模式" class="headerlink" title="哨兵模式"></a><strong>哨兵模式</strong></h4><ol><li><p>反客为主的自动版，能够后台监控主机是否故障，根据投票数将从库转为主库</p></li><li><p>模拟案例</p><ol><li><p>建立一个简易的一主二仆模式</p></li><li><p>在 <code>/myRedis</code> 目录下建立 <code>sentinel.conf</code> 文件</p></li><li><p>写入 <code>sentinel monitor mymaster 127.0.0.1 6379 1</code> </p><p><code>mymaster</code> 为监控对象起的名称，<code>1</code> 为至少有多少个哨兵同意迁移的数量</p></li><li><p>如果你使用 <code>redis-sentinel</code> 可执行文件，你可以使用下面的命令来运行 <code>Sentinel</code>：</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-sentinel <span class="regexp">/path/</span>to/sentinel.conf</span><br></pre></td></tr></table></figure><p>另外，你可以直接使用 <code>redis-server</code> 并以 <code>Sentinel</code> 模式来启动：</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-<span class="keyword">server</span> /<span class="type">path</span>/<span class="keyword">to</span>/sentinel.conf <span class="comment">--sentinel</span></span><br></pre></td></tr></table></figure></li><li><p>将主机关闭，查看结果即可</p></li></ol></li><li><p>选择条件依次如下</p><ul><li>选择优先级靠前的（redis.conf 中的 slave-priority 值越小优先级越高）</li><li>选择偏移量最大的（获得最全原主机数据的从服务）</li><li>选择 runid 最小地从服务（每个 Redis 启动后随机生成的 40 位 runid）</li></ul></li></ol></li></ol><hr><h3 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h3><ol><li><h5 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h5>Redis 集群实现了对 Redis 的水平扩容，即启动 N 个 Redis 节点，将整个数据库分布存储在这 N 个节点中，每个节点存储总数据的 1/N，集群通过分区来提供一定程度的可用性，即使集群中有一部分节点失效或者无法进行通讯，集群也可以继续处理命令请求</li><li><h5 id="搭建简易集群"><a href="#搭建简易集群" class="headerlink" title="搭建简易集群"></a>搭建简易集群</h5><ol><li><p>在目录下创建六份实例 <code>redis.conf</code></p></li><li><p>在主从的基础上，添加以下内容（替换 6379 即可）</p><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cluster</span>-enabled yes</span><br><span class="line"><span class="keyword">cluster</span>-config-<span class="keyword">file</span> nodes-6379.<span class="keyword">conf</span></span><br><span class="line"><span class="keyword">cluster</span>-node-timeout 15000</span><br></pre></td></tr></table></figure></li><li><p>启动六个 Redis 服务，将节点合成一个集群</p><p>启动服务后，确保所有的 <code>nodes-xxxx.conf</code> 文件生成正常</p><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli --cluster create --cluster-replicas <span class="number">1 127.0.0</span>.<span class="number">1:6379 127</span>.<span class="number">0</span>.<span class="number">0.1:6380</span> <span class="number">127.0.0.1</span>:<span class="number">6381 127.0</span>.<span class="number">0.1:6389</span> <span class="number">127.0.0.1</span>:<span class="number">6390 127.0</span>.<span class="number">0.1:6391</span></span><br></pre></td></tr></table></figure><p>通过任意节点进入集群 <code>redis-cli.exe -p 6379</code></p><p>查看集群节点信息 <code>cluster nodes</code></p></li></ol></li><li><h5 id="如何分配节点"><a href="#如何分配节点" class="headerlink" title="如何分配节点"></a>如何分配节点</h5><code>--cluster-replicas 1</code> 表示为集群中的每个主节点创建一个从节点分配原则尽量保证每个主数据库运行在不同的 IP 地址，每个主库和从库不在一个 IP 地址上</li><li><h5 id="插槽-Hash-Slot"><a href="#插槽-Hash-Slot" class="headerlink" title="插槽 Hash Slot"></a>插槽 Hash Slot</h5>一个集群包含 <code>16384</code> 个插槽，数据库中的每个键都属于其中一个，集群使用公式 <code>CRC16(key) % 16384</code> 来计算 key 属于哪个槽，而集群中的每个节点负责处理一部分插槽</li><li><strong>故障恢复</strong><ul><li><p>如果主节点宕机，从节点根据超时时间自动升为主节点</p></li><li><p>主节点恢复后，主节点变成从机</p></li><li><p>如果所有某段插槽的主从节点都宕机，</p><p>集群根据 <code>cluster-require-full-coverage</code> 是否宕机</p></li></ul></li><li><h5 id="优缺点-2"><a href="#优缺点-2" class="headerlink" title="优缺点"></a>优缺点</h5>优点：<ol><li>实现扩容</li><li>分摊压力</li><li>无中心配置相对简单</li></ol></li></ol><p>   缺点：</p><pre><code>  1. 多键操作是不支持的  2. 多键的 Redis 事务是不被支持的，lua 脚本不被支持  3. 出现较晚，目前整体迁移复杂度较大</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Redis </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Spring相关API</title>
+      <link href="/2022/01/31/3-Spring%E7%9B%B8%E5%85%B3API/"/>
+      <url>/2022/01/31/3-Spring%E7%9B%B8%E5%85%B3API/</url>
+      
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><p>各个版本的 API 文档链接：<a href="https://docs.spring.io/spring-framework/docs/">https://docs.spring.io/spring-framework/docs/</a></p><h3 id="ApplicationContext-的继承体系"><a href="#ApplicationContext-的继承体系" class="headerlink" title="ApplicationContext 的继承体系"></a>ApplicationContext 的继承体系</h3><p>ApplicationContext：接口类型，代表应用上下文，可以通过其实例获得 Spring 容器中的 Bean 对象</p><h3 id="ApplicationContext-的实现类"><a href="#ApplicationContext-的实现类" class="headerlink" title="ApplicationContext 的实现类"></a>ApplicationContext 的实现类</h3><ul><li><p><strong>ClassPathXmlApplicationContext</strong></p><p>从类的根路径下加载配置文件<strong>（推荐使用）</strong></p></li><li><p><strong>FileSystemXmlApplicationContext</strong></p><p>从磁盘路径上加载配置文件，配置文件可以在磁盘上的任意位置</p></li><li><p><strong>AnnotationConfigApplicationContext</strong></p><p>当使用注解配置容器对象时，需要用此类创建容器，用来读取注解</p></li></ul><h3 id="getBean-方法"><a href="#getBean-方法" class="headerlink" title="getBean() 方法"></a>getBean() 方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java.lang.<span class="function">Object <span class="title">getBean</span><span class="params">(java.lang.String name)</span> <span class="keyword">throws</span> BeansException</span></span><br><span class="line"><span class="function">&lt;T&gt; T <span class="title">getBean</span><span class="params">(java.lang.Class&lt;T&gt; requiredType)</span> <span class="keyword">throws</span> BeansException</span></span><br></pre></td></tr></table></figure><ol><li><p>参数类型是字符串时，表示根据 Bean 的 id 从容器中获得实例，</p><p>返回时 Object，需要进行强制类型转换</p></li><li><p>参数类型是 Class 时，表示根据类型从容器中匹配 Bean 实例，</p><p>不需要强制类型转换，但是当有多个相同 Bean 时，会报错</p></li></ol>]]></content>
       
       
       <categories>
@@ -893,11 +810,94 @@
     
     
     <entry>
+      <title>Spring配置数据源</title>
+      <link href="/2022/01/31/4-Spring%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E6%BA%90/"/>
+      <url>/2022/01/31/4-Spring%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E6%BA%90/</url>
+      
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="数据源（连接池）的作用"><a href="#数据源（连接池）的作用" class="headerlink" title="数据源（连接池）的作用"></a>数据源（连接池）的作用</h3><ul><li>提高程序性能</li><li>事先实例化数据源，初始化部分连接资源</li><li>使用连接资源时从数据源中获取</li><li>使用完毕后连接资源归还给数据源</li></ul><p>常见的数据源：DBCP、C3P0、BoneCP、Druid等</p><h3 id="数据源的开发步骤"><a href="#数据源的开发步骤" class="headerlink" title="数据源的开发步骤"></a>数据源的开发步骤</h3><ol><li>导入数据源的坐标和数据库驱动坐标</li><li>创建数据源对象</li><li>设置数据源的基本连接数据</li><li>使用数据源获取连接资源和归还连接资源</li></ol><h3 id="Spring-配置数据源"><a href="#Spring-配置数据源" class="headerlink" title="Spring 配置数据源"></a>Spring 配置数据源</h3><p>可以将 DataSource 的创建权交由 Spring 容器完成</p><h4 id="抽取-jdbc-配置文件"><a href="#抽取-jdbc-配置文件" class="headerlink" title="抽取 jdbc 配置文件"></a>抽取 jdbc 配置文件</h4><p>applicationContext.xml 加载 jdbc.properties 配置文件获得连接信息。</p><ol><li><p>引入 context 命名空间和约束路径：</p><p>命名空间：</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</span><br></pre></td></tr></table></figure><p>约束路径：</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http://www.springframework.org/schema/context </span><br><span class="line">http://www.springframework.org/schema/context/spring-context.xsd</span><br></pre></td></tr></table></figure></li><li><p>Spring 容器加载 properties 文件</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:property-placeholder</span> <span class="attr">location</span>=<span class="string">&quot;xx.properties&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;key&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+          <category> Spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Spring </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Redis应用</title>
+      <link href="/2022/01/31/4-Redis%E5%BA%94%E7%94%A8/"/>
+      <url>/2022/01/31/4-Redis%E5%BA%94%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="秒杀"><a href="#秒杀" class="headerlink" title="秒杀"></a>秒杀</h3><ol><li><p><strong>关于 Postman 和 JMeter 的选择</strong></p><p>推荐选择 JMeter，因为 Postman 只能支持串行接口测试</p><p>JMeter 推荐参考文章：</p><ul><li><p><a href="https://www.jianshu.com/p/0e4daecc8122">JMeter入门教程 - 简书 (jianshu.com)</a></p></li><li><p><a href="https://www.cnblogs.com/summerstore/p/11529105.html">如何使用JMeter进行并发测试 - 你安静了夏天 - 博客园 (cnblogs.com)</a></p></li></ul><p>Postman 关于能否并发：<a href="https://www.zhihu.com/question/280155125">https://www.zhihu.com/question/280155125</a></p></li><li><p><strong>出现的问题</strong></p><ul><li><p>超时：节省每次连接 Redis 服务带来的消耗，使用连接池解决</p></li><li><p>超卖：使用乐观锁，事务提交，解决超出库存的问题</p></li><li><p>库存遗留问题：由于乐观锁的机制造成仍有库存遗留</p><p><strong>通过 LUA 脚本解决争抢问题</strong>，实际上是 Redis 利用其单线程的特性，</p><p>用任务队列的方式解决多任务并发问题</p></li></ul></li></ol><hr><h3 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h3><ol><li><p>概念</p><p>使用 Redis 大部分情况都是通过 key 查询对应的值，</p><p>假如发送的请求传进来的 key 是不存在 Redis 中的，</p><p>那么就查不到缓存，查不到缓存就会去数据库查询，</p><p>假如有大量这样的请求，这些请求像“穿透”了缓存一样直接打在数据库上。</p></li><li><p>解决方案</p><ol><li><p><strong>把无效的 key 存进 Redis 中</strong></p><p>如果Redis查不到数据，数据库也查不到，我们把这个 key 值保存进 Redis，</p><p>设置 value=”null”，当下次再通过这个 key 查询时就不需要再查询数据库，</p><p>这种方式是有问题的，若不存在的 Key 值每次都是随机的，存进Redis也没有意义。</p></li><li><p><strong>设置可访问的名单（白名单）</strong></p></li><li><p><strong>采用布隆过滤器（Boom Filter）</strong></p><p>布隆过滤器的作用是某个 key 不存在，那么就一定不存在，</p><p>它说某个 key 存在，那么很大可能是存在(存在一定的误判率)，</p><p>于是我们可以在缓存之前再加一层布隆过滤器，</p><p>在查询的时候先去布隆过滤器查询 key 是否存在，如果不存在就直接返回。</p></li><li><p><strong>进行实时监控</strong></p><p>当发现 Redis 的命中率开始急速降低时，需要排查访问对象和访问的数据，</p><p>以及运维人员配合，可以设置黑名单限制服务。</p></li></ol></li></ol><hr><h3 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h3><ol><li><p>概念</p><p>缓存击穿是一个热点的 key ，有大并发集中对其进行访问，</p><p>突然间这个 key 失效了，导致大并发全部打在数据库上，</p><p>导致数据库压力剧增，这种现象就叫做缓存击穿。</p></li><li><p>解决方案</p><ol><li><p><strong>预先设置热门数据</strong></p><p>如果业务允许的话，对于热点的 key 可以设置永不过期，</p><p>或者加大热门数据 key 的过期时长。</p></li><li><p><strong>实时调整</strong></p><p>现场监控哪些数据热门，实时调整 key 的过期时长。</p></li><li><p><strong>使用互斥锁</strong></p><p>如果缓存失效的情况，只有拿到锁才可以查询数据库，</p><p>降低了在同一时刻打在数据库上的请求，防止数据库打死，</p><p>当然这样会导致系统的性能变差。</p></li></ol></li></ol><hr><h3 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h3><ol><li><p>概念</p><p>当某一个时刻出现大规模的缓存失效的情况，</p><p>那么就会导致大量的请求直接打在数据库上面，导致数据库压力巨大，</p><p>如果在高并发的情况下，可能瞬间就会导致数据库宕机，</p><p>这时如果马上重启数据库，马上又会有新的流量把数据库打死，这就是缓存雪崩。</p></li><li><p>解决方案</p><ol><li><p><strong>构建多级缓存架构</strong></p><p>nginx + redis + 其他缓存</p></li><li><p><strong>使用锁或队列</strong></p><p>用加锁或队列的方式保证不会有大量的线程对数据库一次性读写，</p><p>从而避免失效时大量的并发请求落到底层存储系统上，不适用高并发情况</p></li><li><p><strong>设置过期标志更新缓存</strong></p><p>如果过期会触发通知另外的线程在后台去更新实际 key 的缓存</p></li><li><p><strong>将缓存失效时间分散</strong></p><p>在失效时间上加上一个随机值，避免因为相同的过期时间导致缓存雪崩</p></li><li><p><strong>熔断机制</strong></p><p>当流量到达一定的阈值时，就直接返回“系统拥挤”之类的提示，</p><p>防止过多的请求打在数据库上，至少能保证一部分用户是可以正常使用，</p><p>其他用户多刷新几次也能得到结果。</p></li></ol></li></ol><hr><h3 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h3><ol><li><h5 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h5><p>随着业务发展的需要，原单体单机部署的系统被演化成分布式集群系统后，</p><p>由于分布式系统多线程、多进程并且分布在不同机器上，</p><p>这使原单机部署情况下的并发控制锁策略失效，</p><p>单纯的 Java API 并不能提供分布式锁的能力，为了解决这个问题，</p><p>需要一种跨 JVM 的互斥机制来控制共享资源的访问</p></li><li><h5 id="实现方案"><a href="#实现方案" class="headerlink" title="实现方案"></a>实现方案</h5><ol><li>基于数据库实现分布式锁</li><li><strong>基于缓存（Redis 等）</strong></li><li>基于 Zookeeper</li></ol></li><li><h5 id="使用-redis-实现分布式锁"><a href="#使用-redis-实现分布式锁" class="headerlink" title="使用 redis 实现分布式锁"></a><strong>使用 redis 实现分布式锁</strong></h5><ol><li>设置锁和过期时间</li><li>UUID 防止误删</li><li>LUA 保证删除原子性</li></ol></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Redis </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Spring集成Junit</title>
       <link href="/2022/01/31/6-Spring%E9%9B%86%E6%88%90Junit/"/>
       <url>/2022/01/31/6-Spring%E9%9B%86%E6%88%90Junit/</url>
       
         <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="原始-Junit-测试-Spring-的问题"><a href="#原始-Junit-测试-Spring-的问题" class="headerlink" title="原始 Junit 测试 Spring 的问题"></a>原始 Junit 测试 Spring 的问题</h3><p>在测试类中，每个测试方法都有一下两行代码：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ApplicationContext ac = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">&quot;applicationContext.xml&quot;</span>);</span><br><span class="line">IAccountService as = ac.getBean(<span class="string">&quot;accountService&quot;</span>, IAccountService.class);</span><br></pre></td></tr></table></figure><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><ul><li>让 SpringJunit 负责创建 Spring 容器，但是需要将配置文件的名称告之；</li><li>将需要进行测试 Bean 直接在测试类中进行注入；</li></ul><h3 id="Spring-集成-Junit-步骤"><a href="#Spring-集成-Junit-步骤" class="headerlink" title="Spring 集成 Junit 步骤"></a>Spring 集成 Junit 步骤</h3><ol><li>导入 Spring 集成 Junit 的坐标</li><li>使用 @RunWith 注解替换原来的运行期</li><li>使用 @ContextConfiguration 指定配置文件或配置类</li><li>使用 @Autowired 注入需要测试的对象</li><li>创建测试方法进行测试</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+          <category> Spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Spring </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Spring注解开发</title>
+      <link href="/2022/01/31/5-Spring%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/"/>
+      <url>/2022/01/31/5-Spring%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/</url>
+      
+        <content type="html"><![CDATA[<p><escpae><span id="more"></span></escape></p><p>Spring 是轻代码而重配置的框架，配置比较繁重，影响开发效率，</p><p>所以注解是一种开发趋势，注解代替 <code>xml</code> 配置文件可以简化配置，提高开发效率。</p><h3 id="原始注解"><a href="#原始注解" class="headerlink" title="原始注解"></a>原始注解</h3><p>Spring 原始注解主要是替代 &lt;Bean&gt; 的配置</p><table><thead><tr><th>注解</th><th align="left">说明</th></tr></thead><tbody><tr><td>@Component</td><td align="left">使用在类上实例化 Bean</td></tr><tr><td>@Controller</td><td align="left">使用在 web 层类上实例化 Bean</td></tr><tr><td>@Service</td><td align="left">使用在 service 层类上实例化 Bean</td></tr><tr><td>@Repository</td><td align="left">使用在 dao 层类上实例化 Bean</td></tr><tr><td>@Autowired</td><td align="left">使用在字段上用于根据类型依赖注入</td></tr><tr><td>@Qualifier</td><td align="left">结合 @Autowired 用于根据名称依赖注入</td></tr><tr><td>@Resource</td><td align="left">相当于 @Autowired + @Qualifier</td></tr><tr><td>@Value</td><td align="left">注入普通属性</td></tr><tr><td>@Scope</td><td align="left">标注 Bean 的作用范围</td></tr><tr><td>@PostConstruct</td><td align="left">标注方法上表明是 Bean 的初始化方法</td></tr><tr><td>@PreDestory</td><td align="left">标注方法上表明是 Bean 的销毁方法</td></tr></tbody></table><p><strong>注意：</strong></p><ol><li><p>使用注解进行开发时，需要在 <code>xml</code> 中配置组件扫描，其作用是：</p><p>指定哪个包及其子包下的 <code>Bean</code> 需要进行扫描以便识别使用注解配置的类、字段和方法；</p></li></ol><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">&quot;&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure><ol start="2"><li><p><code>@Autowired</code> 根据数据类型从 <code>Spring</code> 容器中进行匹配</p><p><code>@Qualifier</code> 根据 <code>id</code> 值从容器中进行匹配，但是需要结合 <code>@Autowired</code> 使用；</p></li><li><p>使用 <code>prototype</code> 时 <code>Spring</code> 不会负责销毁容器对象，将 <code>scope</code> 改为 <code>singleton</code> 才会生效 <code>destroy</code> 方法；</p></li></ol><h3 id="新注解"><a href="#新注解" class="headerlink" title="新注解"></a>新注解</h3><ul><li>非自定义的 <code>Bean</code> 配置：&lt;bean&gt;</li><li>加载外部 <code>properties</code> 文件的配置：&lt;context:property-placeholder&gt;</li><li>组件扫描的配置：&lt;context:component-scan&gt;</li><li>引入其他文件：&lt;import&gt;</li></ul><table><thead><tr><th>注解</th><th>说明</th></tr></thead><tbody><tr><td>@Configuration</td><td>用于指定当前类是一个 Spring 核心配置类</td></tr><tr><td>@ComponentScan</td><td>用于指定 Spring 在初始化容器时要扫描的包</td></tr><tr><td>@Bean</td><td>使用在方法上，将该方法的返回值存储到容器中</td></tr><tr><td>@PropertySource</td><td>用于加载 properties 文件</td></tr><tr><td>@Import</td><td>用于导入其他配置类</td></tr></tbody></table>]]></content>
       
       
       <categories>
