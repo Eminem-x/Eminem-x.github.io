@@ -23,17 +23,17 @@
   </script>
 
   <meta property="og:type" content="article">
-<meta property="og:title" content="二分搜索">
-<meta property="og:url" content="http://example.com/2021/12/20/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/index.html">
+<meta property="og:title" content="后端参数检验">
+<meta property="og:url" content="http://example.com/2022/08/18/%E5%90%8E%E7%AB%AF%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C/index.html">
 <meta property="og:site_name" content="Yuanhao Blog">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-12-19T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-12-19T16:00:00.000Z">
+<meta property="article:published_time" content="2022-08-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-18T15:40:39.940Z">
 <meta property="article:author" content="Yuanhao">
-<meta property="article:tag" content="算法">
+<meta property="article:tag" content="Tool">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/12/20/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/">
+<link rel="canonical" href="http://example.com/2022/08/18/%E5%90%8E%E7%AB%AF%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>二分搜索 | Yuanhao Blog</title>
+  <title>后端参数检验 | Yuanhao Blog</title>
   
 
 
@@ -186,7 +186,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/20/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/18/%E5%90%8E%E7%AB%AF%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -199,7 +199,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          二分搜索
+          后端参数检验
         </h1>
 
         <div class="post-meta">
@@ -208,27 +208,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-12-20 00:00:00" itemprop="dateCreated datePublished" datetime="2021-12-20T00:00:00+08:00">2021-12-20</time>
+              <time title="创建时间：2022-08-18 00:00:00 / 修改时间：23:40:39" itemprop="dateCreated datePublished" datetime="2022-08-18T00:00:00+08:00">2022-08-18</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-12-20 00:00:00" itemprop="dateModified" datetime="2022-12-20T00:00:00+08:00">2022-12-20</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/%E5%8F%8C%E6%8C%87%E9%92%88/" itemprop="url" rel="index"><span itemprop="name">双指针</span></a>
+                  <a href="/categories/Tool/" itemprop="url" rel="index"><span itemprop="name">Tool</span></a>
                 </span>
             </span>
 
@@ -252,27 +242,41 @@
       
         <p><escape><span id="more"></span></escape></p>
 <blockquote>
-<blockquote>
-<p>总结一下二分搜索的特性，处理问题时总遇到怎么确定 left 或者 right 的情况；</p>
-<p>因此总结一下基本的用法，方便以后使用。</p>
+<p>最近在工作中处理后端参数校验时，总结了一些工具和方法，整理以便以后使用。</p>
 </blockquote>
-</blockquote>
-<h3 id="第一种判定方式：left-≤-right"><a href="#第一种判定方式：left-≤-right" class="headerlink" title="第一种判定方式：left ≤ right"></a>第一种判定方式：<code>left ≤ right</code></h3><p>如果有的题目需要得到不存在时，应在数组中的位置：</p>
-<ol>
-<li><strong>如果以 <code>left</code> 为基准，那么最终 <code>left</code> 指向的位置在 <code>target</code> 右边；</strong></li>
-<li>如果以 <code>right</code> 为基准，那么最终 <code>right</code> 指向的位置在 <code>target</code> 左边；</li>
-<li>以第一种情况为例：</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = nums.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (left + right) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">                <span class="keyword">return</span> mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                right = mid - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 如果仅用来搜索是否存在</span></span><br><span class="line">        <span class="comment">// return -1;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 判断位置</span></span><br><span class="line">        <span class="keyword">if</span> (left &gt; nums.length) &#123;</span><br><span class="line">            <span class="keyword">return</span> nums[--left];</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (left == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> nums[left];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 判断左右那个值得差更小</span></span><br><span class="line">        <span class="keyword">if</span> (target - nums[left - <span class="number">1</span>] &lt; nums[left] - target) &#123;</span><br><span class="line">            <span class="keyword">return</span> nums[left - <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums[left];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="普通参数校验"><a href="#普通参数校验" class="headerlink" title="普通参数校验"></a>普通参数校验</h3><p>如何在 Gin 框架中添加请求参数检验，在工作开发中，了解到一个开源工具：<code>gotagexpr</code>，</p>
+<p><code>GitHub</code> 链接：<a target="_blank" rel="noopener" href="https://github.com/bytedance/go-tagexpr">https://github.com/bytedance/go-tagexpr</a></p>
+<p><code>Demo</code> 链接：<a target="_blank" rel="noopener" href="https://github.com/Eminem-x/Learning/tree/main/Go/gin-doc-cn/gin-tagexpr">https://github.com/Eminem-x/Learning/tree/main/Go/gin-doc-cn/gin-tagexpr</a></p>
+<p>在 <code>Request</code> 请求类型中增加 <code>tag</code>，通过正则表达式的方式，在绑定入参时，即可判断是否合法，</p>
+<p>当然如果参数之间有限制关系的话，似乎仍需要 <code>if-else</code> 去解决，这里也只是推荐此工具。</p>
+<p>更通用的是，可以对此抽取成通用方法，针对每个请求都无需关心如何处理，只需定义规则即可，</p>
+<p>中间件抽取如下，只需要传入 <code>request</code> 的地址即可进行校验：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> middlewares</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;github.com/bytedance/go-tagexpr/v2/validator&quot;</span></span><br><span class="line">	<span class="string">&quot;github.com/gin-gonic/gin&quot;</span></span><br><span class="line">	<span class="string">&quot;github.com/gin-gonic/gin/binding&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> tagexpr = validator.New(<span class="string">&quot;tagexpr&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ValidateArgs</span><span class="params">(c *gin.Context, request <span class="keyword">interface</span>&#123;&#125;)</span> <span class="title">error</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 绑定request model</span></span><br><span class="line">	err := c.ShouldBindBodyWith(request, binding.JSON)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> err</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> tagexpr.Validate(request) != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> ErrInputInvalid <span class="comment">// 此处为自定义 error</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="第二种判定方式：left-lt-right"><a href="#第二种判定方式：left-lt-right" class="headerlink" title="第二种判定方式：left &lt; right"></a>第二种判定方式：<code>left &lt; right</code></h3><p>在得到 <code>mid</code> 时，常用得方法有两种：</p>
+<h3 id="图片校验"><a href="#图片校验" class="headerlink" title="图片校验"></a>图片校验</h3><p>实际业务场景中，用户上传图片后，前端传入 <code>tos</code>，而后将 <code>CDN</code> 地址传到后端，后端存入数据库，</p>
+<p>因为未对 <code>uri</code> 校验，修改图片链接为任意，此时打开请求该图片的页面后，会发起请求，造成损失，</p>
+<p>由于请求是本地浏览器发起的，也可以做到类似于肉鸡的行为，解决方法如下：</p>
 <ol>
-<li><code>mid = (right - left) / 2 + left</code> ，避免溢出；</li>
-<li><strong><code>mid = (right + left) &gt;&gt; 1</code> 运算更快，推荐；</strong></li>
+<li><p>后端下载传入链接的图片，判断是否为合法图片，具体实现，参考 <a target="_blank" rel="noopener" href="https://github.com/Eminem-x/Learning/tree/main/middleware/Auth/img_validate">GitHub 链接</a></p>
+<p>但是该方法并不可取，因为如果去请求传入的链接，所带来的影响更是不可控的，但可以用来判断是否为合法图片</p>
+</li>
+<li><p>根据 <code>CDN</code> 的 <code>Host</code> 特征，进行简易的匹配判断即可</p>
+</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = nums.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (left + right) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                right = mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (nums[left] != target) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> left;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是最好的方式还是整个流程托付给后端去做处理，可以保证整个过程的原子性和一致性。</p>
+<h3 id="CSRF-校验"><a href="#CSRF-校验" class="headerlink" title="CSRF 校验"></a>CSRF 校验</h3><p>跨站点请求伪造攻击是指攻击者通过设置好的陷阱，属于被动攻击，</p>
+<p>强制对已完成认证的用户进行非预期的个人信息或设定信息等某些状态更新，</p>
+<p>有可能造成以下影响：</p>
+<ul>
+<li>利用已通过认证的用户权限更新设定信息</li>
+<li>利用已通过认证的用户权限购买商品</li>
+<li>利用已通过认证的用户权限在留言板上发表评论</li>
+</ul>
+<p>比如攻击者在留言板部下陷阱：<code>&lt;img src=&quot;http://example.com/msg?q=hello&quot;&gt;</code>，就可以影响其他用户。</p>
+<p>在实际业务场景中，也需要防止其他站点对项目站点进行恶意请求，例如下面的 <code>html</code> 文件：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- CSRF PoC --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript">history.pushState(<span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;/&#x27;</span>)</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;https://examplle.com/xxx&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Submit request&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>$$<br>\begin{align}<br>&amp;时间复杂度:O(logn)<br>&amp;空间复杂度:O(1)<br>\end{align}<br>$$</p>
+<p>只需要添加 <code>Header</code> 即可，具体的开源代码参考：<a target="_blank" rel="noopener" href="https://github.com/utrack/gin-csrf">https://github.com/utrack/gin-csrf</a></p>
 
     </div>
 
@@ -282,7 +286,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+              <a href="/tags/Tool/" rel="tag"># Tool</a>
           </div>
 
         
@@ -291,13 +295,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/11/29/Hexo%E7%9A%84%E7%95%8C%E9%9D%A2%E4%BC%98%E5%8C%96/" rel="prev" title="Hexo Next的界面优化">
-      <i class="fa fa-chevron-left"></i> Hexo Next的界面优化
+    <a href="/2022/08/14/%E5%AE%9E%E4%B9%A0%E6%80%BB%E7%BB%93/" rel="prev" title="实习总结">
+      <i class="fa fa-chevron-left"></i> 实习总结
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/01/31/9-SpringMVC%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94/" rel="next" title="SpringMVC数据响应">
-      SpringMVC数据响应 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -356,7 +357,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%A7%8D%E5%88%A4%E5%AE%9A%E6%96%B9%E5%BC%8F%EF%BC%9Aleft-%E2%89%A4-right"><span class="nav-number">1.</span> <span class="nav-text">第一种判定方式：left ≤ right</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%A7%8D%E5%88%A4%E5%AE%9A%E6%96%B9%E5%BC%8F%EF%BC%9Aleft-lt-right"><span class="nav-number">2.</span> <span class="nav-text">第二种判定方式：left &lt; right</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%AE%E9%80%9A%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C"><span class="nav-number">1.</span> <span class="nav-text">普通参数校验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E6%A0%A1%E9%AA%8C"><span class="nav-number">2.</span> <span class="nav-text">图片校验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSRF-%E6%A0%A1%E9%AA%8C"><span class="nav-number">3.</span> <span class="nav-text">CSRF 校验</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -515,59 +516,6 @@
   
 
   
-      
-
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
 
   
 
