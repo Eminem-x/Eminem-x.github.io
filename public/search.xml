@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Google Plugins</title>
+      <link href="/2022/08/27/Google%20Plugins/"/>
+      <url>/2022/08/27/Google%20Plugins/</url>
+      
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><blockquote><p>在使用 Google 浏览器时，遇到了很多非常棒的插件，整理以便使用。</p></blockquote><h3 id="Google-Plugins"><a href="#Google-Plugins" class="headerlink" title="Google Plugins"></a>Google Plugins</h3><ol><li>侧边翻译</li><li>Pinterest 收藏按钮</li><li>lastpass：整理保存密码</li><li>Quick QR：快速操作二维码</li><li>adblock：拦截阻止网页广告</li><li>custom cursor：自定义鼠标样式</li><li>Dark Reader：所有网页 Dark 模式</li><li>Bookmark Sidebar：侧边书签管理器</li><li>Https Everwhere：开启 https 加密连接</li><li>onetab：一键整理 tab，并且便捷寻找 tab</li><li>Adobe Acrobat：PDF 编辑、转化、签名工具</li><li>chrono download manager：Google 下载管理器</li><li>vimium：以 Vim 的方式操作网页，具体使用可参考<a href="https://zhuanlan.zhihu.com/p/113316942">链接</a></li><li>Grammarly: Grammar Checker and Writing App：语法检查</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Tool </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tool </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>后端参数检验</title>
       <link href="/2022/08/18/%E5%90%8E%E7%AB%AF%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C/"/>
       <url>/2022/08/18/%E5%90%8E%E7%AB%AF%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C/</url>
@@ -578,6 +603,35 @@
     
     
     <entry>
+      <title>SpringMVC拦截器</title>
+      <link href="/2022/01/31/13-SpringMVC%E6%8B%A6%E6%88%AA%E5%99%A8/"/>
+      <url>/2022/01/31/13-SpringMVC%E6%8B%A6%E6%88%AA%E5%99%A8/</url>
+      
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="拦截器作用"><a href="#拦截器作用" class="headerlink" title="拦截器作用"></a>拦截器作用</h3><p>SpringMVC 的拦截器类似于 Servlet 开发中的过滤器 Filter，用于对处理器进行<strong>预处理</strong>和<strong>后处理</strong>；</p><p>将拦截器按一定顺序连接成一条链，这条链成为<strong>拦截器链（Interceptor Chain）</strong>；</p><p>在访问被拦截的方法或字段时，拦截器链中的拦截器就会按之前定义的顺序被调用；</p><p>拦截器也是 <strong>AOP</strong> 思想的具体实现。</p><h3 id="拦截器和过滤器区别"><a href="#拦截器和过滤器区别" class="headerlink" title="拦截器和过滤器区别"></a>拦截器和过滤器区别</h3><table><thead><tr><th>区别</th><th align="left">过滤器（Filter）</th><th>拦截器（Interceptor）</th></tr></thead><tbody><tr><td>适用范围</td><td align="left">servlet 规范中的一部分，<br />任何 Java Web 工程都可以使用</td><td>SpringMVC框架才能使用</td></tr><tr><td>拦截范围</td><td align="left">在 url-pattern 中配置 /* 后，<br />可以对所有要访问的资源拦截</td><td>在 &lt;mvc:mapping path=”” /&gt; 中配置 /** 后，也可以全部拦截，<br />但是可以通过  &lt;mvc:exclude-mapping path=”” /&gt;标签，<br />排除不需要拦截的资源</td></tr></tbody></table><h3 id="自定义拦截器"><a href="#自定义拦截器" class="headerlink" title="自定义拦截器"></a>自定义拦截器</h3><ol><li><p>创建拦截器类实现 HandlerInterceptor 接口</p><table><thead><tr><th>方法名</th><th>说明</th></tr></thead><tbody><tr><td>preHandle()</td><td>方法将在请求处理之前进行调用，返回值为布尔类型，<br />当返回值为 false 时，表示请求结束；<br />当返回值为 true 时，继续调用下一个拦截器的 preHandle 方法</td></tr><tr><td>postHandle()</td><td>方法在 preHandle 方法返回值为 true 时才能被调用，<br />并且会在视图返回渲染之前被调用</td></tr><tr><td>afterCompletion()</td><td>在整个请求结束后即渲染视图之后执行</td></tr></tbody></table></li><li><p>配置拦截器在 spring-mvc.xml 文件中</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--    配置拦截器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mvc:interceptors</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mvc:interceptor</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--    对哪些资源执行拦截操作--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mvc:mapping</span> <span class="attr">path</span>=<span class="string">&quot;/**&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.yuanhao.controller.interceptor.MyInterceptor1&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mvc:interceptor</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mvc:interceptors</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>测试拦截器</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+          <category> Spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Spring </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Spring AOP</title>
       <link href="/2022/01/31/15-Spring%20AOP/"/>
       <url>/2022/01/31/15-Spring%20AOP/</url>
@@ -636,122 +690,6 @@
     
     
     <entry>
-      <title>SpringMVC拦截器</title>
-      <link href="/2022/01/31/13-SpringMVC%E6%8B%A6%E6%88%AA%E5%99%A8/"/>
-      <url>/2022/01/31/13-SpringMVC%E6%8B%A6%E6%88%AA%E5%99%A8/</url>
-      
-        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="拦截器作用"><a href="#拦截器作用" class="headerlink" title="拦截器作用"></a>拦截器作用</h3><p>SpringMVC 的拦截器类似于 Servlet 开发中的过滤器 Filter，用于对处理器进行<strong>预处理</strong>和<strong>后处理</strong>；</p><p>将拦截器按一定顺序连接成一条链，这条链成为<strong>拦截器链（Interceptor Chain）</strong>；</p><p>在访问被拦截的方法或字段时，拦截器链中的拦截器就会按之前定义的顺序被调用；</p><p>拦截器也是 <strong>AOP</strong> 思想的具体实现。</p><h3 id="拦截器和过滤器区别"><a href="#拦截器和过滤器区别" class="headerlink" title="拦截器和过滤器区别"></a>拦截器和过滤器区别</h3><table><thead><tr><th>区别</th><th align="left">过滤器（Filter）</th><th>拦截器（Interceptor）</th></tr></thead><tbody><tr><td>适用范围</td><td align="left">servlet 规范中的一部分，<br />任何 Java Web 工程都可以使用</td><td>SpringMVC框架才能使用</td></tr><tr><td>拦截范围</td><td align="left">在 url-pattern 中配置 /* 后，<br />可以对所有要访问的资源拦截</td><td>在 &lt;mvc:mapping path=”” /&gt; 中配置 /** 后，也可以全部拦截，<br />但是可以通过  &lt;mvc:exclude-mapping path=”” /&gt;标签，<br />排除不需要拦截的资源</td></tr></tbody></table><h3 id="自定义拦截器"><a href="#自定义拦截器" class="headerlink" title="自定义拦截器"></a>自定义拦截器</h3><ol><li><p>创建拦截器类实现 HandlerInterceptor 接口</p><table><thead><tr><th>方法名</th><th>说明</th></tr></thead><tbody><tr><td>preHandle()</td><td>方法将在请求处理之前进行调用，返回值为布尔类型，<br />当返回值为 false 时，表示请求结束；<br />当返回值为 true 时，继续调用下一个拦截器的 preHandle 方法</td></tr><tr><td>postHandle()</td><td>方法在 preHandle 方法返回值为 true 时才能被调用，<br />并且会在视图返回渲染之前被调用</td></tr><tr><td>afterCompletion()</td><td>在整个请求结束后即渲染视图之后执行</td></tr></tbody></table></li><li><p>配置拦截器在 spring-mvc.xml 文件中</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--    配置拦截器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mvc:interceptors</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mvc:interceptor</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--    对哪些资源执行拦截操作--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mvc:mapping</span> <span class="attr">path</span>=<span class="string">&quot;/**&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.yuanhao.controller.interceptor.MyInterceptor1&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mvc:interceptor</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mvc:interceptors</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>测试拦截器</p></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java </category>
-          
-          <category> Spring </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Java </tag>
-            
-            <tag> Spring </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Spring事务控制</title>
-      <link href="/2022/01/31/16-Spring%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6/"/>
-      <url>/2022/01/31/16-Spring%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6/</url>
-      
-        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="编程式事务控制相关对象"><a href="#编程式事务控制相关对象" class="headerlink" title="编程式事务控制相关对象"></a>编程式事务控制相关对象</h3><ol><li><p><strong>PlatformTransactionManager</strong> 是接口类型，不同的 Dao 层技术有不同的实现类，</p><p>Jdbc 或 Mybatis 时：</p><p><code>org.springframework.jdbc.datasource.DataSourceTransactionManager</code></p><p>Hibernate 时：</p><p><code>org.springframework.orm.hibernate5.HibernateTransactionManager</code></p></li><li><p><strong>TransactionDefinition</strong> 是事务的定义信息对象</p><ol><li><p><strong>事务隔离级别</strong></p><ul><li>ISOLATION_DEFAULT</li><li>ISOLATION_READ_UNCOMMITTED</li><li>ISOLATION_READ_COMMITTED</li><li>ISOLATION_REPEATABLE_READ</li><li>ISOLATION_SERIALIZABLE</li></ul></li><li><p><strong>事务传播行为</strong></p><p><strong>指的是当一个事务方法被另一个事务方法调用时，这个事务方法应该如何进行。 </strong><br>例如：A 事务方法调用 B 事务方法时，B 是继续在调用者 A 的事务中运行，</p><p>还是为自己开启一个新事务运行，这就是由 B 的事务传播行为决定的。</p></li><li><p><strong>事务运行状态 TransactionStatus</strong></p></li></ol></li></ol><hr><h3 id="声明式事务控制"><a href="#声明式事务控制" class="headerlink" title="声明式事务控制"></a>声明式事务控制</h3><ol><li><strong>概念：</strong></li></ol><p>Spring 在配置文件中声明的方式来处理事务，代替代码式的处理事务</p><ol start="2"><li><strong>作用：</strong></li></ol><ul><li><p>事务管理不侵入开发的组件，具体来说，业务逻辑对象就不会意识到正在事务管理之中，</p><p>事实上也应如此，因为事务管理是属于系统层面的服务，而不是业务逻辑的一部分，</p><p>如果想要改变事务管理策划的化，也只需要在定义文件中重新配置即可</p></li><li><p>不需要事务管理的时候，只要再设定文件上修改，便于维护</p></li></ul><ol start="3"><li><strong>Spring声明式事务控制底层就是AOP</strong></li></ol><hr><h3 id="基于XML文件配置"><a href="#基于XML文件配置" class="headerlink" title="基于XML文件配置"></a>基于XML文件配置</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--    配置平台事务管理器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;transactionManager&quot;</span> <span class="attr">class</span>=<span class="string">&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;dataSource&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;dataSource&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--通知 事务的增强--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tx:advice</span> <span class="attr">id</span>=<span class="string">&quot;txAdvice&quot;</span> <span class="attr">transaction-manager</span>=<span class="string">&quot;transactionManager&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tx:attributes</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--代表切点方法的事务参数的配置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tx:method</span> <span class="attr">name</span>=<span class="string">&quot;*&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tx:attributes</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tx:advice</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--    配置事务的aop织入--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">aop:config</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">aop:advisor</span> <span class="attr">advice-ref</span>=<span class="string">&quot;txAdvice&quot;</span> <span class="attr">pointcut</span>=<span class="string">&quot;execution(* com.service.impl.*.*(..))&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">aop:config</span>&gt;</span></span><br></pre></td></tr></table></figure><hr><h3 id="基于注解"><a href="#基于注解" class="headerlink" title="基于注解"></a>基于注解</h3><ol><li>使用 <strong>@Transactional</strong> 在需要进行事务控制的类或方法上修饰</li><li>注解使用在类上，那么该类下的所有方法都使用同一套注解参数配置</li><li>使用在方法上，不同的方法可以采用不同的事务参数配置</li><li>配置事务注解驱动 <code>&lt;tx:annotation-driver&gt;</code></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java </category>
-          
-          <category> Spring </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Java </tag>
-            
-            <tag> Spring </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>SSM框架整合</title>
-      <link href="/2022/01/31/18-SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88/"/>
-      <url>/2022/01/31/18-SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88/</url>
-      
-        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h3><p>从 GitHub 上 Fork 的项目：<a href="https://github.com/liyifeng1994/ssm/tree/master/src">https://github.com/liyifeng1994/ssm/tree/master/src</a></p><p>并且该项目有详细的整合流程：<a href="https://blog.csdn.net/qq598535550/article/details/51703190">https://blog.csdn.net/qq598535550/article/details/51703190</a></p><p>但是因为是几年前的项目，许多包的版本过时，无法正常启动，所以重新构建了整个项目，</p><p>跟着原作者的流程完成，整体不会出现太难解决的问题，并且该项目并无具体 web实现，</p><p>仅通过 test 测试整体框架的完备性，适合学习框架的设计流程。</p><h3 id="更改版本"><a href="#更改版本" class="headerlink" title="更改版本"></a>更改版本</h3><ol><li><p>数据库驱动版本：要和自己的数据库版本保持一致</p></li><li><p>c3p0 版本：<a href="https://blog.csdn.net/Peng_Ze_Yu/article/details/81632828">https://blog.csdn.net/Peng_Ze_Yu/article/details/81632828</a></p><p>在 Maven 导入时，更改版本信息，否则报错</p></li><li><p>Spring 版本：5.0.5.RELEASE</p></li><li><p>junit 版本：4.12 避免低版本不支持</p><p>mybatis 以及 mybatis-spring 版本更新</p></li><li><p>entity：<a href="https://blog.csdn.net/qq_35991056/article/details/81390551">https://blog.csdn.net/qq_35991056/article/details/81390551</a></p><p>entity / domain / model 的区别，在以后项目中应该也会遇到</p></li><li><p>数据库的 appoint_time 修改为 appoint_date</p><p>因为创建变量时，误写为 appointDate，所以更改了数据库列名</p></li></ol><h3 id="整合流程"><a href="#整合流程" class="headerlink" title="整合流程"></a>整合流程</h3><ol><li><p>建立整个项目的基础目录结构，同时遵循 maven 的目录规范</p></li><li><p>导入相应的 jar 包，资源坐标，注意版本号兼容性</p></li><li><p>资源文件中建立 spring 文件，按照 dao、service、controller分层配置</p></li><li><p>配置 mybatis 的核心文件 <code>mybatis-config.xml</code></p></li><li><p>配置 <code>web.xml</code> 文件</p></li><li><p>根据需求，配置日志文件</p></li><li><p>需要根据需求设计数据库以及查询语句</p></li><li><p>在 entity 层中封装数据库实体，注意内部成员名称</p></li><li><p>在 dao 层建立相对应的接口，由于 mybatis 不需要实现</p></li><li><p>资源文件中编写相对应的 mapper 配置文件</p></li><li><p>定义业务的数据字典，返回给客户端的状态信息</p></li><li><p>在 dto 包下建立类存储执行操作后的返回结果</p></li><li><p>在 dto 包下建立封装 json 返回结果的类，设计成泛型</p></li><li><p>在 exception 下建立自定义异常类</p></li><li><p>在 service 层下编写具体业务代码，创建并实现接口</p></li><li><p>编写 controller 层即 web 层，完善整体结构</p></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java </category>
-          
-          <category> Spring </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Java </tag>
-            
-            <tag> Spring </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Mybatis基础</title>
-      <link href="/2022/01/31/17-Mybatis%E5%9F%BA%E7%A1%80/"/>
-      <url>/2022/01/31/17-Mybatis%E5%9F%BA%E7%A1%80/</url>
-      
-        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="原始-Jdbc-操作分析"><a href="#原始-Jdbc-操作分析" class="headerlink" title="原始 Jdbc 操作分析"></a>原始 Jdbc 操作分析</h3><p><strong>存在以下问题：</strong></p><ol><li>数据库连接创建、释放频繁造成系统资源浪费从而影响性能</li><li>sql 语句在代码中硬编码，不易维护，不便于实际应用</li><li>查询和插入操作时，需要手动处理结果集和实体集</li></ol><p><strong>解决方案：</strong></p><ol><li>使用数据库连接池初始化连接资源</li><li>将 sql 语句抽取到 xml 配置文件中</li><li>使用反射、内省等底层技术，自动将实体与表进行映射</li></ol><h3 id="Mybatis-概念"><a href="#Mybatis-概念" class="headerlink" title="Mybatis 概念"></a>Mybatis 概念</h3><ul><li>基于 Java 的持久层框架，内部封装了 Jdbc，简化了开发者的工作</li><li>通过 xml 或注解的方式将要执行的各种 statement 配置起来</li><li>将结果映射为对象并返回，采用 ORM 思想解决实体和数据库映射问题</li><li>对 Jdbc 进行封装，屏蔽了底层访问细节，便于操作和维护</li></ul><h3 id="开发步骤"><a href="#开发步骤" class="headerlink" title="开发步骤"></a>开发步骤</h3><ol><li><p>添加 MyBatis 坐标</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.25<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.4.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>创建数据表（user）</p></li><li><p>创建实体类（User）</p></li><li><p>编写映射文件（UserMapper.xml）</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">mapper</span> <span class="meta-keyword">PUBLIC</span> <span class="meta-string">&quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span> </span></span><br><span class="line"><span class="meta"><span class="meta-string">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">&quot;userMapper&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;findAll&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;com.domain.User&quot;</span>&gt;</span></span><br><span class="line">        select * from user</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure><ul><li>&lt;if&gt;：if 判断</li><li>&lt;foreach&gt;：循环</li><li>&lt;sql&gt;：sql 片段抽取</li></ul></li><li><p>编写核心文件（SqlMapConfig.xml）</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">configuration</span> <span class="meta-keyword">PUBLIC</span> <span class="meta-string">&quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span> </span></span><br><span class="line"><span class="meta"><span class="meta-string">&quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--数据源环境--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">&quot;development&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">&quot;development&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">&quot;JDBC&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">transactionManager</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">&quot;POOLED&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;driver&quot;</span> <span class="attr">value</span>=<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;url&quot;</span> <span class="attr">value</span>=<span class="string">&quot;jdbc:mysql://localhost:3306/study&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;root&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;123456&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">environments</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>编写测试类</p><p><strong>操作涉及数据库数据变化时，要提交事务，即<code>sqlSession.commit()</code></strong></p></li></ol><h3 id="核心配置文件"><a href="#核心配置文件" class="headerlink" title="核心配置文件"></a>核心配置文件</h3><ul><li>environments 标签：数据源环境配置标签</li><li>mappers 标签：加载映射配置</li><li>properties 标签：加载外部的 properties 文件</li><li>typeAliases 标签：设置类型别名</li><li>typeHandlers 标签：重写或创建类型处理器来处理不支持或非标准的类型</li><li>plugins 标签：Mybatis 可以使用第三方插件对功能进行拓展</li></ul><h3 id="相应API"><a href="#相应API" class="headerlink" title="相应API"></a>相应API</h3><ol><li><h4 id="SqlSession-工厂构建器-SqlSessionFactoryBuilder"><a href="#SqlSession-工厂构建器-SqlSessionFactoryBuilder" class="headerlink" title="SqlSession 工厂构建器 SqlSessionFactoryBuilder"></a>SqlSession 工厂构建器 SqlSessionFactoryBuilder</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获得核心配置文件</span></span><br><span class="line">InputStream resourceAsStream = Resources.getResourceAsStream(<span class="string">&quot;sqlMapConfig.xml&quot;</span>);</span><br><span class="line"><span class="comment">// 获得session工厂对象</span></span><br><span class="line">SqlSessionFactory sqlSessionFactory = <span class="keyword">new</span> SqlSessionFactoryBuilder().build(resourceAsStream);</span><br></pre></td></tr></table></figure><p>通过加载核心文件输入流的形式构建一个 SqlSessionFactory 对象</p></li><li><h4 id="SqlSession-工厂对象-SqlSessionFactory"><a href="#SqlSession-工厂对象-SqlSessionFactory" class="headerlink" title="SqlSession 工厂对象 SqlSessionFactory"></a>SqlSession 工厂对象 SqlSessionFactory</h4><p>存在多个方法创建 SqlSession 实例，常用的如下两种：</p><table><thead><tr><th>方法</th><th>解释</th></tr></thead><tbody><tr><td>openSession()</td><td>默认开启一个事务，但事务不会自动提交，需要手动提交，<br />更新数据才会持久化到数据库中</td></tr><tr><td>openSession(boolean autoCommit)</td><td>参数为是否自动提交，如果为 true，那么不需要手动提交</td></tr></tbody></table></li><li><h4 id="SqlSession-会话对象"><a href="#SqlSession-会话对象" class="headerlink" title="SqlSession 会话对象"></a>SqlSession 会话对象</h4><p>包含所有执行语句、提交或回滚事务和获取映射器实例的方法</p></li></ol><h3 id="Dao层代理开发"><a href="#Dao层代理开发" class="headerlink" title="Dao层代理开发"></a>Dao层代理开发</h3><p>Mybatis的代理开发方式实现 DAO 层的开发：<strong>Mapper接口开发方法</strong>，</p><p><strong>只需要实现 Mapper 接口，由 Mybatis 框架根据接口定义创建接口的动态代理对象。</strong></p><p><strong>遵循以下开发规范：</strong></p><ul><li>Mapper.xml 文件中的 namespace 与 mapper 接口的全限定名相同</li><li>Mapper 接口方法名和 Mapper.xml 中定义的每个 statement 的 id 相同</li><li>Mapper 接口方法的输入参数类型和文件中定义的每个 sql 的 parameterType 类型相同</li><li>Mapper 接口方法的输出参数类型和文件中定义的每个 sql 的 resultType 类型相同、</li></ul><h3 id="MyBatis注解开发"><a href="#MyBatis注解开发" class="headerlink" title="MyBatis注解开发"></a>MyBatis注解开发</h3>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java </category>
-          
-          <category> Spring </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Java </tag>
-            
-            <tag> Spring </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Redis特性</title>
       <link href="/2022/01/31/2-Redis%E7%89%B9%E6%80%A7/"/>
       <url>/2022/01/31/2-Redis%E7%89%B9%E6%80%A7/</url>
@@ -769,35 +707,6 @@
         <tags>
             
             <tag> Redis </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Spring相关API</title>
-      <link href="/2022/01/31/3-Spring%E7%9B%B8%E5%85%B3API/"/>
-      <url>/2022/01/31/3-Spring%E7%9B%B8%E5%85%B3API/</url>
-      
-        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><p>各个版本的 API 文档链接：<a href="https://docs.spring.io/spring-framework/docs/">https://docs.spring.io/spring-framework/docs/</a></p><h3 id="ApplicationContext-的继承体系"><a href="#ApplicationContext-的继承体系" class="headerlink" title="ApplicationContext 的继承体系"></a>ApplicationContext 的继承体系</h3><p>ApplicationContext：接口类型，代表应用上下文，可以通过其实例获得 Spring 容器中的 Bean 对象</p><h3 id="ApplicationContext-的实现类"><a href="#ApplicationContext-的实现类" class="headerlink" title="ApplicationContext 的实现类"></a>ApplicationContext 的实现类</h3><ul><li><p><strong>ClassPathXmlApplicationContext</strong></p><p>从类的根路径下加载配置文件<strong>（推荐使用）</strong></p></li><li><p><strong>FileSystemXmlApplicationContext</strong></p><p>从磁盘路径上加载配置文件，配置文件可以在磁盘上的任意位置</p></li><li><p><strong>AnnotationConfigApplicationContext</strong></p><p>当使用注解配置容器对象时，需要用此类创建容器，用来读取注解</p></li></ul><h3 id="getBean-方法"><a href="#getBean-方法" class="headerlink" title="getBean() 方法"></a>getBean() 方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java.lang.<span class="function">Object <span class="title">getBean</span><span class="params">(java.lang.String name)</span> <span class="keyword">throws</span> BeansException</span></span><br><span class="line"><span class="function">&lt;T&gt; T <span class="title">getBean</span><span class="params">(java.lang.Class&lt;T&gt; requiredType)</span> <span class="keyword">throws</span> BeansException</span></span><br></pre></td></tr></table></figure><ol><li><p>参数类型是字符串时，表示根据 Bean 的 id 从容器中获得实例，</p><p>返回时 Object，需要进行强制类型转换</p></li><li><p>参数类型是 Class 时，表示根据类型从容器中匹配 Bean 实例，</p><p>不需要强制类型转换，但是当有多个相同 Bean 时，会报错</p></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java </category>
-          
-          <category> Spring </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Java </tag>
-            
-            <tag> Spring </tag>
             
         </tags>
       
@@ -860,6 +769,35 @@
     
     
     <entry>
+      <title>Spring相关API</title>
+      <link href="/2022/01/31/3-Spring%E7%9B%B8%E5%85%B3API/"/>
+      <url>/2022/01/31/3-Spring%E7%9B%B8%E5%85%B3API/</url>
+      
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><p>各个版本的 API 文档链接：<a href="https://docs.spring.io/spring-framework/docs/">https://docs.spring.io/spring-framework/docs/</a></p><h3 id="ApplicationContext-的继承体系"><a href="#ApplicationContext-的继承体系" class="headerlink" title="ApplicationContext 的继承体系"></a>ApplicationContext 的继承体系</h3><p>ApplicationContext：接口类型，代表应用上下文，可以通过其实例获得 Spring 容器中的 Bean 对象</p><h3 id="ApplicationContext-的实现类"><a href="#ApplicationContext-的实现类" class="headerlink" title="ApplicationContext 的实现类"></a>ApplicationContext 的实现类</h3><ul><li><p><strong>ClassPathXmlApplicationContext</strong></p><p>从类的根路径下加载配置文件<strong>（推荐使用）</strong></p></li><li><p><strong>FileSystemXmlApplicationContext</strong></p><p>从磁盘路径上加载配置文件，配置文件可以在磁盘上的任意位置</p></li><li><p><strong>AnnotationConfigApplicationContext</strong></p><p>当使用注解配置容器对象时，需要用此类创建容器，用来读取注解</p></li></ul><h3 id="getBean-方法"><a href="#getBean-方法" class="headerlink" title="getBean() 方法"></a>getBean() 方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java.lang.<span class="function">Object <span class="title">getBean</span><span class="params">(java.lang.String name)</span> <span class="keyword">throws</span> BeansException</span></span><br><span class="line"><span class="function">&lt;T&gt; T <span class="title">getBean</span><span class="params">(java.lang.Class&lt;T&gt; requiredType)</span> <span class="keyword">throws</span> BeansException</span></span><br></pre></td></tr></table></figure><ol><li><p>参数类型是字符串时，表示根据 Bean 的 id 从容器中获得实例，</p><p>返回时 Object，需要进行强制类型转换</p></li><li><p>参数类型是 Class 时，表示根据类型从容器中匹配 Bean 实例，</p><p>不需要强制类型转换，但是当有多个相同 Bean 时，会报错</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+          <category> Spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Spring </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Redis应用</title>
       <link href="/2022/01/31/4-Redis%E5%BA%94%E7%94%A8/"/>
       <url>/2022/01/31/4-Redis%E5%BA%94%E7%94%A8/</url>
@@ -914,11 +852,11 @@
     
     
     <entry>
-      <title>Spring与Web环境集成</title>
-      <link href="/2022/01/31/7-Spring%E4%B8%8EWeb%E7%8E%AF%E5%A2%83%E9%9B%86%E6%88%90/"/>
-      <url>/2022/01/31/7-Spring%E4%B8%8EWeb%E7%8E%AF%E5%A2%83%E9%9B%86%E6%88%90/</url>
+      <title>SSM框架整合</title>
+      <link href="/2022/01/31/18-SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88/"/>
+      <url>/2022/01/31/18-SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88/</url>
       
-        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="ApplicationContext应用上下文获取方式"><a href="#ApplicationContext应用上下文获取方式" class="headerlink" title="ApplicationContext应用上下文获取方式"></a>ApplicationContext应用上下文获取方式</h3><p>应用上下文对象是通过 <code>new ClassPathXmlApplicationContext(Spring配置文件)</code>方式获取，</p><p>但是每次从容器中获得 Bean 时都要编写，会导致配置文件加载多次，应用上下文创建多次。</p><br><p>在 Web 项目中，可以使用 <code>ServletContextListener</code> 监听 Web 应用的启动，当应用启动时，</p><p>就加载 Spring 的配置文件，创建应用上下文对象，并将其存储到 <code>servletContext</code> 域中，</p><p>这样就可以在任意位置从域中获得应用上下文对象 <code>ApplicationContext</code> 对象。</p><h3 id="Spring提供获取应用上下文的工具"><a href="#Spring提供获取应用上下文的工具" class="headerlink" title="Spring提供获取应用上下文的工具"></a>Spring提供获取应用上下文的工具</h3><p>Spring 提供监听器 <code>ContextLoaderListener</code> 对上述功能封装，</p><p>该监听器内部加载 Spring 配置文件，创建应用上下文对象，并存储到 <code>servletContext</code> 域中，</p><p>提供了一个客户端工具 <code>WebApplicationContextUtils</code> 供获得应用上下文对象。</p><ol><li>在 web.xml 中配置 ContextLoaderListener 监听器<strong>（导入 spring-web 坐标）</strong></li><li>使用 WebApplicationContextUtils 获得应用上下文对象</li></ol>]]></content>
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h3><p>从 GitHub 上 Fork 的项目：<a href="https://github.com/liyifeng1994/ssm/tree/master/src">https://github.com/liyifeng1994/ssm/tree/master/src</a></p><p>并且该项目有详细的整合流程：<a href="https://blog.csdn.net/qq598535550/article/details/51703190">https://blog.csdn.net/qq598535550/article/details/51703190</a></p><p>但是因为是几年前的项目，许多包的版本过时，无法正常启动，所以重新构建了整个项目，</p><p>跟着原作者的流程完成，整体不会出现太难解决的问题，并且该项目并无具体 web实现，</p><p>仅通过 test 测试整体框架的完备性，适合学习框架的设计流程。</p><h3 id="更改版本"><a href="#更改版本" class="headerlink" title="更改版本"></a>更改版本</h3><ol><li><p>数据库驱动版本：要和自己的数据库版本保持一致</p></li><li><p>c3p0 版本：<a href="https://blog.csdn.net/Peng_Ze_Yu/article/details/81632828">https://blog.csdn.net/Peng_Ze_Yu/article/details/81632828</a></p><p>在 Maven 导入时，更改版本信息，否则报错</p></li><li><p>Spring 版本：5.0.5.RELEASE</p></li><li><p>junit 版本：4.12 避免低版本不支持</p><p>mybatis 以及 mybatis-spring 版本更新</p></li><li><p>entity：<a href="https://blog.csdn.net/qq_35991056/article/details/81390551">https://blog.csdn.net/qq_35991056/article/details/81390551</a></p><p>entity / domain / model 的区别，在以后项目中应该也会遇到</p></li><li><p>数据库的 appoint_time 修改为 appoint_date</p><p>因为创建变量时，误写为 appointDate，所以更改了数据库列名</p></li></ol><h3 id="整合流程"><a href="#整合流程" class="headerlink" title="整合流程"></a>整合流程</h3><ol><li><p>建立整个项目的基础目录结构，同时遵循 maven 的目录规范</p></li><li><p>导入相应的 jar 包，资源坐标，注意版本号兼容性</p></li><li><p>资源文件中建立 spring 文件，按照 dao、service、controller分层配置</p></li><li><p>配置 mybatis 的核心文件 <code>mybatis-config.xml</code></p></li><li><p>配置 <code>web.xml</code> 文件</p></li><li><p>根据需求，配置日志文件</p></li><li><p>需要根据需求设计数据库以及查询语句</p></li><li><p>在 entity 层中封装数据库实体，注意内部成员名称</p></li><li><p>在 dao 层建立相对应的接口，由于 mybatis 不需要实现</p></li><li><p>资源文件中编写相对应的 mapper 配置文件</p></li><li><p>定义业务的数据字典，返回给客户端的状态信息</p></li><li><p>在 dto 包下建立类存储执行操作后的返回结果</p></li><li><p>在 dto 包下建立封装 json 返回结果的类，设计成泛型</p></li><li><p>在 exception 下建立自定义异常类</p></li><li><p>在 service 层下编写具体业务代码，创建并实现接口</p></li><li><p>编写 controller 层即 web 层，完善整体结构</p></li></ol>]]></content>
       
       
       <categories>
@@ -972,11 +910,40 @@
     
     
     <entry>
-      <title>SpringMVC基础</title>
-      <link href="/2022/01/31/8-SpringMVC%E5%9F%BA%E7%A1%80/"/>
-      <url>/2022/01/31/8-SpringMVC%E5%9F%BA%E7%A1%80/</url>
+      <title>Mybatis基础</title>
+      <link href="/2022/01/31/17-Mybatis%E5%9F%BA%E7%A1%80/"/>
+      <url>/2022/01/31/17-Mybatis%E5%9F%BA%E7%A1%80/</url>
       
-        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="SpringMVC概述"><a href="#SpringMVC概述" class="headerlink" title="SpringMVC概述"></a>SpringMVC概述</h3><p>SpringMVC 是一种基于 Java 的实现 MVC设计模型的请求驱动类型的轻量级 Web 框架</p><ol><li>前端控制器：DispatcherServlet</li><li>处理器映射器：HandlerMapping</li><li>处理器适配器：HandlerAdapter</li><li>处理器：Handler</li><li>视图解析器：ViewResolver</li><li>视图：View</li></ol><h3 id="SpringMVC步骤"><a href="#SpringMVC步骤" class="headerlink" title="SpringMVC步骤"></a>SpringMVC步骤</h3><p>需求：客户端发起请求，服务器端接受请求，执行逻辑并进行视图跳转</p><ol><li>导入 SpringMVC 相关坐标</li><li>配置 SpringMVC 核心控制器 DispatcherServlet</li><li>创建 Controller 类和视图页面</li><li>使用注解配置 Controller 类中业务方法的映射地址</li><li>配置 SpringMVC 核心文件 spring-mvc.xml</li><li>客户端发起请求测试</li></ol><h3 id="SpringMVC执行流程"><a href="#SpringMVC执行流程" class="headerlink" title="SpringMVC执行流程"></a>SpringMVC执行流程</h3><ol><li><p>用户发送请求至前端控制器 DispatcherServlet</p></li><li><p>DispatcherServlet 收到请求调用 HandlerMapping 处理器映射器</p></li><li><p>处理器映射器找到具体的处理器，生成处理器对象以及处理器拦截器，</p><p>一并返回给 DispatcherServlet</p></li><li><p>DispatcherServlet 调用 HandlerAdapter 处理器适配器</p></li><li><p>HandlerAdapter 经过适配器调用具体的处理器</p></li><li><p>Controller 执行完成后返回 ModelAndView</p></li><li><p>HandlerAdapter 将 ModelAndView 返回给 DispatcherServlet</p></li><li><p>DispatcherServlet 将 ModelAndView 传给 ViewReslover 视图解析器</p></li><li><p>ViewReslover 解析后返回具体 View</p></li><li><p>DispatcherServlet 根据 View 进行渲染视图后响应用户</p></li></ol><h3 id="SpringMVC注解解析"><a href="#SpringMVC注解解析" class="headerlink" title="SpringMVC注解解析"></a>SpringMVC注解解析</h3><ol><li><strong>@RequestMapping</strong></li></ol><p>作用：用于建立请求 URL 和 处理请求方法之间的对应关系</p><p>位置：</p><ul><li>类上，请求 URL 的第一级访问目录</li><li>方法上，请求 URL 的第二级访问目录</li></ul><p>属性：</p><ul><li>value：用于指定请求的 URL</li><li>method：用于指定请求的方式</li><li>params：用于指定限制请求参数的条件，支持简单的表达式</li></ul><h3 id="SpringMVC的XML配置解析"><a href="#SpringMVC的XML配置解析" class="headerlink" title="SpringMVC的XML配置解析"></a>SpringMVC的XML配置解析</h3><ol><li>mvc 命名空间引入和组件扫描</li><li>配置内部资源视图解析器</li></ol>]]></content>
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="原始-Jdbc-操作分析"><a href="#原始-Jdbc-操作分析" class="headerlink" title="原始 Jdbc 操作分析"></a>原始 Jdbc 操作分析</h3><p><strong>存在以下问题：</strong></p><ol><li>数据库连接创建、释放频繁造成系统资源浪费从而影响性能</li><li>sql 语句在代码中硬编码，不易维护，不便于实际应用</li><li>查询和插入操作时，需要手动处理结果集和实体集</li></ol><p><strong>解决方案：</strong></p><ol><li>使用数据库连接池初始化连接资源</li><li>将 sql 语句抽取到 xml 配置文件中</li><li>使用反射、内省等底层技术，自动将实体与表进行映射</li></ol><h3 id="Mybatis-概念"><a href="#Mybatis-概念" class="headerlink" title="Mybatis 概念"></a>Mybatis 概念</h3><ul><li>基于 Java 的持久层框架，内部封装了 Jdbc，简化了开发者的工作</li><li>通过 xml 或注解的方式将要执行的各种 statement 配置起来</li><li>将结果映射为对象并返回，采用 ORM 思想解决实体和数据库映射问题</li><li>对 Jdbc 进行封装，屏蔽了底层访问细节，便于操作和维护</li></ul><h3 id="开发步骤"><a href="#开发步骤" class="headerlink" title="开发步骤"></a>开发步骤</h3><ol><li><p>添加 MyBatis 坐标</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.25<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.4.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>创建数据表（user）</p></li><li><p>创建实体类（User）</p></li><li><p>编写映射文件（UserMapper.xml）</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">mapper</span> <span class="meta-keyword">PUBLIC</span> <span class="meta-string">&quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span> </span></span><br><span class="line"><span class="meta"><span class="meta-string">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">&quot;userMapper&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">&quot;findAll&quot;</span> <span class="attr">resultType</span>=<span class="string">&quot;com.domain.User&quot;</span>&gt;</span></span><br><span class="line">        select * from user</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure><ul><li>&lt;if&gt;：if 判断</li><li>&lt;foreach&gt;：循环</li><li>&lt;sql&gt;：sql 片段抽取</li></ul></li><li><p>编写核心文件（SqlMapConfig.xml）</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">configuration</span> <span class="meta-keyword">PUBLIC</span> <span class="meta-string">&quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span> </span></span><br><span class="line"><span class="meta"><span class="meta-string">&quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--数据源环境--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">&quot;development&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">&quot;development&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">&quot;JDBC&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">transactionManager</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">&quot;POOLED&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;driver&quot;</span> <span class="attr">value</span>=<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;url&quot;</span> <span class="attr">value</span>=<span class="string">&quot;jdbc:mysql://localhost:3306/study&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;root&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;123456&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">environments</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>编写测试类</p><p><strong>操作涉及数据库数据变化时，要提交事务，即<code>sqlSession.commit()</code></strong></p></li></ol><h3 id="核心配置文件"><a href="#核心配置文件" class="headerlink" title="核心配置文件"></a>核心配置文件</h3><ul><li>environments 标签：数据源环境配置标签</li><li>mappers 标签：加载映射配置</li><li>properties 标签：加载外部的 properties 文件</li><li>typeAliases 标签：设置类型别名</li><li>typeHandlers 标签：重写或创建类型处理器来处理不支持或非标准的类型</li><li>plugins 标签：Mybatis 可以使用第三方插件对功能进行拓展</li></ul><h3 id="相应API"><a href="#相应API" class="headerlink" title="相应API"></a>相应API</h3><ol><li><h4 id="SqlSession-工厂构建器-SqlSessionFactoryBuilder"><a href="#SqlSession-工厂构建器-SqlSessionFactoryBuilder" class="headerlink" title="SqlSession 工厂构建器 SqlSessionFactoryBuilder"></a>SqlSession 工厂构建器 SqlSessionFactoryBuilder</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获得核心配置文件</span></span><br><span class="line">InputStream resourceAsStream = Resources.getResourceAsStream(<span class="string">&quot;sqlMapConfig.xml&quot;</span>);</span><br><span class="line"><span class="comment">// 获得session工厂对象</span></span><br><span class="line">SqlSessionFactory sqlSessionFactory = <span class="keyword">new</span> SqlSessionFactoryBuilder().build(resourceAsStream);</span><br></pre></td></tr></table></figure><p>通过加载核心文件输入流的形式构建一个 SqlSessionFactory 对象</p></li><li><h4 id="SqlSession-工厂对象-SqlSessionFactory"><a href="#SqlSession-工厂对象-SqlSessionFactory" class="headerlink" title="SqlSession 工厂对象 SqlSessionFactory"></a>SqlSession 工厂对象 SqlSessionFactory</h4><p>存在多个方法创建 SqlSession 实例，常用的如下两种：</p><table><thead><tr><th>方法</th><th>解释</th></tr></thead><tbody><tr><td>openSession()</td><td>默认开启一个事务，但事务不会自动提交，需要手动提交，<br />更新数据才会持久化到数据库中</td></tr><tr><td>openSession(boolean autoCommit)</td><td>参数为是否自动提交，如果为 true，那么不需要手动提交</td></tr></tbody></table></li><li><h4 id="SqlSession-会话对象"><a href="#SqlSession-会话对象" class="headerlink" title="SqlSession 会话对象"></a>SqlSession 会话对象</h4><p>包含所有执行语句、提交或回滚事务和获取映射器实例的方法</p></li></ol><h3 id="Dao层代理开发"><a href="#Dao层代理开发" class="headerlink" title="Dao层代理开发"></a>Dao层代理开发</h3><p>Mybatis的代理开发方式实现 DAO 层的开发：<strong>Mapper接口开发方法</strong>，</p><p><strong>只需要实现 Mapper 接口，由 Mybatis 框架根据接口定义创建接口的动态代理对象。</strong></p><p><strong>遵循以下开发规范：</strong></p><ul><li>Mapper.xml 文件中的 namespace 与 mapper 接口的全限定名相同</li><li>Mapper 接口方法名和 Mapper.xml 中定义的每个 statement 的 id 相同</li><li>Mapper 接口方法的输入参数类型和文件中定义的每个 sql 的 parameterType 类型相同</li><li>Mapper 接口方法的输出参数类型和文件中定义的每个 sql 的 resultType 类型相同、</li></ul><h3 id="MyBatis注解开发"><a href="#MyBatis注解开发" class="headerlink" title="MyBatis注解开发"></a>MyBatis注解开发</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+          <category> Spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Spring </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Spring事务控制</title>
+      <link href="/2022/01/31/16-Spring%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6/"/>
+      <url>/2022/01/31/16-Spring%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6/</url>
+      
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="编程式事务控制相关对象"><a href="#编程式事务控制相关对象" class="headerlink" title="编程式事务控制相关对象"></a>编程式事务控制相关对象</h3><ol><li><p><strong>PlatformTransactionManager</strong> 是接口类型，不同的 Dao 层技术有不同的实现类，</p><p>Jdbc 或 Mybatis 时：</p><p><code>org.springframework.jdbc.datasource.DataSourceTransactionManager</code></p><p>Hibernate 时：</p><p><code>org.springframework.orm.hibernate5.HibernateTransactionManager</code></p></li><li><p><strong>TransactionDefinition</strong> 是事务的定义信息对象</p><ol><li><p><strong>事务隔离级别</strong></p><ul><li>ISOLATION_DEFAULT</li><li>ISOLATION_READ_UNCOMMITTED</li><li>ISOLATION_READ_COMMITTED</li><li>ISOLATION_REPEATABLE_READ</li><li>ISOLATION_SERIALIZABLE</li></ul></li><li><p><strong>事务传播行为</strong></p><p><strong>指的是当一个事务方法被另一个事务方法调用时，这个事务方法应该如何进行。 </strong><br>例如：A 事务方法调用 B 事务方法时，B 是继续在调用者 A 的事务中运行，</p><p>还是为自己开启一个新事务运行，这就是由 B 的事务传播行为决定的。</p></li><li><p><strong>事务运行状态 TransactionStatus</strong></p></li></ol></li></ol><hr><h3 id="声明式事务控制"><a href="#声明式事务控制" class="headerlink" title="声明式事务控制"></a>声明式事务控制</h3><ol><li><strong>概念：</strong></li></ol><p>Spring 在配置文件中声明的方式来处理事务，代替代码式的处理事务</p><ol start="2"><li><strong>作用：</strong></li></ol><ul><li><p>事务管理不侵入开发的组件，具体来说，业务逻辑对象就不会意识到正在事务管理之中，</p><p>事实上也应如此，因为事务管理是属于系统层面的服务，而不是业务逻辑的一部分，</p><p>如果想要改变事务管理策划的化，也只需要在定义文件中重新配置即可</p></li><li><p>不需要事务管理的时候，只要再设定文件上修改，便于维护</p></li></ul><ol start="3"><li><strong>Spring声明式事务控制底层就是AOP</strong></li></ol><hr><h3 id="基于XML文件配置"><a href="#基于XML文件配置" class="headerlink" title="基于XML文件配置"></a>基于XML文件配置</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--    配置平台事务管理器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;transactionManager&quot;</span> <span class="attr">class</span>=<span class="string">&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;dataSource&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;dataSource&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--通知 事务的增强--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tx:advice</span> <span class="attr">id</span>=<span class="string">&quot;txAdvice&quot;</span> <span class="attr">transaction-manager</span>=<span class="string">&quot;transactionManager&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tx:attributes</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--代表切点方法的事务参数的配置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tx:method</span> <span class="attr">name</span>=<span class="string">&quot;*&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tx:attributes</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tx:advice</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--    配置事务的aop织入--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">aop:config</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">aop:advisor</span> <span class="attr">advice-ref</span>=<span class="string">&quot;txAdvice&quot;</span> <span class="attr">pointcut</span>=<span class="string">&quot;execution(* com.service.impl.*.*(..))&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">aop:config</span>&gt;</span></span><br></pre></td></tr></table></figure><hr><h3 id="基于注解"><a href="#基于注解" class="headerlink" title="基于注解"></a>基于注解</h3><ol><li>使用 <strong>@Transactional</strong> 在需要进行事务控制的类或方法上修饰</li><li>注解使用在类上，那么该类下的所有方法都使用同一套注解参数配置</li><li>使用在方法上，不同的方法可以采用不同的事务参数配置</li><li>配置事务注解驱动 <code>&lt;tx:annotation-driver&gt;</code></li></ol>]]></content>
       
       
       <categories>
@@ -1030,11 +997,69 @@
     
     
     <entry>
+      <title>Spring与Web环境集成</title>
+      <link href="/2022/01/31/7-Spring%E4%B8%8EWeb%E7%8E%AF%E5%A2%83%E9%9B%86%E6%88%90/"/>
+      <url>/2022/01/31/7-Spring%E4%B8%8EWeb%E7%8E%AF%E5%A2%83%E9%9B%86%E6%88%90/</url>
+      
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="ApplicationContext应用上下文获取方式"><a href="#ApplicationContext应用上下文获取方式" class="headerlink" title="ApplicationContext应用上下文获取方式"></a>ApplicationContext应用上下文获取方式</h3><p>应用上下文对象是通过 <code>new ClassPathXmlApplicationContext(Spring配置文件)</code>方式获取，</p><p>但是每次从容器中获得 Bean 时都要编写，会导致配置文件加载多次，应用上下文创建多次。</p><br><p>在 Web 项目中，可以使用 <code>ServletContextListener</code> 监听 Web 应用的启动，当应用启动时，</p><p>就加载 Spring 的配置文件，创建应用上下文对象，并将其存储到 <code>servletContext</code> 域中，</p><p>这样就可以在任意位置从域中获得应用上下文对象 <code>ApplicationContext</code> 对象。</p><h3 id="Spring提供获取应用上下文的工具"><a href="#Spring提供获取应用上下文的工具" class="headerlink" title="Spring提供获取应用上下文的工具"></a>Spring提供获取应用上下文的工具</h3><p>Spring 提供监听器 <code>ContextLoaderListener</code> 对上述功能封装，</p><p>该监听器内部加载 Spring 配置文件，创建应用上下文对象，并存储到 <code>servletContext</code> 域中，</p><p>提供了一个客户端工具 <code>WebApplicationContextUtils</code> 供获得应用上下文对象。</p><ol><li>在 web.xml 中配置 ContextLoaderListener 监听器<strong>（导入 spring-web 坐标）</strong></li><li>使用 WebApplicationContextUtils 获得应用上下文对象</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+          <category> Spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Spring </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SpringMVC数据响应</title>
       <link href="/2022/01/31/9-SpringMVC%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94/"/>
       <url>/2022/01/31/9-SpringMVC%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94/</url>
       
         <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="页面跳转"><a href="#页面跳转" class="headerlink" title="页面跳转"></a>页面跳转</h3><h4 id="直接返回字符串"><a href="#直接返回字符串" class="headerlink" title="直接返回字符串"></a>直接返回字符串</h4><p>此种方式会将返回的字符串与视图解析器的前后缀拼接后跳转</p><h4 id="通过-ModelAndView-对象返回"><a href="#通过-ModelAndView-对象返回" class="headerlink" title="通过 ModelAndView 对象返回"></a>通过 ModelAndView 对象返回</h4><hr><h3 id="回写数据"><a href="#回写数据" class="headerlink" title="回写数据"></a>回写数据</h3><h4 id="直接返回字符串-JSON"><a href="#直接返回字符串-JSON" class="headerlink" title="直接返回字符串 / JSON"></a>直接返回字符串 / JSON</h4><ul><li>通过 SpringMVC 框架注入的 response 对象，此时不需要视图跳转，方法返回值为 void</li><li>将需要回写的字符串直接返回，通过 <strong>@ResponseBody</strong> 注解告知 SpringMVC 框架</li></ul><h4 id="返回对象或集合"><a href="#返回对象或集合" class="headerlink" title="返回对象或集合"></a>返回对象或集合</h4><p>通过 SpringMVC 进行 JSON 字符串的转换并回写，为处理器适配器配置消息转化参数，</p><p>指定使用 jackson 进行转换，因此需要在 spring-mvc.xml 中进行如下配置：</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;messageConverters&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">list</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;org.springframework.http.converter.json.MappingJackson2HttpMessageConverter&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure><p>在方法上添加 @ResponseBody 就可以返回 json 格式的字符串，但是配置比较繁琐，</p><p>因此，可以使用<strong>注解驱动代替上述配置：<code>&lt;mvc:annotation-driven/&gt;</code></strong></p><p><strong>处理器映射器、处理器适配器、视图解析器成为 SpringMVC 的三大组件</strong>，</p><p>上述注解驱动默认底层就会集成 jackson 进行对象或集合的 json格式字符串的转换。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+          <category> Spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Spring </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SpringMVC基础</title>
+      <link href="/2022/01/31/8-SpringMVC%E5%9F%BA%E7%A1%80/"/>
+      <url>/2022/01/31/8-SpringMVC%E5%9F%BA%E7%A1%80/</url>
+      
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="SpringMVC概述"><a href="#SpringMVC概述" class="headerlink" title="SpringMVC概述"></a>SpringMVC概述</h3><p>SpringMVC 是一种基于 Java 的实现 MVC设计模型的请求驱动类型的轻量级 Web 框架</p><ol><li>前端控制器：DispatcherServlet</li><li>处理器映射器：HandlerMapping</li><li>处理器适配器：HandlerAdapter</li><li>处理器：Handler</li><li>视图解析器：ViewResolver</li><li>视图：View</li></ol><h3 id="SpringMVC步骤"><a href="#SpringMVC步骤" class="headerlink" title="SpringMVC步骤"></a>SpringMVC步骤</h3><p>需求：客户端发起请求，服务器端接受请求，执行逻辑并进行视图跳转</p><ol><li>导入 SpringMVC 相关坐标</li><li>配置 SpringMVC 核心控制器 DispatcherServlet</li><li>创建 Controller 类和视图页面</li><li>使用注解配置 Controller 类中业务方法的映射地址</li><li>配置 SpringMVC 核心文件 spring-mvc.xml</li><li>客户端发起请求测试</li></ol><h3 id="SpringMVC执行流程"><a href="#SpringMVC执行流程" class="headerlink" title="SpringMVC执行流程"></a>SpringMVC执行流程</h3><ol><li><p>用户发送请求至前端控制器 DispatcherServlet</p></li><li><p>DispatcherServlet 收到请求调用 HandlerMapping 处理器映射器</p></li><li><p>处理器映射器找到具体的处理器，生成处理器对象以及处理器拦截器，</p><p>一并返回给 DispatcherServlet</p></li><li><p>DispatcherServlet 调用 HandlerAdapter 处理器适配器</p></li><li><p>HandlerAdapter 经过适配器调用具体的处理器</p></li><li><p>Controller 执行完成后返回 ModelAndView</p></li><li><p>HandlerAdapter 将 ModelAndView 返回给 DispatcherServlet</p></li><li><p>DispatcherServlet 将 ModelAndView 传给 ViewReslover 视图解析器</p></li><li><p>ViewReslover 解析后返回具体 View</p></li><li><p>DispatcherServlet 根据 View 进行渲染视图后响应用户</p></li></ol><h3 id="SpringMVC注解解析"><a href="#SpringMVC注解解析" class="headerlink" title="SpringMVC注解解析"></a>SpringMVC注解解析</h3><ol><li><strong>@RequestMapping</strong></li></ol><p>作用：用于建立请求 URL 和 处理请求方法之间的对应关系</p><p>位置：</p><ul><li>类上，请求 URL 的第一级访问目录</li><li>方法上，请求 URL 的第二级访问目录</li></ul><p>属性：</p><ul><li>value：用于指定请求的 URL</li><li>method：用于指定请求的方式</li><li>params：用于指定限制请求参数的条件，支持简单的表达式</li></ul><h3 id="SpringMVC的XML配置解析"><a href="#SpringMVC的XML配置解析" class="headerlink" title="SpringMVC的XML配置解析"></a>SpringMVC的XML配置解析</h3><ol><li>mvc 命名空间引入和组件扫描</li><li>配置内部资源视图解析器</li></ol>]]></content>
       
       
       <categories>
