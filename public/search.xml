@@ -29,11 +29,11 @@
     
     
     <entry>
-      <title>读书清单</title>
-      <link href="/2022/12/31/%E8%AF%BB%E4%B9%A6%E6%B8%85%E5%8D%95/"/>
-      <url>/2022/12/31/%E8%AF%BB%E4%B9%A6%E6%B8%85%E5%8D%95/</url>
+      <title>年度总结</title>
+      <link href="/2022/12/31/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
+      <url>/2022/12/31/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</url>
       
-        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p>2022 年买了很多书，但是却没有读完多少，更多的是由于自身惰性导致的，希望明年能够坚持读下去书籍，</p><p>不过 2022 年对我来说发生了很多事情，而源源不断的力量除了周围人帮助，还有来源于书籍的力量，</p><p>并且看过很多其他人的建议，整理读书笔记也是重要的事情，所以也整理一下读书清单，</p><p>当然这里的读书清单不仅仅包括书籍，还会有一些不错的课程和博客推荐。</p><h3 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h3><h4 id="Acwing-系列课程"><a href="#Acwing-系列课程" class="headerlink" title="Acwing 系列课程"></a>Acwing 系列课程</h4><ol><li><p><strong>算法基础课、Linux 基础课</strong></p><p> 这两门课程我是跟着走完的，强烈推荐给想要学习算法、了解 Linux 基础命令的同学，内容短小精悍，</p><p> 能够比较系统的去学习算法以及入门算法流程，Linux 部分则是在日常开发工作中比较常见实用。</p></li><li><p><strong>LeetCode 究极班、Django 框架课</strong></p><p> 这两门课程我跟着走完一半，后来因为时间原因就没再跟进，不过其中学到的知识方法依然实用，</p><p> 跟着一起刷完 LeetCode 前 1500 所有非会员题目，与自己刷不同的点在于，更加优雅和奇妙的解法，</p><p> Django 框架课个人觉得不在于讲授 python 的框架，而是在于把控如何起一个前后端服务，</p><p> 从 python 到 Django，再到前端三大件，部署时的 docker、nginx，以及 thrift 的使用都非常实用，</p><p> 如果时间精力比较充裕的话，我还是比较推荐学习的。</p></li><li><p><strong>Web 应用课、SpringBoot 框架课</strong></p><p> 这两门课程我还没开始，不过打算有时间去学学 Web 应用课，前后端都尽量涉足，但是有所偏向。</p></li></ol><h4 id="极客时间"><a href="#极客时间" class="headerlink" title="极客时间"></a>极客时间</h4><ol><li><p><strong>MySQL 实战 45 讲</strong></p><p> 比较出名了，个人觉得后端开发同学都应该花时间去学习，对于整体把握数据库非常有帮助。</p></li><li><p><strong>趣谈网络协议</strong></p><p> 如果对于计算机网络仍然有些迷糊，这门课程会按照日常生活实际来逐步介绍网络的组成以及流程。</p></li></ol><h4 id="黑马程序员系列"><a href="#黑马程序员系列" class="headerlink" title="黑马程序员系列"></a>黑马程序员系列</h4><p>B站上有免费资源，Spring、SpringBoot、Redis、Java Web、Maven 等等课程，</p><p>尽管从实际来说讲的很琐碎，但是个人学习下来，对于小白来说还是非常有帮助的，这个看个人偏向。</p><h4 id="代码整洁之道"><a href="#代码整洁之道" class="headerlink" title="代码整洁之道"></a>代码整洁之道</h4><p>书籍本身也说到了，没有几年开发经验无法完全做到，读完之后对于日常代码还是有影响的，不过很难完全做到。</p><h4 id="Go-语言程序设计语言"><a href="#Go-语言程序设计语言" class="headerlink" title="Go 语言程序设计语言"></a>Go 语言程序设计语言</h4><p>黑皮书出品，网上评价褒贬不一，个人觉得如果在没有接触过其他语言的情况下，可能有些晦涩难懂，</p><p>可以去通过 Go 官网学习基础语法，或者其他入门书籍，这本书更加偏向实战以及大量的实例，推荐阅读。</p><h4 id="Go-语言高级编程"><a href="#Go-语言高级编程" class="headerlink" title="Go 语言高级编程"></a>Go 语言高级编程</h4><p>更多的是对于 Go 整体性能设计的 overview，书的后半部分也涵盖了开发过程中常见的设计模式以及思想，</p><p>整体读下来，觉得还不错，对于日常开发过程中的语法糖、以及组件运用都会有帮助。</p><h4 id="C-程序设计语言"><a href="#C-程序设计语言" class="headerlink" title="C 程序设计语言"></a>C 程序设计语言</h4><p>慕名而来 K&amp;R，大致浏览了书的前半部分，除了 C 语言语法，还会有很多例题以及源码的示例。</p><h4 id="深入理解-Java-虚拟机"><a href="#深入理解-Java-虚拟机" class="headerlink" title="深入理解 Java 虚拟机"></a>深入理解 Java 虚拟机</h4><p>当时走马观花跟着走了一遍，其中很多地方不仅仅是 special for Java，很多地方都适用，</p><p>如果有时间和精力更推荐跟着书中安装 JDK 源码学习，不然可能会无法理解其中细节。</p><h4 id="数据结构与算法（Java版）"><a href="#数据结构与算法（Java版）" class="headerlink" title="数据结构与算法（Java版）"></a>数据结构与算法（Java版）</h4><p>读完了大半，入门书籍，但是需要对 Java 语法比较熟悉，当然也有助于 Java 的学习。</p><h4 id="鸟哥的-Linux-私房菜"><a href="#鸟哥的-Linux-私房菜" class="headerlink" title="鸟哥的 Linux 私房菜"></a>鸟哥的 Linux 私房菜</h4><p>个人觉得内容太多了，比较琐碎，读者可能无法抓住重点，可以在日常开发学习中当作字典来用。</p><h4 id="图解-HTTP"><a href="#图解-HTTP" class="headerlink" title="图解 HTTP"></a>图解 HTTP</h4><p>快速跟着走了一遍，比较基础入门，可以在空闲时间阅读，后面可以当字典用。</p><h4 id="图解-TCP-IP"><a href="#图解-TCP-IP" class="headerlink" title="图解 TCP&#x2F;IP"></a>图解 TCP&#x2F;IP</h4><p>相较于 http，更加晦涩一些，不过整体比较通俗易懂，可以二者先后一起阅读。</p><h4 id="计算机网络-自顶向下方法"><a href="#计算机网络-自顶向下方法" class="headerlink" title="计算机网络 自顶向下方法"></a>计算机网络 自顶向下方法</h4><p>当时整体读下来，不知所云，随着工作学习更进一步，对其中的内容也有了更清晰的理解。</p><h4 id="七天用Go从零实现系列"><a href="#七天用Go从零实现系列" class="headerlink" title="七天用Go从零实现系列"></a>七天用Go从零实现系列</h4><p>网络博主：<a href="https://geektutu.com/post/gee.html">https://geektutu.com/post/gee.html</a></p><p>从零实现类似 gin、gorm、grpc、gcache 的框架，比较基础，代码示例以及讲解都很清晰，推荐 Go 新手学习，</p><p>并且我自己也打算在此基础上去完成毕业设计，也有助于日常后端开发工作的理解。</p><h4 id="未能坚持下去的书籍课程"><a href="#未能坚持下去的书籍课程" class="headerlink" title="未能坚持下去的书籍课程"></a>未能坚持下去的书籍课程</h4><p>最开始同学推荐给我的 CSAPP、OSTEP、MIT6.S081 这几门课程比较硬核，</p><p>以及 byteTech 内部的一些课程，自己没能坚持下去，希望明年能够完成。</p><h3 id="Final"><a href="#Final" class="headerlink" title="Final"></a>Final</h3><p>学习过程中整理的笔记基本也在这个仓库中：<a href="https://github.com/Eminem-x/Learning">https://github.com/Eminem-x/Learning</a></p><p>回顾一下，发现阅读的更多是基础书籍，当然很多工作中学习到的技巧以及工具使用，无法量化的用某本书来代替，</p><p>但是仍然需要努力，战胜自己的惰性，能够坚持学习下去，笨鸟先飞，慢慢提升自己的知识水平，</p><p>整体来说，今年对我是一个转折点，对于计算机的学习有了更清晰的目标和认知，希望明年能够进步。</p>]]></content>
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p>2022 年结束了，今年对我来说是一个转折点，发生了很多事情，但是最终结果走向是好的，</p><p>以前没有这样整理记录过，回顾过去的二十多年，经历了很多，但是似乎没有办法追溯到根源，</p><p>所以便有了这篇 annual summary，悟已往之不谏，知来者之可追。</p><h3 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h3><p>年初的时候个人压力比较大，因为不准备读研，所以需要准备春招，但很多知识都不会，也没有一个明确的方向，</p><p>完全凭着自己去搜集资料，甄别信息，磕磕绊绊的学习，也时常怀疑自己是否走在正确的道路上，也担心失败，</p><p>整体的就业环境不太好，寒假在家的时候时常学习到深夜，也经常不出门，和女朋友之间也有了矛盾，为日后埋下了种子，</p><p>后来稀里糊涂的通过了字节的面试，运气确实比较好，也记录过这个经历：「<a href="https://eminem-x.github.io/2022/03/15/%E9%9D%A2%E8%AF%95%E6%84%9F%E6%82%9F/">面试感悟</a>」，居然已经过去九个月了，</p><p>因为异地加上生活节奏的不同，和玥玥在拿到录取结果之前分手了，当时还是挺无奈的，无力感涌上全身，</p><p>最后在五月份的时候从学校前往广州实习，当时我也不知道以后会如何走向，但现在回头看看，我是无比幸运的，</p><p>关于实习的一些经历，我也有过记录：「<a href="https://eminem-x.github.io/2022/05/15/%E5%AE%9E%E4%B9%A0%E9%97%AE%E9%A2%98/">实习问题</a>」、「<a href="https://eminem-x.github.io/2022/08/14/%E5%AE%9E%E4%B9%A0%E6%80%BB%E7%BB%93/">实习总结</a>」，也很感谢同事和领导对于我的包容以及鼓励，</p><p>九月份的转正答辩是残酷的，有人成功有人失败，我幸运地通过了，也逃过了残酷的秋招，并且过程中也学习到很多知识，</p><p>在这个过程中，我和玥玥复合了，再见面的时候，用一见如故形容或许不恰当，但是确实一扫阴霾，虽然依然有分歧，</p><p>尽管生活节奏依然不同，但周末假期可以见面：「<a href="https://eminem-x.github.io/2022/09/26/%E5%91%A8%E6%9C%AB(9.24-9.25)/">周末记录</a>」、「<a href="https://eminem-x.github.io/2022/10/08/%E5%9B%BD%E5%BA%86%E5%81%87%E6%9C%9F/">国庆假期</a>」，后来因为疫情封校，也没办法再见面了，</p><p>在公司上班和在学校读书对我来说其实区别不大，个人也比较宅吧，不过有时候确实感觉非常疲惫，慢慢适应吧，</p><p>这一年的学习，很感激大学同学以及同事的指引和分享，自己有了清晰的认知：「<a href="https://eminem-x.github.io/2022/12/31/%E8%AF%BB%E4%B9%A6%E6%B8%85%E5%8D%95/">读书清单</a>」，</p><p>家里面也发生了很多事情，让我意识到自己也到了经历老人因病困扰的阶段了，或者说生死离别，</p><p>回顾过去，一眨眼已经过完三个七年了，时间越来越快，留下的人和事却越来越少，希望未来会更好吧。</p><h3 id="Final"><a href="#Final" class="headerlink" title="Final"></a>Final</h3><ol><li>计算机学习的路上发生了质的变化，从懵懵懂懂到有了自己前进的方向</li><li>家庭发生一些事情，学会去面对和经历，尽到自己的责任和义务</li><li>完成了去年的三个新年愿望：找到实习、在广州找到工作、和玥玥依然在一起</li></ol><p>对于工作和学习过程，通过 Github 和 Gitlab 的 contributions 来记录：</p><img src="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/2022github.jpg" style="max-width: 70%"><img src="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/2022gitlab.jpg" style="max-width: 70%">]]></content>
       
       
       <categories>
@@ -54,11 +54,11 @@
     
     
     <entry>
-      <title>年度总结</title>
-      <link href="/2022/12/31/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
-      <url>/2022/12/31/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</url>
+      <title>读书清单</title>
+      <link href="/2022/12/31/%E8%AF%BB%E4%B9%A6%E6%B8%85%E5%8D%95/"/>
+      <url>/2022/12/31/%E8%AF%BB%E4%B9%A6%E6%B8%85%E5%8D%95/</url>
       
-        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p>2022 年结束了，今年对我来说是一个转折点，发生了很多事情，但是最终结果走向是好的，</p><p>以前没有这样整理记录过，回顾过去的二十多年，经历了很多，但是似乎没有办法追溯到根源，</p><p>所以便有了这篇 annual summary，悟已往之不谏，知来者之可追。</p><h3 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h3><p>年初的时候个人压力比较大，因为不准备读研，所以需要准备春招，但很多知识都不会，也没有一个明确的方向，</p><p>完全凭着自己去搜集资料，甄别信息，磕磕绊绊的学习，也时常怀疑自己是否走在正确的道路上，也担心失败，</p><p>整体的就业环境不太好，寒假在家的时候时常学习到深夜，也经常不出门，和女朋友之间也有了矛盾，为日后埋下了种子，</p><p>后来稀里糊涂的通过了字节的面试，运气确实比较好，也记录过这个经历：「<a href="https://eminem-x.github.io/2022/03/15/%E9%9D%A2%E8%AF%95%E6%84%9F%E6%82%9F/">面试感悟</a>」，居然已经过去九个月了，</p><p>因为异地加上生活节奏的不同，和玥玥在拿到录取结果之前分手了，当时还是挺无奈的，无力感涌上全身，</p><p>最后在五月份的时候从学校前往广州实习，当时我也不知道以后会如何走向，但现在回头看看，我是无比幸运的，</p><p>关于实习的一些经历，我也有过记录：「<a href="https://eminem-x.github.io/2022/05/15/%E5%AE%9E%E4%B9%A0%E9%97%AE%E9%A2%98/">实习问题</a>」、「<a href="https://eminem-x.github.io/2022/08/14/%E5%AE%9E%E4%B9%A0%E6%80%BB%E7%BB%93/">实习总结</a>」，也很感谢同事和领导对于我的包容以及鼓励，</p><p>九月份的转正答辩是残酷的，有人成功有人失败，我幸运地通过了，也逃过了残酷的秋招，并且过程中也学习到很多知识，</p><p>在这个过程中，我和玥玥复合了，再见面的时候，用一见如故形容或许不恰当，但是确实一扫阴霾，虽然依然有分歧，</p><p>尽管生活节奏依然不同，但周末假期可以见面：「<a href="https://eminem-x.github.io/2022/09/26/%E5%91%A8%E6%9C%AB(9.24-9.25)/">周末记录</a>」、「<a href="https://eminem-x.github.io/2022/10/08/%E5%9B%BD%E5%BA%86%E5%81%87%E6%9C%9F/">国庆假期</a>」，后来因为疫情封校，也没办法再见面了，</p><p>在公司上班和在学校读书对我来说其实区别不大，个人也比较宅吧，不过有时候确实感觉非常疲惫，慢慢适应吧，</p><p>这一年的学习，很感激大学同学以及同事的指引和分享，自己有了清晰的认知：「<a href="https://eminem-x.github.io/2022/12/31/%E8%AF%BB%E4%B9%A6%E6%B8%85%E5%8D%95/">读书清单</a>」，</p><p>家里面也发生了很多事情，让我意识到自己也到了经历老人因病困扰的阶段了，或者说生死离别，</p><p>回顾过去，一眨眼已经过完三个七年了，时间越来越快，留下的人和事却越来越少，希望未来会更好吧。</p><h3 id="Final"><a href="#Final" class="headerlink" title="Final"></a>Final</h3><ol><li>计算机学习的路上发生了质的变化，从懵懵懂懂到有了自己前进的方向</li><li>家庭发生一些事情，学会去面对和经历，尽到自己的责任和义务</li><li>完成了去年的三个新年愿望：找到实习、在广州找到工作、和玥玥依然在一起</li></ol><p>对于工作和学习过程，通过 Github 和 Gitlab 的 contributions 来记录：</p><img src="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/2022github.jpg" style="max-width: 70%"><img src="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/2022gitlab.jpg" style="max-width: 70%">]]></content>
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p>2022 年买了很多书，但是却没有读完多少，更多的是由于自身惰性导致的，希望明年能够坚持读下去书籍，</p><p>不过 2022 年对我来说发生了很多事情，而源源不断的力量除了周围人帮助，还有来源于书籍的力量，</p><p>并且看过很多其他人的建议，整理读书笔记也是重要的事情，所以也整理一下读书清单，</p><p>当然这里的读书清单不仅仅包括书籍，还会有一些不错的课程和博客推荐。</p><h3 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h3><h4 id="Acwing-系列课程"><a href="#Acwing-系列课程" class="headerlink" title="Acwing 系列课程"></a>Acwing 系列课程</h4><ol><li><p><strong>算法基础课、Linux 基础课</strong></p><p> 这两门课程我是跟着走完的，强烈推荐给想要学习算法、了解 Linux 基础命令的同学，内容短小精悍，</p><p> 能够比较系统的去学习算法以及入门算法流程，Linux 部分则是在日常开发工作中比较常见实用。</p></li><li><p><strong>LeetCode 究极班、Django 框架课</strong></p><p> 这两门课程我跟着走完一半，后来因为时间原因就没再跟进，不过其中学到的知识方法依然实用，</p><p> 跟着一起刷完 LeetCode 前 1500 所有非会员题目，与自己刷不同的点在于，更加优雅和奇妙的解法，</p><p> Django 框架课个人觉得不在于讲授 python 的框架，而是在于把控如何起一个前后端服务，</p><p> 从 python 到 Django，再到前端三大件，部署时的 docker、nginx，以及 thrift 的使用都非常实用，</p><p> 如果时间精力比较充裕的话，我还是比较推荐学习的。</p></li><li><p><strong>Web 应用课、SpringBoot 框架课</strong></p><p> 这两门课程我还没开始，不过打算有时间去学学 Web 应用课，前后端都尽量涉足，但是有所偏向。</p></li></ol><h4 id="极客时间"><a href="#极客时间" class="headerlink" title="极客时间"></a>极客时间</h4><ol><li><p><strong>MySQL 实战 45 讲</strong></p><p> 比较出名了，个人觉得后端开发同学都应该花时间去学习，对于整体把握数据库非常有帮助。</p></li><li><p><strong>趣谈网络协议</strong></p><p> 如果对于计算机网络仍然有些迷糊，这门课程会按照日常生活实际来逐步介绍网络的组成以及流程。</p></li></ol><h4 id="黑马程序员系列"><a href="#黑马程序员系列" class="headerlink" title="黑马程序员系列"></a>黑马程序员系列</h4><p>B站上有免费资源，Spring、SpringBoot、Redis、Java Web、Maven 等等课程，</p><p>尽管从实际来说讲的很琐碎，但是个人学习下来，对于小白来说还是非常有帮助的，这个看个人偏向。</p><h4 id="代码整洁之道"><a href="#代码整洁之道" class="headerlink" title="代码整洁之道"></a>代码整洁之道</h4><p>书籍本身也说到了，没有几年开发经验无法完全做到，读完之后对于日常代码还是有影响的，不过很难完全做到。</p><h4 id="Go-语言程序设计语言"><a href="#Go-语言程序设计语言" class="headerlink" title="Go 语言程序设计语言"></a>Go 语言程序设计语言</h4><p>黑皮书出品，网上评价褒贬不一，个人觉得如果在没有接触过其他语言的情况下，可能有些晦涩难懂，</p><p>可以去通过 Go 官网学习基础语法，或者其他入门书籍，这本书更加偏向实战以及大量的实例，推荐阅读。</p><h4 id="Go-语言高级编程"><a href="#Go-语言高级编程" class="headerlink" title="Go 语言高级编程"></a>Go 语言高级编程</h4><p>更多的是对于 Go 整体性能设计的 overview，书的后半部分也涵盖了开发过程中常见的设计模式以及思想，</p><p>整体读下来，觉得还不错，对于日常开发过程中的语法糖、以及组件运用都会有帮助。</p><h4 id="C-程序设计语言"><a href="#C-程序设计语言" class="headerlink" title="C 程序设计语言"></a>C 程序设计语言</h4><p>慕名而来 K&amp;R，大致浏览了书的前半部分，除了 C 语言语法，还会有很多例题以及源码的示例。</p><h4 id="深入理解-Java-虚拟机"><a href="#深入理解-Java-虚拟机" class="headerlink" title="深入理解 Java 虚拟机"></a>深入理解 Java 虚拟机</h4><p>当时走马观花跟着走了一遍，其中很多地方不仅仅是 special for Java，很多地方都适用，</p><p>如果有时间和精力更推荐跟着书中安装 JDK 源码学习，不然可能会无法理解其中细节。</p><h4 id="数据结构与算法（Java版）"><a href="#数据结构与算法（Java版）" class="headerlink" title="数据结构与算法（Java版）"></a>数据结构与算法（Java版）</h4><p>读完了大半，入门书籍，但是需要对 Java 语法比较熟悉，当然也有助于 Java 的学习。</p><h4 id="鸟哥的-Linux-私房菜"><a href="#鸟哥的-Linux-私房菜" class="headerlink" title="鸟哥的 Linux 私房菜"></a>鸟哥的 Linux 私房菜</h4><p>个人觉得内容太多了，比较琐碎，读者可能无法抓住重点，可以在日常开发学习中当作字典来用。</p><h4 id="图解-HTTP"><a href="#图解-HTTP" class="headerlink" title="图解 HTTP"></a>图解 HTTP</h4><p>快速跟着走了一遍，比较基础入门，可以在空闲时间阅读，后面可以当字典用。</p><h4 id="图解-TCP-IP"><a href="#图解-TCP-IP" class="headerlink" title="图解 TCP&#x2F;IP"></a>图解 TCP&#x2F;IP</h4><p>相较于 http，更加晦涩一些，不过整体比较通俗易懂，可以二者先后一起阅读。</p><h4 id="计算机网络-自顶向下方法"><a href="#计算机网络-自顶向下方法" class="headerlink" title="计算机网络 自顶向下方法"></a>计算机网络 自顶向下方法</h4><p>当时整体读下来，不知所云，随着工作学习更进一步，对其中的内容也有了更清晰的理解。</p><h4 id="七天用Go从零实现系列"><a href="#七天用Go从零实现系列" class="headerlink" title="七天用Go从零实现系列"></a>七天用Go从零实现系列</h4><p>网络博主：<a href="https://geektutu.com/post/gee.html">https://geektutu.com/post/gee.html</a></p><p>从零实现类似 gin、gorm、grpc、gcache 的框架，比较基础，代码示例以及讲解都很清晰，推荐 Go 新手学习，</p><p>并且我自己也打算在此基础上去完成毕业设计，也有助于日常后端开发工作的理解。</p><h4 id="未能坚持下去的书籍课程"><a href="#未能坚持下去的书籍课程" class="headerlink" title="未能坚持下去的书籍课程"></a>未能坚持下去的书籍课程</h4><p>最开始同学推荐给我的 CSAPP、OSTEP、MIT6.S081 这几门课程比较硬核，</p><p>以及 byteTech 内部的一些课程，自己没能坚持下去，希望明年能够完成。</p><h3 id="Final"><a href="#Final" class="headerlink" title="Final"></a>Final</h3><p>学习过程中整理的笔记基本也在这个仓库中：<a href="https://github.com/Eminem-x/Learning">https://github.com/Eminem-x/Learning</a></p><p>回顾一下，发现阅读的更多是基础书籍，当然很多工作中学习到的技巧以及工具使用，无法量化的用某本书来代替，</p><p>但是仍然需要努力，战胜自己的惰性，能够坚持学习下去，笨鸟先飞，慢慢提升自己的知识水平，</p><p>整体来说，今年对我是一个转折点，对于计算机的学习有了更清晰的目标和认知，希望明年能够进步。</p>]]></content>
       
       
       <categories>
@@ -612,11 +612,11 @@
     
     
     <entry>
-      <title>Spring快速开始</title>
-      <link href="/2022/01/31/1-Spring%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"/>
-      <url>/2022/01/31/1-Spring%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</url>
+      <title>SpringJdbcTemplate</title>
+      <link href="/2022/01/31/11-Spring%20JdbcTemplate/"/>
+      <url>/2022/01/31/11-Spring%20JdbcTemplate/</url>
       
-        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><p><strong>PS：仅作为个人学习笔记，以后深入学习再补充</strong></p><p>Spring 学习笔记地址：<a href="https://github.com/Eminem-x/Spring">https://github.com/Eminem-x/Spring</a></p><p>SpringBoot学习笔记地址：<a href="https://github.com/Eminem-x/SpringBoot">https://github.com/Eminem-x/SpringBoot</a></p><p>推荐 Spring 学习视频：<a href="https://www.bilibili.com/video/BV1WZ4y1P7Bp?from=search&seid=9648668674109084850&spm_id_from=333.337.0.0">黑马程序员 SSM 框架教程</a></p><p>推荐 SpringBoot 学习视频：<a href="https://www.bilibili.com/video/BV19K4y1L7MT?from=search&seid=14164871616704737958&spm_id_from=333.337.0.0">尚硅谷 雷神 SpringBoot 学习</a></p><p>SpringBoot 学习参考：<a href="http://www.ityouknow.com/springboot/2016/01/06/spring-boot-quick-start.html">ityouknow-SpringBoot学习</a></p><hr><h3 id="Spring程序开发步骤"><a href="#Spring程序开发步骤" class="headerlink" title="Spring程序开发步骤"></a>Spring程序开发步骤</h3><ol><li>导入 Spring 开发的基本包坐标（通过Maven）；</li><li>创建 Bean；</li><li>创建 Spring 核心配置文件；</li><li>在 Spring 配置文件中进行配置；</li><li>使用 Spring 的 API 获得 Bean 实例；</li></ol><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ol><li><p>Dao 是数据访问层，Service 是业务层；</p></li><li><p>Dao 的作用是封装对数据库的访问：CRUD，不涉及业务逻辑；</p></li><li><p>Service 则专注业务逻辑，对于其中需要的数据库操作，通过 Dao 实现；</p></li><li><p>这样的分层是<strong>基于 MVC 架构</strong>而言：</p><p>M是指业务模型（model），V是指用户界面（view），C则是控制器（controller），</p><p>使用MVC的目的是将M和V的实现代码分离，从而使同一个程序可以使用不同的表现形式。</p></li><li><p>分层的作用是<strong>解耦</strong>；</p></li><li><p><strong>对于 Spring 框架：</strong></p><p>（View\Web）表示层调用控制层（Controller），</p><p>控制层调用业务层（Service），</p><p>业务层调用数据访问层（Dao）。</p></li><li><p><strong>Bean 是一个被实例化，组装，并通过 Spring IoC 容器所管理的对象。</strong></p></li></ol>]]></content>
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="JdbcTemplate概述"><a href="#JdbcTemplate概述" class="headerlink" title="JdbcTemplate概述"></a>JdbcTemplate概述</h3><p>Spring 框架中提供的对象，对原始繁琐的 Jdbc API 对象简单封装，提供了很多的操作模板类</p><h3 id="JdbcTemplate开发步骤"><a href="#JdbcTemplate开发步骤" class="headerlink" title="JdbcTemplate开发步骤"></a>JdbcTemplate开发步骤</h3><ul><li><p>导入 spring-jdbc 和 spring-tx 坐标</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.0.5.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-tx<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.0.5.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>创建数据库表和实体</p></li><li><p>创建 JdbcTemplate对象</p></li><li><p>执行数据库操作</p></li></ul>]]></content>
       
       
       <categories>
@@ -641,11 +641,11 @@
     
     
     <entry>
-      <title>SpringJdbcTemplate</title>
-      <link href="/2022/01/31/11-Spring%20JdbcTemplate/"/>
-      <url>/2022/01/31/11-Spring%20JdbcTemplate/</url>
+      <title>Spring快速开始</title>
+      <link href="/2022/01/31/1-Spring%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"/>
+      <url>/2022/01/31/1-Spring%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</url>
       
-        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="JdbcTemplate概述"><a href="#JdbcTemplate概述" class="headerlink" title="JdbcTemplate概述"></a>JdbcTemplate概述</h3><p>Spring 框架中提供的对象，对原始繁琐的 Jdbc API 对象简单封装，提供了很多的操作模板类</p><h3 id="JdbcTemplate开发步骤"><a href="#JdbcTemplate开发步骤" class="headerlink" title="JdbcTemplate开发步骤"></a>JdbcTemplate开发步骤</h3><ul><li><p>导入 spring-jdbc 和 spring-tx 坐标</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.0.5.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-tx<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.0.5.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>创建数据库表和实体</p></li><li><p>创建 JdbcTemplate对象</p></li><li><p>执行数据库操作</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><p><strong>PS：仅作为个人学习笔记，以后深入学习再补充</strong></p><p>Spring 学习笔记地址：<a href="https://github.com/Eminem-x/Spring">https://github.com/Eminem-x/Spring</a></p><p>SpringBoot学习笔记地址：<a href="https://github.com/Eminem-x/SpringBoot">https://github.com/Eminem-x/SpringBoot</a></p><p>推荐 Spring 学习视频：<a href="https://www.bilibili.com/video/BV1WZ4y1P7Bp?from=search&seid=9648668674109084850&spm_id_from=333.337.0.0">黑马程序员 SSM 框架教程</a></p><p>推荐 SpringBoot 学习视频：<a href="https://www.bilibili.com/video/BV19K4y1L7MT?from=search&seid=14164871616704737958&spm_id_from=333.337.0.0">尚硅谷 雷神 SpringBoot 学习</a></p><p>SpringBoot 学习参考：<a href="http://www.ityouknow.com/springboot/2016/01/06/spring-boot-quick-start.html">ityouknow-SpringBoot学习</a></p><hr><h3 id="Spring程序开发步骤"><a href="#Spring程序开发步骤" class="headerlink" title="Spring程序开发步骤"></a>Spring程序开发步骤</h3><ol><li>导入 Spring 开发的基本包坐标（通过Maven）；</li><li>创建 Bean；</li><li>创建 Spring 核心配置文件；</li><li>在 Spring 配置文件中进行配置；</li><li>使用 Spring 的 API 获得 Bean 实例；</li></ol><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ol><li><p>Dao 是数据访问层，Service 是业务层；</p></li><li><p>Dao 的作用是封装对数据库的访问：CRUD，不涉及业务逻辑；</p></li><li><p>Service 则专注业务逻辑，对于其中需要的数据库操作，通过 Dao 实现；</p></li><li><p>这样的分层是<strong>基于 MVC 架构</strong>而言：</p><p>M是指业务模型（model），V是指用户界面（view），C则是控制器（controller），</p><p>使用MVC的目的是将M和V的实现代码分离，从而使同一个程序可以使用不同的表现形式。</p></li><li><p>分层的作用是<strong>解耦</strong>；</p></li><li><p><strong>对于 Spring 框架：</strong></p><p>（View\Web）表示层调用控制层（Controller），</p><p>控制层调用业务层（Service），</p><p>业务层调用数据访问层（Dao）。</p></li><li><p><strong>Bean 是一个被实例化，组装，并通过 Spring IoC 容器所管理的对象。</strong></p></li></ol>]]></content>
       
       
       <categories>
@@ -927,35 +927,6 @@
     
     
     <entry>
-      <title>Spring配置文件</title>
-      <link href="/2022/01/31/2-Spring%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
-      <url>/2022/01/31/2-Spring%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</url>
-      
-        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="Bean-标签基本配置"><a href="#Bean-标签基本配置" class="headerlink" title="Bean 标签基本配置"></a>Bean 标签基本配置</h3><ol><li><p>Bean 用于配置对象交由 Spring 来创建，<strong>默认情况下调用的是类中的无参构造函数</strong>，</p><p>如果没有无参构造函数则不能创建成功；</p></li><li><p>基本属性</p><ol><li><p><strong>id</strong>：Bean 实例在 Spring 容器中的唯一标识</p></li><li><p><strong>class</strong>：Bean 的全限定名称</p></li><li><p><strong>scope</strong>：Bean 的作用范围</p></li><li><p><strong>&lt;property&gt;</strong>标签：属性注入</p><ol><li>name 属性：属性名称</li><li>value 属性：注入的普通属性值</li><li>ref 属性：注入的对象引用值</li><li>&lt;list&gt;标签、&lt;map&gt;标签、&lt;properties&gt;标签</li></ol></li><li><p><strong>&lt;constructor-arg&gt;标签</strong></p></li></ol></li><li><p><strong>&lt;import&gt;标签</strong>：导入其他的 Spring 的分文件</p></li></ol><h3 id="Bean-标签范围配置"><a href="#Bean-标签范围配置" class="headerlink" title="Bean 标签范围配置"></a>Bean 标签范围配置</h3><table><thead><tr><th align="center">取值范围</th><th align="center">说明</th></tr></thead><tbody><tr><td align="center">singleton</td><td align="center">默认值、单例</td></tr><tr><td align="center">prototype</td><td align="center">多例</td></tr><tr><td align="center">request</td><td align="center">WEB项目中，存入到 request 域</td></tr><tr><td align="center">session</td><td align="center">WEB项目中，存入到 session 域</td></tr><tr><td align="center">global session</td><td align="center">WEB项目中，应用在 Portlet 环境</td></tr></tbody></table><ol><li><h4 id="当-scope-的取值为-singleton-时："><a href="#当-scope-的取值为-singleton-时：" class="headerlink" title="当 scope 的取值为 singleton 时："></a>当 scope 的取值为 singleton 时：</h4></li></ol><ul><li>Bean 的实例化个数：1个</li><li>Bean 的实例化时机：当 Spring 核心文件被加载时，实例化配置的 Bean 实例</li><li>Bean 的生命周期：<ol><li>对象创建：当应用加载，创建容器时，对象就被创建；</li><li>对象运行：只要容器在，对象就一直存在；</li><li>对象销毁：当应用卸载，销毁容器时，对象就被销毁；</li></ol></li></ul><ol start="2"><li><h4 id="当-scope-的取值为-prototype-时："><a href="#当-scope-的取值为-prototype-时：" class="headerlink" title="当 scope 的取值为 prototype 时："></a>当 scope 的取值为 prototype 时：</h4></li></ol><ul><li>Bean 的实例化个数：多个</li><li>Bean 的实例化时机：当调用 getBean() 方法时实例化 Bean</li><li>Bean 的生命周期：<ol><li>对象创建：当使用对象时，创建新的对象实例；</li><li>对象运行：只要对象在使用中，就一直存在；</li><li>对象销毁：当对象长时间不用，就被 Java 的垃圾回收期回收；</li></ol></li></ul><h3 id="Bean-生命周期配置"><a href="#Bean-生命周期配置" class="headerlink" title="Bean 生命周期配置"></a>Bean 生命周期配置</h3><ul><li><p>init-method：指定类中的初始化方法名称</p></li><li><p>destroy-method：指定类中的销毁方法名称</p><p><strong>注意：需要手动关闭容器，才能运行销毁方法</strong></p></li></ul><p><strong>特殊说明：</strong></p><p>当创建 ApplicationContext 对象时，不存在 close() 方法，有两种解决方法：</p><ol><li>更改为 AbstractApplicationContext 对象；</li><li><strong>向下强制转为 ConfigurableApplicationContext，即声明时的类型；</strong></li><li>在大多数情况下更加推荐第二种方法；</li><li>参考文章：<a href="https://stackoverflow.com/questions/14423980/how-to-close-a-spring-applicationcontext">java - How to close a spring ApplicationContext? - Stack Overflow</a></li></ol><h3 id="Bean-实例化三种方式"><a href="#Bean-实例化三种方式" class="headerlink" title="Bean 实例化三种方式"></a>Bean 实例化三种方式</h3><ul><li>无参构造方法实例化</li><li>工厂静态方法实例化</li><li>工厂实例方法实例化</li></ul><h3 id="Bean-依赖注入"><a href="#Bean-依赖注入" class="headerlink" title="Bean 依赖注入"></a>Bean 依赖注入</h3><ol><li><p><strong>依赖注入（Dependency Injection）: Spring框架核心 IOC 的具体实现</strong></p></li><li><p>依赖注入方式：</p><ul><li>构造方法</li><li>set 方法</li></ul></li><li><p>依赖注入的数据类型：</p><ul><li>普通数据类型</li><li>引用数据类型</li><li>集合数据类型</li></ul></li></ol><h3 id="引入其他配置文件（分模块开发）"><a href="#引入其他配置文件（分模块开发）" class="headerlink" title="引入其他配置文件（分模块开发）"></a>引入其他配置文件（分模块开发）</h3><p>实际开发中，Spring 的配置内容非常多，导致配置很繁杂并且体积大，</p><p>所以可以将部分配置拆解到其他配置文件中，而在 Spring 主配置文件中，</p><p>通过 import 标签进行加载。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java </category>
-          
-          <category> Spring </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Java </tag>
-            
-            <tag> Spring </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Redis进阶</title>
       <link href="/2022/01/31/3-Redis%E8%BF%9B%E9%98%B6/"/>
       <url>/2022/01/31/3-Redis%E8%BF%9B%E9%98%B6/</url>
@@ -1010,11 +981,65 @@
     
     
     <entry>
+      <title>Redis应用</title>
+      <link href="/2022/01/31/4-Redis%E5%BA%94%E7%94%A8/"/>
+      <url>/2022/01/31/4-Redis%E5%BA%94%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="秒杀"><a href="#秒杀" class="headerlink" title="秒杀"></a>秒杀</h3><ol><li><p><strong>关于 Postman 和 JMeter 的选择</strong></p><p>推荐选择 JMeter，因为 Postman 只能支持串行接口测试</p><p>JMeter 推荐参考文章：</p><ul><li><p><a href="https://www.jianshu.com/p/0e4daecc8122">JMeter入门教程 - 简书 (jianshu.com)</a></p></li><li><p><a href="https://www.cnblogs.com/summerstore/p/11529105.html">如何使用JMeter进行并发测试 - 你安静了夏天 - 博客园 (cnblogs.com)</a></p></li></ul><p>Postman 关于能否并发：<a href="https://www.zhihu.com/question/280155125">https://www.zhihu.com/question/280155125</a></p></li><li><p><strong>出现的问题</strong></p><ul><li><p>超时：节省每次连接 Redis 服务带来的消耗，使用连接池解决</p></li><li><p>超卖：使用乐观锁，事务提交，解决超出库存的问题</p></li><li><p>库存遗留问题：由于乐观锁的机制造成仍有库存遗留</p><p><strong>通过 LUA 脚本解决争抢问题</strong>，实际上是 Redis 利用其单线程的特性，</p><p>用任务队列的方式解决多任务并发问题</p></li></ul></li></ol><hr><h3 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h3><ol><li><p>概念</p><p>使用 Redis 大部分情况都是通过 key 查询对应的值，</p><p>假如发送的请求传进来的 key 是不存在 Redis 中的，</p><p>那么就查不到缓存，查不到缓存就会去数据库查询，</p><p>假如有大量这样的请求，这些请求像“穿透”了缓存一样直接打在数据库上。</p></li><li><p>解决方案</p><ol><li><p><strong>把无效的 key 存进 Redis 中</strong></p><p>如果Redis查不到数据，数据库也查不到，我们把这个 key 值保存进 Redis，</p><p>设置 value&#x3D;”null”，当下次再通过这个 key 查询时就不需要再查询数据库，</p><p>这种方式是有问题的，若不存在的 Key 值每次都是随机的，存进Redis也没有意义。</p></li><li><p><strong>设置可访问的名单（白名单）</strong></p></li><li><p><strong>采用布隆过滤器（Boom Filter）</strong></p><p>布隆过滤器的作用是某个 key 不存在，那么就一定不存在，</p><p>它说某个 key 存在，那么很大可能是存在(存在一定的误判率)，</p><p>于是我们可以在缓存之前再加一层布隆过滤器，</p><p>在查询的时候先去布隆过滤器查询 key 是否存在，如果不存在就直接返回。</p></li><li><p><strong>进行实时监控</strong></p><p>当发现 Redis 的命中率开始急速降低时，需要排查访问对象和访问的数据，</p><p>以及运维人员配合，可以设置黑名单限制服务。</p></li></ol></li></ol><hr><h3 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h3><ol><li><p>概念</p><p>缓存击穿是一个热点的 key ，有大并发集中对其进行访问，</p><p>突然间这个 key 失效了，导致大并发全部打在数据库上，</p><p>导致数据库压力剧增，这种现象就叫做缓存击穿。</p></li><li><p>解决方案</p><ol><li><p><strong>预先设置热门数据</strong></p><p>如果业务允许的话，对于热点的 key 可以设置永不过期，</p><p>或者加大热门数据 key 的过期时长。</p></li><li><p><strong>实时调整</strong></p><p>现场监控哪些数据热门，实时调整 key 的过期时长。</p></li><li><p><strong>使用互斥锁</strong></p><p>如果缓存失效的情况，只有拿到锁才可以查询数据库，</p><p>降低了在同一时刻打在数据库上的请求，防止数据库打死，</p><p>当然这样会导致系统的性能变差。</p></li></ol></li></ol><hr><h3 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h3><ol><li><p>概念</p><p>当某一个时刻出现大规模的缓存失效的情况，</p><p>那么就会导致大量的请求直接打在数据库上面，导致数据库压力巨大，</p><p>如果在高并发的情况下，可能瞬间就会导致数据库宕机，</p><p>这时如果马上重启数据库，马上又会有新的流量把数据库打死，这就是缓存雪崩。</p></li><li><p>解决方案</p><ol><li><p><strong>构建多级缓存架构</strong></p><p>nginx + redis + 其他缓存</p></li><li><p><strong>使用锁或队列</strong></p><p>用加锁或队列的方式保证不会有大量的线程对数据库一次性读写，</p><p>从而避免失效时大量的并发请求落到底层存储系统上，不适用高并发情况</p></li><li><p><strong>设置过期标志更新缓存</strong></p><p>如果过期会触发通知另外的线程在后台去更新实际 key 的缓存</p></li><li><p><strong>将缓存失效时间分散</strong></p><p>在失效时间上加上一个随机值，避免因为相同的过期时间导致缓存雪崩</p></li><li><p><strong>熔断机制</strong></p><p>当流量到达一定的阈值时，就直接返回“系统拥挤”之类的提示，</p><p>防止过多的请求打在数据库上，至少能保证一部分用户是可以正常使用，</p><p>其他用户多刷新几次也能得到结果。</p></li></ol></li></ol><hr><h3 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h3><ol><li><h5 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h5><p>随着业务发展的需要，原单体单机部署的系统被演化成分布式集群系统后，</p><p>由于分布式系统多线程、多进程并且分布在不同机器上，</p><p>这使原单机部署情况下的并发控制锁策略失效，</p><p>单纯的 Java API 并不能提供分布式锁的能力，为了解决这个问题，</p><p>需要一种跨 JVM 的互斥机制来控制共享资源的访问</p></li><li><h5 id="实现方案"><a href="#实现方案" class="headerlink" title="实现方案"></a>实现方案</h5><ol><li>基于数据库实现分布式锁</li><li><strong>基于缓存（Redis 等）</strong></li><li>基于 Zookeeper</li></ol></li><li><h5 id="使用-redis-实现分布式锁"><a href="#使用-redis-实现分布式锁" class="headerlink" title="使用 redis 实现分布式锁"></a><strong>使用 redis 实现分布式锁</strong></h5><ol><li>设置锁和过期时间</li><li>UUID 防止误删</li><li>LUA 保证删除原子性</li></ol></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Redis </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Spring配置数据源</title>
       <link href="/2022/01/31/4-Spring%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E6%BA%90/"/>
       <url>/2022/01/31/4-Spring%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E6%BA%90/</url>
       
         <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="数据源（连接池）的作用"><a href="#数据源（连接池）的作用" class="headerlink" title="数据源（连接池）的作用"></a>数据源（连接池）的作用</h3><ul><li>提高程序性能</li><li>事先实例化数据源，初始化部分连接资源</li><li>使用连接资源时从数据源中获取</li><li>使用完毕后连接资源归还给数据源</li></ul><p>常见的数据源：DBCP、C3P0、BoneCP、Druid等</p><h3 id="数据源的开发步骤"><a href="#数据源的开发步骤" class="headerlink" title="数据源的开发步骤"></a>数据源的开发步骤</h3><ol><li>导入数据源的坐标和数据库驱动坐标</li><li>创建数据源对象</li><li>设置数据源的基本连接数据</li><li>使用数据源获取连接资源和归还连接资源</li></ol><h3 id="Spring-配置数据源"><a href="#Spring-配置数据源" class="headerlink" title="Spring 配置数据源"></a>Spring 配置数据源</h3><p>可以将 DataSource 的创建权交由 Spring 容器完成</p><h4 id="抽取-jdbc-配置文件"><a href="#抽取-jdbc-配置文件" class="headerlink" title="抽取 jdbc 配置文件"></a>抽取 jdbc 配置文件</h4><p>applicationContext.xml 加载 jdbc.properties 配置文件获得连接信息。</p><ol><li><p>引入 context 命名空间和约束路径：</p><p>命名空间：</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xmlns:context=&quot;http://www.springframework.org/schema/context&quot;</span><br></pre></td></tr></table></figure><p>约束路径：</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http://www.springframework.org/schema/context </span><br><span class="line">http://www.springframework.org/schema/context/spring-context.xsd</span><br></pre></td></tr></table></figure></li><li><p>Spring 容器加载 properties 文件</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:property-placeholder</span> <span class="attr">location</span>=<span class="string">&quot;xx.properties&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;key&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+          <category> Spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Spring </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Spring配置文件</title>
+      <link href="/2022/01/31/2-Spring%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
+      <url>/2022/01/31/2-Spring%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="Bean-标签基本配置"><a href="#Bean-标签基本配置" class="headerlink" title="Bean 标签基本配置"></a>Bean 标签基本配置</h3><ol><li><p>Bean 用于配置对象交由 Spring 来创建，<strong>默认情况下调用的是类中的无参构造函数</strong>，</p><p>如果没有无参构造函数则不能创建成功；</p></li><li><p>基本属性</p><ol><li><p><strong>id</strong>：Bean 实例在 Spring 容器中的唯一标识</p></li><li><p><strong>class</strong>：Bean 的全限定名称</p></li><li><p><strong>scope</strong>：Bean 的作用范围</p></li><li><p><strong>&lt;property&gt;</strong>标签：属性注入</p><ol><li>name 属性：属性名称</li><li>value 属性：注入的普通属性值</li><li>ref 属性：注入的对象引用值</li><li>&lt;list&gt;标签、&lt;map&gt;标签、&lt;properties&gt;标签</li></ol></li><li><p><strong>&lt;constructor-arg&gt;标签</strong></p></li></ol></li><li><p><strong>&lt;import&gt;标签</strong>：导入其他的 Spring 的分文件</p></li></ol><h3 id="Bean-标签范围配置"><a href="#Bean-标签范围配置" class="headerlink" title="Bean 标签范围配置"></a>Bean 标签范围配置</h3><table><thead><tr><th align="center">取值范围</th><th align="center">说明</th></tr></thead><tbody><tr><td align="center">singleton</td><td align="center">默认值、单例</td></tr><tr><td align="center">prototype</td><td align="center">多例</td></tr><tr><td align="center">request</td><td align="center">WEB项目中，存入到 request 域</td></tr><tr><td align="center">session</td><td align="center">WEB项目中，存入到 session 域</td></tr><tr><td align="center">global session</td><td align="center">WEB项目中，应用在 Portlet 环境</td></tr></tbody></table><ol><li><h4 id="当-scope-的取值为-singleton-时："><a href="#当-scope-的取值为-singleton-时：" class="headerlink" title="当 scope 的取值为 singleton 时："></a>当 scope 的取值为 singleton 时：</h4></li></ol><ul><li>Bean 的实例化个数：1个</li><li>Bean 的实例化时机：当 Spring 核心文件被加载时，实例化配置的 Bean 实例</li><li>Bean 的生命周期：<ol><li>对象创建：当应用加载，创建容器时，对象就被创建；</li><li>对象运行：只要容器在，对象就一直存在；</li><li>对象销毁：当应用卸载，销毁容器时，对象就被销毁；</li></ol></li></ul><ol start="2"><li><h4 id="当-scope-的取值为-prototype-时："><a href="#当-scope-的取值为-prototype-时：" class="headerlink" title="当 scope 的取值为 prototype 时："></a>当 scope 的取值为 prototype 时：</h4></li></ol><ul><li>Bean 的实例化个数：多个</li><li>Bean 的实例化时机：当调用 getBean() 方法时实例化 Bean</li><li>Bean 的生命周期：<ol><li>对象创建：当使用对象时，创建新的对象实例；</li><li>对象运行：只要对象在使用中，就一直存在；</li><li>对象销毁：当对象长时间不用，就被 Java 的垃圾回收期回收；</li></ol></li></ul><h3 id="Bean-生命周期配置"><a href="#Bean-生命周期配置" class="headerlink" title="Bean 生命周期配置"></a>Bean 生命周期配置</h3><ul><li><p>init-method：指定类中的初始化方法名称</p></li><li><p>destroy-method：指定类中的销毁方法名称</p><p><strong>注意：需要手动关闭容器，才能运行销毁方法</strong></p></li></ul><p><strong>特殊说明：</strong></p><p>当创建 ApplicationContext 对象时，不存在 close() 方法，有两种解决方法：</p><ol><li>更改为 AbstractApplicationContext 对象；</li><li><strong>向下强制转为 ConfigurableApplicationContext，即声明时的类型；</strong></li><li>在大多数情况下更加推荐第二种方法；</li><li>参考文章：<a href="https://stackoverflow.com/questions/14423980/how-to-close-a-spring-applicationcontext">java - How to close a spring ApplicationContext? - Stack Overflow</a></li></ol><h3 id="Bean-实例化三种方式"><a href="#Bean-实例化三种方式" class="headerlink" title="Bean 实例化三种方式"></a>Bean 实例化三种方式</h3><ul><li>无参构造方法实例化</li><li>工厂静态方法实例化</li><li>工厂实例方法实例化</li></ul><h3 id="Bean-依赖注入"><a href="#Bean-依赖注入" class="headerlink" title="Bean 依赖注入"></a>Bean 依赖注入</h3><ol><li><p><strong>依赖注入（Dependency Injection）: Spring框架核心 IOC 的具体实现</strong></p></li><li><p>依赖注入方式：</p><ul><li>构造方法</li><li>set 方法</li></ul></li><li><p>依赖注入的数据类型：</p><ul><li>普通数据类型</li><li>引用数据类型</li><li>集合数据类型</li></ul></li></ol><h3 id="引入其他配置文件（分模块开发）"><a href="#引入其他配置文件（分模块开发）" class="headerlink" title="引入其他配置文件（分模块开发）"></a>引入其他配置文件（分模块开发）</h3><p>实际开发中，Spring 的配置内容非常多，导致配置很繁杂并且体积大，</p><p>所以可以将部分配置拆解到其他配置文件中，而在 Spring 主配置文件中，</p><p>通过 import 标签进行加载。</p>]]></content>
       
       
       <categories>
@@ -1068,60 +1093,6 @@
     
     
     <entry>
-      <title>Redis应用</title>
-      <link href="/2022/01/31/4-Redis%E5%BA%94%E7%94%A8/"/>
-      <url>/2022/01/31/4-Redis%E5%BA%94%E7%94%A8/</url>
-      
-        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="秒杀"><a href="#秒杀" class="headerlink" title="秒杀"></a>秒杀</h3><ol><li><p><strong>关于 Postman 和 JMeter 的选择</strong></p><p>推荐选择 JMeter，因为 Postman 只能支持串行接口测试</p><p>JMeter 推荐参考文章：</p><ul><li><p><a href="https://www.jianshu.com/p/0e4daecc8122">JMeter入门教程 - 简书 (jianshu.com)</a></p></li><li><p><a href="https://www.cnblogs.com/summerstore/p/11529105.html">如何使用JMeter进行并发测试 - 你安静了夏天 - 博客园 (cnblogs.com)</a></p></li></ul><p>Postman 关于能否并发：<a href="https://www.zhihu.com/question/280155125">https://www.zhihu.com/question/280155125</a></p></li><li><p><strong>出现的问题</strong></p><ul><li><p>超时：节省每次连接 Redis 服务带来的消耗，使用连接池解决</p></li><li><p>超卖：使用乐观锁，事务提交，解决超出库存的问题</p></li><li><p>库存遗留问题：由于乐观锁的机制造成仍有库存遗留</p><p><strong>通过 LUA 脚本解决争抢问题</strong>，实际上是 Redis 利用其单线程的特性，</p><p>用任务队列的方式解决多任务并发问题</p></li></ul></li></ol><hr><h3 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h3><ol><li><p>概念</p><p>使用 Redis 大部分情况都是通过 key 查询对应的值，</p><p>假如发送的请求传进来的 key 是不存在 Redis 中的，</p><p>那么就查不到缓存，查不到缓存就会去数据库查询，</p><p>假如有大量这样的请求，这些请求像“穿透”了缓存一样直接打在数据库上。</p></li><li><p>解决方案</p><ol><li><p><strong>把无效的 key 存进 Redis 中</strong></p><p>如果Redis查不到数据，数据库也查不到，我们把这个 key 值保存进 Redis，</p><p>设置 value&#x3D;”null”，当下次再通过这个 key 查询时就不需要再查询数据库，</p><p>这种方式是有问题的，若不存在的 Key 值每次都是随机的，存进Redis也没有意义。</p></li><li><p><strong>设置可访问的名单（白名单）</strong></p></li><li><p><strong>采用布隆过滤器（Boom Filter）</strong></p><p>布隆过滤器的作用是某个 key 不存在，那么就一定不存在，</p><p>它说某个 key 存在，那么很大可能是存在(存在一定的误判率)，</p><p>于是我们可以在缓存之前再加一层布隆过滤器，</p><p>在查询的时候先去布隆过滤器查询 key 是否存在，如果不存在就直接返回。</p></li><li><p><strong>进行实时监控</strong></p><p>当发现 Redis 的命中率开始急速降低时，需要排查访问对象和访问的数据，</p><p>以及运维人员配合，可以设置黑名单限制服务。</p></li></ol></li></ol><hr><h3 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h3><ol><li><p>概念</p><p>缓存击穿是一个热点的 key ，有大并发集中对其进行访问，</p><p>突然间这个 key 失效了，导致大并发全部打在数据库上，</p><p>导致数据库压力剧增，这种现象就叫做缓存击穿。</p></li><li><p>解决方案</p><ol><li><p><strong>预先设置热门数据</strong></p><p>如果业务允许的话，对于热点的 key 可以设置永不过期，</p><p>或者加大热门数据 key 的过期时长。</p></li><li><p><strong>实时调整</strong></p><p>现场监控哪些数据热门，实时调整 key 的过期时长。</p></li><li><p><strong>使用互斥锁</strong></p><p>如果缓存失效的情况，只有拿到锁才可以查询数据库，</p><p>降低了在同一时刻打在数据库上的请求，防止数据库打死，</p><p>当然这样会导致系统的性能变差。</p></li></ol></li></ol><hr><h3 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h3><ol><li><p>概念</p><p>当某一个时刻出现大规模的缓存失效的情况，</p><p>那么就会导致大量的请求直接打在数据库上面，导致数据库压力巨大，</p><p>如果在高并发的情况下，可能瞬间就会导致数据库宕机，</p><p>这时如果马上重启数据库，马上又会有新的流量把数据库打死，这就是缓存雪崩。</p></li><li><p>解决方案</p><ol><li><p><strong>构建多级缓存架构</strong></p><p>nginx + redis + 其他缓存</p></li><li><p><strong>使用锁或队列</strong></p><p>用加锁或队列的方式保证不会有大量的线程对数据库一次性读写，</p><p>从而避免失效时大量的并发请求落到底层存储系统上，不适用高并发情况</p></li><li><p><strong>设置过期标志更新缓存</strong></p><p>如果过期会触发通知另外的线程在后台去更新实际 key 的缓存</p></li><li><p><strong>将缓存失效时间分散</strong></p><p>在失效时间上加上一个随机值，避免因为相同的过期时间导致缓存雪崩</p></li><li><p><strong>熔断机制</strong></p><p>当流量到达一定的阈值时，就直接返回“系统拥挤”之类的提示，</p><p>防止过多的请求打在数据库上，至少能保证一部分用户是可以正常使用，</p><p>其他用户多刷新几次也能得到结果。</p></li></ol></li></ol><hr><h3 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h3><ol><li><h5 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h5><p>随着业务发展的需要，原单体单机部署的系统被演化成分布式集群系统后，</p><p>由于分布式系统多线程、多进程并且分布在不同机器上，</p><p>这使原单机部署情况下的并发控制锁策略失效，</p><p>单纯的 Java API 并不能提供分布式锁的能力，为了解决这个问题，</p><p>需要一种跨 JVM 的互斥机制来控制共享资源的访问</p></li><li><h5 id="实现方案"><a href="#实现方案" class="headerlink" title="实现方案"></a>实现方案</h5><ol><li>基于数据库实现分布式锁</li><li><strong>基于缓存（Redis 等）</strong></li><li>基于 Zookeeper</li></ol></li><li><h5 id="使用-redis-实现分布式锁"><a href="#使用-redis-实现分布式锁" class="headerlink" title="使用 redis 实现分布式锁"></a><strong>使用 redis 实现分布式锁</strong></h5><ol><li>设置锁和过期时间</li><li>UUID 防止误删</li><li>LUA 保证删除原子性</li></ol></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> Redis </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Redis </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Spring集成Junit</title>
-      <link href="/2022/01/31/6-Spring%E9%9B%86%E6%88%90Junit/"/>
-      <url>/2022/01/31/6-Spring%E9%9B%86%E6%88%90Junit/</url>
-      
-        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="原始-Junit-测试-Spring-的问题"><a href="#原始-Junit-测试-Spring-的问题" class="headerlink" title="原始 Junit 测试 Spring 的问题"></a>原始 Junit 测试 Spring 的问题</h3><p>在测试类中，每个测试方法都有一下两行代码：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">ApplicationContext</span> <span class="variable">ac</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ClassPathXmlApplicationContext</span>(<span class="string">&quot;applicationContext.xml&quot;</span>);</span><br><span class="line"><span class="type">IAccountService</span> <span class="variable">as</span> <span class="operator">=</span> ac.getBean(<span class="string">&quot;accountService&quot;</span>, IAccountService.class);</span><br></pre></td></tr></table></figure><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><ul><li>让 SpringJunit 负责创建 Spring 容器，但是需要将配置文件的名称告之；</li><li>将需要进行测试 Bean 直接在测试类中进行注入；</li></ul><h3 id="Spring-集成-Junit-步骤"><a href="#Spring-集成-Junit-步骤" class="headerlink" title="Spring 集成 Junit 步骤"></a>Spring 集成 Junit 步骤</h3><ol><li>导入 Spring 集成 Junit 的坐标</li><li>使用 @RunWith 注解替换原来的运行期</li><li>使用 @ContextConfiguration 指定配置文件或配置类</li><li>使用 @Autowired 注入需要测试的对象</li><li>创建测试方法进行测试</li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java </category>
-          
-          <category> Spring </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Java </tag>
-            
-            <tag> Spring </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Spring与Web环境集成</title>
       <link href="/2022/01/31/7-Spring%E4%B8%8EWeb%E7%8E%AF%E5%A2%83%E9%9B%86%E6%88%90/"/>
       <url>/2022/01/31/7-Spring%E4%B8%8EWeb%E7%8E%AF%E5%A2%83%E9%9B%86%E6%88%90/</url>
@@ -1151,11 +1122,11 @@
     
     
     <entry>
-      <title>SpringMVC数据响应</title>
-      <link href="/2022/01/31/9-SpringMVC%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94/"/>
-      <url>/2022/01/31/9-SpringMVC%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94/</url>
+      <title>Spring集成Junit</title>
+      <link href="/2022/01/31/6-Spring%E9%9B%86%E6%88%90Junit/"/>
+      <url>/2022/01/31/6-Spring%E9%9B%86%E6%88%90Junit/</url>
       
-        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="页面跳转"><a href="#页面跳转" class="headerlink" title="页面跳转"></a>页面跳转</h3><h4 id="直接返回字符串"><a href="#直接返回字符串" class="headerlink" title="直接返回字符串"></a>直接返回字符串</h4><p>此种方式会将返回的字符串与视图解析器的前后缀拼接后跳转</p><h4 id="通过-ModelAndView-对象返回"><a href="#通过-ModelAndView-对象返回" class="headerlink" title="通过 ModelAndView 对象返回"></a>通过 ModelAndView 对象返回</h4><hr><h3 id="回写数据"><a href="#回写数据" class="headerlink" title="回写数据"></a>回写数据</h3><h4 id="直接返回字符串-JSON"><a href="#直接返回字符串-JSON" class="headerlink" title="直接返回字符串 &#x2F; JSON"></a>直接返回字符串 &#x2F; JSON</h4><ul><li>通过 SpringMVC 框架注入的 response 对象，此时不需要视图跳转，方法返回值为 void</li><li>将需要回写的字符串直接返回，通过 <strong>@ResponseBody</strong> 注解告知 SpringMVC 框架</li></ul><h4 id="返回对象或集合"><a href="#返回对象或集合" class="headerlink" title="返回对象或集合"></a>返回对象或集合</h4><p>通过 SpringMVC 进行 JSON 字符串的转换并回写，为处理器适配器配置消息转化参数，</p><p>指定使用 jackson 进行转换，因此需要在 spring-mvc.xml 中进行如下配置：</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;messageConverters&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">list</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;org.springframework.http.converter.json.MappingJackson2HttpMessageConverter&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure><p>在方法上添加 @ResponseBody 就可以返回 json 格式的字符串，但是配置比较繁琐，</p><p>因此，可以使用<strong>注解驱动代替上述配置：<code>&lt;mvc:annotation-driven/&gt;</code></strong></p><p><strong>处理器映射器、处理器适配器、视图解析器成为 SpringMVC 的三大组件</strong>，</p><p>上述注解驱动默认底层就会集成 jackson 进行对象或集合的 json格式字符串的转换。</p>]]></content>
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="原始-Junit-测试-Spring-的问题"><a href="#原始-Junit-测试-Spring-的问题" class="headerlink" title="原始 Junit 测试 Spring 的问题"></a>原始 Junit 测试 Spring 的问题</h3><p>在测试类中，每个测试方法都有一下两行代码：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">ApplicationContext</span> <span class="variable">ac</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ClassPathXmlApplicationContext</span>(<span class="string">&quot;applicationContext.xml&quot;</span>);</span><br><span class="line"><span class="type">IAccountService</span> <span class="variable">as</span> <span class="operator">=</span> ac.getBean(<span class="string">&quot;accountService&quot;</span>, IAccountService.class);</span><br></pre></td></tr></table></figure><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><ul><li>让 SpringJunit 负责创建 Spring 容器，但是需要将配置文件的名称告之；</li><li>将需要进行测试 Bean 直接在测试类中进行注入；</li></ul><h3 id="Spring-集成-Junit-步骤"><a href="#Spring-集成-Junit-步骤" class="headerlink" title="Spring 集成 Junit 步骤"></a>Spring 集成 Junit 步骤</h3><ol><li>导入 Spring 集成 Junit 的坐标</li><li>使用 @RunWith 注解替换原来的运行期</li><li>使用 @ContextConfiguration 指定配置文件或配置类</li><li>使用 @Autowired 注入需要测试的对象</li><li>创建测试方法进行测试</li></ol>]]></content>
       
       
       <categories>
@@ -1209,6 +1180,35 @@
     
     
     <entry>
+      <title>SpringMVC数据响应</title>
+      <link href="/2022/01/31/9-SpringMVC%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94/"/>
+      <url>/2022/01/31/9-SpringMVC%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94/</url>
+      
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="页面跳转"><a href="#页面跳转" class="headerlink" title="页面跳转"></a>页面跳转</h3><h4 id="直接返回字符串"><a href="#直接返回字符串" class="headerlink" title="直接返回字符串"></a>直接返回字符串</h4><p>此种方式会将返回的字符串与视图解析器的前后缀拼接后跳转</p><h4 id="通过-ModelAndView-对象返回"><a href="#通过-ModelAndView-对象返回" class="headerlink" title="通过 ModelAndView 对象返回"></a>通过 ModelAndView 对象返回</h4><hr><h3 id="回写数据"><a href="#回写数据" class="headerlink" title="回写数据"></a>回写数据</h3><h4 id="直接返回字符串-JSON"><a href="#直接返回字符串-JSON" class="headerlink" title="直接返回字符串 &#x2F; JSON"></a>直接返回字符串 &#x2F; JSON</h4><ul><li>通过 SpringMVC 框架注入的 response 对象，此时不需要视图跳转，方法返回值为 void</li><li>将需要回写的字符串直接返回，通过 <strong>@ResponseBody</strong> 注解告知 SpringMVC 框架</li></ul><h4 id="返回对象或集合"><a href="#返回对象或集合" class="headerlink" title="返回对象或集合"></a>返回对象或集合</h4><p>通过 SpringMVC 进行 JSON 字符串的转换并回写，为处理器适配器配置消息转化参数，</p><p>指定使用 jackson 进行转换，因此需要在 spring-mvc.xml 中进行如下配置：</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;messageConverters&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">list</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;org.springframework.http.converter.json.MappingJackson2HttpMessageConverter&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure><p>在方法上添加 @ResponseBody 就可以返回 json 格式的字符串，但是配置比较繁琐，</p><p>因此，可以使用<strong>注解驱动代替上述配置：<code>&lt;mvc:annotation-driven/&gt;</code></strong></p><p><strong>处理器映射器、处理器适配器、视图解析器成为 SpringMVC 的三大组件</strong>，</p><p>上述注解驱动默认底层就会集成 jackson 进行对象或集合的 json格式字符串的转换。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+          <category> Spring </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Spring </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>二分搜索</title>
       <link href="/2021/12/20/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/"/>
       <url>/2021/12/20/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/</url>
@@ -1236,6 +1236,31 @@
     
     
     <entry>
+      <title>Hexo Next的界面优化</title>
+      <link href="/2021/11/29/Hexo%E7%9A%84%E7%95%8C%E9%9D%A2%E4%BC%98%E5%8C%96/"/>
+      <url>/2021/11/29/Hexo%E7%9A%84%E7%95%8C%E9%9D%A2%E4%BC%98%E5%8C%96/</url>
+      
+        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="如何将页面背景改为黑色模式？"><a href="#如何将页面背景改为黑色模式？" class="headerlink" title="如何将页面背景改为黑色模式？"></a>如何将页面背景改为黑色模式？</h3><p>修改 Next 主题下的 _config.yml 配置文件：将 darkmode 的值修改为 true 。</p><p>如果主界面已经设置了 hexo-tag-cloud 标签云的展示，那么修改博客站点的配置文件，</p><p>_config.yml 中标签云模块下的 textColor 更改为 ‘#FFFFFF’ # 白色，或者其他颜色即可。</p><hr><h3 id="如何为页面添加当前浏览进度？"><a href="#如何为页面添加当前浏览进度？" class="headerlink" title="如何为页面添加当前浏览进度？"></a>如何为页面添加当前浏览进度？</h3><p>修改 Next 主题下的 _config.yml 配置文件：</p><p>将 back2top 中的 enable 和 scrollpercent 值修改为 true 。</p><hr><h3 id="如何将页面的首页更改为归档？"><a href="#如何将页面的首页更改为归档？" class="headerlink" title="如何将页面的首页更改为归档？"></a>如何将页面的首页更改为归档？</h3><p>修改 Next 主题下的 _config.yml 配置文件：</p><p>将 menu 下的 home 路径修改为 archive 即可，同时注释掉 archive。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu</span>:</span><br><span class="line">  <span class="attr">home</span>: <span class="regexp">/archives/</span> || fa fa-archive</span><br><span class="line">  <span class="attr">about</span>: <span class="regexp">/about/</span> || fa fa-user</span><br><span class="line">  <span class="attr">tags</span>: <span class="regexp">/tags/</span> || fa fa-tags</span><br><span class="line">  <span class="attr">categories</span>: <span class="regexp">/categories/</span> || fa fa-th</span><br><span class="line">  #<span class="attr">archives</span>: <span class="regexp">/archives/</span> || fa fa-archive</span><br><span class="line">  #<span class="attr">schedule</span>: <span class="regexp">/schedule/</span> || fa fa-calendar</span><br><span class="line">  #<span class="attr">sitemap</span>: /sitemap.<span class="property">xml</span> || fa fa-sitemap</span><br><span class="line">  #<span class="attr">commonweal</span>: <span class="regexp">/404/</span> || fa fa-heartbeat</span><br></pre></td></tr></table></figure><p><em>（提醒：如果担心更改错误，备份原文件）</em></p><hr><h3 id="如何为页面添加加载特效？"><a href="#如何为页面添加加载特效？" class="headerlink" title="如何为页面添加加载特效？"></a>如何为页面添加加载特效？</h3><p>参考文章：<a><a href="https://juejin.cn/post/6844903789946896398">Hexo博客NexT主题美化之顶部加载进度条 - 掘金 (juejin.cn)</a></a></p><hr><h3 id="如何修改主题的段距？"><a href="#如何修改主题的段距？" class="headerlink" title="如何修改主题的段距？"></a>如何修改主题的段距？</h3><p>回答在官方仓库的 Issue，链接：<a href="https://github.com/theme-next/hexo-theme-next/issues/1703">https://github.com/theme-next/hexo-theme-next/issues/1703</a></p><hr><h3 id="如何美化分类页面？"><a href="#如何美化分类页面？" class="headerlink" title="如何美化分类页面？"></a>如何美化分类页面？</h3><p>参考这两篇博客：</p><p><a href="https://jrbcode.gitee.io/posts/be9758cd.html">Hexo+NexT博客归档&#x2F;标签&#x2F;分类页美化 | CodeHeap (gitee.io)</a></p><p><a href="https://www.cnblogs.com/cscshi/p/15196122.html">Hexo-NexT 分类多层级描述 - 锦瑟，无端 - 博客园 (cnblogs.com)</a></p><p>前者是添加一些 CSS 样式以及美化，而后者是增强分类的观感。</p><hr><h3 id="如何把文章间的距离缩小？"><a href="#如何把文章间的距离缩小？" class="headerlink" title="如何把文章间的距离缩小？"></a>如何把文章间的距离缩小？</h3><p>参考 Issue：<a href="https://github.com/iissnan/hexo-theme-next/issues/591">https://github.com/iissnan/hexo-theme-next/issues/591</a></p><hr><h3 id="如何修改文章链接样式？"><a href="#如何修改文章链接样式？" class="headerlink" title="如何修改文章链接样式？"></a>如何修改文章链接样式？</h3><p>修改 <code>themes\next\source\css\_common\components\post.styl</code> 文件，添加如下 CSS 样式：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 文章内链接文本样式</span><br><span class="line"><span class="selector-class">.post-body</span> <span class="selector-tag">p</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#8CC7B5</span>;</span><br><span class="line">  <span class="attribute">border-bottom</span>: none;</span><br><span class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#8CC7B5</span>;</span><br><span class="line">  &amp;<span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fc6423</span>;</span><br><span class="line">    <span class="attribute">border-bottom</span>: none;</span><br><span class="line">    <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#fc6423</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><code>color</code> 部分可以根据个人喜好更改。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基本概念</title>
       <link href="/2021/11/29/Java%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
       <url>/2021/11/29/Java%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</url>
@@ -1255,31 +1280,6 @@
         <tags>
             
             <tag> Java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hexo Next的界面优化</title>
-      <link href="/2021/11/29/Hexo%E7%9A%84%E7%95%8C%E9%9D%A2%E4%BC%98%E5%8C%96/"/>
-      <url>/2021/11/29/Hexo%E7%9A%84%E7%95%8C%E9%9D%A2%E4%BC%98%E5%8C%96/</url>
-      
-        <content type="html"><![CDATA[<p><escape><span id="more"></span></escape></p><h3 id="如何将页面背景改为黑色模式？"><a href="#如何将页面背景改为黑色模式？" class="headerlink" title="如何将页面背景改为黑色模式？"></a>如何将页面背景改为黑色模式？</h3><p>修改 Next 主题下的 _config.yml 配置文件：将 darkmode 的值修改为 true 。</p><p>如果主界面已经设置了 hexo-tag-cloud 标签云的展示，那么修改博客站点的配置文件，</p><p>_config.yml 中标签云模块下的 textColor 更改为 ‘#FFFFFF’ # 白色，或者其他颜色即可。</p><hr><h3 id="如何为页面添加当前浏览进度？"><a href="#如何为页面添加当前浏览进度？" class="headerlink" title="如何为页面添加当前浏览进度？"></a>如何为页面添加当前浏览进度？</h3><p>修改 Next 主题下的 _config.yml 配置文件：</p><p>将 back2top 中的 enable 和 scrollpercent 值修改为 true 。</p><hr><h3 id="如何将页面的首页更改为归档？"><a href="#如何将页面的首页更改为归档？" class="headerlink" title="如何将页面的首页更改为归档？"></a>如何将页面的首页更改为归档？</h3><p>修改 Next 主题下的 _config.yml 配置文件：</p><p>将 menu 下的 home 路径修改为 archive 即可，同时注释掉 archive。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu</span>:</span><br><span class="line">  <span class="attr">home</span>: <span class="regexp">/archives/</span> || fa fa-archive</span><br><span class="line">  <span class="attr">about</span>: <span class="regexp">/about/</span> || fa fa-user</span><br><span class="line">  <span class="attr">tags</span>: <span class="regexp">/tags/</span> || fa fa-tags</span><br><span class="line">  <span class="attr">categories</span>: <span class="regexp">/categories/</span> || fa fa-th</span><br><span class="line">  #<span class="attr">archives</span>: <span class="regexp">/archives/</span> || fa fa-archive</span><br><span class="line">  #<span class="attr">schedule</span>: <span class="regexp">/schedule/</span> || fa fa-calendar</span><br><span class="line">  #<span class="attr">sitemap</span>: /sitemap.<span class="property">xml</span> || fa fa-sitemap</span><br><span class="line">  #<span class="attr">commonweal</span>: <span class="regexp">/404/</span> || fa fa-heartbeat</span><br></pre></td></tr></table></figure><p><em>（提醒：如果担心更改错误，备份原文件）</em></p><hr><h3 id="如何为页面添加加载特效？"><a href="#如何为页面添加加载特效？" class="headerlink" title="如何为页面添加加载特效？"></a>如何为页面添加加载特效？</h3><p>参考文章：<a><a href="https://juejin.cn/post/6844903789946896398">Hexo博客NexT主题美化之顶部加载进度条 - 掘金 (juejin.cn)</a></a></p><hr><h3 id="如何修改主题的段距？"><a href="#如何修改主题的段距？" class="headerlink" title="如何修改主题的段距？"></a>如何修改主题的段距？</h3><p>回答在官方仓库的 Issue，链接：<a href="https://github.com/theme-next/hexo-theme-next/issues/1703">https://github.com/theme-next/hexo-theme-next/issues/1703</a></p><hr><h3 id="如何美化分类页面？"><a href="#如何美化分类页面？" class="headerlink" title="如何美化分类页面？"></a>如何美化分类页面？</h3><p>参考这两篇博客：</p><p><a href="https://jrbcode.gitee.io/posts/be9758cd.html">Hexo+NexT博客归档&#x2F;标签&#x2F;分类页美化 | CodeHeap (gitee.io)</a></p><p><a href="https://www.cnblogs.com/cscshi/p/15196122.html">Hexo-NexT 分类多层级描述 - 锦瑟，无端 - 博客园 (cnblogs.com)</a></p><p>前者是添加一些 CSS 样式以及美化，而后者是增强分类的观感。</p><hr><h3 id="如何把文章间的距离缩小？"><a href="#如何把文章间的距离缩小？" class="headerlink" title="如何把文章间的距离缩小？"></a>如何把文章间的距离缩小？</h3><p>参考 Issue：<a href="https://github.com/iissnan/hexo-theme-next/issues/591">https://github.com/iissnan/hexo-theme-next/issues/591</a></p><hr><h3 id="如何修改文章链接样式？"><a href="#如何修改文章链接样式？" class="headerlink" title="如何修改文章链接样式？"></a>如何修改文章链接样式？</h3><p>修改 <code>themes\next\source\css\_common\components\post.styl</code> 文件，添加如下 CSS 样式：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 文章内链接文本样式</span><br><span class="line"><span class="selector-class">.post-body</span> <span class="selector-tag">p</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#8CC7B5</span>;</span><br><span class="line">  <span class="attribute">border-bottom</span>: none;</span><br><span class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#8CC7B5</span>;</span><br><span class="line">  &amp;<span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fc6423</span>;</span><br><span class="line">    <span class="attribute">border-bottom</span>: none;</span><br><span class="line">    <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#fc6423</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><code>color</code> 部分可以根据个人喜好更改。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Hexo </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Hexo </tag>
             
         </tags>
       
