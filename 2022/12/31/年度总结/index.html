@@ -1,37 +1,329 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="年度总结">
+<meta property="og:url" content="http://example.com/2022/12/31/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Yuanhao Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/2022github.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/2022gitlab.jpg">
+<meta property="article:published_time" content="2022-12-30T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-12-30T16:00:00.000Z">
+<meta property="article:author" content="Yuanhao">
+<meta property="article:tag" content="Thinking">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/2022github.jpg">
 
 
-{% block content %}
+<link rel="canonical" href="http://example.com/2022/12/31/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/12/31/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/","path":"2022/12/31/年度总结/","title":"年度总结"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>年度总结 | Yuanhao Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
     </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Yuanhao Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Later Equals Never</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Preface"><span class="nav-number">1.</span> <span class="nav-text">Preface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Details"><span class="nav-number">2.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Final"><span class="nav-number">3.</span> <span class="nav-text">Final</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yuanhao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/31/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuanhao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuanhao Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="年度总结 | Yuanhao Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          年度总结
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-12-31 00:00:00" itemprop="dateCreated datePublished" datetime="2022-12-31T00:00:00+08:00">2022-12-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Thinking/" itemprop="url" rel="index"><span itemprop="name">Thinking</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><escape><span id="more"></span></escape></p>
+<h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p>2022 年结束了，今年对我来说是一个转折点，发生了很多事情，但是最终结果走向是好的，</p>
+<p>以前没有这样整理记录过，回顾过去的二十多年，经历了很多，但是似乎没有办法追溯到根源，</p>
+<p>所以便有了这篇 annual summary，悟已往之不谏，知来者之可追。</p>
+<h3 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h3><p>年初的时候个人压力比较大，因为不准备读研，所以需要准备春招，但很多知识都不会，也没有一个明确的方向，</p>
+<p>完全凭着自己去搜集资料，甄别信息，磕磕绊绊的学习，也时常怀疑自己是否走在正确的道路上，也担心失败，</p>
+<p>整体的就业环境不太好，寒假在家的时候时常学习到深夜，也经常不出门，和女朋友之间也有了矛盾，为日后埋下了种子，</p>
+<p>后来稀里糊涂的通过了字节的面试，运气确实比较好，也记录过这个经历：「<a target="_blank" rel="noopener" href="https://eminem-x.github.io/2022/03/15/%E9%9D%A2%E8%AF%95%E6%84%9F%E6%82%9F/">面试感悟</a>」，居然已经过去九个月了，</p>
+<p>因为异地加上生活节奏的不同，和玥玥在拿到录取结果之前分手了，当时还是挺无奈的，无力感涌上全身，</p>
+<p>最后在五月份的时候从学校前往广州实习，当时我也不知道以后会如何走向，但现在回头看看，我是无比幸运的，</p>
+<p>关于实习的一些经历，我也有过记录：「<a target="_blank" rel="noopener" href="https://eminem-x.github.io/2022/05/15/%E5%AE%9E%E4%B9%A0%E9%97%AE%E9%A2%98/">实习问题</a>」、「<a target="_blank" rel="noopener" href="https://eminem-x.github.io/2022/08/14/%E5%AE%9E%E4%B9%A0%E6%80%BB%E7%BB%93/">实习总结</a>」，也很感谢同事和领导对于我的包容以及鼓励，</p>
+<p>九月份的转正答辩是残酷的，有人成功有人失败，我幸运地通过了，也逃过了残酷的秋招，并且过程中也学习到很多知识，</p>
+<p>在这个过程中，我和玥玥复合了，再见面的时候，用一见如故形容或许不恰当，但是确实一扫阴霾，虽然依然有分歧，</p>
+<p>尽管生活节奏依然不同，但周末假期可以见面：「<a target="_blank" rel="noopener" href="https://eminem-x.github.io/2022/09/26/%E5%91%A8%E6%9C%AB(9.24-9.25)/">周末记录</a>」、「<a target="_blank" rel="noopener" href="https://eminem-x.github.io/2022/10/08/%E5%9B%BD%E5%BA%86%E5%81%87%E6%9C%9F/">国庆假期</a>」，后来因为疫情封校，也没办法再见面了，</p>
+<p>在公司上班和在学校读书对我来说其实区别不大，个人也比较宅吧，不过有时候确实感觉非常疲惫，慢慢适应吧，</p>
+<p>这一年的学习，很感激大学同学以及同事的指引和分享，自己有了清晰的认知：「<a target="_blank" rel="noopener" href="https://eminem-x.github.io/2022/12/31/%E8%AF%BB%E4%B9%A6%E6%B8%85%E5%8D%95/">读书清单</a>」，</p>
+<p>家里面也发生了很多事情，让我意识到自己也到了经历老人因病困扰的阶段了，或者说生死离别，</p>
+<p>回顾过去，一眨眼已经过完三个七年了，时间越来越快，留下的人和事却越来越少，希望未来会更好吧。</p>
+<h3 id="Final"><a href="#Final" class="headerlink" title="Final"></a>Final</h3><ol>
+<li>计算机学习的路上发生了质的变化，从懵懵懂懂到有了自己前进的方向</li>
+<li>家庭发生一些事情，学会去面对和经历，尽到自己的责任和义务</li>
+<li>完成了去年的三个新年愿望：找到实习、在广州找到工作、和玥玥依然在一起</li>
+</ol>
+<p>对于工作和学习过程，通过 Github 和 Gitlab 的 contributions 来记录：</p>
+<img src="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/2022github.jpg" style="max-width: 70%">
+
+<img src="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/2022gitlab.jpg" style="max-width: 70%">
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Thinking/" rel="tag"># Thinking</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/10/08/%E5%9B%BD%E5%BA%86%E5%81%87%E6%9C%9F/" rel="prev" title="国庆假期">
+                  <i class="fa fa-angle-left"></i> 国庆假期
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/12/31/%E8%AF%BB%E4%B9%A6%E6%B8%85%E5%8D%95/" rel="next" title="读书清单">
+                  读书清单 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Yuanhao</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

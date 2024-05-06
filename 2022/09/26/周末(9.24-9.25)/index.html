@@ -1,37 +1,329 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="周末(9.24-9.25)">
+<meta property="og:url" content="http://example.com/2022/09/26/%E5%91%A8%E6%9C%AB(9.24-9.25)/index.html">
+<meta property="og:site_name" content="Yuanhao Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/%E5%91%A8%E6%9C%AB/%E6%B3%B0%E8%8F%9C.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/%E5%91%A8%E6%9C%AB/%E6%8A%B1%E7%8C%AB2.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/%E5%91%A8%E6%9C%AB/%E6%8A%B1%E7%8C%AB1.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/%E5%91%A8%E6%9C%AB/%E7%BE%8E%E9%A3%9F%E8%A1%97.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/%E5%91%A8%E6%9C%AB/%E7%8B%AC%E8%A7%92%E5%85%BD.png">
+<meta property="article:published_time" content="2022-09-25T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-09-26T16:00:00.000Z">
+<meta property="article:author" content="Yuanhao">
+<meta property="article:tag" content="Life">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/%E5%91%A8%E6%9C%AB/%E6%B3%B0%E8%8F%9C.jpg">
 
 
-{% block content %}
+<link rel="canonical" href="http://example.com/2022/09/26/%E5%91%A8%E6%9C%AB(9.24-9.25)/">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/09/26/%E5%91%A8%E6%9C%AB(9.24-9.25)/","path":"2022/09/26/周末(9.24-9.25)/","title":"周末(9.24-9.25)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>周末(9.24-9.25) | Yuanhao Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
     </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Yuanhao Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Later Equals Never</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Preface"><span class="nav-number">1.</span> <span class="nav-text">Preface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Detail"><span class="nav-number">2.</span> <span class="nav-text">Detail</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yuanhao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/26/%E5%91%A8%E6%9C%AB(9.24-9.25)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuanhao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuanhao Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="周末(9.24-9.25) | Yuanhao Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          周末(9.24-9.25)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-09-26 00:00:00" itemprop="dateCreated datePublished" datetime="2022-09-26T00:00:00+08:00">2022-09-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-09-27 00:00:00" itemprop="dateModified" datetime="2022-09-27T00:00:00+08:00">2022-09-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Life/" itemprop="url" rel="index"><span itemprop="name">Life</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><escape><span id="more"></span></escape></p>
+<h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p>在确定实习，来沈阳之前，我们分手了，异地恋会让间隙逐渐放大，但是随后的时间会去弥补裂痕，</p>
+<p>从沈阳来到广州，尽管两个人节奏不同，一个工作一个上学，但是周末可以一起见面，比以前还是好很多的，</p>
+<p>便想到记录下周末生活，以后也有迹可循，方便回顾吧。</p>
+<h3 id="Detail"><a href="#Detail" class="headerlink" title="Detail"></a>Detail</h3><p>早上在学校见面，然后去吃的泰菜，不过感觉味道一般，可能不会去喽，</p>
+<img src="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/%E5%91%A8%E6%9C%AB/%E6%B3%B0%E8%8F%9C.jpg" style="max-width: 60%"> 
+
+<p>下午一起去的猫咖，运气比较好，我进门相中的猫主动跳进我怀里，没有白来，</p>
+ <img src="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/%E5%91%A8%E6%9C%AB/%E6%8A%B1%E7%8C%AB2.jpg" style="max-width: 60%">
+
+ <img src="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/%E5%91%A8%E6%9C%AB/%E6%8A%B1%E7%8C%AB1.jpg" style="max-width: 60%">
+
+<p>晚上来的美食街，吃了小吃，路上又遇到独角兽，不过是活动，轻松拿下，最后一起去打台球，</p>
+ <img src="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/%E5%91%A8%E6%9C%AB/%E7%BE%8E%E9%A3%9F%E8%A1%97.jpg" style="max-width: 60%">
+
+ <img src="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/%E5%91%A8%E6%9C%AB/%E7%8B%AC%E8%A7%92%E5%85%BD.png" style="max-width: 60%">
+
+<p>生活还是很美好的，在一起的时候很多误会和不开心也都随之消散。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Life/" rel="tag"># Life</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/08/27/Google%20Plugins/" rel="prev" title="Google Plugins">
+                  <i class="fa fa-angle-left"></i> Google Plugins
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/10/08/%E5%9B%BD%E5%BA%86%E5%81%87%E6%9C%9F/" rel="next" title="国庆假期">
+                  国庆假期 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Yuanhao</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

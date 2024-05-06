@@ -1,37 +1,351 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="读书清单">
+<meta property="og:url" content="http://example.com/2022/12/31/%E8%AF%BB%E4%B9%A6%E6%B8%85%E5%8D%95/index.html">
+<meta property="og:site_name" content="Yuanhao Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-12-30T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-12-30T16:00:00.000Z">
+<meta property="article:author" content="Yuanhao">
+<meta property="article:tag" content="Thinking">
+<meta name="twitter:card" content="summary">
 
 
-{% block content %}
+<link rel="canonical" href="http://example.com/2022/12/31/%E8%AF%BB%E4%B9%A6%E6%B8%85%E5%8D%95/">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/12/31/%E8%AF%BB%E4%B9%A6%E6%B8%85%E5%8D%95/","path":"2022/12/31/读书清单/","title":"读书清单"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>读书清单 | Yuanhao Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
     </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Yuanhao Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Later Equals Never</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Preface"><span class="nav-number">1.</span> <span class="nav-text">Preface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Details"><span class="nav-number">2.</span> <span class="nav-text">Details</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Acwing-%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B"><span class="nav-number">2.1.</span> <span class="nav-text">Acwing 系列课程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4"><span class="nav-number">2.2.</span> <span class="nav-text">极客时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%BB%91%E9%A9%AC%E7%A8%8B%E5%BA%8F%E5%91%98%E7%B3%BB%E5%88%97"><span class="nav-number">2.3.</span> <span class="nav-text">黑马程序员系列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93"><span class="nav-number">2.4.</span> <span class="nav-text">代码整洁之道</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Go-%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80"><span class="nav-number">2.5.</span> <span class="nav-text">Go 语言程序设计语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Go-%E8%AF%AD%E8%A8%80%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B"><span class="nav-number">2.6.</span> <span class="nav-text">Go 语言高级编程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80"><span class="nav-number">2.7.</span> <span class="nav-text">C 程序设计语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Java-%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="nav-number">2.8.</span> <span class="nav-text">深入理解 Java 虚拟机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%88Java%E7%89%88%EF%BC%89"><span class="nav-number">2.9.</span> <span class="nav-text">数据结构与算法（Java版）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%B8%9F%E5%93%A5%E7%9A%84-Linux-%E7%A7%81%E6%88%BF%E8%8F%9C"><span class="nav-number">2.10.</span> <span class="nav-text">鸟哥的 Linux 私房菜</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E8%A7%A3-HTTP"><span class="nav-number">2.11.</span> <span class="nav-text">图解 HTTP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E8%A7%A3-TCP-IP"><span class="nav-number">2.12.</span> <span class="nav-text">图解 TCP&#x2F;IP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E6%96%B9%E6%B3%95"><span class="nav-number">2.13.</span> <span class="nav-text">计算机网络 自顶向下方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%83%E5%A4%A9%E7%94%A8Go%E4%BB%8E%E9%9B%B6%E5%AE%9E%E7%8E%B0%E7%B3%BB%E5%88%97"><span class="nav-number">2.14.</span> <span class="nav-text">七天用Go从零实现系列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AA%E8%83%BD%E5%9D%9A%E6%8C%81%E4%B8%8B%E5%8E%BB%E7%9A%84%E4%B9%A6%E7%B1%8D%E8%AF%BE%E7%A8%8B"><span class="nav-number">2.15.</span> <span class="nav-text">未能坚持下去的书籍课程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Final"><span class="nav-number">3.</span> <span class="nav-text">Final</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yuanhao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/12/31/%E8%AF%BB%E4%B9%A6%E6%B8%85%E5%8D%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuanhao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuanhao Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="读书清单 | Yuanhao Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          读书清单
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-12-31 00:00:00" itemprop="dateCreated datePublished" datetime="2022-12-31T00:00:00+08:00">2022-12-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Thinking/" itemprop="url" rel="index"><span itemprop="name">Thinking</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><escape><span id="more"></span></escape></p>
+<h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p>2022 年买了很多书，但是却没有读完多少，更多的是由于自身惰性导致的，希望明年能够坚持读下去书籍，</p>
+<p>不过 2022 年对我来说发生了很多事情，而源源不断的力量除了周围人帮助，还有来源于书籍的力量，</p>
+<p>并且看过很多其他人的建议，整理读书笔记也是重要的事情，所以也整理一下读书清单，</p>
+<p>当然这里的读书清单不仅仅包括书籍，还会有一些不错的课程和博客推荐。</p>
+<h3 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h3><h4 id="Acwing-系列课程"><a href="#Acwing-系列课程" class="headerlink" title="Acwing 系列课程"></a>Acwing 系列课程</h4><ol>
+<li><p><strong>算法基础课、Linux 基础课</strong></p>
+<p> 这两门课程我是跟着走完的，强烈推荐给想要学习算法、了解 Linux 基础命令的同学，内容短小精悍，</p>
+<p> 能够比较系统的去学习算法以及入门算法流程，Linux 部分则是在日常开发工作中比较常见实用。</p>
+</li>
+<li><p><strong>LeetCode 究极班、Django 框架课</strong></p>
+<p> 这两门课程我跟着走完一半，后来因为时间原因就没再跟进，不过其中学到的知识方法依然实用，</p>
+<p> 跟着一起刷完 LeetCode 前 1500 所有非会员题目，与自己刷不同的点在于，更加优雅和奇妙的解法，</p>
+<p> Django 框架课个人觉得不在于讲授 python 的框架，而是在于把控如何起一个前后端服务，</p>
+<p> 从 python 到 Django，再到前端三大件，部署时的 docker、nginx，以及 thrift 的使用都非常实用，</p>
+<p> 如果时间精力比较充裕的话，我还是比较推荐学习的。</p>
+</li>
+<li><p><strong>Web 应用课、SpringBoot 框架课</strong></p>
+<p> 这两门课程我还没开始，不过打算有时间去学学 Web 应用课，前后端都尽量涉足，但是有所偏向。</p>
+</li>
+</ol>
+<h4 id="极客时间"><a href="#极客时间" class="headerlink" title="极客时间"></a>极客时间</h4><ol>
+<li><p><strong>MySQL 实战 45 讲</strong></p>
+<p> 比较出名了，个人觉得后端开发同学都应该花时间去学习，对于整体把握数据库非常有帮助。</p>
+</li>
+<li><p><strong>趣谈网络协议</strong></p>
+<p> 如果对于计算机网络仍然有些迷糊，这门课程会按照日常生活实际来逐步介绍网络的组成以及流程。</p>
+</li>
+</ol>
+<h4 id="黑马程序员系列"><a href="#黑马程序员系列" class="headerlink" title="黑马程序员系列"></a>黑马程序员系列</h4><p>B站上有免费资源，Spring、SpringBoot、Redis、Java Web、Maven 等等课程，</p>
+<p>尽管从实际来说讲的很琐碎，但是个人学习下来，对于小白来说还是非常有帮助的，这个看个人偏向。</p>
+<h4 id="代码整洁之道"><a href="#代码整洁之道" class="headerlink" title="代码整洁之道"></a>代码整洁之道</h4><p>书籍本身也说到了，没有几年开发经验无法完全做到，读完之后对于日常代码还是有影响的，不过很难完全做到。</p>
+<h4 id="Go-语言程序设计语言"><a href="#Go-语言程序设计语言" class="headerlink" title="Go 语言程序设计语言"></a>Go 语言程序设计语言</h4><p>黑皮书出品，网上评价褒贬不一，个人觉得如果在没有接触过其他语言的情况下，可能有些晦涩难懂，</p>
+<p>可以去通过 Go 官网学习基础语法，或者其他入门书籍，这本书更加偏向实战以及大量的实例，推荐阅读。</p>
+<h4 id="Go-语言高级编程"><a href="#Go-语言高级编程" class="headerlink" title="Go 语言高级编程"></a>Go 语言高级编程</h4><p>更多的是对于 Go 整体性能设计的 overview，书的后半部分也涵盖了开发过程中常见的设计模式以及思想，</p>
+<p>整体读下来，觉得还不错，对于日常开发过程中的语法糖、以及组件运用都会有帮助。</p>
+<h4 id="C-程序设计语言"><a href="#C-程序设计语言" class="headerlink" title="C 程序设计语言"></a>C 程序设计语言</h4><p>慕名而来 K&amp;R，大致浏览了书的前半部分，除了 C 语言语法，还会有很多例题以及源码的示例。</p>
+<h4 id="深入理解-Java-虚拟机"><a href="#深入理解-Java-虚拟机" class="headerlink" title="深入理解 Java 虚拟机"></a>深入理解 Java 虚拟机</h4><p>当时走马观花跟着走了一遍，其中很多地方不仅仅是 special for Java，很多地方都适用，</p>
+<p>如果有时间和精力更推荐跟着书中安装 JDK 源码学习，不然可能会无法理解其中细节。</p>
+<h4 id="数据结构与算法（Java版）"><a href="#数据结构与算法（Java版）" class="headerlink" title="数据结构与算法（Java版）"></a>数据结构与算法（Java版）</h4><p>读完了大半，入门书籍，但是需要对 Java 语法比较熟悉，当然也有助于 Java 的学习。</p>
+<h4 id="鸟哥的-Linux-私房菜"><a href="#鸟哥的-Linux-私房菜" class="headerlink" title="鸟哥的 Linux 私房菜"></a>鸟哥的 Linux 私房菜</h4><p>个人觉得内容太多了，比较琐碎，读者可能无法抓住重点，可以在日常开发学习中当作字典来用。</p>
+<h4 id="图解-HTTP"><a href="#图解-HTTP" class="headerlink" title="图解 HTTP"></a>图解 HTTP</h4><p>快速跟着走了一遍，比较基础入门，可以在空闲时间阅读，后面可以当字典用。</p>
+<h4 id="图解-TCP-IP"><a href="#图解-TCP-IP" class="headerlink" title="图解 TCP&#x2F;IP"></a>图解 TCP&#x2F;IP</h4><p>相较于 http，更加晦涩一些，不过整体比较通俗易懂，可以二者先后一起阅读。</p>
+<h4 id="计算机网络-自顶向下方法"><a href="#计算机网络-自顶向下方法" class="headerlink" title="计算机网络 自顶向下方法"></a>计算机网络 自顶向下方法</h4><p>当时整体读下来，不知所云，随着工作学习更进一步，对其中的内容也有了更清晰的理解。</p>
+<h4 id="七天用Go从零实现系列"><a href="#七天用Go从零实现系列" class="headerlink" title="七天用Go从零实现系列"></a>七天用Go从零实现系列</h4><p>网络博主：<a target="_blank" rel="noopener" href="https://geektutu.com/post/gee.html">https://geektutu.com/post/gee.html</a></p>
+<p>从零实现类似 gin、gorm、grpc、gcache 的框架，比较基础，代码示例以及讲解都很清晰，推荐 Go 新手学习，</p>
+<p>并且我自己也打算在此基础上去完成毕业设计，也有助于日常后端开发工作的理解。</p>
+<h4 id="未能坚持下去的书籍课程"><a href="#未能坚持下去的书籍课程" class="headerlink" title="未能坚持下去的书籍课程"></a>未能坚持下去的书籍课程</h4><p>最开始同学推荐给我的 CSAPP、OSTEP、MIT6.S081 这几门课程比较硬核，</p>
+<p>以及 byteTech 内部的一些课程，自己没能坚持下去，希望明年能够完成。</p>
+<h3 id="Final"><a href="#Final" class="headerlink" title="Final"></a>Final</h3><p>学习过程中整理的笔记基本也在这个仓库中：<a target="_blank" rel="noopener" href="https://github.com/Eminem-x/Learning">https://github.com/Eminem-x/Learning</a></p>
+<p>回顾一下，发现阅读的更多是基础书籍，当然很多工作中学习到的技巧以及工具使用，无法量化的用某本书来代替，</p>
+<p>但是仍然需要努力，战胜自己的惰性，能够坚持学习下去，笨鸟先飞，慢慢提升自己的知识水平，</p>
+<p>整体来说，今年对我是一个转折点，对于计算机的学习有了更清晰的目标和认知，希望明年能够进步。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Thinking/" rel="tag"># Thinking</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/12/31/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" rel="prev" title="年度总结">
+                  <i class="fa fa-angle-left"></i> 年度总结
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/01/21/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E5%92%8C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%8C%BA%E5%88%AB/" rel="next" title="正向代理和反向代理区别">
+                  正向代理和反向代理区别 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Yuanhao</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

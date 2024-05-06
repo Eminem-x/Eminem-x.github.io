@@ -1,37 +1,363 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="正向代理和反向代理区别">
+<meta property="og:url" content="http://example.com/2023/01/21/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E5%92%8C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%8C%BA%E5%88%AB/index.html">
+<meta property="og:site_name" content="Yuanhao Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/tool/proxy1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/tool/proxy2.png">
+<meta property="article:published_time" content="2023-01-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-01-21T14:50:15.992Z">
+<meta property="article:author" content="Yuanhao">
+<meta property="article:tag" content="Tool">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/tool/proxy1.png">
 
 
-{% block content %}
+<link rel="canonical" href="http://example.com/2023/01/21/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E5%92%8C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%8C%BA%E5%88%AB/">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/01/21/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E5%92%8C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%8C%BA%E5%88%AB/","path":"2023/01/21/正向代理和反向代理区别/","title":"正向代理和反向代理区别"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>正向代理和反向代理区别 | Yuanhao Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
     </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Yuanhao Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Later Equals Never</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Preface"><span class="nav-number">1.</span> <span class="nav-text">Preface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Details"><span class="nav-number">2.</span> <span class="nav-text">Details</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%EF%BC%88Forward-Proxy%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">正向代理（Forward Proxy）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.1.</span> <span class="nav-text">正向代理的类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E7%9A%84%E7%94%A8%E9%80%94"><span class="nav-number">2.1.2.</span> <span class="nav-text">正向代理的用途</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%EF%BC%88Reverse-Proxy%EF%BC%89"><span class="nav-number">2.2.</span> <span class="nav-text">反向代理（Reverse Proxy）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.2.1.</span> <span class="nav-text">反向代理的类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%9A%84%E7%94%A8%E9%80%94"><span class="nav-number">2.2.2.</span> <span class="nav-text">反向代理的用途</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Final"><span class="nav-number">3.</span> <span class="nav-text">Final</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E5%92%8C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.1.</span> <span class="nav-text">正向代理和反向代理的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E5%85%85%E5%BD%93%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%EF%BC%9F"><span class="nav-number">3.2.</span> <span class="nav-text">正向代理是否可以充当反向代理？</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yuanhao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/21/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E5%92%8C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%8C%BA%E5%88%AB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuanhao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuanhao Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="正向代理和反向代理区别 | Yuanhao Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          正向代理和反向代理区别
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-01-21 00:00:00 / 修改时间：22:50:15" itemprop="dateCreated datePublished" datetime="2023-01-21T00:00:00+08:00">2023-01-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tool/" itemprop="url" rel="index"><span itemprop="name">Tool</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><escape><span id="more"></span></escape></p>
+<h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p>代理（Proxy）通常是指用户和服务器之间的中介，常见的主要有正向代理和反向代理，</p>
+<p><strong>正向代理确保网站绝不与用户直接通信。而反向代理确保用户不会与后端服务器直接通信。</strong></p>
+<img src="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/tool/proxy1.png" style="max-width: 70%">
+
+<img src="https://raw.githubusercontent.com/Eminem-x/Eminem-x.github.io/source/source/_posts/tool/proxy2.png" style="max-width: 70%">
+
+<h3 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h3><h4 id="正向代理（Forward-Proxy）"><a href="#正向代理（Forward-Proxy）" class="headerlink" title="正向代理（Forward Proxy）"></a>正向代理（Forward Proxy）</h4><p>大多数情况下，常说的代理服务器指的是最普通的代理，即正向代理。</p>
+<p>这类代理位于用户之前，在用户与其访问的服务器之间充当中介，意味着用户的请求要通过正向代理后才能抵达网页，</p>
+<p>从互联网检索数据后，数据就会被发送到代理服务器并将其重定向后返回请求者，</p>
+<p>从互联网服务器的角度来看，这个请求是有代理服务器、而不是用户发送的，正向代理还可以用于缓存信息。</p>
+<h5 id="正向代理的类型"><a href="#正向代理的类型" class="headerlink" title="正向代理的类型"></a>正向代理的类型</h5><p>现在有各种不同类型的正向代理，最常见的分类是按来源分：住宅代理、数据中心代理</p>
+<p><strong>住宅代理</strong>：由互联网服务提供商（ISP）提供、绑定物理位置的 IP 地址</p>
+<p><strong>数据中心代理：</strong>不属于 ISP，这些地址来自于二级来源，例如：数据中心</p>
+<h5 id="正向代理的用途"><a href="#正向代理的用途" class="headerlink" title="正向代理的用途"></a>正向代理的用途</h5><p>个人用户或企业出于各种原因使用正向代理：</p>
+<ol>
+<li><p><strong>访问受限地理位置</strong>：用户浏览互联网时，能浏览的内容通常由所在的地理位置来决定，</p>
+<p> 使用正向代理时，用户可以访问定位给其他国家&#x2F;地区的各种内容。例如，对于提供广告验证服务的公司，</p>
+<p> 这一特点尤其有用。无论这些公司处于任何地理位置，都可以自由监控广告投放，</p>
+<p> 例如，您想要了解自己投放的广告在巴西是否可以显示，可以使用巴西代理；也可以用德国代理访问德国的内容。</p>
+</li>
+<li><p><strong>确保匿名性：</strong>可以用作额外的安全保护层，可以通过使用自己的 IP 地址来隐藏网页服务器的真实IP 地址，</p>
+<p> 这就是使用正向代理服务器来确保更高级别的匿名性和安全性的原因。</p>
+</li>
+<li><p><strong>网络抓取：</strong>公司通常采集数据来帮助改进营销、定价和其他策略。可通过网络抓取有助于在市场上保持竞争力。</p>
+</li>
+</ol>
+<p>正向代理也可以用于控制和监控互联网的使用、创建和管理社交媒体帐户等。</p>
+<h4 id="反向代理（Reverse-Proxy）"><a href="#反向代理（Reverse-Proxy）" class="headerlink" title="反向代理（Reverse Proxy）"></a>反向代理（Reverse Proxy）</h4><p><strong>反向代理</strong>服务器位于后端服务器之前，将客户端请求转发至这些服务器。<strong>反向代理</strong>通常用于提高防护、速度和可靠度。</p>
+<p>反向代理从客户端获取请求，将请求传递到其他服务器，然后将其转发回相关客户端，使它看起来像是初始代理服务器在处理请求。</p>
+<p>这类代理可以确保用户不会直接访问原始服务器，因此可为这类网页服务器提供匿名性。</p>
+<p>尽管对普通消费者和普通人不会特别有用，但反向代理服务器非常适合服务提供商和<strong>每天访问量大的网站</strong>。</p>
+<p>这些代理可以保护网页服务器，增强网站性能并帮助避免过载，反向代理也可用于负载平衡、缓存和 SSL 加密。</p>
+<h5 id="反向代理的类型"><a href="#反向代理的类型" class="headerlink" title="反向代理的类型"></a>反向代理的类型</h5><p>可以根据特性来区别两款主要反向代理：普通反向代理、负载均衡器：</p>
+<p><strong> 普通反向代理</strong>：从客户端拦截请求，将请求定向到服务器进行处理，然后再将它返回至客户端，主要用于安全方面。 </p>
+<p><strong>负载均衡器</strong>：可以在多个其他服务器中间分配流量，并管理所有服务器之间的客户端-服务器通信，</p>
+<p>这种类型更适合在不同的服务器之间均匀分配负载，从而提高速度和性能。</p>
+<h5 id="反向代理的用途"><a href="#反向代理的用途" class="headerlink" title="反向代理的用途"></a>反向代理的用途</h5><p>网站和服务提供商可能出于各种原因使用反向代理，部分用途如下：</p>
+<ol>
+<li><p><strong>负载均衡</strong>：高流量的网站有时可能需要反向代理服务器来处理传入流量。一个热门站点不会自行处理流量，</p>
+<p> 而可能在多个后端服务器之间分配流量，从而提高容量以处理大量请求。</p>
+<p> 如果其中一台服务器过载并出现故障，可以将流量重定向至其它在线服务器，以确保网页正常运行，</p>
+<p> 网站工程师甚至可以添加更多后端服务器到此负载均衡器，以增加容量，满足不断提高的性能要求。</p>
+</li>
+<li><p><strong>缓存</strong>：可以缓存请求的数据。需要存储大量图片可以通过缓存内容，降低网站服务器的负载来提高网站性能。 </p>
+</li>
+<li><p><strong>匿名信和安全性</strong>：由于反向代理拦截所有传入请求，它们会为后端服务器带来更高层级的保护，</p>
+<p> 它可以阻止来自特定 IP 地址的可疑流量，从而有助于防止恶意访问者滥用网页服务器。</p>
+</li>
+</ol>
+<h3 id="Final"><a href="#Final" class="headerlink" title="Final"></a>Final</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://oxylabs.cn/blog/reverse-proxy-vs-forward-proxy">https://oxylabs.cn/blog/reverse-proxy-vs-forward-proxy</a></p>
+</blockquote>
+<h4 id="正向代理和反向代理的区别"><a href="#正向代理和反向代理的区别" class="headerlink" title="正向代理和反向代理的区别"></a>正向代理和反向代理的区别</h4><p><strong>正向代理</strong>和<strong>反向代理</strong>之间的关键区别在于，前者由客户端使用，例如专用网络内的用户；而后者由互联网服务器使用。</p>
+<p><strong>正向代理</strong>可以与用户定位于专用网络中，也可以用于在线。</p>
+<p>正向代理确保网站绝不与用户直接通信。而反向代理确保用户不会与后端服务器直接通信。</p>
+<p>这两类代理之间的另一个区别在于它们的用途。我们已经讨论过各种代理的一些常见用例。</p>
+<p>出于隐私原因使用正向代理访问受限制的内容、进行网络抓取等。</p>
+<p>而网页服务器使用反向代理来避免过载、加强对恶意用户的安全防范、缓存、SSL 加密等。</p>
+<p>因此，这些代理可用于完全不同的任务，这就是它们之间的主要区别。</p>
+<h4 id="正向代理是否可以充当反向代理？"><a href="#正向代理是否可以充当反向代理？" class="headerlink" title="正向代理是否可以充当反向代理？"></a>正向代理是否可以充当反向代理？</h4><p>简而言之，<strong>正向代理服务器无法用作反向代理服务器</strong>。尽管这些代理概念相近，它们的用途完全不同。</p>
+<p>代理本身不只是一个 IP 地址。代理由 IP 地址和能够以预期方式运行的专用软件组成。</p>
+<p>由于正向代理和反向代理分别用于截然不同的任务，它们各自都有不同的软件来确保顺利运转。</p>
+<p>因此，无法将正向代理用作反向代理。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Tool/" rel="tag"># Tool</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/12/31/%E8%AF%BB%E4%B9%A6%E6%B8%85%E5%8D%95/" rel="prev" title="读书清单">
+                  <i class="fa fa-angle-left"></i> 读书清单
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Yuanhao</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

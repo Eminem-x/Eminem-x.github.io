@@ -1,37 +1,416 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="泛型机制和实现">
+<meta property="og:url" content="http://example.com/2022/04/21/%E6%B3%9B%E5%9E%8B%E6%9C%BA%E5%88%B6%E5%92%8C%E5%AE%9E%E7%8E%B0/index.html">
+<meta property="og:site_name" content="Yuanhao Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/object.png">
+<meta property="og:image" content="http://example.com/T.png">
+<meta property="og:image" content="http://example.com/ASE.PNG">
+<meta property="article:published_time" content="2022-04-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-04-20T16:00:00.000Z">
+<meta property="article:author" content="Yuanhao">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/object.png">
 
 
-{% block content %}
+<link rel="canonical" href="http://example.com/2022/04/21/%E6%B3%9B%E5%9E%8B%E6%9C%BA%E5%88%B6%E5%92%8C%E5%AE%9E%E7%8E%B0/">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/04/21/%E6%B3%9B%E5%9E%8B%E6%9C%BA%E5%88%B6%E5%92%8C%E5%AE%9E%E7%8E%B0/","path":"2022/04/21/泛型机制和实现/","title":"泛型机制和实现"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>泛型机制和实现 | Yuanhao Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
     </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Yuanhao Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Later Equals Never</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Preface"><span class="nav-number">1.</span> <span class="nav-text">Preface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Details"><span class="nav-number">2.</span> <span class="nav-text">Details</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Object-%E6%8E%A5%E5%8F%A3-%E6%B3%9B%E5%9E%8B%E7%89%B9%E6%80%A7"><span class="nav-number">2.1.</span> <span class="nav-text">Object + 接口 &#x2F; 泛型特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E5%85%BC%E5%AE%B9%E6%80%A7-%E9%80%9A%E9%85%8D%E7%AC%A6"><span class="nav-number">2.2.</span> <span class="nav-text">数组兼容性 &#x2F; 通配符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E9%99%90%E7%95%8C"><span class="nav-number">2.3.</span> <span class="nav-text">类型限界</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E6%93%A6%E9%99%A4"><span class="nav-number">2.4.</span> <span class="nav-text">类型擦除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">2.5.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yuanhao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/21/%E6%B3%9B%E5%9E%8B%E6%9C%BA%E5%88%B6%E5%92%8C%E5%AE%9E%E7%8E%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuanhao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuanhao Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="泛型机制和实现 | Yuanhao Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          泛型机制和实现
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-21 00:00:00" itemprop="dateCreated datePublished" datetime="2022-04-21T00:00:00+08:00">2022-04-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">基础知识</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><escape><span id="more"></span></escape></p>
+<h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p>最近在重新学习数据结构，因为以前总是停留在概念，只知道如何使用，但不清楚具体的实现机制，</p>
+<p>于是想着借此机会阅读 <code>JDK</code> 源码，另外尝试自己实现一个简单的 <code>JDK</code> ，巩固基础并且深入学习。</p>
+<p>学习过程中也捡起了放置了很久的一本书《数据结构与算法分析 Java 版》，因为以前基础比较薄弱，</p>
+<p>并且缺少练习，导致对书中很多概念模糊不清，花费将近半天时间，重新阅读了<strong>泛型</strong>这一小节，</p>
+<p>纸上得来终觉浅，绝知此事要躬行，因此在阅读过程中，也将一些地方，用代码实现了一遍。</p>
+<p><em>（代码部分链接如下：<a target="_blank" rel="noopener" href="https://github.com/Eminem-x/Learning/tree/main/Java/GenericMechanism/src/com/yuanhao">泛型机制和实现代码</a>)</em></p>
+<p>重新学习，收获还是很多的，站在和以前不同的角度去学习，以前书上的一些笔记也得到了解答，</p>
+<p>接下来的内容按照这本书的内容顺序，加上一些个人理解和代码实现来叙述，会忽略一些基础。</p>
+<h3 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h3><h4 id="Object-接口-泛型特性"><a href="#Object-接口-泛型特性" class="headerlink" title="Object + 接口 &#x2F; 泛型特性"></a>Object + 接口 &#x2F; 泛型特性</h4><ol>
+<li><p><strong>Object + 接口类型表示泛型</strong></p>
+<p><code>Java</code> 中的基本思想就是可以通过使用像 <code>Object</code> 类这样的超类来实现泛型类，</p>
+<p>不过只有在使用 <code>Object</code> 类中已有的方法能够表示所执行操作的时候，才能采用这种方式，</p>
+<p>因此，可以使用接口类型表示泛型，比如 <code>Comparable</code>，为 <code>Object</code> 提供了一种能力比较对象大小。</p>
+<p>那么不妨简单的构建以上情况，<code>MyInteger1</code> 类实现 <code>Comparable1</code> 接口，并且附上一个测试方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Comparable1</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compareTo</span><span class="params">(Object o)</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyInteger1</span> <span class="keyword">implements</span> <span class="title class_">Comparable1</span> &#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compareTo</span><span class="params">(Object o)</span> &#123;</span><br><span class="line">        <span class="type">MyInteger1</span> <span class="variable">t</span> <span class="operator">=</span> (MyInteger1) o;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.val - t.val;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testObjectAndAnyType</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 利用 Object 超类实现泛型</span></span><br><span class="line">    <span class="type">MyInteger1</span> <span class="variable">myInteger</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MyInteger1</span>();</span><br><span class="line">    <span class="type">MyInteger1</span> <span class="variable">otherInteger</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MyInteger1</span>();</span><br><span class="line">    <span class="type">Shape</span> <span class="variable">shape1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Shape</span>();</span><br><span class="line">    System.out.println(myInteger.compareTo(otherInteger));</span><br><span class="line">    <span class="comment">// 运行时会抛出 ClassCastException</span></span><br><span class="line">    System.out.println(myInteger.compareTo(shape1));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果如下图：</p>
+<p><img src="/object.png"></p>
+</li>
+<li><p><strong>泛型特性实现泛型</strong></p>
+<p><code>Java 5</code> 支持泛型类，当指定一个泛型类时，类的声明则包含一个或多个类型参数，位于 <code>&lt;&gt;</code> 内，</p>
+<p>与 <code>Object</code> 类不同的是，如果在给定一个参数类型以后，尝试传递其他参数，那么就会产生编译错误。</p>
+<p>仍然简单构造上述情况，<code>MyInteger2</code> 类实现 <code>Comparable2</code> 接口，并附上一个测试方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Comparable2</span>&lt;T&gt; &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compareTo</span><span class="params">(T o)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyInteger2</span> <span class="keyword">implements</span> <span class="title class_">Comparable2</span>&lt;MyInteger2&gt; &#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compareTo</span><span class="params">(MyInteger2 o)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.val - o.val;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testObjectAndAnyType</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 利用泛型特性实现泛型</span></span><br><span class="line">    com.yuanhao.<span class="type">MyInteger2</span> <span class="variable">integer2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">com</span>.yuanhao.MyInteger2();</span><br><span class="line">    com.yuanhao.<span class="type">MyInteger2</span> <span class="variable">otherInteger2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">com</span>.yuanhao.MyInteger2();</span><br><span class="line">    com.yuanhao.<span class="type">Shape</span> <span class="variable">shape2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">com</span>.yuanhao.Shape();</span><br><span class="line">    System.out.println(integer2.compareTo(otherInteger2));</span><br><span class="line">    <span class="comment">// 传递参数时产生一个编译错误</span></span><br><span class="line">    System.out.println(integer2.compareTo(shape2));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>编译结果如下图：</p>
+<p><img src="/T.png"></p>
+</li>
+<li><p><strong>对比结果</strong></p>
+<p>不难看出，利用 <code>Java 5</code> 的泛型特性去实现泛型构件，</p>
+<p>避免了以前的运行时错误 <code>ClassCastException</code>，</p>
+<p>通过使类变成泛型类，将运行时才能报告的许多错误，转变为现如今编译时的错误。</p>
+</li>
+</ol>
+<h4 id="数组兼容性-通配符"><a href="#数组兼容性-通配符" class="headerlink" title="数组兼容性 &#x2F; 通配符"></a>数组兼容性 &#x2F; 通配符</h4><ol>
+<li><p><strong>协变数组类型</strong></p>
+<p>在介绍这个概念之前，不妨先看一段代码（可以先忽略注释），思考能否通过编译以及运行：</p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Person</span><span class="comment">[]</span> arr = new Employee<span class="comment">[5]</span>; // 编译: arrays <span class="keyword">are</span> compatible</span><br><span class="line">arr<span class="comment">[0]</span> = new Student(...);		// 编译: Student <span class="keyword">IS</span>-A <span class="keyword">Person</span></span><br></pre></td></tr></table></figure>
+
+<p>上述代码中，<code>Employee</code> 和 <code>Student</code> 继承自 <code>Person</code>，先说结果：<strong>可编译但会运行错误。</strong></p>
+<p>因为 <code>Employee IS-A Person</code>，因此 <code>Employee[] IS-A Person[]</code>，这似乎是没问题的，</p>
+<p>但是 <code>Student IS-A Person</code>，而 <code>Student IS-NOT-A Employee</code>，这就会产生类型混乱。</p>
+<p><strong>运行时系统不会抛出 <code>ClassCastException</code>，因为不存在类型转换。</strong></p>
+<p>避免这种情况最容易的办法是指定这些数组不是类型兼容的，可是 <code>Java</code> 中数组是兼容的，</p>
+<p>称为<strong>协变数组类型（covariant array type），</strong>其实从多态的角度挺容易理解这个问题的。</p>
+<p>第二段代码中，编译时没有进行动态绑定，不清楚是 <code>Person</code> 还是 <code>Employee</code>，所以运行出错，</p>
+<p><strong>如果将一个不兼容的类型插入到数组中，那么虚拟机将抛出 <code>ArrayStoreException</code> 异常。</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Shape[] arr = <span class="keyword">new</span> <span class="title class_">Square</span>[<span class="number">5</span>];</span><br><span class="line">arr[<span class="number">0</span>] = <span class="keyword">new</span> <span class="title class_">Circle</span>();</span><br></pre></td></tr></table></figure>
+
+<p><img src="/ASE.PNG"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr = <span class="keyword">new</span> <span class="title class_">Square</span>[] &#123;<span class="keyword">new</span> <span class="title class_">Circle</span>()&#125;; <span class="comment">// Incompatible types. Found: &#x27;Circle&#x27;, required: &#x27;Square&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果再深入思考一点，可以发现这样声明时，就会出现编译报错，恰恰验证了从多态角度考虑的正确性。</p>
+</li>
+<li><p><strong>带有限制的通配符</strong></p>
+<p>因为使用泛型的全部原因就在于产生编译器错误而不是运行时异常，所以泛型集合是不可协变的，</p>
+<p>因此不能传递类型不同的参数，但是这样一来，就使得代码失去了灵活性，对用户而言不太友好，</p>
+<p><strong>因此，<code>Java 5 </code> 用通配符（wildcard） 来弥补这个不足，其用来表示参数类型的子类或超类。</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testCovariant</span><span class="params">()</span> &#123;</span><br><span class="line">    List&lt;Shape&gt; list1 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    List&lt;Square&gt; list2 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    System.out.println(totalArea(list1));</span><br><span class="line">    System.out.println(totalArea(list2));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Collection&lt;Shape&gt; 不加通配符就会产生编译错误</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">double</span> <span class="title function_">totalArea</span><span class="params">(Collection&lt;? extends Shape&gt; arr)</span> &#123;</span><br><span class="line">    <span class="type">double</span> <span class="variable">total</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (Shape s : arr) &#123;</span><br><span class="line">        total += s.test();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> total;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="类型限界"><a href="#类型限界" class="headerlink" title="类型限界"></a>类型限界</h4><p>类型限界的概念其实还是蛮好理解的，就是限制参数类型，但是比较难理解的地方是改进的做法。</p>
+<p><code>findMax</code> 是一个泛型方法，需要对参数执行 <code>compareTo</code> 方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不合法 编译出错 不能运行</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; T <span class="title function_">findMax</span><span class="params">(T[] arr)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> arr[<span class="number">0</span>].compareTo(arr[<span class="number">1</span>]) == <span class="number">0</span> ? arr[<span class="number">0</span>] : arr[<span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果不对 <code>&lt;T&gt;</code> 添加类型限制，编译器不能证明 <code>arr[0]</code> 对 <code>compareTo</code> 方法调用是合法的，所以编译错误。</p>
+<p><strong>因此需要类型限界（type bound）解决这个问题，类型限界在尖括号内指定，指定参数必须具有的性质。</strong></p>
+<p>因此可以对代码进行修改：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 可以运行 但会 warning</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T <span class="keyword">extends</span> <span class="title class_">Comparable</span>&gt; T <span class="title function_">findMax</span><span class="params">(T[] arr)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> arr[<span class="number">0</span>].compareTo(arr[<span class="number">1</span>]) == <span class="number">0</span> ? arr[<span class="number">0</span>] : arr[<span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这种做法看起来很自然，但是在 <code>IDEA</code> 编译器下，会报出 <code>warning</code>，但不影响运行，</p>
+<p>可以参考这篇回答：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/4830400/java-unchecked-call-to-comparetot-as-a-member-of-the-raw-type-java-lang-compa">关于 <code>&lt;T extends Comparable&gt;</code> warning</a>，其中有一个回答：</p>
+<blockquote>
+<blockquote>
+<p>In essence, this warning says that <code>Comparable</code> object can’t be compared to arbitrary objects. <code>Comparable&lt;T&gt;</code> is a generic interface, where type parameter <code>T</code> specifies the type of the object this object can be compared to.</p>
+<p>So, in order to use <code>Comparable&lt;T&gt;</code> correctly, you need to make your sorted list generic, to express a constraint that your list stores objects that can be compared to each other, something like this:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SortedList</span>&lt;T <span class="keyword">extends</span> <span class="title class_">Comparable</span>&lt;? <span class="built_in">super</span> T&gt;&gt; &#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">add</span><span class="params">(T obj)</span> &#123; ... &#125;</span><br><span class="line">   ...</span><br><span class="line">&gt;&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</blockquote>
+<p>这个回答和书上后续的补充是对应的，那么接着修改上述代码，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// warning 消失</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T <span class="keyword">extends</span> <span class="title class_">Comparable</span>&lt;T&gt;&gt; T <span class="title function_">findMax</span><span class="params">(T[] arr)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> arr[<span class="number">0</span>].compareTo(arr[<span class="number">1</span>]) == <span class="number">0</span> ? arr[<span class="number">0</span>] : arr[<span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>那么为何还会出现 <code>&lt;T extends Comparable&lt;? super T&gt;&gt;</code> 这种形式的类型界限呢？</strong></p>
+<p>为了看清楚这个问题，编写一段代码：</p>
+<p>( <code>Square</code> 是 <code>Shape</code> 的子类，并且 <code>Shape</code> 实现 <code>Comparable&lt;Shape&gt;</code>)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="comment">// 这两段代码都可以通过编译并且正常运行</span></span><br><span class="line">    Shape[] arr1 = <span class="keyword">new</span> <span class="title class_">Square</span>[<span class="number">5</span>];</span><br><span class="line">    arr1[<span class="number">0</span>] = <span class="keyword">new</span> <span class="title class_">Square</span>();</span><br><span class="line">    arr1[<span class="number">1</span>] = <span class="keyword">new</span> <span class="title class_">Square</span>();</span><br><span class="line">    System.out.println(findMax(arr1));</span><br><span class="line"></span><br><span class="line">    Square[] arr2 = <span class="keyword">new</span> <span class="title class_">Square</span>[<span class="number">5</span>];</span><br><span class="line">    arr2[<span class="number">0</span>] = <span class="keyword">new</span> <span class="title class_">Square</span>();</span><br><span class="line">    arr2[<span class="number">1</span>] = <span class="keyword">new</span> <span class="title class_">Square</span>();</span><br><span class="line">    System.out.println(findMax(arr2));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T <span class="keyword">extends</span> <span class="title class_">Comparable</span>&lt;T&gt;&gt; T <span class="title function_">findMax</span><span class="params">(T[] arr)</span> &#123;</span><br><span class="line">    <span class="comment">// 这里可以打印类, 确认无误</span></span><br><span class="line">    <span class="keyword">return</span> arr[<span class="number">0</span>].compareTo(arr[<span class="number">1</span>]) == <span class="number">0</span> ? arr[<span class="number">0</span>] : arr[<span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>此时，我们所知道的只是 <code>Square</code> 实现 <code>Comparable&lt;Shape&gt;</code>，</strong></p>
+<p><strong>于是 <code>Square IS-A Comparable&lt;Shape&gt;</code>，</strong>这在前面也解释过，</p>
+<p><strong>但是 <code>Square IS-NOT-A Comparable&lt;Square&gt;</code>，这看起来合情合理，可放到代码里确实费解的。 </strong></p>
+<p><strong>因此对类型界限再加修饰：<code>&lt;T extends Comparable&lt;? super T&gt;&gt;</code></strong>。</p>
+<h4 id="类型擦除"><a href="#类型擦除" class="headerlink" title="类型擦除"></a>类型擦除</h4><p>泛型在很大程度上是 <code>Java</code> 语言中的成分而不是虚拟机中的结构。</p>
+<p>泛型类可以由编译器通过所谓的<strong>类型擦除（type erase）</strong>过程而转变成非泛型类，</p>
+<p>这样，编译器就生成一种与泛型类同名的<strong>原始类（raw object）</strong>，但是参数类型都被删去了。</p>
+<p>类型变量由它们的类型界限来代替，当一个具有擦除返回类型的泛型方法被调用的时，一些特性被自动地插入。</p>
+<p>类型擦除的一个重要结论是，所生成的代码与程序员在泛型之前所写的代码并没有太多的差异，</p>
+<p>而且事实上运行的也并不快，优点在于，程序员不比类型转换，交给编译器类型检验。</p>
+<p>更深层的细节参考博客：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/wuqinglong/p/9456193.html">https://www.cnblogs.com/wuqinglong/p/9456193.html</a></p>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>除上述描述的一些概念以外，还有一些细枝末节，就不再赘述，比如泛型的使用或者方式等等，</p>
+<p>当然也是重要的部分，不过这部分就不是细节方面的问题了，但是还是补充一点，关于 <code>static</code> 泛型。</p>
+<p>个人感觉 <code>static</code> 所带来的问题，一律带到它是静态的，是类的属性而不是成员，就往往自洽了，</p>
+<p>因为类的属性先加载而成员需要运行时，所以从这个角度分析问题，就不需要死记硬背了。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/04/12/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" rel="prev" title="树状数组">
+                  <i class="fa fa-angle-left"></i> 树状数组
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/04/25/KMP/" rel="next" title="KMP">
+                  KMP <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Yuanhao</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

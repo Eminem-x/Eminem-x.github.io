@@ -1,37 +1,338 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="实习问题">
+<meta property="og:url" content="http://example.com/2022/05/15/%E5%AE%9E%E4%B9%A0%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:site_name" content="Yuanhao Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-05-20T16:00:00.000Z">
+<meta property="article:author" content="Yuanhao">
+<meta property="article:tag" content="Thinking">
+<meta name="twitter:card" content="summary">
 
 
-{% block content %}
+<link rel="canonical" href="http://example.com/2022/05/15/%E5%AE%9E%E4%B9%A0%E9%97%AE%E9%A2%98/">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/05/15/%E5%AE%9E%E4%B9%A0%E9%97%AE%E9%A2%98/","path":"2022/05/15/实习问题/","title":"实习问题"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>实习问题 | Yuanhao Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
     </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Yuanhao Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Later Equals Never</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BA%E8%A1%8C%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">出行问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%9F%E6%88%BF%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">租房问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%B4%BB%E7%94%A8%E5%93%81"><span class="nav-number">3.</span> <span class="nav-text">生活用品</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yuanhao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/15/%E5%AE%9E%E4%B9%A0%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuanhao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuanhao Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="实习问题 | Yuanhao Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          实习问题
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-05-15 00:00:00" itemprop="dateCreated datePublished" datetime="2022-05-15T00:00:00+08:00">2022-05-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-05-21 00:00:00" itemprop="dateModified" datetime="2022-05-21T00:00:00+08:00">2022-05-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Thinking/" itemprop="url" rel="index"><span itemprop="name">Thinking</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><escape><span id="more"></span></escape></p>
+<blockquote>
+<p>暑期实习地点：广东省广州市海珠区赫基大厦 字节跳动 三个月</p>
+</blockquote>
+<h3 id="出行问题"><a href="#出行问题" class="headerlink" title="出行问题"></a>出行问题</h3><ol>
+<li>暑期实习基本上都在学期结束之前，因此需要向学校说明情况，缓考或者线上考试，不要隐瞒出校；</li>
+<li>广州可能梅雨季节，注意准备伞具以及多的干衣服，不过天气基本就是短袖短裤，可以考虑带长衣服；</li>
+<li>如果飞机航班取消，可以考虑飞机 + 高铁或者高铁，因为也许因为暴雨导致航班不能正常出行；</li>
+<li>到达广州火车高铁站或者飞机航站楼后，不要听信黄牛的言辞，比如：地铁不通或者维修路段，寻找打表出租；</li>
+<li>一般第一天都会租宾馆，但是办公地点周围可能没有宾馆，需要提前扩大一下范围寻找合适的宾馆；</li>
+<li>当然如果有疫情的话，一定要查看当地和广州的疫情政策，以免不必要的麻烦；</li>
+<li>如果无法在原定日期到达实习地点，可以向 hr 说明情况，适当延缓日期，一般都很好沟通；</li>
+</ol>
+<h3 id="租房问题"><a href="#租房问题" class="headerlink" title="租房问题"></a>租房问题</h3><ol>
+<li>字节跳动和「自如」有合作关系，不过影响不大，可以通过该平台寻找合适的公寓；</li>
+<li>一般都是短租，如果推销长租一年，事后转租，尽量不要选择后者，以免不必要的麻烦；</li>
+<li>短租房子数量一般比较少，可能需要合租，并且价格会上浮一点，不过应该都可以接受；</li>
+<li>关于房补要求，可以向 hr 咨询具体的政策，然后扩大搜索范围，用地图校准即可；</li>
+<li>当联系好相应的中介人后，可能会出现同行竞争的情况，一定要确保二者话语一致，避免上当受骗；</li>
+<li>关于房子，建议实地考察，不要太相信照片，适合不适合自己，还是需要自己来看的；</li>
+<li>租房交押金，不需要一次性付清，可以按月付，不过第一个月需要额外加上押金，另外水电费自费；</li>
+<li>赫基大厦推荐两个小区：「佳信小区」和「泓景花园」距离最近，并且环境和周围设施可以；</li>
+<li>一般而言房屋内设施都没什么问题，可以维修，不过还是推荐检查所有设施的状况；</li>
+<li>房补需要自己申请，可以通过「自如」联系客服，让其提供有关房产的信息，合同里不包含这些图片；</li>
+</ol>
+<h3 id="生活用品"><a href="#生活用品" class="headerlink" title="生活用品"></a>生活用品</h3><ol>
+<li>床上用品实习地点周围可能会比较贵，可以考虑从京东购买，发货比较快；</li>
+<li>广州比较潮湿，购买干燥剂和香薰片放在衣柜里，避免衣服潮湿，散霉味；</li>
+<li>广州虫子比较多，或者因为房子闲置很久，买驱虫剂和除螨剂喷洒，会好一点；</li>
+<li>插座、烧水器、盆、扫把、晾衣杆、晾衣架、拖鞋、垃圾桶等都是需要的，可以一起下单；</li>
+<li>房屋一般都配有厨房，做饭与否看个人时间，公司也一般都有餐食，不过周末可以考虑；</li>
+<li>工资卡最初填写邮寄地址，建议直接填写公司所在地，因为需要到线下银行携带卡去激活办理；</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Thinking/" rel="tag"># Thinking</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/11/%E3%80%8C%E7%83%9F%E7%81%AB%E3%80%8D/" rel="prev" title="「烟火」">
+                  <i class="fa fa-angle-left"></i> 「烟火」
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/06/04/%E4%BA%BA%E7%94%9F%E4%B8%83%E5%B9%B4/" rel="next" title="人生七年">
+                  人生七年 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Yuanhao</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

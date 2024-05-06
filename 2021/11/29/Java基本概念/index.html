@@ -1,37 +1,481 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="基本概念">
+<meta property="og:url" content="http://example.com/2021/11/29/Java%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/index.html">
+<meta property="og:site_name" content="Yuanhao Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-28T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-11-30T16:00:00.000Z">
+<meta property="article:author" content="Yuanhao">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
 
 
-{% block content %}
+<link rel="canonical" href="http://example.com/2021/11/29/Java%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/11/29/Java%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/","path":"2021/11/29/Java基本概念/","title":"基本概念"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>基本概念 | Yuanhao Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
     </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Yuanhao Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Later Equals Never</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java%E8%AF%AD%E8%A8%80%E6%9C%89%E5%93%AA%E4%BA%9B%E4%BC%98%E7%82%B9%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">Java语言有哪些优点？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java%E4%B8%8EC%E3%80%81C-%E6%9C%89%E4%BB%80%E4%B9%88%E5%BC%82%E5%90%8C"><span class="nav-number">2.</span> <span class="nav-text">Java与C、C++有什么异同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81-main-%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">为什么需要 main 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%B8%AAJava%E6%96%87%E4%BB%B6%E4%B8%AD%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E5%AE%9A%E4%B9%89%E5%A4%9A%E4%B8%AA%E7%B1%BB"><span class="nav-number">4.</span> <span class="nav-text">一个Java文件中是否可以定义多个类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java%E7%A8%8B%E5%BA%8F%E5%88%9D%E5%A7%8B%E5%8C%96%E7%9A%84%E9%A1%BA%E5%BA%8F"><span class="nav-number">5.</span> <span class="nav-text">Java程序初始化的顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java%E4%B8%AD%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">6.</span> <span class="nav-text">Java中的作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java%E4%B8%AD%E7%9A%84%E6%A0%87%E8%AF%86%E6%8E%A5%E5%8F%A3"><span class="nav-number">7.</span> <span class="nav-text">Java中的标识接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java%E4%B8%AD%E7%9A%84clone%E6%96%B9%E6%B3%95"><span class="nav-number">8.</span> <span class="nav-text">Java中的clone方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">9.</span> <span class="nav-text">Java创建对象的四种方式</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yuanhao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/29/Java%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuanhao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuanhao Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="基本概念 | Yuanhao Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          基本概念
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-11-29 00:00:00" itemprop="dateCreated datePublished" datetime="2021-11-29T00:00:00+08:00">2021-11-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2021-12-01 00:00:00" itemprop="dateModified" datetime="2021-12-01T00:00:00+08:00">2021-12-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">Java基础知识</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><escape><span id="more"></span></escape></p>
+<h3 id="Java语言有哪些优点？"><a href="#Java语言有哪些优点？" class="headerlink" title="Java语言有哪些优点？"></a>Java语言有哪些优点？</h3><ol>
+<li><p>Java为纯面向对象的语言</p>
+</li>
+<li><p>平台无关性</p>
+</li>
+<li><p>Java提供了很多内置的类库</p>
+</li>
+<li><p>提供了对Web应用开发的支持</p>
+</li>
+<li><p>具有较好的安全性和健壮性</p>
+</li>
+<li><p>去除了C++语言中难以理解、容易混淆的特性</p>
+<p><strong>说明：Java语言是由C++语言改进并重新设计而来的</strong></p>
+</li>
+</ol>
+<hr>
+<h3 id="Java与C、C-有什么异同"><a href="#Java与C、C-有什么异同" class="headerlink" title="Java与C、C++有什么异同"></a>Java与C、C++有什么异同</h3><ol>
+<li><p><strong>Java为半编译半解释型语言，而C &#x2F; C++为编译型语言</strong></p>
+<ul>
+<li>Java程序源代码先经过Java编译器编译成字节码，然后由JVM解释执行</li>
+<li>C &#x2F; C++程序源代码经过编译和链接后生成可执行的二进制代码</li>
+</ul>
+<p>因此C &#x2F; C++的执行速度比Java快，但是Java因为JVM可以跨平台执行。</p>
+</li>
+<li><p><strong>Java为纯面向对象的语言，而C++兼具面向过程和面向对象的特点</strong></p>
+<ul>
+<li>Java中除了基本数据类型，所有类型都是类</li>
+<li>Java语言中不存在全局变量或者全局函数</li>
+</ul>
+</li>
+<li><p><strong>Java没有多重继承，但是可以实现多个接口</strong></p>
+</li>
+<li><p><strong>Java语言提供了垃圾回收器来实现垃圾的自动回收</strong></p>
+<ul>
+<li>C++语言中，需要开发人员去管理对内存的分配（申请与释放）</li>
+<li>Java的GC机制，不需要开发人员去关心内存空间</li>
+</ul>
+</li>
+<li><p><strong>Java具有平台无关性</strong></p>
+<ul>
+<li>Java中每种基本类型数据都分配固定长度</li>
+<li>C &#x2F; C++中在不同的平台会分配不同的字节数</li>
+</ul>
+</li>
+<li><p><strong>其他不同的地方</strong></p>
+<ol>
+<li>Java不支持运算符重载</li>
+<li>Java没有预处理器，但是提供 import 机制</li>
+<li>Java不支持默认函数参数</li>
+<li>Java不提供 goto 语句，但是做为保留关键字</li>
+<li>Java不提供自动强制类型转化，需要显示转换</li>
+<li>Java不包含结构和联合，所有内容封装在类里面</li>
+<li>Java没有指针的概念，避免指针引起的系统问题</li>
+<li>Java提供了一些标准库，用于完成特定的任务，比如 JDBC</li>
+</ol>
+</li>
+</ol>
+<p><strong>常见的一个错误说法：Java语言中的方法属于类的成员</strong></p>
+<p>静态方法：类成员</p>
+<p>非静态方法：实例成员</p>
+<hr>
+<h3 id="为什么需要-main-方法"><a href="#为什么需要-main-方法" class="headerlink" title="为什么需要 main 方法"></a>为什么需要 main 方法</h3><p><code>public static void main(String args[]) &#123;&#125;</code></p>
+<ol>
+<li><p>该方法为Java程序的入口方法，JVM在运行程序时，会首先查找 main() 方法</p>
+</li>
+<li><p>字符串数组 args 为开发人员在命令行状态下与程序交互提供了一种手段</p>
+</li>
+<li><p>因为 main() 方法是程序的入口，要执行一个类的方法，就必须实例化一个对象，</p>
+<p>此时还没有实例化对象，所以该方法需要被定义成 public 和 static </p>
+</li>
+<li><p>main() 方法其他可用的定义格式：</p>
+<p><em><strong>说明：public 和 static 的位置可以互换，没有先后关系</strong></em></p>
+<ol>
+<li><code>static public void main(String args[]) &#123;&#125;</code></li>
+<li><code>public static final void main(String args[]) &#123;&#125;</code></li>
+<li><code>public static synchronized void main(String args[]) &#123;&#125;</code></li>
+</ol>
+<p><strong>但是不可以用 abstract 关键字修饰，因为该函数为程序的入口方法</strong></p>
+</li>
+</ol>
+<hr>
+<h3 id="一个Java文件中是否可以定义多个类"><a href="#一个Java文件中是否可以定义多个类" class="headerlink" title="一个Java文件中是否可以定义多个类"></a>一个Java文件中是否可以定义多个类</h3><ol>
+<li>可以定义多个类，但是<strong>最多只能有一个被 public 修饰的类</strong>，并且该类与文件名相同</li>
+<li>如果没有 public 类，那么文件名随便一个类的名字即可</li>
+<li>当编译此文件时，每一个类都会生成一个对应的字节码文件 .class</li>
+<li><strong>普通方法可以与构造函数有相同的方法名</strong></li>
+</ol>
+<hr>
+<h3 id="Java程序初始化的顺序"><a href="#Java程序初始化的顺序" class="headerlink" title="Java程序初始化的顺序"></a>Java程序初始化的顺序</h3><p>在Java语言中，当实例化对象时，对象所在类的所有成员变量首先要进行初始化，</p>
+<p>只有当所有类成员完成初始化后，才会调用对象所在类的构造函数创建对象。</p>
+<p><strong>程序初始化一般遵循三个原则（优先级依次递减）：</strong></p>
+<ol>
+<li>静态对象（变量）优先于非静态</li>
+<li>父类优先于子类</li>
+<li>按照成员变量的定义顺序进行初始化</li>
+</ol>
+<p><strong>具体的执行顺序如下：</strong></p>
+<p>父类静态变量、父类静态代码块、子类静态变量、子类静态代码块、</p>
+<p>父类非静态变量、父类非静态代码块、父类构造函数、</p>
+<p>子类非静态变量、子类非静态代码块、子类构造函数。</p>
+<p><strong>示例代码如下：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">B</span> <span class="keyword">extends</span> <span class="title class_">Object</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Load B&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">B</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Create B&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Load B&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> <span class="keyword">extends</span> <span class="title class_">B</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Load A&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">A</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Create A&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestClass</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">A</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>程序运行结果是：</strong>Load B	Load B	Load A	Create B	Create A</p>
+<hr>
+<h3 id="Java中的作用域"><a href="#Java中的作用域" class="headerlink" title="Java中的作用域"></a>Java中的作用域</h3><table>
+<thead>
+<tr>
+<th align="center">作用域与可见性</th>
+<th align="center">当前类</th>
+<th align="center">同一package</th>
+<th align="center">子类</th>
+<th align="center">其他package</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">public</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="center">protected</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">×</td>
+</tr>
+<tr>
+<td align="center">default</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">×</td>
+<td align="center">×</td>
+</tr>
+<tr>
+<td align="center">private</td>
+<td align="center">√</td>
+<td align="center">×</td>
+<td align="center">×</td>
+<td align="center">×</td>
+</tr>
+</tbody></table>
+<p>注意：private 和 protected 不能用来修饰类</p>
+<hr>
+<h3 id="Java中的标识接口"><a href="#Java中的标识接口" class="headerlink" title="Java中的标识接口"></a>Java中的标识接口</h3><p>标识接口：没有任何方法声明的接口</p>
+<p>作用：仅仅充当一个标识作用，用来表明实现它的类属于一个特定的类型</p>
+<hr>
+<h3 id="Java中的clone方法"><a href="#Java中的clone方法" class="headerlink" title="Java中的clone方法"></a>Java中的clone方法</h3><p>实际编程中，需要从某个已有的对象 A 创建处另外一个与 A 具有相同状态的对象 B，</p>
+<p>并且对 B 的修改不会影响到 A 的自身状态，因此提供了 clone 方法返回一个新的对象。</p>
+<p><strong>使用clone方法的步骤：</strong></p>
+<ol>
+<li>实现clone的类首先需要继承 Cloneable 接口</li>
+<li>在类中重写 Object 类中的 clone() 方法</li>
+<li>在 clone() 方法章调用 super.clone() <strong>（浅复制）</strong></li>
+<li>对对象中的非基本类型的属性也调用 clone() 方法 <strong>（深复制）</strong></li>
+<li>把复制的引用指向原型对象新的克隆体</li>
+</ol>
+<p><strong>示例代码如下：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Obj</span> <span class="keyword">implements</span> <span class="title class_">Cloneable</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">Date</span> <span class="variable">birth</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Date <span class="title function_">getBirth</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> birth;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">changeDate</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.birth.setMonth(<span class="number">4</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">clone</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">Obj</span> <span class="variable">o</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 实现浅复制</span></span><br><span class="line">            o = (Obj) <span class="built_in">super</span>.clone();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (CloneNotSupportedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 实现深复制</span></span><br><span class="line">        o.birth = (Date) <span class="built_in">this</span>.getBirth().clone();</span><br><span class="line">        <span class="keyword">return</span> o;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestClass</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Obj</span> <span class="variable">a</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Obj</span>();</span><br><span class="line">        <span class="type">Obj</span> <span class="variable">b</span> <span class="operator">=</span> (Obj)a.clone();</span><br><span class="line">        b.changeDate();</span><br><span class="line">        System.out.println(<span class="string">&quot;a = &quot;</span> + a.getBirth());</span><br><span class="line">        System.out.println(<span class="string">&quot;b = &quot;</span> + b.getBirth());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>程序运行结果是：</strong></p>
+<p>a &#x3D; Mon Nov 29 19:05:03 CST 2021<br>b &#x3D; Sat May 29 19:05:03 CST 2021</p>
+<hr>
+<h3 id="Java创建对象的四种方式"><a href="#Java创建对象的四种方式" class="headerlink" title="Java创建对象的四种方式"></a>Java创建对象的四种方式</h3><ol>
+<li>通过 new 语句实例化一个对象</li>
+<li>通过反射机制创建对象</li>
+<li>通过 clone() 方法创建一个对象</li>
+<li>通过反序列化的方式船舰一个对象</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/11/29/Hexo%E7%9A%84%E7%95%8C%E9%9D%A2%E4%BC%98%E5%8C%96/" rel="prev" title="Hexo Next的界面优化">
+                  <i class="fa fa-angle-left"></i> Hexo Next的界面优化
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/12/20/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2/" rel="next" title="二分搜索">
+                  二分搜索 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Yuanhao</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

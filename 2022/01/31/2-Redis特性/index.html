@@ -1,37 +1,353 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="Redis特性">
+<meta property="og:url" content="http://example.com/2022/01/31/2-Redis%E7%89%B9%E6%80%A7/index.html">
+<meta property="og:site_name" content="Yuanhao Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-30T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-01-30T16:00:00.000Z">
+<meta property="article:author" content="Yuanhao">
+<meta property="article:tag" content="Redis">
+<meta name="twitter:card" content="summary">
 
 
-{% block content %}
+<link rel="canonical" href="http://example.com/2022/01/31/2-Redis%E7%89%B9%E6%80%A7/">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/01/31/2-Redis%E7%89%B9%E6%80%A7/","path":"2022/01/31/2-Redis特性/","title":"Redis特性"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Redis特性 | Yuanhao Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
     </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Yuanhao Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Later Equals Never</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85"><span class="nav-number">2.</span> <span class="nav-text">发布订阅</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E6%A6%82%E5%BF%B5"><span class="nav-number">2.1.</span> <span class="nav-text">1. 概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.2.</span> <span class="nav-text">2. 命令行实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">新数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Bitmaps"><span class="nav-number">3.1.</span> <span class="nav-text">1. Bitmaps</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-HyperLogLog"><span class="nav-number">3.2.</span> <span class="nav-text">2. HyperLogLog</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Geospatial"><span class="nav-number">3.3.</span> <span class="nav-text">3. Geospatial</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E5%92%8C%E9%94%81%E6%9C%BA%E5%88%B6"><span class="nav-number">4.</span> <span class="nav-text">事务和锁机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E4%BA%8B%E5%8A%A1%E6%A6%82%E5%BF%B5"><span class="nav-number">4.1.</span> <span class="nav-text">1. 事务概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E4%BA%8B%E5%8A%A1%E4%BD%9C%E7%94%A8"><span class="nav-number">4.2.</span> <span class="nav-text">2. 事务作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4"><span class="nav-number">4.3.</span> <span class="nav-text">3. 操作命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E4%BA%8B%E5%8A%A1%E7%89%B9%E6%80%A7"><span class="nav-number">4.4.</span> <span class="nav-text">4. 事务特性</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yuanhao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/31/2-Redis%E7%89%B9%E6%80%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuanhao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuanhao Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Redis特性 | Yuanhao Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Redis特性
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-01-31 00:00:00" itemprop="dateCreated datePublished" datetime="2022-01-31T00:00:00+08:00">2022-01-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Redis/" itemprop="url" rel="index"><span itemprop="name">Redis</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><escape><span id="more"></span></escape></p>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>配置信息存储在 <code>redis.windows.conf</code> 文件</p>
+<hr>
+<h3 id="发布订阅"><a href="#发布订阅" class="headerlink" title="发布订阅"></a>发布订阅</h3><h4 id="1-概念"><a href="#1-概念" class="headerlink" title="1. 概念"></a>1. 概念</h4><p>发布订阅（pub &#x2F; sub）是一种消息通信模式：发送者（pub）发送信息，订阅者（sub）接收信息，</p>
+<p>Redis 客户端可以订阅任意数量的频道，发布的消息没有持久化。</p>
+<h4 id="2-命令行实现"><a href="#2-命令行实现" class="headerlink" title="2. 命令行实现"></a>2. 命令行实现</h4><ul>
+<li><p>打开一个客户端订阅 channel1：<code>subscribe channel1</code></p>
+</li>
+<li><p>打开另一个客户端，给 channel1 发布消息：<code>public channel1 helloworld</code></p>
+</li>
+<li><p>打开第一个客户端可以接收到发送的信息</p>
+</li>
+</ul>
+<hr>
+<h3 id="新数据类型"><a href="#新数据类型" class="headerlink" title="新数据类型"></a>新数据类型</h3><h4 id="1-Bitmaps"><a href="#1-Bitmaps" class="headerlink" title="1. Bitmaps"></a>1. Bitmaps</h4><p>合理地使用操作位能够有效地提高内存使用率和开发效率</p>
+<p>Redis 提供 Bitmaps 实现对位的操作：</p>
+<ul>
+<li><p>本身不是一种数据类型，实际上就是字符串，不过可以对位进行操作</p>
+</li>
+<li><p>提供单独的一套命令，可以堪称一个以位为单位的数组</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">setbit key <span class="keyword">offset</span> <span class="keyword">value</span>		设置 Bitmaps 中某个偏移量的值</span><br><span class="line">getbit key <span class="keyword">offset</span>		获取 Bitmaps 中某个偏移量的值</span><br><span class="line">bitcount key <span class="keyword">start</span> <span class="keyword">end</span>		统计字符串被设置为 <span class="number">1</span> 的 bit 数</span><br><span class="line">bitop op dest src		多功能符合操作</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="2-HyperLogLog"><a href="#2-HyperLogLog" class="headerlink" title="2. HyperLogLog"></a>2. HyperLogLog</h4><p>工作当中，会遇到<strong>基数问题：</strong>求集合中不重复元素的个数，解决方案：</p>
+<ol>
+<li>数据存储在 MySQL 中，使用 <code>distinct count</code> 计算不重复个数</li>
+<li>使用 Redis 提供的 hash、set、bitmaps 等数据结构来处理</li>
+</ol>
+<p>以上方案的结果准确，但是随着数据规模增加，导致占用空间非常大，</p>
+<p><strong>而 HyperLogLog 可以降低一定的精度来平衡存储空间，用来做基数统计。</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pfadd key element		添加指定元素到 HyperLogLog 中</span><br><span class="line">pfcount key			计算 HLL 近似基数值</span><br><span class="line">pfmerge dest src		将一个或多个 HLL 合并后的结果存在 dest 中 </span><br></pre></td></tr></table></figure>
+
+<h4 id="3-Geospatial"><a href="#3-Geospatial" class="headerlink" title="3. Geospatial"></a>3. Geospatial</h4><p>对 GEO 类型的支持，<strong>GEO（Geographic）地理信息的缩写，二维坐标</strong></p>
+<p>基于该类型，提供了经纬度设置、范围查询、距离查询等常见操作。</p>
+<hr>
+<h3 id="事务和锁机制"><a href="#事务和锁机制" class="headerlink" title="事务和锁机制"></a>事务和锁机制</h3><h4 id="1-事务概念"><a href="#1-事务概念" class="headerlink" title="1. 事务概念"></a>1. 事务概念</h4><p>Redis 事务是一个单独的隔离操作：事务中的所有命令都会序列化、按顺序地执行，</p>
+<p>事务在执行的过程中，不会被其他客户端发送来的命令请求所打断。</p>
+<h4 id="2-事务作用"><a href="#2-事务作用" class="headerlink" title="2. 事务作用"></a>2. 事务作用</h4><p>Redis 事务的主要作用就是串联多个命令防止别的命令插队</p>
+<h4 id="3-操作命令"><a href="#3-操作命令" class="headerlink" title="3. 操作命令"></a>3. 操作命令</h4><ul>
+<li>Multi：输入的命令依次进入命令队列中</li>
+<li>Exec：将之前的命令队列中的命令依次执行</li>
+<li>Discard：放弃组队</li>
+</ul>
+<h4 id="4-事务特性"><a href="#4-事务特性" class="headerlink" title="4. 事务特性"></a>4. 事务特性</h4><ol>
+<li><p><strong>单独的隔离操作</strong></p>
+<p>事务中的所有命令都会序列化、按顺序地执行，事务在执行的过程中，</p>
+<p>不会被其他客户端发送来的命令请求所打断</p>
+</li>
+<li><p><strong>没有隔离级别的概念</strong></p>
+<p>队列中的命令没有提交之前都不会实际被执行，</p>
+<p>因为事务提交前任何指令都不会被实际执行</p>
+</li>
+<li><p><strong>不保证原子性</strong></p>
+<p>事务中如果有一条命令执行失败，其后的命令仍然会被执行，不回滚</p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Redis/" rel="tag"># Redis</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/01/31/2-Spring%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" rel="prev" title="Spring配置文件">
+                  <i class="fa fa-angle-left"></i> Spring配置文件
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/01/31/18-SSM%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%88/" rel="next" title="SSM框架整合">
+                  SSM框架整合 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Yuanhao</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

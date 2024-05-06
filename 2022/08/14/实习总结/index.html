@@ -1,37 +1,330 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="实习总结">
+<meta property="og:url" content="http://example.com/2022/08/14/%E5%AE%9E%E4%B9%A0%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Yuanhao Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-14T15:17:53.082Z">
+<meta property="article:author" content="Yuanhao">
+<meta property="article:tag" content="Thinking">
+<meta name="twitter:card" content="summary">
 
 
-{% block content %}
+<link rel="canonical" href="http://example.com/2022/08/14/%E5%AE%9E%E4%B9%A0%E6%80%BB%E7%BB%93/">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/08/14/%E5%AE%9E%E4%B9%A0%E6%80%BB%E7%BB%93/","path":"2022/08/14/实习总结/","title":"实习总结"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>实习总结 | Yuanhao Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
     </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Yuanhao Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Later Equals Never</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Preface"><span class="nav-number">1.</span> <span class="nav-text">Preface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Details"><span class="nav-number">2.</span> <span class="nav-text">Details</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%B9%A0%E5%86%85%E5%AE%B9"><span class="nav-number">2.1.</span> <span class="nav-text">实习内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E4%B9%A0%E6%84%9F%E5%8F%97"><span class="nav-number">2.2.</span> <span class="nav-text">实习感受</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Final"><span class="nav-number">3.</span> <span class="nav-text">Final</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yuanhao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/14/%E5%AE%9E%E4%B9%A0%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuanhao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuanhao Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="实习总结 | Yuanhao Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          实习总结
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-08-14 00:00:00 / 修改时间：23:17:53" itemprop="dateCreated datePublished" datetime="2022-08-14T00:00:00+08:00">2022-08-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Thinking/" itemprop="url" rel="index"><span itemprop="name">Thinking</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><escape><span id="more"></span></escape></p>
+<h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p>转眼间距离实习已经过去三个月了，期间跟随开发的项目也于本周六正式上线，我也随之前往下一个阶段：秋招，</p>
+<p>本身我也很愿意留在这个部门，但是 HR 不给予稳定的答复，Leader 也不能确定我能否留下，所以需要投递简历，</p>
+<p>并且听周围同学说，转正相对于校招工资会被压价，其实我对于这个蛮无奈的，觉得很不合理，但毕竟我只是普通员工，</p>
+<p>尽管当下这个部门并不是核心部门，但我想留下沉淀自己的学习，就当读研了，一步一步提升自己，并且大家都很好，</p>
+<p>并且广州的风土人情以及美食，我还想去体验一下，给自己时间和精力去思考过去和未来，放缓脚步，</p>
+<p>接下来主要记录这段实习期间的工作内容，还有收获的东西吧，算是完成一个里程，回顾一下。</p>
+<h3 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h3><h4 id="实习内容"><a href="#实习内容" class="headerlink" title="实习内容"></a>实习内容</h4><p>实习期间主要是负责资产配件助手项目，涉及客户端、前端、小程序端与后端的联调，我主要负责后端，</p>
+<p>刚来的时候，我还不会 Go 语言，也不会其框架：Gin、Gorm，只留给我一星期的学习时间，</p>
+<p>第一个需求是给前端与后端的联调中，增加 RBAC 权限管理，现在回头看看，当时设计的并不合理，</p>
+<p>并且代码写的很糟糕，Gorm 中很多规范性约束没有合理应用，并且没有考虑到权限管理的三权分立以及越权，</p>
+<p>磕磕绊绊地完成了这个需求之后，因为每周六我都去公司学习，结果恰好一天，后端负责人来公司了，</p>
+<p>我才知道他要离职了，而这个项目就交给了我和另外一个实习生，这一交付就是两个月的加班和联调，</p>
+<p>因为项目要于八月初上线，而以前的测试不够严谨，有很多 corner case 没有考虑到，而我主要负责业务部分，</p>
+<p>疯狂看和前端、客户端、小程序端的交互模块，梳理流程，解决 OAT 验收出现的问题，并且重构核心代码，</p>
+<p>学习了 Websocket、MQTT、RPC、Postman、EMQX、字节云等常用开发组件和工具的使用，</p>
+<p>也学习到了很多前端、小程序端的知识细节以及网络防御，对于以前看过的基础知识有了更深的理解和应用，</p>
+<p>从结果上来看，完成的还算可以，基本上帮助这个项目的成功上线，但是我也深深地意识到一个问题，</p>
+<p>一定要考虑你工作内容的替代性，如果你做的事情随便找一个人培训一下就可以上任，那你就是码农，</p>
+<p>之所以这样说，是因为转正得不到一个肯定的答复，回头看看这个项目，业务上不需要很深的技术，只需要逻辑，</p>
+<p>但是如何将这样一个项目架构起来，才是困难的，我想这是我应该去学习的部分，应该去提升的部分。</p>
+<h4 id="实习感受"><a href="#实习感受" class="headerlink" title="实习感受"></a>实习感受</h4><p>周围有很多同学当听到部门里没有转正希望后，就开始无心工作，不去做好自己手上的业务，开始搪塞，</p>
+<p>和另外一个正式员工交流后，得到的答复是：「他们想要 offer，而你是想学习」，我不知道该如何评价，</p>
+<p>毕竟当下学习的目的就是为了得到工作，但是我觉得更重要的应该是提升自己，汲取当下项目值得学习的模块，</p>
+<p>做好每一个需求，然后总结复盘，再去结合经验学习，而不是投身于面试，为了面试去背很多没有用过的知识。</p>
+<p>另外在部门里，结识遇到了很多程序员、产品经理，大家一起负责各个模块，感觉真的很棒，我喜欢这种氛围，</p>
+<p>大家都是在思考，互帮互助，遇到问题愿意帮助你，愿意一起想办法去解决，愿意分享自己的知识，</p>
+<p>我觉得这种氛围很适合学习，远大于我在学校里学到的知识，或许是因为从事业务部门的原因。</p>
+<h3 id="Final"><a href="#Final" class="headerlink" title="Final"></a>Final</h3><p>秋招也开始了，希望能够留在这个部门，并且工资在我理想范围之内，我不希望被过分压榨，</p>
+<p>这周末也完成了美团和大疆的笔试，前者 5 题完成 4.6，后者 AK，还算顺利，希望给面试机会吧，减缓焦虑，</p>
+<p>最重要的还是提升自己，提升自己的不可替代性，保持学习的节奏，也不要骄傲自满，希望越来越好。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Thinking/" rel="tag"># Thinking</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/08/08/mqtt%E9%97%AE%E9%A2%98/" rel="prev" title="Mqtt机制问题">
+                  <i class="fa fa-angle-left"></i> Mqtt机制问题
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/08/18/%E5%90%8E%E7%AB%AF%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C/" rel="next" title="后端参数检验">
+                  后端参数检验 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Yuanhao</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

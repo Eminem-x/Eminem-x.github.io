@@ -1,37 +1,426 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="Spring配置文件">
+<meta property="og:url" content="http://example.com/2022/01/31/2-Spring%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/index.html">
+<meta property="og:site_name" content="Yuanhao Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-30T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-01-30T16:00:00.000Z">
+<meta property="article:author" content="Yuanhao">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Spring">
+<meta name="twitter:card" content="summary">
 
 
-{% block content %}
+<link rel="canonical" href="http://example.com/2022/01/31/2-Spring%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/01/31/2-Spring%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/","path":"2022/01/31/2-Spring配置文件/","title":"Spring配置文件"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Spring配置文件 | Yuanhao Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
     </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Yuanhao Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Later Equals Never</p>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bean-%E6%A0%87%E7%AD%BE%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">Bean 标签基本配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bean-%E6%A0%87%E7%AD%BE%E8%8C%83%E5%9B%B4%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">Bean 标签范围配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BD%93-scope-%E7%9A%84%E5%8F%96%E5%80%BC%E4%B8%BA-singleton-%E6%97%B6%EF%BC%9A"><span class="nav-number">2.1.</span> <span class="nav-text">当 scope 的取值为 singleton 时：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BD%93-scope-%E7%9A%84%E5%8F%96%E5%80%BC%E4%B8%BA-prototype-%E6%97%B6%EF%BC%9A"><span class="nav-number">2.2.</span> <span class="nav-text">当 scope 的取值为 prototype 时：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bean-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">Bean 生命周期配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bean-%E5%AE%9E%E4%BE%8B%E5%8C%96%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">Bean 实例化三种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bean-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5"><span class="nav-number">5.</span> <span class="nav-text">Bean 依赖注入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E5%85%A5%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%88%E5%88%86%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91%EF%BC%89"><span class="nav-number">6.</span> <span class="nav-text">引入其他配置文件（分模块开发）</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yuanhao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/31/2-Spring%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuanhao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuanhao Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Spring配置文件 | Yuanhao Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Spring配置文件
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-01-31 00:00:00" itemprop="dateCreated datePublished" datetime="2022-01-31T00:00:00+08:00">2022-01-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><escape><span id="more"></span></escape></p>
+<h3 id="Bean-标签基本配置"><a href="#Bean-标签基本配置" class="headerlink" title="Bean 标签基本配置"></a>Bean 标签基本配置</h3><ol>
+<li><p>Bean 用于配置对象交由 Spring 来创建，<strong>默认情况下调用的是类中的无参构造函数</strong>，</p>
+<p>如果没有无参构造函数则不能创建成功；</p>
+</li>
+<li><p>基本属性</p>
+<ol>
+<li><p><strong>id</strong>：Bean 实例在 Spring 容器中的唯一标识</p>
+</li>
+<li><p><strong>class</strong>：Bean 的全限定名称</p>
+</li>
+<li><p><strong>scope</strong>：Bean 的作用范围</p>
+</li>
+<li><p><strong>&lt;property&gt;</strong>标签：属性注入</p>
+<ol>
+<li>name 属性：属性名称</li>
+<li>value 属性：注入的普通属性值</li>
+<li>ref 属性：注入的对象引用值</li>
+<li>&lt;list&gt;标签、&lt;map&gt;标签、&lt;properties&gt;标签</li>
+</ol>
+</li>
+<li><p><strong>&lt;constructor-arg&gt;标签</strong></p>
+</li>
+</ol>
+</li>
+<li><p><strong>&lt;import&gt;标签</strong>：导入其他的 Spring 的分文件</p>
+</li>
+</ol>
+<h3 id="Bean-标签范围配置"><a href="#Bean-标签范围配置" class="headerlink" title="Bean 标签范围配置"></a>Bean 标签范围配置</h3><table>
+<thead>
+<tr>
+<th align="center">取值范围</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">singleton</td>
+<td align="center">默认值、单例</td>
+</tr>
+<tr>
+<td align="center">prototype</td>
+<td align="center">多例</td>
+</tr>
+<tr>
+<td align="center">request</td>
+<td align="center">WEB项目中，存入到 request 域</td>
+</tr>
+<tr>
+<td align="center">session</td>
+<td align="center">WEB项目中，存入到 session 域</td>
+</tr>
+<tr>
+<td align="center">global session</td>
+<td align="center">WEB项目中，应用在 Portlet 环境</td>
+</tr>
+</tbody></table>
+<ol>
+<li><h4 id="当-scope-的取值为-singleton-时："><a href="#当-scope-的取值为-singleton-时：" class="headerlink" title="当 scope 的取值为 singleton 时："></a>当 scope 的取值为 singleton 时：</h4></li>
+</ol>
+<ul>
+<li>Bean 的实例化个数：1个</li>
+<li>Bean 的实例化时机：当 Spring 核心文件被加载时，实例化配置的 Bean 实例</li>
+<li>Bean 的生命周期：<ol>
+<li>对象创建：当应用加载，创建容器时，对象就被创建；</li>
+<li>对象运行：只要容器在，对象就一直存在；</li>
+<li>对象销毁：当应用卸载，销毁容器时，对象就被销毁；</li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li><h4 id="当-scope-的取值为-prototype-时："><a href="#当-scope-的取值为-prototype-时：" class="headerlink" title="当 scope 的取值为 prototype 时："></a>当 scope 的取值为 prototype 时：</h4></li>
+</ol>
+<ul>
+<li>Bean 的实例化个数：多个</li>
+<li>Bean 的实例化时机：当调用 getBean() 方法时实例化 Bean</li>
+<li>Bean 的生命周期：<ol>
+<li>对象创建：当使用对象时，创建新的对象实例；</li>
+<li>对象运行：只要对象在使用中，就一直存在；</li>
+<li>对象销毁：当对象长时间不用，就被 Java 的垃圾回收期回收；</li>
+</ol>
+</li>
+</ul>
+<h3 id="Bean-生命周期配置"><a href="#Bean-生命周期配置" class="headerlink" title="Bean 生命周期配置"></a>Bean 生命周期配置</h3><ul>
+<li><p>init-method：指定类中的初始化方法名称</p>
+</li>
+<li><p>destroy-method：指定类中的销毁方法名称</p>
+<p><strong>注意：需要手动关闭容器，才能运行销毁方法</strong></p>
+</li>
+</ul>
+<p><strong>特殊说明：</strong></p>
+<p>当创建 ApplicationContext 对象时，不存在 close() 方法，有两种解决方法：</p>
+<ol>
+<li>更改为 AbstractApplicationContext 对象；</li>
+<li><strong>向下强制转为 ConfigurableApplicationContext，即声明时的类型；</strong></li>
+<li>在大多数情况下更加推荐第二种方法；</li>
+<li>参考文章：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/14423980/how-to-close-a-spring-applicationcontext">java - How to close a spring ApplicationContext? - Stack Overflow</a></li>
+</ol>
+<h3 id="Bean-实例化三种方式"><a href="#Bean-实例化三种方式" class="headerlink" title="Bean 实例化三种方式"></a>Bean 实例化三种方式</h3><ul>
+<li>无参构造方法实例化</li>
+<li>工厂静态方法实例化</li>
+<li>工厂实例方法实例化</li>
+</ul>
+<h3 id="Bean-依赖注入"><a href="#Bean-依赖注入" class="headerlink" title="Bean 依赖注入"></a>Bean 依赖注入</h3><ol>
+<li><p><strong>依赖注入（Dependency Injection）: Spring框架核心 IOC 的具体实现</strong></p>
+</li>
+<li><p>依赖注入方式：</p>
+<ul>
+<li>构造方法</li>
+<li>set 方法</li>
+</ul>
+</li>
+<li><p>依赖注入的数据类型：</p>
+<ul>
+<li>普通数据类型</li>
+<li>引用数据类型</li>
+<li>集合数据类型</li>
+</ul>
+</li>
+</ol>
+<h3 id="引入其他配置文件（分模块开发）"><a href="#引入其他配置文件（分模块开发）" class="headerlink" title="引入其他配置文件（分模块开发）"></a>引入其他配置文件（分模块开发）</h3><p>实际开发中，Spring 的配置内容非常多，导致配置很繁杂并且体积大，</p>
+<p>所以可以将部分配置拆解到其他配置文件中，而在 Spring 主配置文件中，</p>
+<p>通过 import 标签进行加载。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"># Java</a>
+              <a href="/tags/Spring/" rel="tag"># Spring</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/01/31/3-Redis%E8%BF%9B%E9%98%B6/" rel="prev" title="Redis进阶">
+                  <i class="fa fa-angle-left"></i> Redis进阶
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/01/31/2-Redis%E7%89%B9%E6%80%A7/" rel="next" title="Redis特性">
+                  Redis特性 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Yuanhao</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
